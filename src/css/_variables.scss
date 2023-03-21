@@ -1,0 +1,86 @@
+$color_black                      : #000;
+$color_white                      : #fff; 
+$color_brand                      : #1f8cd7;
+$color_primary                    : #588bbc;
+$color_dark                       : #030720;
+$color_mid                        : #3f4255;
+$color_light                      : #E8E8E8;
+$color_dimmed                     : #ACB2BA;
+$color_secondary                  : #6D6E70;
+
+
+$normalized_font_family           : 'Raleway', sans-serif;
+$serif_font_family                : serif;
+
+$letter_spacing_base              : 0;
+
+$font_size_base                   : 17px;
+$line_height_base                 : 35/17;
+$line_height_computed             : $font_size_base * $line_height_base;
+$line_height_default              : 21/18; // mimics photoshop "auto" setting
+
+$background                       : $color_dark;
+$color                            : $color_white;
+$link_color                       : inherit;
+$link_color_hover                 : $color_brand;
+$selection_bg                     : $color_brand;
+$selection_text                   : $color_white;
+$color_error                      : darken(red, 10%);
+
+$h1_font_size                     : 6.8rem;
+$h2_font_size                     : 3.6rem;
+$h3_font_size                     : 3rem;
+$h4_font_size                     : 1.9rem;
+$lead_font_size                   : 2.8rem;
+$description_big                  : 1.8rem;
+
+$wrapper_width                    : 128rem;
+$grid_columns                     : 12;
+$grid_gutter                      : 2.4rem;
+$margin_base                      : 6rem;
+
+//burger
+$burger_height                    : 20px;
+$burger_width                     : 22px;
+$burger_line_width                : 3px;
+
+// Dropkick
+$dk_border_width                  : 1px;
+
+
+// z-index
+$z_index_over_all                 : 10000;
+$z_index_modal                    : 9000;
+$z_index_overlay                  : 8000;
+$z_index_dropdown                 : 7000;
+$z_index_header                   : 6000;
+$z_index_footer                   : 5000;
+$z_index_over_content             : 1000;
+$z_index_over_base                : 10;
+$z_index_content                  : 5;
+$z_index_base                     : 1;
+$z_index_under_base               : -10;
+
+$transition_default               : all 300ms ease;
+$transition_slow                  : all 800ms ease;
+$transition_fast                  : all 100ms ease;
+
+
+// RWD
+
+$bp-super-narrow                  : ( max:  419px );
+$bp-mobile-narrow                 : ( max:  479px );
+$bp-mobile                        : ( max:  519px );
+$bp-phablet                       : ( max:  767px );
+$bp-portrait                      : ( max:  1023px );
+$bp-tablet                        : ( max:  1199px );
+$bp-desktop                       : ( max: 1359px );
+$bp-min-desktop                   : ( min: 1200px );
+$bp-hd                            : ( min: map-get($bp-desktop, max) + 1 );
+
+$bp-mobile                        : $bp-mobile;
+$bp-phablet-only                  : ( min: map-get($bp-mobile, max) + 1, max: map-get($bp-phablet, max) );
+$bp-portrait-only                 : ( min: map-get($bp-phablet, max) + 1, max: map-get($bp-portrait, max) );
+$bp-tablet-only                   : ( min: map-get($bp-portrait, max) + 1, max: map-get($bp-tablet, max) );
+$bp-desktop-only                  : ( min: map-get($bp-tablet, max) + 1, max: map-get($bp-desktop, max) );
+$bp-hd-only                       : $bp-hd;

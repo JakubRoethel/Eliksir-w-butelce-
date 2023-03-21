@@ -1,0 +1,22 @@
+.burger { display: block; width: $burger_width; height: $burger_height; position: relative; background: none; border: 0; cursor: pointer; font-size: 0;
+	&:before,
+	&:after { content: ''; }
+	&:before,
+	&:after,
+	.label { display: block; width: 22px; height: $burger_line_width; background: $color; position: absolute; left: 0; transition: $transition_default; }
+	&:before,
+	&:after { transition: top 200ms 300ms ease, transform 300ms ease; }
+	&:before { top: 0; }
+	&:after { top: 100%; transform: translateY(-$burger_line_width); }
+	.label { top: 50%; transform: translateY(-50%); transition-delay: 210ms; }
+
+	.menu-visible & {
+		&:before,
+		&:after { transition: top 200ms ease, transform 300ms 300ms easeOutBack; }
+		.label { width: 0; margin-left: 0; opacity: 0; transition-delay: 310ms;
+		
+		}
+		&:before { top: 50%; transform: translateY(-50%) rotate(45deg); }
+		&:after { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+	}
+}

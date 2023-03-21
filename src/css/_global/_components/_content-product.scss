@@ -1,0 +1,33 @@
+.archive {
+    li.product {
+        border: 1px solid white !important;
+        border-radius: 22px;
+        transition: all .3s ease;
+
+        span.onsale {
+            background-color: grey ;
+            top: 10px !important;
+            right: 10px !important;
+            margin: unset !important;
+            border-radius: 8px !important;
+            min-height: auto;
+            line-height: initial;
+        }
+        &:hover{
+            padding: 10px !important;
+            transition: all .3s ease;
+        }
+        img {
+            border-radius: 20px;
+        }
+
+        .button {
+            border-radius: 20px;
+            margin: 0 0 10px 10px;
+        }
+    }
+
+    
+    
+} 
+
