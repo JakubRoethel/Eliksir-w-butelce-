@@ -50,40 +50,42 @@ function products_slider($atts) {
     );
     $loop = new WP_Query($args);
     ?> 
+
+    <?php 
+            if( have_rows('slider_images') ): ?>
      <div class="container">
         <div class="swiper">
             <div class="swiper-wrapper"> 
-                
+            <?php while( have_rows('slider_images') ): the_row(); 
+                  $image = get_sub_field('single_slide_image');
+                  ?> 
+                <div class="swiper-slide swiper-slide-active">
+                      <?php echo wp_get_attachment_image( $image, 'full' ); ?>
+                </div>  
+                  
+              <?php endwhile; ?>
+             
+          <?php endif; ?>
+          </div>
+          <div class="swiper-pagination"></div>
 
-            <?php 
-            while ($loop->have_posts()) : $loop->the_post(); ?>
-            <div class="swiper-slide swiper-slide-active">
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/487.svg" alt="">
-              <div class="info">
-                <h4 class="name">
-                  Giratina <?php  echo get_the_ID(); ?>
-                </h4>
-                <span class="type">
-                  Ghost, Dragon
-                </span>
-              </div>
-            </div>
-            <?php endwhile; 
-            wp_reset_query();
-            ?>
-
-
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          </div> 
+          </div>
 
 
 
-            </div>
-            <div class="swiper-pagination"></div>
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div> 
-     </div>
+            <!-- wp_reset_query();
+            ?> -->
+
+
+
+
+
+           
      
         <?php
     }

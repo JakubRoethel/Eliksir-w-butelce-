@@ -29,8 +29,10 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init.bind(undefined, {
   easing: 'ease-in-out',
   delay: 100
 });
-(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
-console.log("test");
+
+// headerService();
+
+var swiperNames = ['One', 'Two', 'Three'];
 var swiper = new Swiper(".swiper", {
   effect: "slide",
   grabCursor: true,

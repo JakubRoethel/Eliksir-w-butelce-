@@ -8,10 +8,9 @@ AOS.init.bind(this, {
     delay: 100,
 }) 
 
-headerService();
-console.log("test");
+// headerService();
 
-
+let swiperNames = ['One', 'Two', 'Three'];
 var swiper = new Swiper(".swiper", {
     effect: "slide",
     grabCursor: true,
@@ -20,7 +19,7 @@ var swiper = new Swiper(".swiper", {
     autoplay: {
       delay: 2000
     }, 
-    spaceBetween: 20,
+    spaceBetween: 20, 
     loop: true,
     pagination: {
       el: ".swiper-pagination",
