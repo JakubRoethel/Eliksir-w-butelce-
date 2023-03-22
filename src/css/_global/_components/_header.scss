@@ -13,115 +13,133 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 22px 51px;
-    color: $color_white;
-    // background: transparent;
-    background: red; 
+    padding: 20px;
     z-index: $z_index_header;
-    transition: 0.2s ease-in;
 
   @include bp($bp-tablet) {
-      padding: 2.4rem 3.5rem;
-  }
+      
+  };
 
   @include bp($bp-mobile) {
-      height: 90px;
-      padding: 1.5rem;
-  }
+      
+  };
 
   .container {
       width: 100%;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-  }
-}
+  };
 
-.header--scrolled {
-  box-shadow: 0 0 20px 0  $color_black;
-  height: 78px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
+  .header_left, .menu_container, .header_right {
+    width: 33.3%;
+    display: flex;
+  };
 
-.header__left {
-  transition: all 0.2s ease-in;
-  display: flex;
-  align-items: center;
-}
-
-.header__right {
-  margin-left: auto;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  padding-bottom: 5px;
-}
-
-.header__languages {
-  display: flex;
-  font-size: 14px;
-  text-transform: uppercase;
-
-  a {
-      color: $color_mid;
-      transition: width 0.2s ease-in;
-      font-weight: 900;
-
-      &:hover {
-          color: $color_white;
-      }
+  .header_left {
+    align-items: flex-start;
+    display: flex;
+    width: 30%;
   }
 
-  .lang-item {
-      padding: 5px 8px;
+  .header_right {
+    align-items: flex-start;
+    display: flex;
+    width: 30%;
   }
 
-  .current-lang {
-      a {
-          color: $color_white;
-      }
-  }
-}
+   .menu_container {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+  };
 
-.header__logo {
-  margin-right: 30px;
+  .header_navigation {
+    width: 100%;
 
-  @include bp($bp-mobile) {
-      margin-right: 15px;
-  }
+    ul {
+        display: flex;
+        gap: 65px;
+    };
 
-  @include bp($bp-mobile-narrow) {
-      margin-right: 0;
-  }
+    ul li {
+        position: relative;
+        width: 33.3%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
 
-  img {
-      height: 42px;
-      @include bp($bp-mobile-narrow) { 
-          height: 34px; 
-      }
-  }
-}
+    li:nth-child(2)::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+        position: absolute;
+        display: flex;
+        left: -50%;
+        top: -25%;    
+    };
 
-.header__social {
-  display: flex;
-  align-items: center;
+    li:nth-child(2)::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+        position: absolute;
+        display: flex;
+        right: -50%;
+        top: -25%;    
+    };
+};
 
-  @include bp($bp-mobile) {
-      display: none;
-  }
+.header_right {
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap:50px;
 
-  .social__item {
-      padding: 10px 12px;
+    .navigation_social {
+        display: flex;
+        gap:30px;
 
-      a{
-          font-size: 22px;
-          color: $color_mid;
-          transition: color 0.2s ease-in;
+        li {
+            display: flex;
+        };
 
-          &:hover {
-              color: white;
-          }
-      }
-  }
-}
+        a {
+            font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+            font-weight: 900;
+            font-size: 10px;
+            opacity: 0.6;
+        }
+    };
+
+    p {
+        text-align: right;
+        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+            font-weight: 900;
+            font-size: 10px;
+    };
+    
+    .icon_box{
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        i {
+            font-weight: 900;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .icon_container {
+        display: flex;
+        gap: 18px;
+    }
+  };
+};
+
+

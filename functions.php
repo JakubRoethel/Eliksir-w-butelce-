@@ -40,62 +40,7 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter){
     return $html;
 }
 
-
-function products_nowosci($atts) {
-$args = array(
-    'product_cat' => 'Accessories'
-);
-$loop = new WP_Query($args);
-while ($loop->have_posts()) : $loop->the_post();
-    // echo get_the_ID();
-    // echo get_field('nowosci');
-    // update_field('nowosci', 'tak');
-    echo has_term( array( 'accessories' ), 'product_cat', get_the_ID());
-    
-endwhile;
-}
-
-add_shortcode('nowosci', 'products_nowosci');
-
-
-//check if the saved product has "Accessories" category
-add_action( 'updated_post_meta', 'on_product_save', 10, 4 );
-function on_product_save( $meta_id, $post_id, $meta_key, $meta_value ) {
-    if ( $meta_key == '_edit_lock' ) { // we've been editing the post
-        if ( get_post_type( $post_id ) == 'product' ) { // we've been editing a product
-            $product = wc_get_product( $post_id );
-            
-            if( has_term( array( 'Accessories' ), 'product_cat', $post_id ) ) {
-                update_field('nowosci', 'tak', $post_id );
-            } else {
-                update_field('nowosci', 'nie', $post_id );
-            }
-
-        }
-    }
-   
-}
-
 require_once('lib/acf-config.php');
-
-
-function hide_custom_field() {
-    remove_meta_box( 'nowosci', 'product', 'normal' );
-}
-
-add_action( 'admin_menu', 'hide_custom_field' );
-
-
-/**
- * Show additional title before Filters widget
- */
-add_action('wpc_before_filters_widget', 'my_filters_widget' );
-function my_filters_widget($args)
-{
-    echo 'My special title'."\r\n";
-}
-
-
 
 function products_slider($atts) {
 
@@ -144,6 +89,9 @@ function products_slider($atts) {
     }
     
     add_shortcode('products_slider_shortcode', 'products_slider');
+
+
+    
 
 
 

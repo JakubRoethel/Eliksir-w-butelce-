@@ -1,3 +1,5 @@
+@import url(https://fonts.cdnfonts.com/css/futura-pt);
+@import url(https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro);
 @charset "UTF-8";
 /* VARIABLES
  * ------------------------------------------------------------------------- */
@@ -272,7 +274,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Raleway", sans-serif;
+  font-family: "Futura PT", sans-serif;
 }
 
 body {
@@ -477,116 +479,112 @@ table {
   top: 0;
   left: 0;
   right: 0;
-  padding: 22px 51px;
-  color: #fff;
-  background: red;
+  padding: 20px;
   z-index: 6000;
-  transition: 0.2s ease-in;
-}
-@media screen and (max-width: 1199px) {
-  .header {
-    padding: 2.4rem 3.5rem;
-  }
-}
-@media screen and (max-width: 519px) {
-  .header {
-    height: 90px;
-    padding: 1.5rem;
-  }
 }
 .header .container {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-
-.header--scrolled {
-  box-shadow: 0 0 20px 0 #000;
-  height: 78px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.header__left {
-  transition: all 0.2s ease-in;
+.header .header_left, .header .menu_container, .header .header_right {
+  width: 33.3%;
   display: flex;
+}
+.header .header_left {
+  align-items: flex-start;
+  display: flex;
+  width: 30%;
+}
+.header .header_right {
+  align-items: flex-start;
+  display: flex;
+  width: 30%;
+}
+.header .menu_container {
+  display: flex;
+  width: 40%;
+  justify-content: center;
   align-items: center;
 }
-
-.header__right {
-  margin-left: auto;
+.header .header_navigation {
+  width: 100%;
+}
+.header .header_navigation ul {
+  display: flex;
+  gap: 65px;
+}
+.header .header_navigation ul li {
   position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  padding-bottom: 5px;
-}
-
-.header__languages {
-  display: flex;
-  font-size: 14px;
+  width: 33.3%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
   text-transform: uppercase;
 }
-.header__languages a {
-  color: #3f4255;
-  transition: width 0.2s ease-in;
-  font-weight: 900;
-}
-.header__languages a:hover {
-  color: #fff;
-}
-.header__languages .lang-item {
-  padding: 5px 8px;
-}
-.header__languages .current-lang a {
-  color: #fff;
-}
-
-.header__logo {
-  margin-right: 30px;
-}
-@media screen and (max-width: 519px) {
-  .header__logo {
-    margin-right: 15px;
-  }
-}
-@media screen and (max-width: 479px) {
-  .header__logo {
-    margin-right: 0;
-  }
-}
-.header__logo img {
-  height: 42px;
-}
-@media screen and (max-width: 479px) {
-  .header__logo img {
-    height: 34px;
-  }
-}
-
-.header__social {
+.header .header_navigation li:nth-child(2)::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+  position: absolute;
   display: flex;
-  align-items: center;
+  left: -50%;
+  top: -25%;
 }
-@media screen and (max-width: 519px) {
-  .header__social {
-    display: none;
-  }
+.header .header_navigation li:nth-child(2)::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+  position: absolute;
+  display: flex;
+  right: -50%;
+  top: -25%;
 }
-.header__social .social__item {
-  padding: 10px 12px;
+.header .header_right {
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 50px;
 }
-.header__social .social__item a {
-  font-size: 22px;
-  color: #3f4255;
-  transition: color 0.2s ease-in;
+.header .header_right .navigation_social {
+  display: flex;
+  gap: 30px;
 }
-.header__social .social__item a:hover {
-  color: white;
+.header .header_right .navigation_social li {
+  display: flex;
+}
+.header .header_right .navigation_social a {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  opacity: 0.6;
+}
+.header .header_right p {
+  text-align: right;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+}
+.header .header_right .icon_box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.header .header_right .icon_box i {
+  font-weight: 900;
+  width: 20px;
+  height: 20px;
+}
+.header .header_right .icon_container {
+  display: flex;
+  gap: 18px;
 }
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 .archive {
@@ -700,4 +698,34 @@ a {
 .product__filters .wpc-filters-section.wpc-filter-_sale_price label {
   position: relative;
   cursor: pointer;
+}
+
+.main_swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.main_swiper .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: grayscale(80%);
+  transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main_swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.swiper-slide-active {
+  filter: none;
+}
+
+.swiper-pagination-bullet {
+  background-color: grey;
 }
