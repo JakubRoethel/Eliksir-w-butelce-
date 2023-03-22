@@ -37,10 +37,7 @@ var swiper = new Swiper(".swiper", {
   effect: "slide",
   grabCursor: true,
   centeredSlides: false,
-  slidesPerView: "1.5",
-  autoplay: {
-    delay: 2000
-  },
+  slidesPerView: "1",
   spaceBetween: 20,
   loop: true,
   pagination: {
