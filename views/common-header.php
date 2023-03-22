@@ -1,5 +1,5 @@
 <header class="header">
-  <p><?php the_field('sale_banner', 'header_settings'); ?></p>
+  <!-- <p><?php the_field('sale_banner', 'header_settings'); ?></p> -->
   <div class="container">
     <div class="header__left" data-aos="fade-in" data-aos-delay="200" data-aos-easing="ease-in-out">
       <div class="header__logo">
@@ -8,16 +8,8 @@
         </a>
       </div>
     </div>
-    <div class="header__right" data-aos="fade-in" data-aos-delay="200" data-aos-easing="ease-in-out">
-      <button type="button" class="header__toggle">
-        <div class="header__toggle__item"></div>
-        <div class="header__toggle__item"></div>
-        <div class="header__toggle__item"></div>
-      </button>
-    </div>
-
+    <div class="menu_container">
     <nav class="header__navigation">
-      <div class="navigation__overlay"></div>
       <?php wp_nav_menu([
         'menu' => 'Main menu',
         'menu_id' => 'navigation-list',
@@ -28,5 +20,6 @@
         'theme_location' => 'main-menu',
       ]);?>
     </nav>
+    </div>
   </div>
 </header>

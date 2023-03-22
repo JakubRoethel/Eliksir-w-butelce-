@@ -16,6 +16,8 @@ function studio_scripts() {
 
 add_action('wp_enqueue_scripts', 'studio_scripts'); 
 
+add_theme_support('custom-logo' );
+
 /**
  * Set WooCommerce image dimensions upon theme activation
  */
