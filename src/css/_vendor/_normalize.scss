@@ -19,22 +19,17 @@ $normalized_font_family: sans-serif !default;
 
 $normalize_headings: true !default;
 
-$h1_font_size: 2em !default;
-$h2_font_size: 1.5em !default;
+$h1_font_size: 60px !default;
+$h2_font_size: 40px !default;
 $h3_font_size: 1.17em !default;
 $h4_font_size: 1em !default;
 $h5_font_size: 0.83em !default;
 $h6_font_size: 0.75em !default;
 
-$h1_margin: 0.67em 0 !default;
-$h2_margin: 0.83em 0 !default;
-$h3_margin: 1em 0 !default;
-$h4_margin: 1.33em 0 !default;
-$h5_margin: 1.67em 0 !default;
-$h6_margin: 2.33em 0 !default;
+
 
 $background: #fff !default;
-$color: #717171 !default;
+$color: #40434D !default;
 
 // =============================================================================
 // HTML5 display definitions
@@ -118,6 +113,7 @@ textarea {
 
 body {
     margin: 0;
+    background: transparent;
 }
 
 // =============================================================================
@@ -158,32 +154,32 @@ a {
 @if $normalize_headings == true {
     h1 {
         font-size: $h1_font_size;
-        margin: $h1_margin;
+        
     }
 
     h2 {
         font-size: $h2_font_size;
-        margin: $h2_margin;
+        
     }
 
     h3 {
         font-size: $h3_font_size;
-        margin: $h3_margin;
+       
     }
 
     h4 {
         font-size: $h4_font_size;
-        margin: $h4_margin;
+       
     }
 
     h5 {
         font-size: $h5_font_size;
-        margin: $h5_margin;
+        
     }
 
     h6 {
         font-size: $h6_font_size;
-        margin: $h6_margin;
+        
     }
 }
 

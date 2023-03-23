@@ -6,7 +6,7 @@ function studio_scripts() {
     wp_register_style('custom', get_stylesheet_directory_uri() .'/src/css/custom.css', [], 1, 'all');
     wp_enqueue_style('custom');
 
-    wp_register_script('main', get_stylesheet_directory_uri() . '/dist/main.js', ['jquery'], 1, true);
+    wp_register_script('main', get_stylesheet_directory_uri() . '/dist/main.js', ['jquery', 'acf-input'], 1, true);
     wp_enqueue_script('main');
 
     wp_register_script( 'Swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', null, null, true );

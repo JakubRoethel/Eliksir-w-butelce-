@@ -32,17 +32,22 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init.bind(undefined, {
 
 // headerService();
 
-var swiperNames = ['One', 'Two', 'Three'];
+var postID = acf.get('post_id');
+var acfVersion = acf.get('acf_version');
+var swiperNames = ['Basil smash', 'Orange Classic', 'Cherry Cuba', 'Lime sour', 'Old Fashioned', 'Spritz'];
 var swiper = new Swiper(".swiper", {
   effect: "slide",
   grabCursor: true,
   centeredSlides: false,
   slidesPerView: "1",
-  spaceBetween: 20,
+  spaceBetween: 0,
   loop: true,
   pagination: {
     el: ".swiper-pagination",
-    clickable: true
+    clickable: true,
+    renderBullet: function renderBullet(index, className) {
+      return "<span class=\"dot swiper-pagination-bullet\">".concat(swiperNames[index], "</span>");
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",

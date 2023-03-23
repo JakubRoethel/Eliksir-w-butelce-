@@ -1,7 +1,7 @@
 <?php
 $rows = get_field('hero_section')['slider_images'];
       if( $rows ): ?>
-        <div class="container">
+        <div class="container hero_section">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <?php  foreach( $rows as $row ) { 
@@ -13,9 +13,6 @@ $rows = get_field('hero_section')['slider_images'];
                       <?php  } ?>
                 </div>
                 <div class="swiper-pagination"></div>
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </div>                

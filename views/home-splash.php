@@ -1,17 +1,66 @@
-<header class="home__splash" style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/img/home-spash-bg.png)">
-  <div class="home__splash__image">
-    <?php
-      $home_hero_section = get_field('hero_section');
-      $home_hero_description = $home_hero_section['hero_description'];
-      $home_hero_image = $home_hero_section['hero_image'];
-    ?>
-    <h2 class="hero__description"><?php echo $home_hero_description ?></h2>
-    <?php echo wp_get_attachment_image( $home_hero_image, 'full' ); ?>
-  <div class="wrapper">
-    <h1 class="header__title" data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in-out"><?php the_field('splash_title'); ?></h1>
-    <p class="header__copy" data-aos="fade-left" data-aos-delay="300"  data-aos-easing="ease-in-out"><?php the_field('splash_copy'); ?></p>
-    <a href="#" class="header__arrow js-scroll-to">
-      <img data-aos="fade-in" data-aos-easing="ease-in-out" src="<?php echo get_template_directory_uri(); ?>/dist/img/home-scroll-down.png" alt="" class="u-img-responsive">
-    </a>
+<?php
+$splash_title = get_field('splash')['title'];
+$splash_subtitle = get_field('splash')['subtitle'];    
+
+?>
+<div class="home_splash">
+  <div class="text_container"> 
+    <h1 class="title"><?php echo $splash_title ?></h2>
+    <p class="subtitle"><?php echo $splash_subtitle ?></p>
   </div>
-</header> 
+  <div class="info_container">
+    <div class="left_box">
+      <?php
+        $splash_ingredients = get_field('splash')['left_ingredients'];
+          if( $splash_ingredients ): ?>
+          <div class="ingredients_list">
+          <?php  foreach( $splash_ingredients as $splash_ingredients) { 
+                         $icon = $splash_ingredients['ingredients_icon'];
+                         $description = $splash_ingredients['ingredients_text'];
+                    ?>
+                        <div class="single_ingredient">
+                            <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
+                            <p class="img_description">  <?php echo $description  ?> </p>
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    </div>
+    <div class="middle_box">
+      <?php
+        $splash_imgs = get_field('splash')['midel_img_section'];
+          if( $splash_imgs): ?>
+          <div class="imgs">
+          <?php  foreach( $splash_imgs as $splash_imgs) { 
+                         $splash_blob = $splash_imgs['blob'];  
+                         $splash_img = $splash_imgs['img'];  
+                    ?>
+                        <div class="mask">
+                            <?php echo wp_get_attachment_image( $splash_blob, 'full' ); ?>
+                        </div>
+                        <div class="img">
+                            <?php echo wp_get_attachment_image( $splash_img, 'full' ); ?>
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    </div>
+    <div class="right_box">
+    <?php
+        $splash_ingredients = get_field('splash')['right_ingredients'];
+          if( $splash_ingredients ): ?>
+          <div class="ingredients_list">
+          <?php  foreach( $splash_ingredients as $splash_ingredients) { 
+                         $icon = $splash_ingredients['ingredients_icon'];
+                         $description = $splash_ingredients['ingredients_text'];
+                    ?>
+                        <div class="single_ingredient">
+                            <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
+                            <p class="img_description">  <?php echo $description  ?> </p>
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    </div>
+  </div>
+</div>                
