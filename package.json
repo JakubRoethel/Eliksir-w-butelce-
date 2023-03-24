@@ -5,6 +5,7 @@
   "main": "webpack.mix.js",
   "dependencies": {
     "aos": "^2.3.4",
+    "autoprefixer": "10.4.5",
     "basic-ftp": "^5.0.2"
   },
   "devDependencies": {
