@@ -1,0 +1,82 @@
+.how_to_mix {
+    background-color: #F0D7C9;
+    padding: 125px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title, .subtitle {
+        font-weight: 700;
+        color: #40434D;
+        text-align: center;
+    };
+
+    .title {
+        font-size: 60px;
+        text-transform: uppercase;
+    };
+
+    .subtitle {
+        padding: 20px 0px;
+    };
+
+    .mix_ingredients {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .left_side_mix {
+            display: flex;
+            width: 40%;
+            justify-content: flex-end;
+
+            .single_icon_box {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 35px;
+                padding: 30px 0px;
+        
+                .icon_description {
+                    font-weight: 700;
+                    font-size: 34px;
+                    min-width: 130px;
+                }
+        
+                img {
+                    width: 20%;
+                    height: auto;
+                }
+            }
+
+            .single_icon_box:first-child .icon_description {
+                color: #C3A43B;
+            }
+        
+        
+            .single_icon_box:nth-child(2) .icon_description {
+                color: #F26B1F;
+                ;
+            };
+        
+        
+            .single_icon_box:nth-child(3) .icon_description {
+                color: #6797B2;
+            };
+
+        }
+    }
+
+
+    .right_side_mix{
+        width: 60%;
+        display: flex;
+        justify-content: flex-start;
+        img {
+            width: 60%;
+            height: auto;
+        }
+    }
+}
+
