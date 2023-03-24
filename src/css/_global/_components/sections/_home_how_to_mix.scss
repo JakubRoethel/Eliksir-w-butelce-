@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
 
     .title, .subtitle {
         font-weight: 700;

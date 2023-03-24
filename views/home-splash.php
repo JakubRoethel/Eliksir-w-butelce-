@@ -5,7 +5,7 @@ $splash_subtitle = get_field('splash')['subtitle'];
 ?>
 <div class="home_splash">
   <div class="text_container"> 
-    <h1 class="title"><?php echo $splash_title ?></h2>
+    <h2 class="title"><?php echo $splash_title ?></h2>
     <p class="subtitle"><?php echo $splash_subtitle ?></p>
   </div>
   <div class="info_container">
