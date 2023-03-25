@@ -11,6 +11,8 @@ function studio_scripts() {
 
     wp_register_script( 'Swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', null, null, true );
     wp_enqueue_script('Swiper');
+
+    wp_enqueue_script('blurry-load', get_stylesheet_directory_uri() . '/src/js/modules/blurry-load.js', array('jquery'), '', true);
     
 }
 
