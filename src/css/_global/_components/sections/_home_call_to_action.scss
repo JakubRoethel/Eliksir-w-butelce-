@@ -3,26 +3,41 @@
   max-width: 1800px;
   margin: 0 auto;
   overflow: hidden;
-  
-  &:hover .single_call_to_action:hover {
-    background-color: red;
-  }
+
+//   &:not(:hover) {
+//     .single_call_to_action {
+//         margin-left: 0%;
+//         border: 1px solid red;
+//     }
+    
+//   }
 
   .single_call_to_action {
-   min-width: 33.3%;
+    min-width: 33.3%;
+    // margin-left: -16%;
     position: relative;
+    cursor: pointer;
     // aspect-ratio: 6/5;
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 
-    &:hover {
-       min-width: 66.6%;
+    // &:hover ~ div {
+    //    min-width: 66.6%;
+    //    transition: all .4s ease;
+    // }
+
+    &:hover:last-child {
+        margin-left: 0;
+        min-width: 66.6%;
     }
 
-   
+    &:hover {
+        min-width: 66.6%;
+    }
+
     
 
     // &:hover ~ .single_call_to_action {
@@ -43,6 +58,7 @@
       left: 35px;
       font-weight: 700;
       color: #2a2b2e;
+      max-width: 480px;
     }
 
     .title {

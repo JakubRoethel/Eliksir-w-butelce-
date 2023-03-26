@@ -39,5 +39,33 @@ $url = get_permalink($product_id);
 			<?php echo $product_price; ?>
 		</div>
 		<hr>
+		<div class="product_metadata_wrapper">
+			<?php
+			$featured_posts = get_field('products_in_set');
+			if ($featured_posts) : ?>
+				<ul>
+					<?php foreach ($featured_posts as $featured_post) :
+						$permalink = get_permalink($featured_post->ID);
+						$title = get_the_title($featured_post->ID);
+						// $custom_field = get_field( 'field_name', $featured_post->ID );
+					?>
+						<li>
+							<p class="single_sub_product"><?php echo esc_html($title); ?></p>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+				<?php else :
+				// $terms = get_terms('product_tag');
+				$terms = wc_get_product_tag_list($product_id);
+				if (!empty($terms)) :
+				?>
+
+					<p>Mieszaj z:&nbsp; </p>
+					<?php echo $terms ?>
+
+			<?php
+				endif;
+			endif; ?>
+		</div>
 	</a>
 </li>

@@ -528,7 +528,7 @@ table {
   content: "";
   width: 30px;
   height: 30px;
-  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
   position: absolute;
   display: flex;
   left: -50%;
@@ -538,7 +538,7 @@ table {
   content: "";
   width: 30px;
   height: 30px;
-  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.png");
+  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
   position: absolute;
   display: flex;
   right: -50%;
@@ -561,6 +561,10 @@ table {
   font-weight: 900;
   font-size: 10px;
   opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+.header .header_right .navigation_social a:hover {
+  opacity: 1;
 }
 .header .header_right p {
   text-align: right;
@@ -1060,17 +1064,19 @@ ul.products li.product hr {
   margin: 0 auto;
   overflow: hidden;
 }
-.call_to_action_container:hover .single_call_to_action:hover {
-  background-color: red;
-}
 .call_to_action_container .single_call_to_action {
   min-width: 33.3%;
   position: relative;
+  cursor: pointer;
   height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.4s ease;
+}
+.call_to_action_container .single_call_to_action:hover:last-child {
+  margin-left: 0;
+  min-width: 66.6%;
 }
 .call_to_action_container .single_call_to_action:hover {
   min-width: 66.6%;
@@ -1088,6 +1094,7 @@ ul.products li.product hr {
   left: 35px;
   font-weight: 700;
   color: #2a2b2e;
+  max-width: 480px;
 }
 .call_to_action_container .single_call_to_action .title {
   bottom: 105px;
@@ -1101,18 +1108,22 @@ ul.products li.product hr {
 
 .featured_products_section {
   background-color: #fff4d8;
+}
+
+.featured_products_section, ul.products {
   padding: 10% 5% 10% 5%;
   margin: 0 auto;
   overflow: hidden;
+  /* filters container */
 }
-.featured_products_section .title {
+.featured_products_section .title, ul.products .title {
   font-weight: 700;
   color: #40434d;
   text-align: center;
   font-size: 40px;
   text-transform: uppercase;
 }
-.featured_products_section .description {
+.featured_products_section .description, ul.products .description {
   color: #40434d;
   text-align: center;
   font-size: 16px;
@@ -1120,8 +1131,56 @@ ul.products li.product hr {
   max-width: 950px;
   margin: 0 auto;
 }
-.featured_products_section .swiper_featured {
+.featured_products_section .swiper_featured, ul.products .swiper_featured {
   padding: 30px 0;
+}
+.featured_products_section .wpc-horizontal-layout .wpc-filters-widget-wrapper, ul.products .wpc-horizontal-layout .wpc-filters-widget-wrapper {
+  justify-content: center;
+}
+.featured_products_section .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label, ul.products .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
+  background-color: transparent;
+  border: 2px solid #40434D;
+  border-radius: 20px;
+  color: #40434D;
+}
+.featured_products_section .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label a, ul.products .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label a {
+  color: #40434D;
+  font-size: 16px;
+  font-weight: 700;
+}
+.featured_products_section .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper, ul.products .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
+  padding: 6px 22px;
+}
+.featured_products_section .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover span.wpc-filter-label-wrapper, ul.products .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover span.wpc-filter-label-wrapper {
+  background-color: #40434D;
+  border-radius: 20px;
+}
+.featured_products_section .wpc-filters-widget-main-wrapper input.wpc-label-input:checked + label span.wpc-filter-label-wrapper, ul.products .wpc-filters-widget-main-wrapper input.wpc-label-input:checked + label span.wpc-filter-label-wrapper {
+  background-color: #40434D;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.featured_products_section .wpc-filters-section, ul.products .wpc-filters-section {
+  width: auto !important;
+  margin-right: 0 !important;
+}
+.featured_products_section .product_metadata_wrapper, ul.products .product_metadata_wrapper {
+  color: #40434d;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.featured_products_section .product_metadata_wrapper .woocommerce-LoopProduct-link, ul.products .product_metadata_wrapper .woocommerce-LoopProduct-link {
+  display: inline-block;
+  text-transform: initial;
+}
+.featured_products_section .product_metadata_wrapper p, .featured_products_section .product_metadata_wrapper a, ul.products .product_metadata_wrapper p, ul.products .product_metadata_wrapper a {
+  color: #40434d;
+  font-size: 16px;
+  font-weight: 700;
+}
+.featured_products_section .product_metadata_wrapper .single_sub_product, ul.products .product_metadata_wrapper .single_sub_product {
+  text-transform: uppercase;
+  color: #40434d;
 }
 
 .why_us_section {

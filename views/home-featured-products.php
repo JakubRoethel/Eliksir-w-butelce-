@@ -4,7 +4,9 @@
         <p class="description">Nullam finibus massa non porttitor scelerisque. Nulla mattis vulputate diam in pellentesque. Proin sodales ultrices dui, id lobortis enim dictum eu. Curabitur consequat ipsum magna, sit amet aliquet felis posuere in. Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.</p>
     </div>
     <div class="featured_products_wrapper">
-
+    <div class="products_filters">
+        <?php echo do_shortcode('[fe_widget id="265" horizontal="yes" columns="1"]'); ?>
+    </div>
         <?php
         // The tax query
         $tax_query[] = array(

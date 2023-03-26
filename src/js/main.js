@@ -41,14 +41,14 @@ var swiper = new Swiper(".swiper", {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
-    slidesPerView: "3.2", 
+    slidesPerView: "3.5", 
     spaceBetween: 50, 
     loop: false,
     autoHeight: true, //enable auto height
     mousewheel: true,
     freeMode: {
       enabled: true,
-      sticky: false,
+      sticky: true,
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -56,3 +56,25 @@ var swiper = new Swiper(".swiper", {
     }
   });
   
+
+
+  jQuery( document ).ajaxComplete(function( event,request, settings ) {
+    var swiper = new Swiper(".swiper_featured", {
+      effect: "slide",
+      grabCursor: true,
+      centeredSlides: false,
+      slidesPerView: "3.5", 
+      spaceBetween: 50, 
+      loop: false,
+      autoHeight: true, //enable auto height
+      mousewheel: true,
+      freeMode: {
+        enabled: true,
+        sticky: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  });

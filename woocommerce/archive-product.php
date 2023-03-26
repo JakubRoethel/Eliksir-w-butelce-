@@ -35,9 +35,9 @@ do_action( 'woocommerce_before_main_content' );
 	<?php 
 
 	// echo do_shortcode('[yith_wcan_filters slug="default-preset"]');
-	echo do_shortcode('[fe_widget id="94" horizontal="yes" columns="5"]');
-	echo do_shortcode('[nowosci]');
-		echo "test";
+	// echo do_shortcode('[fe_widget id="94" horizontal="yes" columns="5"]');
+	// echo do_shortcode('[nowosci]');
+		// echo "test";
 	// $current_cat_title = single_cat_title('' , false );
 	// if($current_cat_title == 'Music') {
 	// 	echo do_shortcode('[yith_wcan_filters slug="default-preset-2"]');
