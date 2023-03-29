@@ -44,6 +44,8 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
 }
 
 require_once('lib/acf-config.php');
+require_once('lib/change-currency-symbol.php');
+
 
 function products_slider($atts)
 {

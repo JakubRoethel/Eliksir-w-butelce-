@@ -31,8 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 //     delay: 100,
 // }) 
 
-// headerService();
-
+(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
 var postID = acf.get('post_id');
 var acfVersion = acf.get('acf_version');
 var swiperNames = ['Basil smash', 'Orange Classic', 'Cherry Cuba', 'Lime sour', 'Old Fashioned', 'Spritz'];
@@ -61,13 +60,36 @@ var swiper = new Swiper(".swiper_featured", {
   centeredSlides: false,
   slidesPerView: "3.5",
   spaceBetween: 50,
+  slidesOffsetBefore: 100,
+  slidesOffsetAfter: 100,
+  slideToClickedSlide: true,
+  // shortSwipes: true,
   loop: false,
   autoHeight: true,
   //enable auto height
-  mousewheel: true,
-  freeMode: {
-    enabled: true,
-    sticky: true
+  // mousewheel: true,
+  // releaseOnEdges: true,
+  // forceToAxis: true,
+  // freeMode: {
+  //   enabled: true,
+  //   sticky: true,
+  // },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    780: {
+      slidesPerView: 2.5,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    940: {
+      slidesPerView: 3.5,
+      spaceBetween: 40
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -81,19 +103,48 @@ jQuery(document).ajaxComplete(function (event, request, settings) {
     centeredSlides: false,
     slidesPerView: "3.5",
     spaceBetween: 50,
+    slidesOffsetBefore: 100,
+    slidesOffsetAfter: 100,
     loop: false,
     autoHeight: true,
     //enable auto height
-    mousewheel: true,
-    freeMode: {
-      enabled: true,
-      sticky: false
+    // mousewheel: true,
+    forceToAxis: true,
+    // freeMode: {
+    //   enabled: true,
+    //   sticky: false,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      780: {
+        slidesPerView: 2.5,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      940: {
+        slidesPerView: 3.5,
+        spaceBetween: 40
+      }
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
     }
   });
+});
+
+//call to action containers logic on hover
+var lastCallToAction = jQuery('.single_call_to_action:last-child');
+lastCallToAction.mouseenter(function () {
+  jQuery('.single_call_to_action:first-child').addClass('margin-left-33');
+});
+lastCallToAction.mouseleave(function () {
+  jQuery('.single_call_to_action:first-child').removeClass('margin-left-33');
 });
 
 /***/ }),
@@ -122,17 +173,20 @@ function headerService() {
       header.classList.remove('header--scrolled');
     }
   });
-  var burger = document.querySelector('.header__toggle');
-  burger.addEventListener('click', function () {
-    if (header.classList.contains('header--navigation-open')) {
-      header.classList.remove('header--navigation-open');
-    } else {
-      header.classList.add('header--navigation-open');
-    }
-  });
-  headerOverlay.addEventListener('click', function () {
-    header.classList.remove('header--navigation-open');
-  });
+
+  // const burger = document.querySelector('.header__toggle');
+
+  //   burger.addEventListener('click', () => {
+  //     if(header.classList.contains('header--navigation-open')){
+  //       header.classList.remove('header--navigation-open');
+  //     } else {
+  //       header.classList.add('header--navigation-open');
+  //     }
+  //   });
+
+  //   headerOverlay.addEventListener('click', () => {
+  //       header.classList.remove('header--navigation-open');
+  //   });
 }
 
 /***/ }),

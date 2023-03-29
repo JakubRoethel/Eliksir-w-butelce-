@@ -28,16 +28,13 @@ $splash_subtitle = get_field('splash')['subtitle'];
     </div>
     <div class="middle_box">
       <?php
-        $splash_imgs = get_field('splash')['midel_img_section'];
+        $splash_imgs = get_field('splash')['middle_img_section'];
           if( $splash_imgs): ?>
           <div class="imgs">
           <?php  foreach( $splash_imgs as $splash_imgs) { 
-                         $splash_blob = $splash_imgs['blob'];  
                          $splash_img = $splash_imgs['img'];  
                     ?>
-                        <div class="mask">
-                            <?php echo wp_get_attachment_image( $splash_blob, 'full' ); ?>
-                        </div>
+                       
                         <div class="img">
                             <?php echo wp_get_attachment_image( $splash_img, 'full' ); ?>
                         </div>

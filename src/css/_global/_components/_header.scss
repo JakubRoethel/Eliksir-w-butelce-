@@ -8,7 +8,7 @@
 
 
 .header {
-    height: 100px;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +17,24 @@
     z-index: $z_index_header;
     max-width: 1800px;
     margin: 0 auto;
+    transition: all .3s ease;
+
+    &.header--scrolled {
+        padding: 10px;
+        transition: all .3s ease;
+    }
+
+    &.header--scrolled .container{
+        transition: all .3s ease;
+        padding: 10px 40px;
+        background: #292929;
+        color: white;
+
+        .header_logo img {
+            transition: all .3s ease;
+            max-height: 40px;
+        }
+    }
 
   @include bp($bp-tablet) {
       
@@ -31,6 +49,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all .3s ease;
+      border-radius: 10px;
   };
 
   .header_left, .menu_container, .header_right {
@@ -42,6 +62,11 @@
     align-items: flex-start;
     display: flex;
     width: 30%;
+
+    .header_logo img {
+        transition: all .3s ease;
+        max-height: 55px;
+    }
   }
 
   .header_right {

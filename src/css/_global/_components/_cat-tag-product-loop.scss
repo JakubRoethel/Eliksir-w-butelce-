@@ -1,0 +1,47 @@
+.archive-wrapper {
+    .category-description {
+        font-size: 16px;
+        font-family: futura-pt, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        color: #40434D;
+        max-width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
+        background-color: transparent;
+        border: 2px solid #40434D;
+        border-radius: 20px;
+        color: #40434D;
+    
+        a {
+          color: #40434D;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    
+      .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
+        padding: 6px 22px;
+      }
+    
+      .wpc-filters-widget-main-wrapper input.wpc-label-input+label:hover span.wpc-filter-label-wrapper {
+        background-color: #40434D;
+        border-radius: 20px;
+      }
+    
+      .wpc-filters-widget-main-wrapper input.wpc-label-input:checked+label span.wpc-filter-label-wrapper {
+        background-color: #40434D;
+        border-radius: 20px;
+        border: 1px solid black;
+      }
+    
+      /* filters container */
+      .wpc-horizontal-layout .wpc-filters-section:not(.wpc-filter-layout-submit-button) {
+        width: auto !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+      }
+    
+}

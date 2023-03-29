@@ -14,11 +14,25 @@ $filter_title = get_field('filter_section')['title'];
                 $description = $filters_icons['icon_text'];
                 $svg_icon = $filters_icons['real_icon'];
             ?>
-                <div class="single_icon_box">
+                <div class="single_icon_box <?php echo strtolower($description); ?>">
                     <a class="filter_link" href="#">
                         <?php
                         if ($svg_icon) {
-                            echo file_get_contents($svg_icon);
+                            // $opts = array('https'=>array('header' => "User-Agent:MyAgent/1.0\r\n")); 
+                            // //Basically adding headers to the request
+                            // $context = stream_context_create($opts);
+                            // echo file_get_contents($svg_icon,false,$context);
+
+                            // $opts = array(
+                            //     'http' => array(
+                            //         'method' => 'GET',
+                            //         'header' => "User-Agent: MyAgent/1.0\r\n"
+                            //     )
+                            // );
+                            
+                            // $context = stream_context_create($opts);
+                            echo @file_get_contents($svg_icon);
+                            
                         }
                         ?>
                         <p class="icon_description"> <?php echo $description  ?> </p>

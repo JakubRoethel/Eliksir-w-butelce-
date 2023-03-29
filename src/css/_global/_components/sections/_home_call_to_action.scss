@@ -3,35 +3,36 @@
   max-width: 1800px;
   margin: 0 auto;
   overflow: hidden;
-
-//   &:not(:hover) {
-//     .single_call_to_action {
-//         margin-left: 0%;
-//         border: 1px solid red;
-//     }
-    
-//   }
+  // flex-direction: row-reverse;
 
   .single_call_to_action {
     min-width: 33.3%;
-    // margin-left: -16%;
     position: relative;
     cursor: pointer;
-    // aspect-ratio: 6/5;
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     transition: all 0.4s ease;
+    
 
     // &:hover ~ div {
     //    min-width: 66.6%;
     //    transition: all .4s ease;
     // }
 
-    &:hover:last-child {
-        margin-left: 0;
-        min-width: 66.6%;
+    // &:hover:last-child {
+    //     margin-left: 0;
+    //     min-width: 66.6%;
+    // }
+
+    &:hover:last-child ~ .single_call_to_action:first-child {
+      margin-left: -33%; 
+      border: 1px solid red;
+    }
+
+    &.margin-left-33 {
+      margin-left: -33%;
     }
 
     &:hover {

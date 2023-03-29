@@ -1,40 +1,56 @@
 .filter_section {
-    background-color: #fff4d8;
-    padding: 110px 10% 130px 10%;
-    max-width: 1800px;
-    margin: 0 auto;
+  background-color: #fff4d8;
+  padding: 110px 10% 130px 10%;
+  max-width: 1800px;
+  margin: 0 auto;
 
+  .title {
+    font-weight: 700;
+    color: #40434d;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
 
-    .title {
-        font-weight: 700;
-        color: #40434D;
-        text-align: center;
-        font-size: 40px;
-        text-transform: uppercase;
-    };
+  .filter_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 80px;
 
-    .filter_container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding-top: 80px;
-
-        a {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap:25px;
-        }
-
-        .icon_description {
-            text-align: center;
-            font-weight: 700;
-            font-size: 24px;
-            color: #40434D;
-
-        }
+    a {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
     }
 
-    
+    path {
+      transition: all 0.6s cubic-bezier(0.64, -0.68, 0.4, 1.85);
+    }
+
+    .whisky:hover svg g g path:last-child,
+    .rum:hover svg g g:first-of-type path:last-child,
+    .gin:hover svg g g:first-of-type path:last-child {
+      transition: all 0.6s cubic-bezier(0.64, -0.68, 0.4, 1.85);
+      d: path(
+        "M42.9245 23.0182C25.942 23.0182 15.9237 20.9007 10 18.087L11 72C16.9573 74.7266 26.328 77 42.9916 77C59.6552 77 69.5427 74.7847 75.5 72L76 18C70.0763 20.8427 60.0244 23.0182 42.9077 23.0182"
+      );
+    }
+
+    .burbon:hover svg g:first-of-type path:first-child {
+      transition: all 0.6s cubic-bezier(0.64, -0.68, 0.4, 1.85);
+      d: path(
+        "M43.5 85C28.5074 85 17.0032 82.9326 13 80.5L12 28C18.2907 30.3134 26.9926 33.5569 42.8508 33.5569C58.709 33.5569 68.7247 31.0766 75 28.7632L74 80.5C69.9968 82.9088 58.5081 84.9762 43.5155 84.9762"
+      );
+    }
+
+    .icon_description {
+      text-align: center;
+      font-weight: 700;
+      font-size: 24px;
+      color: #40434d;
+    }
+  }
 }

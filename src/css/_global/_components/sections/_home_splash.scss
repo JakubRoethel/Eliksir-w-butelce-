@@ -1,198 +1,192 @@
 .home_splash {
-    max-width: 1800px;
+  
+  margin: 0 auto;
+  background-color: #fff4d8;
+  padding: 50px 5% 0 5%;
+
+  .title,
+  .subtitle {
+    font-weight: 700;
+    color: #40434d;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 60px;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    padding: 20px 0px;
+  }
+
+  .info_container {
+    display: flex;
+    padding: 40px 0 0 0px;
+    position: relative;
+    justify-content: space-between;
+    max-width: 1350px;
     margin: 0 auto;
-    background-color: #fff4d8;
-    padding: 100px 5%;
 
-    .title, .subtitle {
-        font-weight: 700;
-        color: #40434D;
-        text-align: center;
-    };
-
-    .title {
-        font-size: 60px;
-        text-transform: uppercase;
-    };
-
-    .subtitle {
-        padding: 20px 0px;
-    };
-
-    .info_container {
+    .left_box {
+        flex: 1;
+      .ingredients_list {
         display: flex;
-        padding: 80px 0px;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .single_ingredient {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .single_ingredient img {
+        height: 95px;
+        object-fit: contain;
+        width: 95px;
+      }
+      .img_description {
+        font-weight: 600;
+        font-size: 32px;
+        text-align: left;
         position: relative;
+      }
 
-        .left_box {
-            width: 30%;
-            .ingredients_list {
-                display: flex;
-                flex-direction: column;
-                gap: 95px;
-            }
-            .single_ingredient {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            } ; 
+      .img_description::before {
+        height: 1px;
+        min-width: 40vw;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        z-index: -33;
+      }
 
-            .single_ingredient img {
-                width: 30%;
-                height: 30%;
-            };
-            .img_description {
-                font-weight: 600;
-                font-size: 36px;
-            };
-    
-            .single_ingredient:first-child .img_description {
-                color: #8AD141;
-            };
+      .single_ingredient:first-child .img_description {
+        color: #8ad141;
+      }
 
-            .single_ingredient:first-child .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #8AD141;
-                margin-bottom: 20px;
+      
 
-            };
+      .single_ingredient:first-child .img_description::before {
+        content: "";
+        // width: 100%;
+        display: block;
+        background-color: #8ad141;
+        margin-bottom: 20px;
+      }
 
-            .single_ingredient:nth-child(2) .img_description {
-                color: #72BCB3;
-                ;
-            };
+      .single_ingredient:nth-child(2) .img_description {
+        color: #72bcb3;
+      }
 
-            .single_ingredient:nth-child(2) .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #72BCB3;
-                margin-bottom: 20px;
+      .single_ingredient:nth-child(2) .img_description::before {
+        content: "";
+        width: 100%;
+        display: block;
+        background-color: #72bcb3;
+        margin-bottom: 20px;
+      }
 
-            };
+      .single_ingredient:nth-child(3) .img_description {
+        color: #5f8163;
+      }
 
-            .single_ingredient:nth-child(3) .img_description {
-                color: #5F8163;
-            };
+      .single_ingredient:nth-child(3) .img_description::before {
+        content: "";
+        width: 100%;
+        display: block;
+        background-color: #5f8163;
+        margin-bottom: 20px;
+      }
+    }
 
-            .single_ingredient:nth-child(3) .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #5F8163;
-                margin-bottom: 20px;
+    .middle_box {
+        flex: 2;
+        z-index: 1;
+      .imgs {
+        .img {
+          img {
+            object-fit: contain;
+            height: 100%;
+          }
+        }
+      }
+    }
 
-            };
-        
-        };
+    .right_box {
+        flex: 1;
+      .ingredients_list {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
 
-        .middle_box {
-            width: 40%;
-            .imgs {
+      .single_ingredient {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 20px;
+      }
+    }
 
-                .mask {
-                    position: absolute;
-                    z-index: 1;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
+    .single_ingredient img {
+        height: 95px;
+        object-fit: contain;
+        width: 95px;
+    }
+    .img_description {
+      font-weight: 600;
+      font-size: 32px;
+      width: 100%;
+      text-align: right;
+      position: relative;
+    }
 
-                .img {
-                    position: absolute;
-                    left: 55%;
-                    top: 53%;
-                    transform: translate(-50%,-45%);
-                    z-index: 100;
-                   
+    .img_description::before {
+        min-width: 42vw;
+        height: 1px;
+        position: absolute;
+        /* bottom: 0; */
+        top: -5px;
+        right: 0;
+        z-index: -33;
+      }
 
-                    img {
-                        object-fit: cover;
-                        
-                        
-                    }
-                };
-            };
+    .single_ingredient:first-child .img_description {
+      color: #cbae4e;
+    }
 
-        };
+    .single_ingredient:first-child .img_description::before {
+      content: "";
+      width: 100%;
+      display: block;
+      background-color: #cbae4e;
+      margin-bottom: 20px;
+    }
 
-        .right_box {
-            width: 30%;
-        
-            .ingredients_list {
-                display: flex;
-                flex-direction: column;
-                gap: 95px;
-            };
+    .single_ingredient:nth-child(2) .img_description {
+      color: #f26b1f;
+    }
 
-            .single_ingredient {
-                display: flex;
-                flex-direction: column;
-                align-items: end;
-                gap: 20px;
-            } ;        
-        };
+    .single_ingredient:nth-child(2) .img_description::before {
+      content: "";
+      width: 100%;
+      display: block;
+      background-color: #f26b1f;
+      margin-bottom: 20px;
+    }
 
-            .single_ingredient img {
-                width: 30%;
-                height: 30%;
-            };
-            .img_description {
-                font-weight: 600;
-                font-size: 36px;
-            };
-    
-            .single_ingredient:first-child .img_description {
-                color: #CBAE4E;
-            };
+    .single_ingredient:nth-child(3) .img_description {
+      color: #dc8d61;
+    }
 
-            .single_ingredient:first-child .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #CBAE4E;
-                margin-bottom: 20px;
-
-            };
-
-            .single_ingredient:nth-child(2) .img_description {
-                color: #F26B1F;
-                ;
-            };
-
-            .single_ingredient:nth-child(2) .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #F26B1F;
-                margin-bottom: 20px;
-
-            };
-
-            
-
-            .single_ingredient:nth-child(3) .img_description {
-                color: #DC8D61;
-            };
-
-            .single_ingredient:nth-child(3) .img_description::before {
-                content: "";
-                height: 2px;
-                width: 100%;
-                display: block;
-                background-color: #DC8D61;
-                margin-bottom: 20px;
-
-            };
-        
-        };
-
-        
-    };
+    .single_ingredient:nth-child(3) .img_description::before {
+      content: "";
+      width: 100%;
+      display: block;
+      background-color: #dc8d61;
+      margin-bottom: 20px;
+    }
+  }
+}

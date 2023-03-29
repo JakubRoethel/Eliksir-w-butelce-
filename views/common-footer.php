@@ -2,7 +2,7 @@
   <div class="container">
     <div class="left_footer_blocks">
       <div class="footer_navigation">
-      <?php wp_nav_menu([
+        <?php wp_nav_menu([
           'menu' => 'Menu footer left',
           'menu_id' => 'navigation-list',
           'menu_class' => 'navigation_list_footer',
@@ -10,7 +10,7 @@
           'container_id' => 'navigation',
           'container_class' => 'navigation',
           'theme_location' => 'main-menu',
-        ]);?>
+        ]); ?>
       </div>
       <ul class="navigation_social">
         <li class="social_item">
@@ -34,19 +34,21 @@
 
     <div class="right_footer_blocks">
       <div class="subscribe_form_container">
-        <h2> TUAJ FORMULARZ !!! </h2>
+        <h2><?php echo __('Zapisz się do newslettera.'); ?></h2>
+        <p><?php echo __('Sed sapien metus, commodo non lectus eget, auctor vestibulum sapien. Nam vel efficitur nisi. Duis tempus tempus odio.'); ?></p>
+        <?php echo do_shortcode('[mc4wp_form id=312]'); ?>
       </div>
 
       <div class="footer_navigation_2">
         <?php wp_nav_menu([
-            'menu' => 'Menu footer right',
-            'menu_id' => 'navigation-list',
-            'menu_class' => 'navigation_list_footer',
-            'container' => 'nav',
-            'container_id' => 'navigation',
-            'container_class' => 'navigation',
-            'theme_location' => 'main-menu',
-          ]);?>
+          'menu' => 'Menu footer right',
+          'menu_id' => 'navigation-list',
+          'menu_class' => 'navigation_list_footer',
+          'container' => 'nav',
+          'container_id' => 'navigation',
+          'container_class' => 'navigation',
+          'theme_location' => 'main-menu',
+        ]); ?>
       </div>
     </div>
 </footer>

@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive
  *
@@ -15,63 +16,38 @@
  * @version 3.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-get_header( 'shop' );
-do_action( 'woocommerce_before_main_content' );
+get_header();
+
+$args  = array(
+	'taxonomy' => 'product_cat'
+);
+$terms = wp_get_post_terms($post->ID, 'product_cat', $args);
 
 ?>
-<header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+<div class="archive-wrapper">
+	<div class="archive-container">
+		<?php do_action('woocommerce_before_main_content'); ?>
+		<section class="product_cat zestawy">
+			<h2 class="category-title"><?php echo __('Zestawy') ?></h2>
+			<p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
+			<?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
+			getProductsByCat(39);
+			?>
 
-	<?php
-	do_action( 'woocommerce_archive_description' );
-	?>
-</header>
-<section class="product__filters">
-	
-	<?php 
+		</section>
 
-	// echo do_shortcode('[yith_wcan_filters slug="default-preset"]');
-	// echo do_shortcode('[fe_widget id="94" horizontal="yes" columns="5"]');
-	// echo do_shortcode('[nowosci]');
-		// echo "test";
-	// $current_cat_title = single_cat_title('' , false );
-	// if($current_cat_title == 'Music') {
-	// 	echo do_shortcode('[yith_wcan_filters slug="default-preset-2"]');
-	// } else {
-	// 	echo do_shortcode('[yith_wcan_filters slug="default-preset"]');
-	// } 
-	?>
-	
-</section>
-<?php
+		<section class="product_cat eliksiry">
+			<h2 class="category-title"><?php echo __('Eliksiry') ?></h2>
+			<p class="category-description"><?php echo get_term_by('id', 40, 'product_cat')->description ?></p>
+			<?php
+			echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
+			getProductsByCat(40);
+			?>
+		</section>
+	</div>
 
-if ( woocommerce_product_loop() ) {
-	do_action( 'woocommerce_before_shop_loop' );
+</div>
 
-	woocommerce_product_loop_start();
-
-	if ( wc_get_loop_prop( 'total' ) ) {
-		while ( have_posts() ) {
-			the_post();
-			do_action( 'woocommerce_shop_loop' );
-
-			wc_get_template_part( 'content', 'product' );
-
-		}
-	}
-
-	woocommerce_product_loop_end();
-	do_action( 'woocommerce_after_shop_loop' );
-} else {
-	do_action( 'woocommerce_no_products_found' );
-}
-
-do_action( 'woocommerce_after_main_content' );
-
-do_action( 'woocommerce_sidebar' );
-
-get_footer( 'shop' ); 
+<?php get_footer(); ?>

@@ -1,6 +1,6 @@
 .how_to_mix {
     background-color: #F0D7C9;
-    padding: 125px 0px;
+    padding: 100px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,24 +21,24 @@
 
     .subtitle {
         padding: 20px 0px;
+     
     };
 
     .mix_ingredients {
         display: flex;
         align-items: center;
         justify-content: center;
+        max-width: 600px;
 
         .left_side_mix {
-            display: flex;
-            width: 40%;
-            justify-content: flex-end;
+           flex: 1;
 
             .single_icon_box {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                gap: 35px;
-                padding: 30px 0px;
+                gap: 20px;
+                padding: 15px 0px;
         
                 .icon_description {
                     font-weight: 700;
@@ -47,7 +47,7 @@
                 }
         
                 img {
-                    width: 20%;
+                    width: 70px;
                     height: auto;
                 }
             }
@@ -72,12 +72,10 @@
 
 
     .right_side_mix{
-        width: 60%;
-        display: flex;
-        justify-content: flex-start;
+       flex: 1;
         img {
-            width: 60%;
             height: auto;
+            // max-width: 320px;
         }
     }
 }

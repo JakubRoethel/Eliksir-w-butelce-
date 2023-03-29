@@ -8,7 +8,7 @@ import headerService from './modules/header';
 //     delay: 100,
 // }) 
 
-// headerService();
+headerService();
 
 
 
@@ -43,12 +43,35 @@ var swiper = new Swiper(".swiper", {
     centeredSlides: false,
     slidesPerView: "3.5", 
     spaceBetween: 50, 
+    slidesOffsetBefore: 100,
+    slidesOffsetAfter: 100,
+    slideToClickedSlide: true,
+    // shortSwipes: true,
     loop: false,
     autoHeight: true, //enable auto height
-    mousewheel: true,
-    freeMode: {
-      enabled: true,
-      sticky: true,
+    // mousewheel: true,
+    // releaseOnEdges: true,
+    // forceToAxis: true,
+    // freeMode: {
+    //   enabled: true,
+    //   sticky: true,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      780: {
+        slidesPerView: 2.5,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      940: {
+        slidesPerView: 3.5,
+        spaceBetween: 40
+      }
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -65,12 +88,32 @@ var swiper = new Swiper(".swiper", {
       centeredSlides: false,
       slidesPerView: "3.5", 
       spaceBetween: 50, 
+      slidesOffsetBefore: 100,
+      slidesOffsetAfter: 100,
       loop: false,
       autoHeight: true, //enable auto height
-      mousewheel: true,
-      freeMode: {
-        enabled: true,
-        sticky: false,
+      // mousewheel: true,
+      forceToAxis: true,
+      // freeMode: {
+      //   enabled: true,
+      //   sticky: false,
+      // },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        780: {
+          slidesPerView: 2.5,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        940: {
+          slidesPerView: 3.5,
+          spaceBetween: 40
+        }
       },
       navigation: {
         nextEl: ".swiper-button-next",
@@ -78,3 +121,19 @@ var swiper = new Swiper(".swiper", {
       }
     });
   });
+
+
+
+
+  //call to action containers logic on hover
+  let lastCallToAction = jQuery('.single_call_to_action:last-child');
+  lastCallToAction.mouseenter(function() {
+   jQuery('.single_call_to_action:first-child').addClass('margin-left-33');
+  });
+
+  lastCallToAction.mouseleave(function() {
+    jQuery('.single_call_to_action:first-child').removeClass('margin-left-33');
+   });
+
+
+
