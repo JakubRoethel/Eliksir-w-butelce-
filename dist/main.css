@@ -1189,7 +1189,8 @@ ul.products li.product hr {
 .featured_products_section .swiper-scrollbar, ul.products .swiper-scrollbar {
   border-radius: 2px;
   height: 5px;
-  margin-top: 60px;
+  margin-top: 50px;
+  position: relative;
   max-width: 500px;
   bottom: 0;
   left: 50%;
@@ -1212,6 +1213,9 @@ ul.products li.product hr {
 }
 .featured_products_section .swiper_featured, ul.products .swiper_featured {
   padding: 30px 0;
+}
+.featured_products_section .swiper_featured .swiper-slide, ul.products .swiper_featured .swiper-slide {
+  height: 100%;
 }
 .featured_products_section .wpc-horizontal-layout .wpc-filters-widget-wrapper, ul.products .wpc-horizontal-layout .wpc-filters-widget-wrapper {
   justify-content: center;

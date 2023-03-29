@@ -69,8 +69,10 @@ var swiper = new Swiper(".swiper_featured", {
     draggable: true
   },
   loop: false,
-  autoHeight: true,
-  //enable auto height
+  autoplay: {
+    delay: 4000
+  },
+  setWrapperSize: true,
   // mousewheel: true,
   // releaseOnEdges: true,
   // forceToAxis: true,
@@ -118,6 +120,7 @@ jQuery(document).ajaxComplete(function (event, request, settings) {
     //   enabled: true,
     //   sticky: false,
     // },
+
     breakpoints: {
       // when window width is >= 320px
       320: {
