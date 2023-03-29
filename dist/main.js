@@ -64,6 +64,10 @@ var swiper = new Swiper(".swiper_featured", {
   slidesOffsetAfter: 100,
   slideToClickedSlide: true,
   // shortSwipes: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true
+  },
   loop: false,
   autoHeight: true,
   //enable auto height

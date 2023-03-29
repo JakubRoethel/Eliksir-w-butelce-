@@ -2,11 +2,20 @@
 .archive {
     margin-top: 100px;
     background-color: #fff4d8;
+
+    .woocommerce-breadcrumb {
+        padding: 0 50px;
+
+    }
+    .product_cat {
+        padding: 50px;
+    }
+
+    .product_cat.eliksiry {
+        background: #FAD9BA;
+    }
     
     & .archive-container {
-
-
-        padding: 50px;
         @include bp($bp-tablet) {
             padding: 30px;
         }

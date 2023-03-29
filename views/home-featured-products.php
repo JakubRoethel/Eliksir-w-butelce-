@@ -38,6 +38,7 @@
 
                     <?php   } ?>
                 </div>
+                <div class="swiper-scrollbar"></div>
             </ul>
         <?php  }
         wp_reset_query();

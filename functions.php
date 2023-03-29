@@ -34,13 +34,30 @@ add_theme_support('custom-logo');
 
 
 /* Let's add Apple logo for 'apple' brand term */
-add_filter('wpc_filters_checkbox_term_html', 'wpc_term_brand_logoo', 10, 4);
+add_filter('wpc_filters_label_term_html', 'wpc_term_brand_logoo', 10, 4);
 function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
 {
-    if ($term->slug === 'yes') {
-        $html = '<a ' . $link_attributes . '>' . __('Sale', 'domain') . '</a>';
-    }
-    return $html;
+  if($filter['ID'] == 317){
+
+    if($term->term_id === 45) {
+        //id = 45 is bubbles
+      $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/bubbles.svg" alt="' . $term->name . '" width="15" height="15" />';
+      $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
+  } else if($term->term_id === 46) {
+      //water
+      $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/water.svg" alt="' . $term->name . '" width="15" height="15" />';
+      $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
+  } else {
+      $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/' . $term->name .'.svg" alt="' . $term->name . '" width="15" height="15" />';
+      $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
+  }
+ 
+
+//    print_r($filter);
+ 
+
+  }
+  return $html;
 }
 
 require_once('lib/acf-config.php');
@@ -97,5 +114,3 @@ function products_slider($atts)
 }
 
 add_shortcode('products_slider_shortcode', 'products_slider');
-
-

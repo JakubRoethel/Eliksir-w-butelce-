@@ -1,62 +1,70 @@
 @mixin bp($map) {
-    $query: "";
-    @if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
-    @if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
-    @if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
-    @media screen and #{$query} { @content; }
+  $query: "";
+  @if map-has-key($map, min) {
+    $query: append($query, "(min-width: #{map-get($map, min)})");
   }
-
+  @if map-has-key($map, min) and map-has-key($map, max) {
+    $query: append($query, "and");
+  }
+  @if map-has-key($map, max) {
+    $query: append($query, "(max-width: #{map-get($map, max)})");
+  }
+  @media screen and #{$query} {
+    @content;
+  }
+}
 
 .header {
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    z-index: $z_index_header;
-    max-width: 1800px;
-    margin: 0 auto;
-    transition: all .3s ease;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: $z_index_header;
+  max-width: 1800px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
 
-    &.header--scrolled {
-        padding: 10px;
-        transition: all .3s ease;
+  &.header--scrolled {
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+
+  &.header--scrolled .container {
+    transition: all 0.3s ease;
+    padding: 10px 40px;
+    background: #292929c2;
+    backdrop-filter: blur(3px); 
+    color: white;
+
+    .header_logo img {
+      transition: all 0.3s ease;
+      max-height: 40px;
     }
-
-    &.header--scrolled .container{
-        transition: all .3s ease;
-        padding: 10px 40px;
-        background: #292929;
-        color: white;
-
-        .header_logo img {
-            transition: all .3s ease;
-            max-height: 40px;
-        }
-    }
+  }
 
   @include bp($bp-tablet) {
-      
-  };
+  }
 
   @include bp($bp-mobile) {
-      
-  };
+  }
 
   .container {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all .3s ease;
-      border-radius: 10px;
-  };
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+  }
 
-  .header_left, .menu_container, .header_right {
+  .header_left,
+  .menu_container,
+  .header_right {
     width: 33.3%;
     display: flex;
-  };
+  }
 
   .header_left {
     align-items: flex-start;
@@ -64,8 +72,8 @@
     width: 30%;
 
     .header_logo img {
-        transition: all .3s ease;
-        max-height: 55px;
+      transition: all 0.3s ease;
+      max-height: 55px;
     }
   }
 
@@ -75,103 +83,101 @@
     width: 30%;
   }
 
-   .menu_container {
+  .menu_container {
     display: flex;
     width: 40%;
     justify-content: center;
     align-items: center;
-  };
+  }
 
   .header_navigation {
     width: 100%;
 
     ul {
-        display: flex;
-        gap: 65px;
-    };
+      display: flex;
+      gap: 65px;
+    }
 
     ul li {
-        position: relative;
-        width: 33.3%;
-        text-align: center;
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
+      position: relative;
+      width: 33.3%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
     }
 
     li:nth-child(2)::before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
-        position: absolute;
-        display: flex;
-        left: -50%;
-        top: -25%;    
-    };
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
+      position: absolute;
+      display: flex;
+      left: -50%;
+      top: -25%;
+    }
 
     li:nth-child(2)::after {
-        content: "";
-        width: 30px;
-        height: 30px;
-        background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
-        position: absolute;
-        display: flex;
-        right: -50%;
-        top: -25%;    
-    };
-};
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
+      position: absolute;
+      display: flex;
+      right: -50%;
+      top: -25%;
+    }
+  }
 
-.header_right {
+  .header_right {
     justify-content: flex-end;
     align-items: flex-start;
-    gap:50px;
+    gap: 50px;
 
     .navigation_social {
+      display: flex;
+      gap: 30px;
+
+      li {
         display: flex;
-        gap:30px;
+      }
 
-        li {
-            display: flex;
-        };
+      a {
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-weight: 900;
+        font-size: 10px;
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
 
-        a {
-            font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-            font-weight: 900;
-            font-size: 10px;
-            opacity: 0.6;
-            transition: opacity .2s ease;
-
-            &:hover {
-                opacity: 1;
-            }
+        &:hover {
+          opacity: 1;
         }
-    };
+      }
+    }
 
     p {
-        text-align: right;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-            font-weight: 900;
-            font-size: 10px;
-    };
-    
-    .icon_box{
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
+      text-align: right;
+      font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+    }
 
-        i {
-            font-weight: 900;
-            width: 20px;
-            height: 20px;
-        }
+    .icon_box {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      i {
+        font-weight: 900;
+        width: 20px;
+        height: 20px;
+      }
     }
 
     .icon_container {
-        display: flex;
-        gap: 18px;
+      display: flex;
+      gap: 18px;
     }
-  };
-};
-
-
+  }
+}
