@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
-get_header();
+get_header('shop');
 
 $category = get_queried_object();
 

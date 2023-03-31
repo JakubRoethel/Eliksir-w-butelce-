@@ -1,4 +1,7 @@
 .archive-wrapper {
+  .category-title {
+    text-transform: capitalize;
+  }
   .category-description {
     font-size: 16px;
     font-family: futura-pt, sans-serif;
@@ -29,7 +32,7 @@
     }
 
     .wpc-term-count {
-        margin: auto;
+      margin: auto;
     }
   }
 
@@ -41,11 +44,9 @@
     padding: 6px 22px;
   }
 
-  .wpc-filters-widget-main-wrapper
-    input.wpc-label-input
-    + label:hover {
-        background-color: #40434d;
-    }
+  .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover {
+    background-color: #40434d;
+  }
 
   .wpc-filters-widget-main-wrapper
     input.wpc-label-input

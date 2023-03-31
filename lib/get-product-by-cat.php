@@ -27,6 +27,6 @@ function getProductsByCat($theCat)
 <?php   } else {
         return false;
     }
-
+    wp_reset_query();
     return true;
 }

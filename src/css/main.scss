@@ -25,6 +25,8 @@
 @import "_global/_components/product-loop";
 @import "_global/_components/content-product"; 
 @import "_global/_components/filters";
+
+//homepage
 @import "_global/_components/sections/_home-slider";
 @import "_global/_components/sections/home_splash";
 @import "_global/_components/sections/home_how_to_mix";
@@ -34,4 +36,7 @@
 @import "_global/_components/sections/home_why_us";
 @import "_global/_components/cat-tag-product-loop"; 
 
-// @import "_global/_components/button";
+//b2b
+@import "_global/_components/sections/b2b_hero";
+@import "_global/_components/sections/b2b_how_to_order";
+@import "_global/_components/sections/why_eliksir";

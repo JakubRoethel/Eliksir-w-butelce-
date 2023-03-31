@@ -1,14 +1,36 @@
 
 .archive {
+
+   
     margin-top: 100px;
     background-color: #fff4d8;
 
+    //for b2b product section 
+    &.b2b {
+        margin-top: unset;
+        background-color: #FAD9BA;
+        padding: 120px 10%;
+
+        .product_cat {
+            padding: unset;
+        }
+
+        ul.products {
+            padding-top: unset;
+            row-gap: 5%;
+        }
+
+
+
+    }
     .woocommerce-breadcrumb {
-        padding: 0 50px;
+        padding: 0 10%;
+        margin-top: 200px;
 
     }
     .product_cat {
-        padding: 50px;
+        padding: 80px 10%;
+        scroll-margin-top: 150px;
     }
 
     .product_cat.eliksiry {

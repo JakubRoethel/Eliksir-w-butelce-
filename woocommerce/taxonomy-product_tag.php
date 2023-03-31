@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once dirname(__DIR__, 1) . ('/lib/get-product-by-tag.php');
-get_header();
+get_header('shop');
 
 $tag = get_queried_object();
 
