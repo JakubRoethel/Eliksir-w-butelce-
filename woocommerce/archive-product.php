@@ -19,35 +19,63 @@ require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
 defined('ABSPATH') || exit;
 
 get_header('shop');
-
-$args  = array(
-	'taxonomy' => 'product_cat'
-);
-$terms = wp_get_post_terms($post->ID, 'product_cat', $args);
+$page_id = wc_get_page_id('shop');
+// $args  = array(
+// 	'taxonomy' => 'product_cat'
+// );
+// $terms = wp_get_post_terms($post->ID, 'product_cat', $args);
 
 ?>
-<div class="archive-wrapper">
-	<div class="archive-container">
-		<?php do_action('woocommerce_before_main_content'); ?>
-		<section id='zestawy' class="product_cat zestawy">
-			<h2 class="category-title"><?php echo __('Zestawy') ?></h2>
-			<p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
-			<?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
-			getProductsByCat(39);
-			?>
+<div class="shop_page">
 
-		</section>
+	<div class="archive-wrapper">
+		<div class="archive-container">
+			<?php do_action('woocommerce_before_main_content'); ?>
+			<section id='zestawy' class="product_cat zestawy">
+				<h2 class="category-title"><?php echo __('Zestawy') ?></h2>
+				<p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
+				<?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
+				getProductsByCat(39, 6);
+				?>
 
-		<section id='eliksiry' class="product_cat eliksiry">
-			<h2 class="category-title"><?php echo __('Eliksiry') ?></h2>
-			<p class="category-description"><?php echo get_term_by('id', 40, 'product_cat')->description ?></p>
-			<?php
-			echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
-			getProductsByCat(40);
-			?>
-		</section>
+			</section>
+
+			<section id='eliksiry' class="product_cat eliksiry">
+				<h2 class="category-title"><?php echo __('Eliksiry') ?></h2>
+				<p class="category-description"><?php echo get_term_by('id', 40, 'product_cat')->description ?></p>
+				<?php
+				echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
+				getProductsByCat(40, 6);
+				?>
+			</section>
+		</div>
+
 	</div>
 
+	<?php
+	// get_template_part('views/b2b', 'why-eliksir-2');
+	$title = get_field('why_eliksir_section', $page_id)['title'];
+
+	$image_id = get_field('why_eliksir_section', $page_id)['image'];
+	$description = get_field('why_eliksir_section', $page_id)['description'];
+	$cta_button = get_field('why_eliksir_section', $page_id)['cta_button'];
+	$background_color = get_field('why_eliksir_section', $page_id)['background_color'];
+	$title_color = get_field('why_eliksir_section', $page_id)['title_color'];
+	?>
+
+
+	<div class="container why_eliksir_section" style="background: <?php echo $background_color; ?>">
+
+		<div class="text_and_button_wrapper">
+			<p class="title" style="color: <?php echo $title_color ?>"><?php echo $title ?></p>
+			<p class="description"><?php echo $description ?></p>
+			<a href="<?php echo $cta_button['url'] ?>" class="cta_button button"><?php echo $cta_button['title'] ?></a>
+		</div>
+		<div class="image_wrapper">
+			<div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
+		</div>
+	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php
+get_footer(); ?>

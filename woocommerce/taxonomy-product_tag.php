@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Template for displaying products in a product tag. Simply includes the archive template
  *
@@ -15,11 +16,13 @@
  * @version     4.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 require_once dirname(__DIR__, 1) . ('/lib/get-product-by-tag.php');
+require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
+
 get_header('shop');
 
 $tag = get_queried_object();
@@ -29,11 +32,31 @@ $tag = get_queried_object();
     <div class="archive-container">
         <?php do_action('woocommerce_before_main_content'); ?>
         <section class="product_cat">
+            <p class="tag-pretitle"><?php echo __('Dobierz eliksir do alkoholu') ?></p>
             <h2 class="woocommerce-products-header__title page-title category-title"><?php woocommerce_page_title(); ?></h2>
             <?php echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
             getProductsByTag($tag->term_id);
             ?>
         </section>
+        <section id='zestawy' class="product_cat zestawy tags" style="background: #FDC9B8">
+            <h2 class="category-title"><?php echo __('Zestawy') ?></h2>
+            <p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
+            <?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
+            getProductsByCat(39, 6);
+            ?>
+
+        </section>
+        <div class="container why_eliksir_section tags_b2b_section">
+            <?php $image_id = 415; ?>
+            <div class="text_and_button_wrapper">
+                <p class="title" style="color: #7B94AA"><?php echo __('Poznaj ofertę B2B') ?></p>
+                <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
+                <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
+            </div>
+            <div class="image_wrapper">
+                <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -548,8 +548,12 @@ table {
   font-size: 16px;
   text-transform: uppercase;
 }
+.header .header_navigation ul li a {
+  transition: all 0.3s ease;
+}
 .header .header_navigation ul li a:hover, .header .header_navigation ul li.current-menu-item a {
   color: #E58A56;
+  transition: all 0.3s ease;
 }
 .header .header_navigation li:nth-child(2)::before {
   content: "";
@@ -771,6 +775,9 @@ a {
 .archive.b2b .product_cat {
   padding: unset;
 }
+.archive.b2b .product_cat.zestawy {
+  padding-bottom: 0px;
+}
 .archive.b2b ul.products {
   padding-top: unset;
   row-gap: 5%;
@@ -780,21 +787,18 @@ a {
   margin-top: 200px;
 }
 .archive .product_cat {
-  padding: 80px 10%;
+  padding: 20px 10%;
   scroll-margin-top: 150px;
+}
+.archive .product_cat .button {
+  margin: auto;
+}
+.archive .product_cat.zestawy {
+  padding-bottom: 120px;
 }
 .archive .product_cat.eliksiry {
   background: #FAD9BA;
-}
-@media screen and (max-width: 1199px) {
-  .archive .archive-container {
-    padding: 30px;
-  }
-}
-@media screen and (max-width: 519px) {
-  .archive .archive-container {
-    padding: 20px;
-  }
+  padding: 120px 10%;
 }
 .archive .archive-container .category-title {
   font-size: 40px;
@@ -855,6 +859,56 @@ ul.products li.product .product-details-wrapper .woocommerce-Price-amount {
 }
 ul.products li.product hr {
   border-color: #40434d;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+.button_container.homepage {
+  margin-top: 60px;
+}
+
+.button {
+  color: #40434d;
+  border: 1px solid #40434d;
+  background-color: transparent;
+  border-radius: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.button.shop-more {
+  color: #40434d !important;
+  border: 1px solid #40434d !important;
+  background-color: transparent !important;
+  border-radius: 30px !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px 32px !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.button.shop-more::after {
+  content: "";
+  background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  transition: all 0.3s ease;
+  background: #40434d;
+  color: white;
+}
+.button:hover::after {
+  transform: translateX(6px);
+  transition: all 0.3s ease;
 }
 
 .container.hero_section {
@@ -1231,7 +1285,7 @@ ul.products li.product hr {
 }
 
 .featured_products_section, ul.products {
-  padding: 10% 0% 10% 0%;
+  padding: 10% 0% 5% 0%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -1352,6 +1406,14 @@ ul.products li.product hr {
 .archive-wrapper {
   /* filters container */
 }
+.archive-wrapper .product_cat .tag-pretitle {
+  font-size: 32px;
+  color: #40434d;
+  margin-bottom: 10px;
+}
+.archive-wrapper .product_cat.tags.zestawy {
+  padding-top: 100px;
+}
 .archive-wrapper .category-title {
   text-transform: capitalize;
 }
@@ -1404,6 +1466,38 @@ ul.products li.product hr {
   width: auto !important;
   margin-right: 0 !important;
   max-width: 100% !important;
+}
+.archive-wrapper .why_eliksir_section.tags_b2b_section .title {
+  font-size: 88px;
+}
+.archive-wrapper .why_eliksir_section.tags_b2b_section .button {
+  color: #40434d;
+  border: 1px solid #40434d;
+  background-color: transparent !important;
+  border-radius: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.archive-wrapper .why_eliksir_section.tags_b2b_section .button::after {
+  content: "";
+  background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+.archive-wrapper .why_eliksir_section.tags_b2b_section .button:hover {
+  transition: all 0.3s ease;
+  background: #40434d;
+}
+.archive-wrapper .why_eliksir_section.tags_b2b_section .button:hover::after {
+  transform: translateX(6px);
+  transition: all 0.3s ease;
 }
 
 .b2b_section .hero_section {
@@ -1511,21 +1605,6 @@ ul.products li.product hr {
   height: 100%;
 }
 
-.cta_button {
-  color: #40434d;
-  border: 1px solid #40434d;
-  border-radius: 30px;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 14px 32px;
-  transition: all 0.3s ease;
-}
-.cta_button:hover {
-  transition: all 0.3s ease;
-  background: #40434d;
-  color: white;
-}
-
 .why_eliksir_section {
   display: flex;
   color: #40434d;
@@ -1541,7 +1620,7 @@ ul.products li.product hr {
 .why_eliksir_section .text_and_button_wrapper .title {
   font-size: 133px;
   font-weight: 700;
-  color: #E58A56;
+  color: #e58a56;
   margin-right: -50%;
   z-index: 1;
 }
@@ -1558,4 +1637,57 @@ ul.products li.product hr {
 .why_eliksir_section .image_wrapper img {
   display: block;
   height: 100%;
+}
+
+.shop_page .why_eliksir_section .text_and_button_wrapper {
+  padding: 40px 0;
+  width: 40%;
+}
+.shop_page .why_eliksir_section .text_and_button_wrapper .title {
+  font-size: 88px;
+  line-height: 90px;
+  margin-right: -230px;
+  margin-bottom: 30px;
+}
+.shop_page .why_eliksir_section .image_wrapper {
+  width: 60%;
+}
+.shop_page .why_eliksir_section .image_wrapper .img_container {
+  height: 100%;
+}
+.shop_page .why_eliksir_section .image_wrapper .img_container img {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shop_page .why_eliksir_section .button {
+  color: #40434d;
+  border: 1px solid #40434d;
+  background-color: transparent !important;
+  border-radius: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.shop_page .why_eliksir_section .button::after {
+  content: "";
+  background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+.shop_page .why_eliksir_section:hover {
+  transition: all 0.3s ease;
+  background: #40434d;
+  color: white;
+}
+.shop_page .why_eliksir_section:hover::after {
+  transform: translateX(6px);
+  transition: all 0.3s ease;
 }

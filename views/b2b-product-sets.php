@@ -6,7 +6,7 @@
                 <h2 class="category-title"><?php echo __('Zestawy dla Twojej firmy') ?></h2>
                 <p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
                 <?php echo do_shortcode('[fe_widget id="358" horizontal="yes" columns="1"]');
-                getProductsByCat(39);
+                getProductsByCat(39, 6);
                 ?>
             </section>
         </div>

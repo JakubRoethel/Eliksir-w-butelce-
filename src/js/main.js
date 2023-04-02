@@ -98,6 +98,13 @@ var swiper = new Swiper(".swiper", {
       slidesOffsetBefore: 100,
       slidesOffsetAfter: 100,
       loop: false,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+      autoplay: {
+        delay: 4000,
+      },
       autoHeight: true, //enable auto height
       // mousewheel: true,
       forceToAxis: true,

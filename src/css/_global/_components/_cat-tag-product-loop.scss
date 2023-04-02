@@ -1,4 +1,16 @@
 .archive-wrapper {
+
+  .product_cat {
+    .tag-pretitle {
+      font-size: 32px;
+      color: #40434d;
+      margin-bottom: 10px;
+    }
+
+    &.tags.zestawy {
+      padding-top: 100px;
+    }
+  }
   .category-title {
     text-transform: capitalize;
   }
@@ -11,6 +23,8 @@
     max-width: 80%;
     margin-bottom: 40px;
   }
+
+ 
 
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
     background-color: transparent;
@@ -72,4 +86,46 @@
     margin-right: 0 !important;
     max-width: 100% !important;
   }
+
+
+  .why_eliksir_section.tags_b2b_section {
+    .title { 
+      font-size: 88px;
+    }
+    .button {
+      color: #40434d;
+      border: 1px solid #40434d;
+      background-color: transparent !important;
+      border-radius: 30px;
+      width: fit-content;
+      padding: 14px 32px;
+      transition: all 0.3s ease;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        margin-left: 10px;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        transition: all 0.3s ease;
+        background: #40434d;
+        // color: white;
+  
+        &::after {
+          transform: translateX(6px);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    
+  }
+
 }

@@ -13,11 +13,15 @@
 
         .product_cat {
             padding: unset;
+            &.zestawy {
+                padding-bottom: 0px;
+            }
         }
 
         ul.products {
             padding-top: unset;
             row-gap: 5%;
+           
         }
 
 
@@ -29,22 +33,35 @@
 
     }
     .product_cat {
-        padding: 80px 10%;
+        padding: 20px 10%;
         scroll-margin-top: 150px;
+
+        .button {
+            margin: auto;
+        }
+
+        &.zestawy {
+            padding-bottom: 120px;
+        }
+
+        &.eliksiry  {
+            background: #FAD9BA;
+            padding: 120px 10%;
+        }
     }
 
-    .product_cat.eliksiry {
-        background: #FAD9BA;
-    }
+    
+
+  
     
     & .archive-container {
-        @include bp($bp-tablet) {
-            padding: 30px;
-        }
+        // @include bp($bp-tablet) {
+        //     padding: 30px;
+        // }
 
-        @include bp($bp-mobile) {
-            padding: 20px;
-        }
+        // @include bp($bp-mobile) {
+        //     padding: 20px;
+        // }
 
         .category-title {
             font-size: 40px;

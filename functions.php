@@ -51,10 +51,6 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
       $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/' . $term->name .'.svg" alt="' . $term->name . '" width="15" height="15" />';
       $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
   }
- 
-
-//    print_r($filter);
- 
 
   }
   return $html;
@@ -114,3 +110,29 @@ function products_slider($atts)
 }
 
 add_shortcode('products_slider_shortcode', 'products_slider');
+
+//add shop breadcrumb
+// add_filter( 'woocommerce_breadcrumb_defaults', 'custom_woocommerce_breadcrumbs' );
+// function custom_woocommerce_breadcrumbs( $defaults ) {
+//     // Ensure that the 'before' key is an array
+//     if ( ! is_array( $defaults['before'] ) ) {
+//         $defaults['before'] = array();
+//     }
+
+//     // Add "Shop" link before breadcrumbs
+//     array_unshift( $defaults['before'], '<a href="' . esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) . '">' . __( 'Shop', 'woocommerce' ) . '</a>' );
+
+//     return $defaults;
+// }
+
+add_filter( 'woocommerce_get_breadcrumb', function($crumbs, $Breadcrumb){
+    $shop_page_id = wc_get_page_id('shop'); //Get the shop page ID
+    if($shop_page_id > 0 && !is_shop()) { //Check we got an ID (shop page is set). Added check for is_shop to prevent Home / Shop / Shop as suggested in comments
+        $new_breadcrumb = [
+            _x( 'Sklep', 'breadcrumb', 'woocommerce' ), //Title
+            get_permalink(wc_get_page_id('shop')) // URL
+        ];
+        array_splice($crumbs, 1, 0, [$new_breadcrumb]); //Insert a new breadcrumb after the 'Home' crumb
+    }
+    return $crumbs;
+}, 10, 2 );

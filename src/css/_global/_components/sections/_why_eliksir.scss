@@ -1,26 +1,9 @@
-
-.cta_button {
-    color: #40434d;
-    border: 1px solid #40434d;
-    border-radius: 30px;
-    width: fit-content;
-    padding: 14px 32px;
-    transition: all .3s ease;
-
-    &:hover {
-        transition: all .3s ease;
-        background: #40434d;
-        color: white;
-    }
-}
-
-
-
 .why_eliksir_section {
   display: flex;
   color: #40434d;
   padding: 0px 0% 0px 10%;
   gap: 10%;
+
   .text_and_button_wrapper {
     display: flex;
     flex: 1;
@@ -29,7 +12,7 @@
     .title {
       font-size: 133px;
       font-weight: 700;
-      color: #E58A56;
+      color: #e58a56;
       margin-right: -50%;
       z-index: 1;
     }
@@ -47,8 +30,72 @@
     flex: 2;
 
     img {
-        display: block;
-        height: 100%;
+      display: block;
+      height: 100%;
     }
+  }
 }
+
+//shop page section
+.shop_page {
+  .why_eliksir_section {
+    .text_and_button_wrapper {
+      padding: 40px 0;
+      width: 40%;
+      .title {
+        font-size: 88px;
+        line-height: 90px;
+        margin-right: -230px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .image_wrapper {
+      width: 60%;
+
+      .img_container {
+        height: 100%;
+        img {
+          display: block;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      
+    }
+
+    .button {
+      color: #40434d;
+      border: 1px solid #40434d;
+      background-color: transparent !important;
+      border-radius: 30px;
+      width: fit-content;
+      padding: 14px 32px;
+      transition: all 0.3s ease;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        margin-left: 10px;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &:hover {
+      transition: all 0.3s ease;
+      background: #40434d;
+      color: white;
+
+      &::after {
+        transform: translateX(6px);
+        transition: all 0.3s ease;
+      }
+    }
+  }
 }

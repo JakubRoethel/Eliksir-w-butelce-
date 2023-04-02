@@ -1,0 +1,52 @@
+.button_container {
+  display: flex;
+  justify-content: center;
+
+  &.homepage {
+    margin-top: 60px;
+  }
+}
+
+.button {
+  color: #40434d;
+  border: 1px solid #40434d;
+  background-color: transparent;
+  border-radius: 30px;
+  width: fit-content;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+  &.shop-more {
+    color: #40434d !important;
+    border: 1px solid #40434d !important;
+    background-color: transparent !important;
+    border-radius: 30px !important;
+    width: fit-content;
+    padding: 14px 32px !important;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+      width: 16px;
+      height: 12px;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:hover {
+    transition: all 0.3s ease;
+    background: #40434d;
+    color: white;
+
+    &::after {
+      transform: translateX(6px);
+      transition: all 0.3s ease;
+    }
+  }
+}

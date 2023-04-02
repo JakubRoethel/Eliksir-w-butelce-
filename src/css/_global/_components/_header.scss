@@ -106,9 +106,13 @@
       font-size: 16px;
       text-transform: uppercase;
 
+      a {
+        transition: all 0.3s ease;
+      }
      
       a:hover,  &.current-menu-item a {
         color: #E58A56;
+        transition: all 0.3s ease;
       }
     }
 

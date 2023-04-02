@@ -4,9 +4,9 @@
         <p class="description">Nullam finibus massa non porttitor scelerisque. Nulla mattis vulputate diam in pellentesque. Proin sodales ultrices dui, id lobortis enim dictum eu. Curabitur consequat ipsum magna, sit amet aliquet felis posuere in. Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.</p>
     </div>
     <div class="featured_products_wrapper">
-    <div class="products_filters">
-        <?php echo do_shortcode('[fe_widget id="265" horizontal="yes" columns="1"]'); ?>
-    </div>
+        <div class="products_filters">
+            <?php echo do_shortcode('[fe_widget id="265" horizontal="yes" columns="1"]'); ?>
+        </div>
         <?php
         // The tax query
         $tax_query[] = array(
@@ -20,7 +20,7 @@
         $query = new WP_Query(array(
             'post_type'           => 'product',
             'post_status'         => 'publish',
-            'posts_per_page'      => -1,
+            'posts_per_page'      => 6,
             'tax_query'           => $tax_query // <===
         ));
 
@@ -33,7 +33,7 @@
                         $query->the_post();
                     ?>
                         <div class="swiper-slide">
-                          <?php  wc_get_template_part('content', 'product'); ?>
+                            <?php wc_get_template_part('content', 'product'); ?>
                         </div>
 
                     <?php   } ?>
@@ -43,6 +43,10 @@
         <?php  }
         wp_reset_query();
         ?>
+        <div class="button_container homepage">
+        <?php  $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) ); ?>
+            <a class="button shop-more" href="<?php echo $shop_page_url ?>"><?php echo __("Zobacz wszystkie produkty") ?></a>
+        </div>
     </div>
 </div>
 </div>

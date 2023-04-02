@@ -32,7 +32,7 @@ $category = get_queried_object();
             <h2 class="woocommerce-products-header__title page-title category-title"><?php woocommerce_page_title(); ?></h2>
             <p class="category-description"><?php echo $category->description; ?></p>
             <?php
-            getProductsByCat($category->term_id);
+            getProductsByCat($category->term_id, -1);
             ?>
         </section>
     </div>

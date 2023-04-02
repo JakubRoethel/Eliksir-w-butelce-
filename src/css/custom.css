@@ -22,3 +22,11 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #ffecbc;
   }
+
+
+  /* loader style */
+  .wpc-spinner:after {
+    border-top-color: #292929 !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
