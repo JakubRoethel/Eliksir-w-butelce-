@@ -30,3 +30,16 @@
     width: 40px !important;
     height: 40px !important;
   }
+
+
+  /* text selection */
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #E58A56;
+  }
+  
+  ::selection {
+    color: white;
+    background: #E58A56;
+  }

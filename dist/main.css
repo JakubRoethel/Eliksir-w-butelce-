@@ -559,7 +559,7 @@ table {
   content: "";
   width: 30px;
   height: 30px;
-  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
+  background-image: url("https://www.test404studio.pl/eliksir-w-butelce/wp-content/uploads/2023/03/Portal.svg");
   position: absolute;
   display: flex;
   left: -50%;
@@ -1186,7 +1186,6 @@ ul.products li.product hr {
 .filter_section {
   background-color: #fff4d8;
   padding: 110px 10% 130px 10%;
-  max-width: 1800px;
   margin: 0 auto;
 }
 .filter_section .title {
@@ -1373,7 +1372,6 @@ ul.products li.product hr {
 }
 
 .why_us_section {
-  max-width: 1800px;
   margin: 0 auto;
   display: flex;
   background-color: #fff4d8;

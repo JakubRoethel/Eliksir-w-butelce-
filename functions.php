@@ -2,6 +2,7 @@
 
 function studio_scripts()
 {
+    wp_enqueue_script('acf-input', get_template_directory_uri() . '/js/acf-input.min.js', array('jquery'), '', true);
     wp_register_style('main', get_stylesheet_directory_uri() . '/dist/main.css', [], 1, 'all');
     wp_enqueue_style('main');
     wp_register_style('custom', get_stylesheet_directory_uri() . '/src/css/custom.css', [], 1, 'all');
@@ -14,6 +15,7 @@ function studio_scripts()
     wp_enqueue_script('Swiper');
 
     wp_enqueue_script('blurry-load', get_stylesheet_directory_uri() . '/src/js/modules/blurry-load.js', array('jquery'), '', true);
+    
 }
 
 add_action('wp_enqueue_scripts', 'studio_scripts');
@@ -136,3 +138,9 @@ add_filter( 'woocommerce_get_breadcrumb', function($crumbs, $Breadcrumb){
     }
     return $crumbs;
 }, 10, 2 );
+
+
+function my_acf_init() {
+    acf_form_head();
+}
+add_action('wp_head', 'my_acf_init');

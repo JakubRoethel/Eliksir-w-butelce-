@@ -160,6 +160,20 @@ lastCallToAction.mouseenter(function () {
 lastCallToAction.mouseleave(function () {
   jQuery('.single_call_to_action:first-child').removeClass('margin-left-33');
 });
+acf.add_action('ready', function () {
+  var currentPageID = acf.get('post_id');
+  console.log(currentPageID);
+  var myCustomFieldValue = acf.getField('my_custom_field', currentPageID).val();
+  console.log(myCustomFieldValue);
+});
+window.onload = function () {
+  var currentPageID = parseInt(acf.get('post_id'));
+  console.log(acf);
+  var myCustomFieldValue = acf.getField('my_custom_field', currentPageID).val();
+  console.log(myCustomFieldValue);
+};
+var currentPageID = parseInt(acf.get('post_id'));
+console.log(currentPageID);
 
 /***/ }),
 
