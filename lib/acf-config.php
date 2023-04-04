@@ -6,7 +6,8 @@ acf_add_options_page(array(
     'menu_title'    => 'Theme Settings',
     'menu_slug'     => 'theme-general-settings',
     'capability'    => 'edit_posts',
-    'redirect'      => false
+    'redirect'      => false,
+    'post_id' => 'general_settings'
 ));
 
 acf_add_options_sub_page(array(
@@ -22,6 +23,10 @@ acf_add_options_sub_page(array(
     'parent_slug'   => 'theme-general-settings',
     'post_id' => 'footer_settings'
 ));
+
+
+
+
 }
 
 add_action('acf/init', 'studio_add_options_pages');

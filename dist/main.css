@@ -538,7 +538,6 @@ table {
 }
 .header .header_navigation ul {
   display: flex;
-  gap: 65px;
 }
 .header .header_navigation ul li {
   position: relative;
@@ -562,7 +561,7 @@ table {
   background-image: url("https://www.test404studio.pl/eliksir-w-butelce/wp-content/uploads/2023/03/Portal.svg");
   position: absolute;
   display: flex;
-  left: -50%;
+  left: -35px;
   top: -25%;
 }
 .header .header_navigation li:nth-child(2)::after {
@@ -572,7 +571,7 @@ table {
   background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
   position: absolute;
   display: flex;
-  right: -50%;
+  right: -35px;
   top: -25%;
 }
 .header .header_right {
@@ -651,6 +650,10 @@ table {
   text-transform: uppercase;
   padding: 24px;
   background-color: #292929;
+}
+.header_shop .submenu_container ul li a:hover, .header_shop .submenu_container ul li.current-menu-item a {
+  color: #E58A56;
+  transition: all 0.3s ease;
 }
 
 .footer {
@@ -859,6 +862,31 @@ ul.products li.product .product-details-wrapper .woocommerce-Price-amount {
 }
 ul.products li.product hr {
   border-color: #40434d;
+}
+
+.product-template-default {
+  margin-top: 200px;
+}
+.product-template-default .woocommerce-breadcrumb {
+  padding: 0px 10%;
+}
+.product-template-default div.product {
+  padding: 0px 10%;
+}
+.product-template-default div.product .product_wrapper {
+  display: flex;
+}
+.product-template-default div.product .product_wrapper a {
+  color: black;
+}
+.product-template-default div.product .product_wrapper div.summary {
+  float: unset;
+  width: unset;
+  flex: 1;
+  color: black;
+}
+.product-template-default div.product .product_wrapper div.product_gallery {
+  flex: 1;
 }
 
 .button_container {

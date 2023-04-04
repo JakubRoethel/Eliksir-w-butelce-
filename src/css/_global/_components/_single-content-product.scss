@@ -1,0 +1,31 @@
+.product-template-default {
+    margin-top: 200px;
+    .woocommerce-breadcrumb {
+        padding: 0px 10%;
+    }
+
+    div.product {
+        padding: 0px 10%;
+
+        .product_wrapper {
+            display: flex;
+
+            a {
+                color: black;
+            }
+
+            div.summary {
+                float: unset;
+                width: unset;
+                flex: 1;
+                color: black;
+            }
+
+            div.product_gallery {
+                flex:1;
+            }
+        }
+
+
+    }
+}

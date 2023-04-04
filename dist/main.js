@@ -102,6 +102,21 @@ var swiper = new Swiper(".swiper_featured", {
     prevEl: ".swiper-button-prev"
   }
 });
+var swiper = new Swiper(".swiper_single_product", {
+  effect: "slide",
+  grabCursor: true,
+  centeredSlides: false,
+  slidesPerView: "1",
+  spaceBetween: 0,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
 jQuery(document).ajaxComplete(function (event, request, settings) {
   var swiper = new Swiper(".swiper_featured", {
     effect: "slide",
