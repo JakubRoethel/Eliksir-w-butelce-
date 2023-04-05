@@ -36,6 +36,10 @@ $product_title = $product->get_name();
 $product_price = $product->get_price_html();
 $product_description = $product->get_description();
 $product_attributs = $product->get_attributes();
+$tags = get_the_terms( $post->ID, 'product_tag' );
+
+
+
 
 
 
@@ -43,35 +47,42 @@ $product_attributs = $product->get_attributes();
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
     <div class="product_wrapper">
         <div class="summary entry-summary">
-            <h2 class="product _name"> <?php echo $product_title ?></h2>
-            <?php  $terms = wc_get_product_tag_list($product_id);
-				if (!empty($terms)) :
+            <h2 class="product_name"> <?php echo $product_title ?></h2>
+            <?php  
+				if (!empty($tags)) :
 				?>
 
-					<p>Najlepiej smakuje z:&nbsp; </p>
-					<?php echo $terms ?>
+					<p class="tags_title">Najlepiej smakuje z:&nbsp; </p>
+					<div class="tags_container">
+                    <?php foreach ($tags as $tag) :
+						$name = $tag->name;
+                        $term_id = $tag->term_id;
+                        $url = get_tag_link( $tag->term_id );
+						$icon_id = get_field('tag_img', 'product_tag_' . $term_id ); ?>
+                        
+                        <div class="single_tag">
+                            <?php echo wp_get_attachment_image( $icon_id, 'full' ); ?>
+                            <a href="<?php echo $url ?>" class="tag_name">
+                            <?php echo $name ?>
+                            </a>
+                        </div>  
+                    <?php endforeach; ?>
+                    </div>
 
 			<?php
 				endif;?>
 
-                <p class="product_description"> <?php echo $product_description ?> </p>
-                <div><?php echo wc_display_product_attributes( $product ); ?> </div>
-            
+            <p class="product_description"> 
+                <?php echo $product_description ?> 
+            </p>
+                <?php
+                    if ( $product->is_type( 'variable' ) ) { 
+                         woocommerce_variable_add_to_cart();
+                    } ?>
 
-
-            <?php
-            echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-            sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="ajax_add_to_cart add_to_cart_button button %s product_type_%s">%s</a>',
-                esc_url( $product->add_to_cart_url() ),
-                esc_attr( $product->get_id() ),
-                esc_attr( $product->get_sku() ),
-                $product->is_purchasable() ? 'add_to_cart_button' : '',
-                esc_attr( $product->get_type() ),
-                esc_html( $product->add_to_cart_text() )
-            ),
-        $product );
-            ?>
-           
+            <span class="price">
+                <?php echo $product->get_price_html(); ?>
+            </span>         
         </div>
         <div class="product_gallery">
             <div class="swiper_single_product">

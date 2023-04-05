@@ -60,6 +60,7 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
 
 require_once('lib/acf-config.php');
 require_once('lib/change-currency-symbol.php');
+require_once('lib/custom-add-to-cart-buttons.php');
 
 
 function products_slider($atts)
@@ -144,3 +145,7 @@ function my_acf_init() {
     acf_form_head();
 }
 add_action('wp_head', 'my_acf_init');
+
+
+
+
