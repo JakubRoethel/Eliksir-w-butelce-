@@ -18,7 +18,7 @@ var acfVersion = acf.get('acf_version');
 
 
 let swiperNames = ['Basil smash', 'Orange Classic', 'Cherry Cuba', 'Lime sour', 'Old Fashioned', 'Spritz'];
-var swiper = new Swiper(".swiper", {
+var swiper1 = new Swiper(".swiper", {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
@@ -37,7 +37,7 @@ var swiper = new Swiper(".swiper", {
     }
   });
 
-  var swiper = new Swiper(".swiper_featured", {
+  var swiper2 = new Swiper(".swiper_featured", {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
@@ -88,13 +88,17 @@ var swiper = new Swiper(".swiper", {
 
 
 
-   var swiper = new Swiper(".swiper_single_product", {
+   var swiper3 = new Swiper(".swiper_single_product", {
     effect: "slide",
     grabCursor: true,
+    spaceBetween: 0,
     centeredSlides: false,
+    loop:true,
+    direction: 'horizontal',
     slidesPerView: "1", 
-    spaceBetween: 0, 
-    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
     pagination: {
       el: '.swiper-pagination',
   },
@@ -107,7 +111,7 @@ var swiper = new Swiper(".swiper", {
 
 
   jQuery( document ).ajaxComplete(function( event,request, settings ) {
-    var swiper = new Swiper(".swiper_featured", {
+    var swiper3 = new Swiper(".swiper_featured", {
       effect: "slide",
       grabCursor: true,
       centeredSlides: false,
@@ -159,7 +163,7 @@ var swiper = new Swiper(".swiper", {
 
 
 
-
+ 
 
 
 
@@ -196,3 +200,38 @@ console.log(currentPageID);
 
 
 
+
+
+
+
+
+
+
+
+//test form 
+
+const productSelect = document.getElementById("product");
+const quantityInput = document.getElementById("quantity");
+const productList = document.getElementById("product-list");
+console.log("TEst form");
+const addProduct = () => {
+  const productValue = productSelect.value;
+  const quantityValue = quantityInput.value;
+
+  if (productValue !== "" && quantityValue !== "") {
+    const productItem = document.createElement("div");
+    productItem.innerHTML = `${productValue} - ${quantityValue}`;
+    productList.appendChild(productItem);
+
+    productSelect.value = "";
+    quantityInput.value = "";
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("TEst form 2");
+  const addButton = document.createElement("button");
+  addButton.textContent = "Add another product";
+  addButton.addEventListener("click", addProduct);
+  document.body.appendChild(addButton);
+});

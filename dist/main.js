@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 var postID = acf.get('post_id');
 var acfVersion = acf.get('acf_version');
 var swiperNames = ['Basil smash', 'Orange Classic', 'Cherry Cuba', 'Lime sour', 'Old Fashioned', 'Spritz'];
-var swiper = new Swiper(".swiper", {
+var swiper1 = new Swiper(".swiper", {
   effect: "slide",
   grabCursor: true,
   centeredSlides: false,
@@ -54,7 +54,7 @@ var swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev"
   }
 });
-var swiper = new Swiper(".swiper_featured", {
+var swiper2 = new Swiper(".swiper_featured", {
   effect: "slide",
   grabCursor: true,
   centeredSlides: false,
@@ -102,13 +102,17 @@ var swiper = new Swiper(".swiper_featured", {
     prevEl: ".swiper-button-prev"
   }
 });
-var swiper = new Swiper(".swiper_single_product", {
+var swiper3 = new Swiper(".swiper_single_product", {
   effect: "slide",
   grabCursor: true,
-  centeredSlides: false,
-  slidesPerView: "1",
   spaceBetween: 0,
+  centeredSlides: false,
   loop: true,
+  direction: 'horizontal',
+  slidesPerView: "1",
+  autoplay: {
+    delay: 4000
+  },
   pagination: {
     el: '.swiper-pagination'
   },
@@ -118,7 +122,7 @@ var swiper = new Swiper(".swiper_single_product", {
   }
 });
 jQuery(document).ajaxComplete(function (event, request, settings) {
-  var swiper = new Swiper(".swiper_featured", {
+  var swiper3 = new Swiper(".swiper_featured", {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
@@ -189,6 +193,31 @@ window.onload = function () {
 };
 var currentPageID = parseInt(acf.get('post_id'));
 console.log(currentPageID);
+
+//test form 
+
+var productSelect = document.getElementById("product");
+var quantityInput = document.getElementById("quantity");
+var productList = document.getElementById("product-list");
+console.log("TEst form");
+var addProduct = function addProduct() {
+  var productValue = productSelect.value;
+  var quantityValue = quantityInput.value;
+  if (productValue !== "" && quantityValue !== "") {
+    var productItem = document.createElement("div");
+    productItem.innerHTML = "".concat(productValue, " - ").concat(quantityValue);
+    productList.appendChild(productItem);
+    productSelect.value = "";
+    quantityInput.value = "";
+  }
+};
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("TEst form 2");
+  var addButton = document.createElement("button");
+  addButton.textContent = "Add another product";
+  addButton.addEventListener("click", addProduct);
+  document.body.appendChild(addButton);
+});
 
 /***/ }),
 

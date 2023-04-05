@@ -23,9 +23,31 @@
 
             div.product_gallery {
                 flex:1;
+                max-width: 100%;
+                width: 50%;
+                overflow: hidden;
+
+                .swiper_single_product {
+                    color: black;
+                    position: relative;
+
+                    img {
+                        aspect-ratio: 1/1;
+                        width: 100%;
+                    }
+                }
             }
         }
 
 
     }
 }
+
+
+//for test page (to delete)
+.form_container{
+    color: black;
+
+}
+
+

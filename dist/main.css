@@ -887,6 +887,21 @@ ul.products li.product hr {
 }
 .product-template-default div.product .product_wrapper div.product_gallery {
   flex: 1;
+  max-width: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+.product-template-default div.product .product_wrapper div.product_gallery .swiper_single_product {
+  color: black;
+  position: relative;
+}
+.product-template-default div.product .product_wrapper div.product_gallery .swiper_single_product img {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.form_container {
+  color: black;
 }
 
 .button_container {
