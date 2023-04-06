@@ -114,7 +114,8 @@ var swiper3 = new Swiper(".swiper_single_product", {
     delay: 4000
   },
   pagination: {
-    el: '.swiper-pagination'
+    el: ".swiper-pagination",
+    clickable: true
   },
   navigation: {
     nextEl: ".swiper-button-next",

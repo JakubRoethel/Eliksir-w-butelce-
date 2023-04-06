@@ -100,8 +100,9 @@ var swiper1 = new Swiper(".swiper", {
       delay: 4000,
     },
     pagination: {
-      el: '.swiper-pagination',
-  },
+      el: ".swiper-pagination",
+      clickable: true
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
