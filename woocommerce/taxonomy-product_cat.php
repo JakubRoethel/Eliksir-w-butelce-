@@ -69,7 +69,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
         <?php
         } ?>
 
-<div class="container why_eliksir_section tags_b2b_section">
+<div class="container b2b_section">
             <?php $image_id = 415; ?>
             <div class="text_and_button_wrapper">
                 <p class="title" style="color: #7B94AA"><?php echo __('Poznaj ofertę B2B') ?></p>

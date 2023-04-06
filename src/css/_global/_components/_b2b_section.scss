@@ -1,0 +1,75 @@
+.b2b_section {
+
+    display: flex;
+    color: #40434d;
+    padding: 0px 0% 0px 10%;
+    gap: 10%;
+    .text_and_button_wrapper {
+        display: flex;
+        flex: 1;
+        margin: auto;
+        flex-direction: column;
+        .title {
+          font-size: 133px;
+          font-weight: 700;
+          color: #e58a56;
+          margin-right: -50%;
+          z-index: 1;
+        }
+    
+        .description {
+          font-size: 16px;
+          font-weight: 700;
+          color: #40434d;
+          margin: auto;
+          margin-bottom: 30px;
+        }
+
+        .button {
+            color: #40434d;
+            border: 1px solid #40434d;
+            background-color: transparent !important;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 14px 32px;
+            transition: all 0.3s ease;
+            display: inline-block;
+      
+            &::after {
+              content: "";
+              background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+              width: 16px;
+              height: 12px;
+              display: inline-block;
+              background-repeat: no-repeat;
+              margin-left: 10px;
+              transition: all 0.3s ease;
+            }
+      
+            &:hover {
+              transition: all 0.3s ease;
+              background: #40434d;
+              // color: white;
+        
+              &::after {
+                transform: translateX(6px);
+                transition: all 0.3s ease;
+              }
+            }
+          }
+      }
+
+      .image_wrapper {
+        flex: 2;
+    
+        img {
+          display: block;
+          height: 100%;
+        }
+      }
+    
+
+    
+
+    
+  }
