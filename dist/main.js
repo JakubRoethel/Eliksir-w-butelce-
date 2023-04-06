@@ -211,12 +211,38 @@ var addProduct = function addProduct() {
     quantityInput.value = "";
   }
 };
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("TEst form 2");
-  var addButton = document.createElement("button");
-  addButton.textContent = "Add another product";
-  addButton.addEventListener("click", addProduct);
-  document.body.appendChild(addButton);
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   console.log("TEst form 2");
+//   // const addButton = document.createElement("button");
+//   addButton.textContent = "Add another product";
+//   addButton.addEventListener("click", addProduct);
+//   // document.body.appendChild(addButton);
+// });
+
+// jQuery(function($) {
+//   $('.cart-icon').click(function(e) {
+//      e.preventDefault();
+//      $('.mini-cart-container').toggleClass('minicart-show');
+//   });
+// });
+
+jQuery(function ($) {
+  $('.cart-icon').click(function (e) {
+    e.preventDefault();
+    $('.mini-cart-container').toggleClass('minicart-show');
+    if ($('.mini-cart-container').hasClass('minicart-show')) {
+      $('html').addClass('noscroll');
+    } else {
+      $('html').removeClass('noscroll');
+    }
+  });
+  $(document).on('click', function (event) {
+    if (!$(event.target).closest('.cart-icon-container').length && !$(event.target).closest('.mini-cart-container').length) {
+      $('.mini-cart-container').removeClass('minicart-show');
+      $('html').removeClass('noscroll');
+    }
+  });
 });
 
 /***/ }),
