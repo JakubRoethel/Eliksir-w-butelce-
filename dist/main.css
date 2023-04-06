@@ -1073,6 +1073,62 @@ ul.products li.product hr {
   background-color: #E58A56;
 }
 
+.product_details {
+  padding: 100px 10% 55px 10%;
+}
+.product_details .mix_details {
+  display: flex;
+  width: 100%;
+}
+.product_details .mix_details .ingredients_container {
+  flex: 4;
+}
+.product_details .mix_details .ingredients_container ul {
+  list-style-type: disc;
+}
+.product_details .mix_details .how_make_coctail {
+  flex: 2;
+  position: relative;
+}
+.product_details .mix_details .how_make_coctail ul li:last-child {
+  position: absolute;
+  bottom: 0px;
+}
+.product_details .mix_details ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 120px;
+  flex-direction: column;
+  padding-left: 25px;
+  gap: 5px;
+}
+.product_details .mix_details li {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #40434D;
+}
+.product_details h6 {
+  font-size: 24px;
+  color: #40434D;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+.product_details .product_short_description {
+  padding-top: 80px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #40434D;
+}
+.product_details .product_short_description .short_description_text {
+  width: 78%;
+}
+.product_details .product_short_description h6 {
+  margin-top: 70px;
+  margin-bottom: 25px;
+}
+
 .form_container {
   color: black;
 }

@@ -37,6 +37,7 @@ $product_price = $product->get_price_html();
 $product_description = $product->get_description();
 $product_attributs = $product->get_attributes();
 $tags = get_the_terms( $post->ID, 'product_tag' );
+$product_short_description = $product->get_short_description();
 
 
 
@@ -138,14 +139,49 @@ $tags = get_the_terms( $post->ID, 'product_tag' );
 
 <div class="product_details">
     <div class="mix_details">
-        <h6 class="title">Skład</h6>
-        <ul class="ingredients_list">
-            <li class="single_ingredient">
-                
-            </li>
-        </ul>
-    </div>
+        <div class="ingredients_container">
+            <h6 class="title">Skład</h6>       
+            <?php
+                    $ingredients_list = get_field('skladniki');
 
+                    if( $ingredients_list ):?>
+                    <ul class="ingredients_list">
+                        <?php  foreach( $ingredients_list as $ingredient ) { 
+                                $single_ingredient = $ingredient['pojedynczy_skladnik'];
+                            ?>
+                                <li class="single_ingredient">
+                                    <?php echo $single_ingredient ?>
+                                </li>
+                            <?php  } ?>
+                    </ul>
+                    <?php endif; ?>
+        </div>
+        <div class="how_make_coctail">
+            <h6 class="title">Jak przygotować koktajl</h6>
+            <ul class="step_list">
+                <li class="single_item">
+                    Po prostu wymieszaj z lodem:
+                </li>
+                <li class="single_item">
+                    - 1 porcję alkoholu
+                </li>
+                <li class="single_item">
+                    - 1/2 porcji eliksiru
+                </li>
+                <li class="single_item">
+                    Gotowe! Naprawdę. To takie proste!
+                </li>
+            </ul> 
+        </div>  
+    </div>
+    <div class="product_short_description">
+        <p class="short_description_text"> <?php echo $product_short_description ?></p>
+        <h6>Jak przygotować koktajl spritz? Nic prostszego! Obejrzyj nasze wideo</h6>
+        <?php
+                    $movie_url = get_field('link_do_filmu'); ?>
+        <iframe width="100%" height="315" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+    </div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
