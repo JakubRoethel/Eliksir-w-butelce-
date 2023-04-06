@@ -1,94 +1,145 @@
 /* Position the mini cart container */
 .cart-icon-container {
-    position: relative;
+  position: relative;
 }
 
 .mini-cart-container {
-    background-color: #E5DECB;
-    border: none;
-    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.45);
-    position: absolute;
-    // right: -530px;
+  background-color: #e5decb;
+  border: none;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.45);
+  position: absolute;
+  right: -630px;
+//   right: 0;
+  top: 35px;
+  width: 580px;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  padding: 32px 40px;
+
+  &.minicart-show {
     right: 0;
-    top: 100%;
-    width: 500px;
-    z-index: 9999;
-    transition: all .3s ease-in-out;
-    padding: 32px 40px;
-    
-    
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
 
-    &.minicart-show {
-        right: 0;
-        display: block;
-        transition: all 0.3s cubic-bezier(0.42, 0, 0.61, 1.33);
-    }
-
-    .woocommerce-mini-cart__buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-        a {
-            width: 100% !important;
-            text-align: center;
-        }
-    } 
- }
- 
- /* Style the mini cart header */
- .mini-cart-header {
+  .woocommerce-mini-cart__buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .mini-cart-title {
-        font-size: 18px;
-        color: #40434D;
-    }
+    flex-direction: column;
+    gap: 15px;
 
-    .close-icon {
-        cursor: pointer;
+    a {
+      width: 100% !important;
+      text-align: center;
     }
- }
- 
- /* Style the mini cart products list */
- .mini-cart-products {
-    list-style: none;
-    margin: 0;
-    padding: 0;
- }
- 
- .mini-cart-products li {
-    border-bottom: 1px solid #ebebeb;
-    padding: 10px;
- }
- 
- .mini-cart-products li:last-child {
-    border-bottom: none;
- }
- 
- /* Style the mini cart footer */
- .mini-cart-footer {
-    background-color: #f2f2f2;
-    border-top: 1px solid #ebebeb;
-    padding: 10px;
-    text-align: center;
- }
- 
- .mini-cart-footer a {
-    color: #333;
-    display: inline-block;
-    font-size: 14px;
-    margin-top: 10px;
-    text-decoration: none;
- }
+  }
 
- //noscroll
- html.noscroll {
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
+  /* Style the mini cart products list */
+  .woocommerce-mini-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    li {
+      display: flex;
+
+      a {
+        display: block;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          max-width: unset;
+          display: block;
+        }
+      }
+
+      .cart-item-title {
+        font-size: 16px;
+        color: #40434d;
+        margin: auto;
+        margin-left: 16px;
+        flex: 2;
+      }
+      .product-quantity {
+        display: flex;
+        align-items: center;
+      }
+      .quantity {
+        display: flex;
+        height: 37px;
+        align-items: center;
+
+        .quantity_title {
+          display: none;
+        }
+
+        button {
+          font-size: 32px;
+          font-weight: 700;
+          color: #40434d;
+          background-color: #e6decb;
+          border: unset;
+          border-radius: 105px;
+          height: 51px;
+          min-width: 60px;
+          opacity: 0.7;
+        }
+
+        input {
+          border: 2px solid #40434d;
+          background-color: transparent;
+          color: #40434d;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 105px;
+          text-align: center;
+          width: 50px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+       
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: flex-end;
+
+        span {
+            color: #40434d;
+        }
+    }
+    }
+  }
 }
 
- 
- 
+/* Style the mini cart header */
+.mini-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  .mini-cart-title {
+    font-size: 18px;
+    color: #40434d;
+  }
+
+  .close-icon {
+    cursor: pointer;
+  }
+}
+
+//noscroll
+html.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
