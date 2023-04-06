@@ -63,6 +63,7 @@ require_once('lib/change-currency-symbol.php');
 require_once('lib/custom-add-to-cart-buttons.php');
 
 
+
 function products_slider($atts)
 {
 
