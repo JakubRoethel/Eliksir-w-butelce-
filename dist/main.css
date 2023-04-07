@@ -1135,6 +1135,10 @@ ul.products li.product hr {
   margin-bottom: 25px;
 }
 
+iframe .ytp-cued-thumbnail-overlay-image {
+  background-size: auto;
+}
+
 .cross_selling_section {
   padding: 150px 10%;
   background-color: #FAC6B6;
@@ -1145,39 +1149,6 @@ ul.products li.product hr {
   color: #40434D;
   margin-bottom: 60px;
   text-transform: uppercase;
-}
-
-.why_eliksir_section.product_b2b_section .title {
-  font-size: 88px !important;
-}
-.why_eliksir_section.product_b2b_section .button {
-  color: #40434d;
-  border: 1px solid #40434d;
-  background-color: transparent !important;
-  border-radius: 30px;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 14px 32px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-.why_eliksir_section.product_b2b_section .button::after {
-  content: "";
-  background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
-  width: 16px;
-  height: 12px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  margin-left: 10px;
-  transition: all 0.3s ease;
-}
-.why_eliksir_section.product_b2b_section .button:hover {
-  transition: all 0.3s ease;
-  background: #40434d;
-}
-.why_eliksir_section.product_b2b_section .button:hover::after {
-  transform: translateX(6px);
-  transition: all 0.3s ease;
 }
 
 .container.b2b_offer_section {
@@ -1248,6 +1219,7 @@ ul.products li.product hr {
 .container.b2b_offer_section .image_wrapper .img_container img {
   display: block;
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
