@@ -1103,10 +1103,6 @@ ul.products li.product hr {
   flex: 2;
   position: relative;
 }
-.product_details .mix_details .how_make_coctail ul li:last-child {
-  position: absolute;
-  bottom: 0px;
-}
 .product_details .mix_details ul {
   display: flex;
   flex-wrap: wrap;
