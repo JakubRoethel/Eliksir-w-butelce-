@@ -16,7 +16,11 @@ $related_products_args = array(
 $related_products_loop = new WP_Query($related_products_args); 
 
     if ($related_products_loop->have_posts()) { ?>
+<<<<<<< HEAD
         <ul class="products columns-3">
+=======
+        <ul class="products columns-3git pu">
+>>>>>>> 5a02f7fea098a405ddb953e6ee186835ba0c8fc0
             <?php while ($related_products_loop->have_posts()) : $related_products_loop->the_post();
 
                 wc_get_template_part('content', 'product');
