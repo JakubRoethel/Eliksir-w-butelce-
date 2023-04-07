@@ -85,7 +85,7 @@ $product_short_description = $product->get_short_description();
                     } ?>   
 
                     <span class="free_shipping">
-                        <p> <?php echo 'Darmowa dostawa od 100zł' ?> </p>
+                        <p> <?php echo __('Darmowa dostawa od 100zł') ?> </p>
                     </span>
                     
         </div>
@@ -198,5 +198,17 @@ $product_short_description = $product->get_short_description();
         </div>
     </div>
 </div>
+
+
+<?php
+	/**
+	 * Hook: woocommerce_after_single_product_summary.
+	 *
+	 * @hooked woocommerce_output_product_data_tabs - 10
+	 * @hooked woocommerce_upsell_display - 15
+	 * @hooked woocommerce_output_related_products - 20
+	 */
+	do_action( 'woocommerce_after_single_product_summary' );
+	?>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

@@ -1,10 +1,10 @@
 <header class="header header_shop">
   <!-- <p><?php the_field('sale_banner', 'header_settings'); ?></p> -->
-  <div class="container" style="background:  linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url('<?php the_field('shop_header_background', 'header_settings');?>') ">
+  <div class="container" style="background:  linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url('<?php the_field('shop_header_background', 'header_settings'); ?>') ">
     <div class="header_left">
       <div class="header_logo">
         <a href="<?php bloginfo('url'); ?>">
-          <img src="<?php echo esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] ); ?>" class="u-img-responsive">
+          <img src="<?php echo esc_url(wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]); ?>" class="u-img-responsive">
         </a>
       </div>
     </div>
@@ -19,7 +19,7 @@
           'container_id' => 'navigation',
           'container_class' => 'navigation',
           'theme_location' => 'main-menu',
-        ]);?>
+        ]); ?>
       </div>
     </div>
 
@@ -43,32 +43,44 @@
       </ul>
       <div class="icon_box">
         <p>English</p>
-        <div class= "icon_container">
-        <a href="http://eliksir-w-butelce.local/my-account/">
-          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        </a>
-        <a href="http://eliksir-w-butelce.local/shop/">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a>
-          
+        <div class="icon_container">
+          <a href="http://eliksir-w-butelce.local/my-account/">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          </a>
+          <div class="cart-icon-container">
+            <a class="cart-icon" href="<?php echo wc_get_cart_url(); ?>">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+            <div class="mini-cart-container">
+              <div class="mini-cart-header">
+                <h2 class="mini-cart-title"><?php echo __('Twój koszyk') ?></h2>
+                <div class="close-icon">
+                  <?php echo @file_get_contents(get_stylesheet_directory_uri() . '/assets/img/close.svg)') ?>
+                </div>
+              </div>
+              <div class="widget_shopping_cart_content">
+                <?php woocommerce_mini_cart(); ?>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
     </div>
+  </div>
 
-    <div class="submenu_container">
-      <div class="shop_navigation">
-        <?php wp_nav_menu([
-          'menu' => 'Submenu shop',
-          'menu_id' => 'submenu-shop',
-          'menu_class' => 'submenu-shop',
-          'container' => 'nav',
-          'container_id' => 'navigation',
-          'container_class' => 'navigation',
-          'theme_location' => 'main-menu',
-        ]);?>
-      </div>
+  <div class="submenu_container">
+    <div class="shop_navigation">
+      <?php wp_nav_menu([
+        'menu' => 'Submenu shop',
+        'menu_id' => 'submenu-shop',
+        'menu_class' => 'submenu-shop',
+        'container' => 'nav',
+        'container_id' => 'navigation',
+        'container_class' => 'navigation',
+        'theme_location' => 'main-menu',
+      ]); ?>
     </div>
-</div>
+  </div>
+  </div>
 
 </header>

@@ -61,6 +61,9 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
 require_once('lib/acf-config.php');
 require_once('lib/change-currency-symbol.php');
 require_once('lib/custom-add-to-cart-buttons.php');
+require_once('lib/ajax-update-cart.php');
+
+
 
 
 
@@ -115,20 +118,6 @@ function products_slider($atts)
 
 add_shortcode('products_slider_shortcode', 'products_slider');
 
-//add shop breadcrumb
-// add_filter( 'woocommerce_breadcrumb_defaults', 'custom_woocommerce_breadcrumbs' );
-// function custom_woocommerce_breadcrumbs( $defaults ) {
-//     // Ensure that the 'before' key is an array
-//     if ( ! is_array( $defaults['before'] ) ) {
-//         $defaults['before'] = array();
-//     }
-
-//     // Add "Shop" link before breadcrumbs
-//     array_unshift( $defaults['before'], '<a href="' . esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) . '">' . __( 'Shop', 'woocommerce' ) . '</a>' );
-
-//     return $defaults;
-// }
-
 add_filter( 'woocommerce_get_breadcrumb', function($crumbs, $Breadcrumb){
     $shop_page_id = wc_get_page_id('shop'); //Get the shop page ID
     if($shop_page_id > 0 && !is_shop()) { //Check we got an ID (shop page is set). Added check for is_shop to prevent Home / Shop / Shop as suggested in comments
@@ -148,5 +137,8 @@ function my_acf_init() {
 add_action('wp_head', 'my_acf_init');
 
 
+//remove cart button in minicart 
+remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 

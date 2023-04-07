@@ -29,12 +29,12 @@ __webpack_require__.r(__webpack_exports__);
 //     duration: 300,
 //     easing: 'ease-in-out',
 //     delay: 100,
-// }) 
+// })
 
 (0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
-var postID = acf.get('post_id');
-var acfVersion = acf.get('acf_version');
-var swiperNames = ['Basil smash', 'Orange Classic', 'Cherry Cuba', 'Lime sour', 'Old Fashioned', 'Spritz'];
+var postID = acf.get("post_id");
+var acfVersion = acf.get("acf_version");
+var swiperNames = ["Basil smash", "Orange Classic", "Cherry Cuba", "Lime sour", "Old Fashioned", "Spritz"];
 var swiper1 = new Swiper(".swiper", {
   effect: "slide",
   grabCursor: true,
@@ -65,7 +65,7 @@ var swiper2 = new Swiper(".swiper_featured", {
   slideToClickedSlide: true,
   // shortSwipes: true,
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: ".swiper-scrollbar",
     draggable: true
   },
   loop: false,
@@ -108,7 +108,7 @@ var swiper3 = new Swiper(".swiper_single_product", {
   spaceBetween: 0,
   centeredSlides: false,
   loop: true,
-  direction: 'horizontal',
+  direction: "horizontal",
   slidesPerView: "1",
   autoplay: {
     delay: 4000
@@ -133,7 +133,7 @@ jQuery(document).ajaxComplete(function (event, request, settings) {
     slidesOffsetAfter: 100,
     loop: false,
     scrollbar: {
-      el: '.swiper-scrollbar',
+      el: ".swiper-scrollbar",
       draggable: true
     },
     autoplay: {
@@ -173,29 +173,29 @@ jQuery(document).ajaxComplete(function (event, request, settings) {
 });
 
 //call to action containers logic on hover
-var lastCallToAction = jQuery('.single_call_to_action:last-child');
+var lastCallToAction = jQuery(".single_call_to_action:last-child");
 lastCallToAction.mouseenter(function () {
-  jQuery('.single_call_to_action:first-child').addClass('margin-left-33');
+  jQuery(".single_call_to_action:first-child").addClass("margin-left-33");
 });
 lastCallToAction.mouseleave(function () {
-  jQuery('.single_call_to_action:first-child').removeClass('margin-left-33');
+  jQuery(".single_call_to_action:first-child").removeClass("margin-left-33");
 });
-acf.add_action('ready', function () {
-  var currentPageID = acf.get('post_id');
+acf.add_action("ready", function () {
+  var currentPageID = acf.get("post_id");
   console.log(currentPageID);
-  var myCustomFieldValue = acf.getField('my_custom_field', currentPageID).val();
+  var myCustomFieldValue = acf.getField("my_custom_field", currentPageID).val();
   console.log(myCustomFieldValue);
 });
 window.onload = function () {
-  var currentPageID = parseInt(acf.get('post_id'));
+  var currentPageID = parseInt(acf.get("post_id"));
   console.log(acf);
-  var myCustomFieldValue = acf.getField('my_custom_field', currentPageID).val();
+  var myCustomFieldValue = acf.getField("my_custom_field", currentPageID).val();
   console.log(myCustomFieldValue);
 };
-var currentPageID = parseInt(acf.get('post_id'));
+var currentPageID = parseInt(acf.get("post_id"));
 console.log(currentPageID);
 
-//test form 
+//test form
 
 var productSelect = document.getElementById("product");
 var quantityInput = document.getElementById("quantity");
@@ -229,21 +229,57 @@ var addProduct = function addProduct() {
 // });
 
 jQuery(function ($) {
-  $('.cart-icon').click(function (e) {
+  $(".cart-icon").click(function (e) {
     e.preventDefault();
-    $('.mini-cart-container').toggleClass('minicart-show');
-    if ($('.mini-cart-container').hasClass('minicart-show')) {
-      $('html').addClass('noscroll');
-    } else {
-      $('html').removeClass('noscroll');
+    $(".mini-cart-container").toggleClass("minicart-show");
+  });
+  $(".close-icon").click(function (e) {
+    e.preventDefault();
+    $(".mini-cart-container").toggleClass("minicart-show");
+  });
+  $(document).on("click", function (event) {
+    if (!$(event.target).closest(".cart-icon-container").length && !$(event.target).closest(".mini-cart-container").length) {
+      $(".mini-cart-container").removeClass("minicart-show");
     }
   });
-  $(document).on('click', function (event) {
-    if (!$(event.target).closest('.cart-icon-container').length && !$(event.target).closest('.mini-cart-container').length) {
-      $('.mini-cart-container').removeClass('minicart-show');
-      $('html').removeClass('noscroll');
-    }
+});
+jQuery(function ($) {
+  var typingTimer;
+  var doneTypingInterval = 500;
+  $("body").on("change", ".quantity input.qty", function (e) {
+    e.stopImmediatePropagation();
+    var item_hash = $(this).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+    var item_quantity = $(this).val();
+    var currentVal = parseFloat(item_quantity);
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(function () {
+      $.ajax({
+        type: "POST",
+        url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
+        data: {
+          action: "update_item_from_cart",
+          cart_item_key: item_hash,
+          qty: currentVal
+        },
+        success: function success(data) {
+          jQuery(document.body).trigger("wc_fragment_refresh");
+          console.log("Added to cart! " + item_quantity);
+          jQuery(document.body).trigger("wc_fragments_refreshed");
+          // jQuery(".mini-cart-container").addClass("minicart-show");
+          console.log(wc_cart_fragments_params);
+        },
+        error: function error(jqXHR, textStatus, errorThrown) {
+          console.log("Error: " + errorThrown);
+        }
+      });
+    }, doneTypingInterval);
   });
+});
+jQuery(document).on('added_to_cart', function (event, fragments, cart_hash) {
+  // show the mini cart here
+  // $('.widget_shopping_cart').fadeIn();
+  jQuery(".mini-cart-container").addClass("minicart-show");
+  console.log(fragments);
 });
 
 /***/ }),

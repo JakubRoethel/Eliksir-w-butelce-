@@ -17,6 +17,8 @@
   transition: all 0.3s ease;
   display: inline-block;
 
+  
+
   &.shop-more {
     color: #40434d !important;
     border: 1px solid #40434d !important;
@@ -49,4 +51,24 @@
       transition: all 0.3s ease;
     }
   }
+}
+
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.loading::after {
+  top: unset;
+  right: unset;
+  animation: unset;
+}
+
+//minicart buttons 
+.woocommerce-mini-cart__buttons a{
+  color: #40434d !important;
+  border: 1px solid #40434d !important;
+  background-color: transparent !important;
+  border-radius: 30px !important;
+  width: fit-content;
+  padding: 14px 32px !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 16px;
 }

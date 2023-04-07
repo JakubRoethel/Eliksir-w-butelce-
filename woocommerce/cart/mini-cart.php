@@ -50,7 +50,10 @@ do_action('woocommerce_before_mini_cart'); ?>
                         </a>
                     <?php endif; ?>
                     <h3 class="cart-item-title">
-                        <?php echo wp_kses_post($product_name); ?>
+                    <a href="<?php echo esc_url($product_permalink); ?>">
+                        <?php echo $product_name; ?>
+
+                    </a>
                     </h3>
                     <div class="product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                         <?php
@@ -88,7 +91,7 @@ do_action('woocommerce_before_mini_cart'); ?>
         ?>
     </ul>
 
-    <!-- <p class="woocommerce-mini-cart__total total">
+    <p class="woocommerce-mini-cart__total total">
         <?php
         /**
          * Hook: woocommerce_widget_shopping_cart_total.
@@ -97,7 +100,7 @@ do_action('woocommerce_before_mini_cart'); ?>
          */
         do_action('woocommerce_widget_shopping_cart_total');
         ?>
-    </p> -->
+    </p>
 
     <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 
