@@ -1135,6 +1135,18 @@ ul.products li.product hr {
   margin-bottom: 25px;
 }
 
+.cross_selling_section {
+  padding: 150px 10%;
+  background-color: #FAC6B6;
+}
+.cross_selling_section .title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #40434D;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
 .why_eliksir_section.product_b2b_section .title {
   font-size: 88px !important;
 }
@@ -1166,6 +1178,69 @@ ul.products li.product hr {
 .why_eliksir_section.product_b2b_section .button:hover::after {
   transform: translateX(6px);
   transition: all 0.3s ease;
+}
+
+.container.b2b_offer_section {
+  display: flex;
+  color: #40434d;
+  padding: 0px 0% 0px 10%;
+  gap: 10%;
+}
+.container.b2b_offer_section .text_and_button_wrapper {
+  display: flex;
+  flex: 1;
+  margin: auto;
+  flex-direction: column;
+}
+.container.b2b_offer_section .text_and_button_wrapper .title {
+  margin-bottom: 40px;
+  font-size: 88px;
+  margin-right: -50%;
+  z-index: 1;
+}
+.container.b2b_offer_section .text_and_button_wrapper .description {
+  font-size: 16px;
+  font-weight: 700;
+  color: #40434d;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.container.b2b_offer_section .text_and_button_wrapper .button {
+  color: white;
+  background-color: #40434D;
+  border-radius: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.container.b2b_offer_section .text_and_button_wrapper .button::after {
+  content: "";
+  background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/04/arrow_right_alt.svg");
+  width: 22px;
+  height: 18px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+.container.b2b_offer_section .text_and_button_wrapper .button:hover {
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #40434D;
+  border: 1px solid #40434D;
+}
+.container.b2b_offer_section .text_and_button_wrapper .button:hover::after {
+  transform: translateX(6px);
+  transition: all 0.3s ease;
+}
+.container.b2b_offer_section .image_wrapper {
+  flex: 2;
+}
+.container.b2b_offer_section .image_wrapper img {
+  display: block;
+  height: 100%;
 }
 
 .form_container {

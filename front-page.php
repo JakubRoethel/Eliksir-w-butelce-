@@ -8,7 +8,7 @@ get_template_part('views/home', 'filters');
 get_template_part('views/home', 'call-to-action');
 get_template_part('views/home', 'featured-products');
 // get_template_part('views/home', 'why-us');
-get_template_part('views/b2b', 'why-eliksir-2');
+get_template_part('views/home', 'why-eliksir-2');
 
 
 get_footer();

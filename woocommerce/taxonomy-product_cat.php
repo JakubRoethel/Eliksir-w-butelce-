@@ -69,10 +69,10 @@ $display_categor_id = get_field('category_set', 'general_settings');
         <?php
         } ?>
 
-<div class="container b2b_section">
+<div class="container b2b_offer_section">
             <?php $image_id = 415; ?>
             <div class="text_and_button_wrapper">
-                <p class="title" style="color: #7B94AA"><?php echo __('Poznaj ofertę B2B') ?></p>
+                <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>
                 <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
                 <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
             </div>
@@ -80,7 +80,6 @@ $display_categor_id = get_field('category_set', 'general_settings');
                 <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
             </div>
         </div>
-        
     </div>
 </div>
 

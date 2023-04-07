@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying product content in the single-product.php template
  *
@@ -16,6 +17,13 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+require_once dirname(__DIR__, 1) . ('/lib/get-cross-sell-products.php');
+
+require_once dirname(__DIR__, 1) . ('/lib/get-related-products.php');
+
+
+
 
 global $product;
 
@@ -38,15 +46,6 @@ $product_description = $product->get_description();
 $product_attributs = $product->get_attributes();
 $tags = get_the_terms( $post->ID, 'product_tag' );
 $product_short_description = $product->get_short_description();
-
-
-
-
-
-
-
-
-
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
     <div class="product_wrapper">
@@ -56,7 +55,7 @@ $product_short_description = $product->get_short_description();
 				if (!empty($tags)) :
 				?>
 
-					<p class="tags_title">Najlepiej smakuje z:&nbsp; </p>
+					<p class="tags_title"><?php echo __('Najlepiej smakuje z:&nbsp;') ?>  </p>
 					<div class="tags_container">
                     <?php foreach ($tags as $tag):
 						$name = $tag->name;
@@ -140,7 +139,7 @@ $product_short_description = $product->get_short_description();
 <div class="product_details">
     <div class="mix_details">
         <div class="ingredients_container">
-            <h6 class="title">Skład</h6>       
+            <h6 class="title"><?php echo __('Skład') ?> </h6>       
             <?php
                     $ingredients_list = get_field('skladniki');
 
@@ -157,26 +156,29 @@ $product_short_description = $product->get_short_description();
                     <?php endif; ?>
         </div>
         <div class="how_make_coctail">
-            <h6 class="title">Jak przygotować koktajl</h6>
+            <h6 class="title"><?php echo __('Jak przygotować koktajl') ?></h6>
             <ul class="step_list">
                 <li class="single_item">
-                    Po prostu wymieszaj z lodem:
+                    <?php echo __('Po prostu wymieszaj z lodem:') ?>
+
                 </li>
                 <li class="single_item">
-                    - 1 porcję alkoholu
+                    <?php echo __('- 1 porcję alkoholu') ?> 
                 </li>
                 <li class="single_item">
-                    - 1/2 porcji eliksiru
+                    <?php echo __('- 1/2 porcji eliksiru') ?>
                 </li>
                 <li class="single_item">
-                    Gotowe! Naprawdę. To takie proste!
+                    <?php echo __('Gotowe! Naprawdę. To takie proste!') ?>
                 </li>
             </ul> 
         </div>  
     </div>
     <div class="product_short_description">
         <p class="short_description_text"> <?php echo $product_short_description ?></p>
-        <h6>Jak przygotować koktajl spritz? Nic prostszego! Obejrzyj nasze wideo</h6>
+        <h6>
+            <?php echo __('Jak przygotować koktajl? Nic prostszego! Obejrzyj nasze wideo') ?>
+        </h6>
         <?php
                     $movie_url = get_field('link_do_filmu'); ?>
         <iframe width="100%" height="315" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
@@ -185,10 +187,28 @@ $product_short_description = $product->get_short_description();
     
 </div>
 
-<div class="container why_eliksir_section product_b2b_section">
+<div class="cross_selling_section">
+    <h6 class="title">   
+        <?php echo __('Zobacz również') ?>
+    </h6>
+        <?php 
+
+        $cross_sell_ids = get_post_meta( $product_id, '_crosssell_ids', true );
+        $products_per_page = 3; 
+
+        if($cross_sell_ids){
+            getCrossSellProducts($product_id,$products_per_page);
+        } else {
+            getRelatedProducts($product_id,$products_per_page );
+        }
+
+        ?>
+</div>
+
+<div class="container b2b_offer_section">
             <?php $image_id = 415; ?>
             <div class="text_and_button_wrapper">
-                <p class="title" style="color: #7B94AA"><?php echo __('Poznaj ofertę B2B') ?></p>
+                <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>
                 <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
                 <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
             </div>
@@ -200,15 +220,9 @@ $product_short_description = $product->get_short_description();
 </div>
 
 
-<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+
+
+    
