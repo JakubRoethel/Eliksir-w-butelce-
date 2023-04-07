@@ -18,7 +18,7 @@ $cross_sell_ids = get_post_meta( $product_id, '_crosssell_ids', true );
     $cross_sell__loop = new WP_Query($cross_sell_args);
 
     if ($cross_sell__loop->have_posts()) { ?>
-        <ul class="products columns-3<?php echo esc_attr(wc_get_loop_prop('3')); ?>">
+        <ul class="products columns-3">
             <?php while ($cross_sell__loop->have_posts()) : $cross_sell__loop->the_post();
 
                 wc_get_template_part('content', 'product');

@@ -412,7 +412,7 @@
 
         display: flex;
         flex: 1;
-        margin: auto;
+        margin: 10% auto;
         flex-direction: column;
 
         .title {
@@ -420,6 +420,7 @@
             font-size: 88px;
             margin-right: -50%;
             z-index: 1;
+            white-space: nowrap;
         }
 
         .description {
@@ -428,6 +429,7 @@
             color: #40434d;
             margin: auto;
             margin-bottom: 30px;
+            padding-right: 200px;
           }
 
           .button {
@@ -438,6 +440,7 @@
             padding: 14px 32px;
             transition: all 0.3s ease;
             display: inline-block;
+            border: 1px solid #40434D ;
       
             &::after {
               content: "";
@@ -468,10 +471,16 @@
 
     .image_wrapper {
         flex: 2;
-    
-        img {
-          display: block;
-          height: 100%;
+        margin-left: -260px;
+
+        .img_container {
+            height: 100%;
+
+            img {
+                display: block;
+                height: 100%;
+                object-fit: cover;
+              }
         }
       }
 

@@ -1189,7 +1189,7 @@ ul.products li.product hr {
 .container.b2b_offer_section .text_and_button_wrapper {
   display: flex;
   flex: 1;
-  margin: auto;
+  margin: 10% auto;
   flex-direction: column;
 }
 .container.b2b_offer_section .text_and_button_wrapper .title {
@@ -1197,6 +1197,7 @@ ul.products li.product hr {
   font-size: 88px;
   margin-right: -50%;
   z-index: 1;
+  white-space: nowrap;
 }
 .container.b2b_offer_section .text_and_button_wrapper .description {
   font-size: 16px;
@@ -1204,6 +1205,7 @@ ul.products li.product hr {
   color: #40434d;
   margin: auto;
   margin-bottom: 30px;
+  padding-right: 200px;
 }
 .container.b2b_offer_section .text_and_button_wrapper .button {
   color: white;
@@ -1214,6 +1216,7 @@ ul.products li.product hr {
   padding: 14px 32px;
   transition: all 0.3s ease;
   display: inline-block;
+  border: 1px solid #40434D;
 }
 .container.b2b_offer_section .text_and_button_wrapper .button::after {
   content: "";
@@ -1237,10 +1240,16 @@ ul.products li.product hr {
 }
 .container.b2b_offer_section .image_wrapper {
   flex: 2;
+  margin-left: -260px;
 }
-.container.b2b_offer_section .image_wrapper img {
+.container.b2b_offer_section .image_wrapper .img_container {
+  height: 100%;
+}
+.container.b2b_offer_section .image_wrapper .img_container img {
   display: block;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .form_container {
