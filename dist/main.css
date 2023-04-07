@@ -928,6 +928,10 @@ ul.products li.product hr {
   line-height: 20px;
   padding-bottom: 40px;
 }
+.product-template-default div.product .product_wrapper div.summary form {
+  display: flex;
+  flex-direction: column;
+}
 .product-template-default div.product .product_wrapper div.summary form .label {
   text-align: start;
   font-size: 16px;
@@ -1036,6 +1040,9 @@ ul.products li.product hr {
   font-weight: 500;
   color: #40434D;
 }
+.product-template-default div.product .product_wrapper div.summary .btn-price .woocommerce-Price-currencySymbol {
+  font-size: 24px;
+}
 .product-template-default div.product .product_wrapper div.summary .free_shipping {
   font-size: 14px;
   color: #40434C;
@@ -1055,7 +1062,7 @@ ul.products li.product hr {
   position: relative;
 }
 .product-template-default div.product .product_wrapper div.product_gallery .swiper_single_product img {
-  aspect-ratio: 1/1;
+  aspect-ratio: 6/5;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;

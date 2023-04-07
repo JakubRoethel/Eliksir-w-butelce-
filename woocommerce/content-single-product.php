@@ -81,7 +81,9 @@ $product_short_description = $product->get_short_description();
                 <?php
                     if ( $product->is_type( 'variable' ) ) { 
                          woocommerce_variable_add_to_cart();
-                    } ?>   
+                    } else {
+                        woocommerce_template_single_add_to_cart();
+                    }?>   
 
                     <span class="free_shipping">
                         <p> <?php echo __('Darmowa dostawa od 100zł') ?> </p>
