@@ -412,11 +412,11 @@ iframe {
             color: white;
             background-color: #40434D;
             border-radius: 30px;
-            width: fit-content;
-            padding: 14px 32px;
+            width: fit-content; 
+            padding: 14px 32px 20px 32px;
             transition: all 0.3s ease;
             display: inline-block;
-            border: 1px solid #40434D ;
+            border: 1px solid #40434D;
       
             &::after {
               content: "";
