@@ -41,8 +41,17 @@ $url = get_permalink($product_id);
 		<hr>
 		<div class="product_metadata_wrapper">
 			<?php
-			$featured_posts = get_field('products_in_set');
-			if ($featured_posts) : ?>
+
+			$featured_post_ids = get_field('products_in_set');
+			$args = array(
+				'post_type' => 'product',
+				'post__in' => $featured_post_ids,
+				'orderby' => 'post__in'
+			);
+		
+		
+			$featured_posts = get_posts($args);
+			if ($featured_post_ids) : ?>
 				<ul>
 					<?php foreach ($featured_posts as $featured_post) :
 						$permalink = get_permalink($featured_post->ID);
@@ -52,7 +61,10 @@ $url = get_permalink($product_id);
 						<li>
 							<p class="single_sub_product"><?php echo esc_html($title); ?></p>
 						</li>
-					<?php endforeach; ?>
+					<?php endforeach; 
+					wp_reset_query();
+					?>
+					
 				</ul>
 				<?php else :
 				// $terms = get_terms('product_tag');

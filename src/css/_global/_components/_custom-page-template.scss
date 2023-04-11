@@ -1,0 +1,140 @@
+
+
+.custom-page-template {
+  color: #40434d;
+  margin-top: 56px;
+  h1 {
+    font-size: 40px;
+  }
+
+  .entry-content {
+    display: flex;
+    gap: 60px;
+
+    .sidebar {
+  
+      color: #40434d;
+      width: 220px;
+      border-right: 1px solid #40434d2d;
+
+      .menu_container {
+        ul {
+          display: grid;
+          gap: 16px;
+          li {
+            a {
+              color: #40434d;
+              font-size: 16px;
+            }
+
+            a:hover,
+            &.current-menu-item a {
+              color: #e58a56;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      flex: 3;
+      //Shipping
+
+      table {
+        max-width: 800px;
+      }
+      .wp-block-table thead {
+        border: 1px solid !important;
+        border-top: unset !important;
+        border-left: unset !important;
+        border-right: unset !important;
+        th {
+          border: 1px solid #40434d2d !important;
+          border-top: unset !important;
+          border-left: unset !important;
+
+          &:last-of-type {
+            border-right: unset !important;
+          }
+        }
+      }
+      tbody {
+        font-family: futura-pt, sans-serif;
+
+        td {
+          border: 1px solid #40434d2d;
+          padding: 16px;
+          vertical-align: middle;
+          border-left: unset;
+
+          &:last-of-type {
+            border-right: unset;
+          }
+        }
+
+        tr:last-of-type {
+          td {
+            border-bottom: unset;
+          }
+        }
+      }
+
+      //FAQ
+      .faq_list {
+        .wrapper {
+          cursor: pointer;
+          border-bottom: 1px solid #40434d2d;
+          display: flex;
+          flex-direction: column;
+          padding: 15px 0px;
+          .title-icon-container {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+              font-size: 18px;
+            }
+            svg {
+              transition: all 0.3s ease;
+            }
+          }
+
+          .description {
+            display: none;
+            font-family: futura-pt, sans-serif;
+            font-size: 16px;
+            margin-top: 16px;
+          }
+
+          &.active .description {
+            display: block;
+          }
+
+          &.active svg {
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      .contact {
+        font-family: futura-pt, sans-serif;
+        strong {
+            font-family: futura-pt-bold, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+
+
+//test page
+
+.test-page {
+    input.error {
+        outline: red;
+        border: 2px solid red;
+    }
+}

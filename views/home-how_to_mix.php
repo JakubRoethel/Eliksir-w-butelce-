@@ -6,6 +6,7 @@ $mix_subtitle = get_field('how_to_mix')['subtitle'];
 ?>
 
 <div class="how_to_mix">
+
     <div class="text_container"> 
         <h2 class="title"><?php echo $mix_title ?></h2>
         <p class="subtitle"><?php echo $mix_subtitle ?></p>

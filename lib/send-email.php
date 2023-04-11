@@ -1,4 +1,9 @@
 <?php
+// Load WordPress
+$root_dir = dirname(dirname(dirname(dirname(dirname(__FILE__)))));
+
+require_once $root_dir . '/wp-load.php';
+// require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Get the JSON data from the POST request
@@ -31,5 +36,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Send the email
   $to = $email;
   $subject = 'Your Order';
-  mail($to, $subject, $message, $headers);
+  $email_sent = mail($to, $subject, $message, $headers);
+
+// Save the email activity data as post meta
+if ($email_sent) { // If the email is sent successfully
+  // Create a new post
+  $post_args = array(
+    'post_title' => $name,
+    'post_type' => 'email_activity',
+    'post_status' => 'publish',
+  );
+
+  $post_id = wp_insert_post($post_args, true);
+
+  if ($post_id) { // If the post is created successfully
+    // Save the email activity data as post meta
+    update_post_meta($post_id, 'email', $email);
+    update_post_meta($post_id, 'products', $data['products']);
+    error_log('Email activity data saved successfully.'); // Debug message
+  } else {
+    error_log('Error creating email activity post.'); // Debug message
+  }
+} else {
+  error_log('Error sending email.'); // Debug message
 }
+}
+
+

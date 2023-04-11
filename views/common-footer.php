@@ -15,17 +15,17 @@
       <ul class="navigation_social">
         <li class="social_item">
           <a href="<?php the_field('facebook_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa-brands fa-facebook"></i>
           </a>
         </li>
         <li class="social_item">
           <a href="<?php the_field('instagram_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa-brands fa-instagram"></i>
           </a>
         </li>
         <li class="social_item">
           <a href="<?php the_field('youtube_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            <i class="fa-brands fa-youtube fa-beat-fade"></i>
           </a>
         </li>
       </ul>

@@ -45,7 +45,14 @@
 @import "_global/_components/sections/b2b_hero";
 @import "_global/_components/sections/b2b_how_to_order";
 @import "_global/_components/sections/why_eliksir";
+@import "_global/_components/b2b_offer-popup";
 
 
 //minicart
 @import "_global/_components/mini-cart";
+
+//checkout
+@import "_woocommerce/checkout";
+
+//custom page template
+@import "_global/_components/custom-page-template";

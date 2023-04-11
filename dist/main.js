@@ -22,6 +22,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/header */ "./src/js/modules/header.js");
+/* harmony import */ var _modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper-objects */ "./src/js/modules/swiper-objects.js");
+/* harmony import */ var _modules_b2b_offer_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/b2b-offer-popup */ "./src/js/modules/b2b-offer-popup.js");
+
+
 
 
 
@@ -31,146 +35,8 @@ __webpack_require__.r(__webpack_exports__);
 //     delay: 100,
 // })
 
-(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
 var postID = acf.get("post_id");
 var acfVersion = acf.get("acf_version");
-var swiperNames = ["Basil smash", "Orange Classic", "Cherry Cuba", "Lime sour", "Old Fashioned", "Spritz"];
-var swiper1 = new Swiper(".swiper", {
-  effect: "slide",
-  grabCursor: true,
-  centeredSlides: false,
-  slidesPerView: "1",
-  spaceBetween: 0,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    renderBullet: function renderBullet(index, className) {
-      return "<span class=\"dot swiper-pagination-bullet\">".concat(swiperNames[index], "</span>");
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-});
-var swiper2 = new Swiper(".swiper_featured", {
-  effect: "slide",
-  grabCursor: true,
-  centeredSlides: false,
-  slidesPerView: "3.5",
-  spaceBetween: 50,
-  slidesOffsetBefore: 100,
-  slidesOffsetAfter: 100,
-  slideToClickedSlide: true,
-  // shortSwipes: true,
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    draggable: true
-  },
-  loop: false,
-  autoplay: {
-    delay: 4000
-  },
-  setWrapperSize: true,
-  // mousewheel: true,
-  // releaseOnEdges: true,
-  // forceToAxis: true,
-  // freeMode: {
-  //   enabled: true,
-  //   sticky: true,
-  // },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.5,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    780: {
-      slidesPerView: 2.5,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    940: {
-      slidesPerView: 3.5,
-      spaceBetween: 40
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-});
-var swiper3 = new Swiper(".swiper_single_product", {
-  effect: "slide",
-  grabCursor: true,
-  spaceBetween: 0,
-  centeredSlides: false,
-  loop: true,
-  direction: "horizontal",
-  slidesPerView: "1",
-  autoplay: {
-    delay: 4000
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-});
-jQuery(document).ajaxComplete(function (event, request, settings) {
-  var swiper3 = new Swiper(".swiper_featured", {
-    effect: "slide",
-    grabCursor: true,
-    centeredSlides: false,
-    slidesPerView: "3.5",
-    spaceBetween: 50,
-    slidesOffsetBefore: 100,
-    slidesOffsetAfter: 100,
-    loop: false,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true
-    },
-    autoplay: {
-      delay: 4000
-    },
-    autoHeight: true,
-    //enable auto height
-    // mousewheel: true,
-    forceToAxis: true,
-    // freeMode: {
-    //   enabled: true,
-    //   sticky: false,
-    // },
-
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1.5,
-        spaceBetween: 20
-      },
-      // when window width is >= 480px
-      780: {
-        slidesPerView: 2.5,
-        spaceBetween: 30
-      },
-      // when window width is >= 640px
-      940: {
-        slidesPerView: 3.5,
-        spaceBetween: 40
-      }
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
-  });
-});
 
 //call to action containers logic on hover
 var lastCallToAction = jQuery(".single_call_to_action:last-child");
@@ -194,93 +60,183 @@ window.onload = function () {
 };
 var currentPageID = parseInt(acf.get("post_id"));
 console.log(currentPageID);
-
-//test form
-
-var productSelect = document.getElementById("product");
-var quantityInput = document.getElementById("quantity");
-var productList = document.getElementById("product-list");
-console.log("TEst form");
-var addProduct = function addProduct() {
-  var productValue = productSelect.value;
-  var quantityValue = quantityInput.value;
-  if (productValue !== "" && quantityValue !== "") {
-    var productItem = document.createElement("div");
-    productItem.innerHTML = "".concat(productValue, " - ").concat(quantityValue);
-    productList.appendChild(productItem);
-    productSelect.value = "";
-    quantityInput.value = "";
-  }
-};
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("TEst form 2");
-//   // const addButton = document.createElement("button");
-//   addButton.textContent = "Add another product";
-//   addButton.addEventListener("click", addProduct);
-//   // document.body.appendChild(addButton);
-// });
-
-// jQuery(function($) {
-//   $('.cart-icon').click(function(e) {
-//      e.preventDefault();
-//      $('.mini-cart-container').toggleClass('minicart-show');
-//   });
-// });
-
-jQuery(function ($) {
-  $(".cart-icon").click(function (e) {
-    e.preventDefault();
-    $(".mini-cart-container").toggleClass("minicart-show");
-  });
-  $(".close-icon").click(function (e) {
-    e.preventDefault();
-    $(".mini-cart-container").toggleClass("minicart-show");
-  });
-  $(document).on("click", function (event) {
-    if (!$(event.target).closest(".cart-icon-container").length && !$(event.target).closest(".mini-cart-container").length) {
-      $(".mini-cart-container").removeClass("minicart-show");
-    }
-  });
+var faq_list = jQuery(".faq_list .wrapper");
+faq_list.click(function () {
+  jQuery(this).toggleClass("active");
 });
-jQuery(function ($) {
-  var typingTimer;
-  var doneTypingInterval = 500;
-  $("body").on("change", ".quantity input.qty", function (e) {
-    e.stopImmediatePropagation();
-    var item_hash = $(this).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
-    var item_quantity = $(this).val();
-    var currentVal = parseFloat(item_quantity);
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(function () {
-      $.ajax({
-        type: "POST",
-        url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
-        data: {
-          action: "update_item_from_cart",
-          cart_item_key: item_hash,
-          qty: currentVal
-        },
-        success: function success(data) {
-          jQuery(document.body).trigger("wc_fragment_refresh");
-          console.log("Added to cart! " + item_quantity);
-          jQuery(document.body).trigger("wc_fragments_refreshed");
-          // jQuery(".mini-cart-container").addClass("minicart-show");
-          console.log(wc_cart_fragments_params);
-        },
-        error: function error(jqXHR, textStatus, errorThrown) {
-          console.log("Error: " + errorThrown);
+(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_modules_b2b_offer_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
+
+/***/ }),
+
+/***/ "./src/js/modules/b2b-offer-popup.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/b2b-offer-popup.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getOfferService)
+/* harmony export */ });
+function getOfferService() {
+  //b2b get offer popup logic form
+  //check if container exist on the page
+  if (document.querySelector(".form_container.b2b_offer")) {
+    var productSelect = document.getElementById("product");
+    var quantityInput = document.getElementById("quantity");
+    var productList = document.getElementById("product-list");
+    var butttonHook = document.getElementById("button-hook");
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var form = document.querySelector(".form_container form");
+    var orderButton = document.getElementById("order-button");
+    var addButton;
+    console.log("TEst form");
+    var addProduct = function addProduct() {
+      var productValue = productSelect.value;
+      var quantityValue = quantityInput.value;
+      if (productValue !== "" && quantityValue !== "") {
+        var productItem = document.createElement("div");
+        productItem.innerHTML = "".concat(productValue, " x ").concat(quantityValue);
+        productList.appendChild(productItem);
+        productSelect.value = "";
+        quantityInput.value = "";
+        if (!addButton) {
+          var addProductDiv = document.createElement("div"); // create new div element
+          addButton = document.createElement("button");
+          addButton.textContent = "Add another product";
+          addButton.addEventListener("click", addProduct);
+          addProductDiv.appendChild(quantityInput); // append quantity input and button to div
+          addProductDiv.appendChild(addButton);
+          document.body.appendChild(addProductDiv); // append div to body
+        }
+      }
+    };
+
+    productSelect.addEventListener("change", function () {
+      if (productSelect.value !== "" && quantityInput.value !== "" && !addButton) {
+        var addProductDiv = document.createElement("div"); // create new div element
+        addButton = document.createElement("button");
+        addButton.textContent = "Add another product";
+        addButton.addEventListener("click", addProduct);
+        // addProductDiv.appendChild(quantityInput); // append quantity input and button to div
+        butttonHook.appendChild(addButton);
+      }
+    });
+    quantityInput.addEventListener("change", function () {
+      if (productSelect.value !== "" && quantityInput.value !== "" && !addButton) {
+        var addProductDiv = document.createElement("div"); // create new div element
+        addButton = document.createElement("button");
+        addButton.textContent = "Add another product";
+        addButton.addEventListener("click", addProduct);
+        // addProductDiv.appendChild(quantityInput); // append quantity input and button to div
+        butttonHook.appendChild(addButton);
+      }
+    });
+    nameInput.addEventListener("input", function () {
+      console.log("CHange");
+      if (nameInput.value) {
+        nameInput.classList.remove("error");
+      }
+    });
+    emailInput.addEventListener("input", function () {
+      console.log("CHange");
+      if (emailInput.value) {
+        emailInput.classList.remove("error");
+      }
+    });
+    orderButton.addEventListener("click", function (event) {
+      console.log("Name value");
+      event.preventDefault(); // prevent page refresh
+      var products = Array.from(productList.children).map(function (item) {
+        return item.textContent.trim();
+      }).join("\n");
+      var send_email_url = "/wp-content/themes/blankslate-child/lib/send-email.php";
+      var send_email_url_prod = "https://www.test404studio.pl/eliksir-w-butelce/wp-content/themes/blankslate-child/lib/send-email.php";
+      var nameValue = document.getElementById("name").value;
+      var emailValue = document.getElementById("email").value;
+
+      //check if there is only one product
+      if (products.length == 0) {
+        products = productSelect.value + " X " + quantityInput.value;
+      }
+
+      // Validate name
+      if (nameValue.trim() === "") {
+        nameInput.classList.add("error");
+        nameInput.focus();
+        return;
+      }
+
+      // Validate email
+      if (emailValue.trim() === "") {
+        emailInput.classList.add("error");
+        emailInput.focus();
+        return;
+      }
+
+      // Validate product and quantity
+      var productValue = productSelect.value;
+      var quantityValue = quantityInput.value;
+      if (productValue === "") {
+        productSelect.focus();
+        productSelect.classList.add("error");
+        return;
+      }
+      if (quantityValue.trim() === "" || parseInt(quantityValue) <= 0) {
+        alert("Please enter a valid quantity");
+        quantityInput.focus();
+        return;
+      }
+
+      // Form is valid, send data using fetch
+      if (form.reportValidity()) {
+        //prepare data
+        var data = {
+          name: nameValue,
+          email: emailValue,
+          products: products
+        };
+        fetch(send_email_url_prod, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }).then(function (response) {
+          if (!response.ok) {
+            throw new Error("Error sending email");
+          }
+          // Handle successful email send here
+          console.log("Email sent successfully");
+        })["catch"](function (error) {
+          // Handle error here
+          console.error(error);
+        });
+      }
+    });
+    //trigger popup
+
+    var getOfferButton = document.querySelector(".get_offer");
+    var popupContainer = document.querySelector(".popup_container");
+    console.log();
+    if (getOfferButton) {
+      getOfferButton.addEventListener("click", function () {
+        popupContainer.classList.add("show");
+      });
+      popupContainer.addEventListener("click", function (event) {
+        if (event.target === popupContainer) {
+          popupContainer.classList.remove("show");
         }
       });
-    }, doneTypingInterval);
-  });
-});
-jQuery(document).on('added_to_cart', function (event, fragments, cart_hash) {
-  // show the mini cart here
-  // $('.widget_shopping_cart').fadeIn();
-  jQuery(".mini-cart-container").addClass("minicart-show");
-  console.log(fragments);
-});
+    }
+  } else {
+    console.log("error");
+  }
+}
 
 /***/ }),
 
@@ -322,6 +278,267 @@ function headerService() {
   //   headerOverlay.addEventListener('click', () => {
   //       header.classList.remove('header--navigation-open');
   //   });
+
+  //minicart buttons logic
+  jQuery(function ($) {
+    $(".cart-icon").click(function (e) {
+      e.preventDefault();
+      $(".mini-cart-container").toggleClass("minicart-show");
+    });
+    $(".close-icon").click(function (e) {
+      e.preventDefault();
+      $(".mini-cart-container").toggleClass("minicart-show");
+    });
+    $(document).on("click", function (event) {
+      if (!$(event.target).closest(".cart-icon-container").length && !$(event.target).closest(".mini-cart-container").length) {
+        $(".mini-cart-container").removeClass("minicart-show");
+      }
+    });
+  });
+  jQuery(function ($) {
+    var typingTimer;
+    var doneTypingInterval = 500;
+    $("body").on("change", ".woocommerce-mini-cart .quantity input.qty", function (e) {
+      e.stopImmediatePropagation();
+      var item_hash = $(this).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+      var item_quantity = $(this).val();
+      var currentVal = parseFloat(item_quantity);
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(function () {
+        $.ajax({
+          type: "POST",
+          url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
+          data: {
+            action: "update_item_from_cart",
+            cart_item_key: item_hash,
+            qty: currentVal
+          },
+          success: function success(data) {
+            jQuery(document.body).trigger("wc_fragment_refresh");
+            console.log("Added to cart! " + item_quantity);
+            jQuery(document.body).trigger("wc_fragments_refreshed");
+            // jQuery(".mini-cart-container").addClass("minicart-show");
+            console.log(wc_cart_fragments_params);
+            $(".cart-icon i").addClass("shake-cart");
+            setTimeout(function () {
+              return $('.cart-icon i').removeClass('shake-cart');
+            }, 1000);
+          },
+          error: function error(jqXHR, textStatus, errorThrown) {
+            console.log("Error: " + errorThrown);
+          }
+        });
+      }, doneTypingInterval);
+    });
+  });
+
+  // show the mini cart here
+  jQuery(document).on('added_to_cart', function (event, fragments, cart_hash) {
+    jQuery(".mini-cart-container").addClass("minicart-show");
+    jQuery(".cart-icon i").addClass("shake-cart");
+    setTimeout(function () {
+      return jQuery('.cart-icon i').removeClass('shake-cart');
+    }, 1000);
+    console.log(fragments);
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/swiper-objects.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/swiper-objects.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ swiperService)
+/* harmony export */ });
+function swiperService() {
+  var swiperNames = ["Basil smash", "Orange Classic", "Cherry Cuba", "Lime sour", "Old Fashioned", "Spritz"];
+  var swiper1 = new Swiper(".swiper", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "1",
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function renderBullet(index, className) {
+        return "<span class=\"dot swiper-pagination-bullet\">".concat(swiperNames[index], "</span>");
+      }
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  var swiper2 = new Swiper(".swiper_featured", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "3.5",
+    spaceBetween: 50,
+    slidesOffsetBefore: 100,
+    slidesOffsetAfter: 100,
+    slideToClickedSlide: true,
+    // shortSwipes: true,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true
+    },
+    loop: false,
+    autoplay: {
+      delay: 4000
+    },
+    setWrapperSize: true,
+    // mousewheel: true,
+    // releaseOnEdges: true,
+    // forceToAxis: true,
+    // freeMode: {
+    //   enabled: true,
+    //   sticky: true,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      780: {
+        slidesPerView: 2.5,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      940: {
+        slidesPerView: 3.5,
+        spaceBetween: 40
+      }
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  var swiper3 = new Swiper(".swiper_single_product", {
+    effect: "slide",
+    grabCursor: true,
+    spaceBetween: 0,
+    centeredSlides: false,
+    loop: true,
+    direction: "horizontal",
+    slidesPerView: "1",
+    autoplay: {
+      delay: 4000
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  jQuery(document).ajaxComplete(function (event, request, settings) {
+    var swiper3 = new Swiper(".swiper_featured", {
+      effect: "slide",
+      grabCursor: true,
+      centeredSlides: false,
+      slidesPerView: "3.5",
+      spaceBetween: 50,
+      slidesOffsetBefore: 100,
+      slidesOffsetAfter: 100,
+      loop: false,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true
+      },
+      autoplay: {
+        delay: 4000
+      },
+      autoHeight: true,
+      //enable auto height
+      // mousewheel: true,
+      forceToAxis: true,
+      // freeMode: {
+      //   enabled: true,
+      //   sticky: false,
+      // },
+
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        780: {
+          slidesPerView: 2.5,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        940: {
+          slidesPerView: 3.5,
+          spaceBetween: 40
+        }
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  });
+  var swiper4 = new Swiper(".swiper_product_set", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "4.2",
+    spaceBetween: 50,
+    slidesOffsetBefore: 150,
+    slidesOffsetAfter: 150,
+    slideToClickedSlide: true,
+    // shortSwipes: true,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true
+    },
+    loop: false,
+    setWrapperSize: true,
+    // mousewheel: true,
+    // releaseOnEdges: true,
+    // forceToAxis: true,
+    // freeMode: {
+    //   enabled: true,
+    //   sticky: true,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      780: {
+        slidesPerView: 2.5,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      940: {
+        slidesPerView: 4.8,
+        spaceBetween: 40
+      }
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
 }
 
 /***/ }),

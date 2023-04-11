@@ -27,5 +27,86 @@ export default function headerService() {
   //   headerOverlay.addEventListener('click', () => {
   //       header.classList.remove('header--navigation-open');
   //   });
+
+
+
+
+
+
+//minicart buttons logic
+jQuery(function ($) {
+  $(".cart-icon").click(function (e) {
+    e.preventDefault();
+    $(".mini-cart-container").toggleClass("minicart-show");
+  });
+
+  $(".close-icon").click(function (e) {
+    e.preventDefault();
+    $(".mini-cart-container").toggleClass("minicart-show");
+  });
+
+  $(document).on("click", function (event) {
+    if (
+      !$(event.target).closest(".cart-icon-container").length &&
+      !$(event.target).closest(".mini-cart-container").length
+    ) {
+      $(".mini-cart-container").removeClass("minicart-show");
+    }
+  });
+});
+
+jQuery(function ($) {
+  var typingTimer;
+  var doneTypingInterval = 500;
+
+  $("body").on("change", ".woocommerce-mini-cart .quantity input.qty", function (e) {
+    e.stopImmediatePropagation();
+
+    var item_hash = $(this)
+      .attr("name")
+      .replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+    var item_quantity = $(this).val();
+    var currentVal = parseFloat(item_quantity);
+
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(function () {
+      $.ajax({
+        type: "POST",
+        url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
+        data: {
+          action: "update_item_from_cart",
+          cart_item_key: item_hash,
+          qty: currentVal,
+        },
+        success: function (data) {
+          jQuery(document.body).trigger("wc_fragment_refresh");
+          console.log("Added to cart! " + item_quantity);
+          jQuery(document.body).trigger("wc_fragments_refreshed");
+          // jQuery(".mini-cart-container").addClass("minicart-show");
+          console.log(wc_cart_fragments_params);
+          $(".cart-icon i").addClass("shake-cart");
+          setTimeout(() => $('.cart-icon i').removeClass('shake-cart'), 1000);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log("Error: " + errorThrown);
+        },
+      });
+    }, doneTypingInterval);
+
+
+    
+  });
+});
+
+
+ // show the mini cart here
+jQuery(document).on('added_to_cart', function(event, fragments, cart_hash) {
+   jQuery(".mini-cart-container").addClass("minicart-show");
+   jQuery(".cart-icon i").addClass("shake-cart");
+   setTimeout(() => jQuery('.cart-icon i').removeClass('shake-cart'), 1000);
+   console.log(fragments);
+});
+
+
   }
   
