@@ -34,7 +34,7 @@ export default function getOfferService() {
           document.body.appendChild(addProductDiv); // append div to body
         }
       }
-    };
+    }; 
 
     productSelect.addEventListener("change", () => {
       if (

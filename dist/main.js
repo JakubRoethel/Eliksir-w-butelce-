@@ -64,9 +64,10 @@ var faq_list = jQuery(".faq_list .wrapper");
 faq_list.click(function () {
   jQuery(this).toggleClass("active");
 });
-(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])(myAjax);
 (0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_modules_b2b_offer_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
+console.log(myAjax);
 
 /***/ }),
 
@@ -251,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ headerService)
 /* harmony export */ });
-function headerService() {
+function headerService(myAjax) {
   var header = document.querySelector('.header');
   var headerOverlay = document.querySelector('.navigation__overlay');
   var doc = document.documentElement;
@@ -298,8 +299,11 @@ function headerService() {
   jQuery(function ($) {
     var typingTimer;
     var doneTypingInterval = 500;
+    var ajaxUrl = myAjax.ajaxurl; // Fetch the AJAX URL from server using wp_localize_script
+
     $("body").on("change", ".woocommerce-mini-cart .quantity input.qty", function (e) {
       e.stopImmediatePropagation();
+      console.log(myAjax);
       var item_hash = $(this).attr("name").replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
       var item_quantity = $(this).val();
       var currentVal = parseFloat(item_quantity);
@@ -307,7 +311,7 @@ function headerService() {
       typingTimer = setTimeout(function () {
         $.ajax({
           type: "POST",
-          url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
+          url: myAjax.ajaxurl,
           data: {
             action: "update_item_from_cart",
             cart_item_key: item_hash,

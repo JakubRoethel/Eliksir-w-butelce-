@@ -51,6 +51,9 @@ faq_list.click(function () {
 
 
 
-headerService();
+headerService(myAjax);
 swiperService();
 getOfferService();
+
+
+console.log(myAjax); 

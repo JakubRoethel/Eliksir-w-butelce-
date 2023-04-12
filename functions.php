@@ -10,6 +10,7 @@ function studio_scripts()
 
     wp_register_script('main', get_stylesheet_directory_uri() . '/dist/main.js', ['jquery', 'acf-input'], 1, true);
     wp_enqueue_script('main');
+    wp_localize_script( 'main', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
     wp_register_script('Swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', null, null, true);
     wp_enqueue_script('Swiper');

@@ -31,7 +31,8 @@
 
     &::after {
       content: "";
-      background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
+      // background: url("/wp-content/themes/blankslate-child/assets/img/arrow_right_alt.svg");
+      background: url("/wp-content/uploads/2023/03/arrow_right_alt.svg");
       width: 16px;
       height: 12px;
       display: inline-block;

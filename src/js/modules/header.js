@@ -1,4 +1,4 @@
-export default function headerService() {
+export default function headerService(myAjax) {
     const header = document.querySelector('.header');
     const headerOverlay = document.querySelector('.navigation__overlay');
     const doc = document.documentElement;
@@ -58,10 +58,12 @@ jQuery(function ($) {
 jQuery(function ($) {
   var typingTimer;
   var doneTypingInterval = 500;
+  var ajaxUrl = myAjax.ajaxurl; // Fetch the AJAX URL from server using wp_localize_script
+  
 
   $("body").on("change", ".woocommerce-mini-cart .quantity input.qty", function (e) {
     e.stopImmediatePropagation();
-
+    console.log(myAjax);
     var item_hash = $(this)
       .attr("name")
       .replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
@@ -72,7 +74,7 @@ jQuery(function ($) {
     typingTimer = setTimeout(function () {
       $.ajax({
         type: "POST",
-        url: "http://eliksir-w-butelce.local/wp-admin/admin-ajax.php",
+        url: myAjax.ajaxurl,
         data: {
           action: "update_item_from_cart",
           cart_item_key: item_hash,
