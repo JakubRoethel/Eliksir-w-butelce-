@@ -64,10 +64,31 @@ var faq_list = jQuery(".faq_list .wrapper");
 faq_list.click(function () {
   jQuery(this).toggleClass("active");
 });
+jQuery(document).ready(function ($) {
+  // Get the element you want to animate
+  var $element = $('.glass_overlay');
+  console.log($element);
+  $(window).scroll(function () {
+    // Get the position of the element relative to the top of the window
+    var elementTop = $element.offset().top;
+    var elementHeight = $element.outerHeight();
+    var windowHeight = $(window).height();
+    var windowScrollTop = $(this).scrollTop();
+    var visibleStart = windowScrollTop + windowHeight;
+    var visibleEnd = windowScrollTop;
+    // Check if the element is in view
+    if (elementTop + elementHeight >= visibleEnd && elementTop <= visibleStart) {
+      // Calculate the amount to move the element based on the scroll position
+      var distance = windowScrollTop - elementTop;
+      var translateY = 'translateY(' + distance + 'px)';
+      // Add the transform to the element's CSS
+      $element.css('transform', translateY);
+    }
+  });
+});
 (0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])(myAjax);
 (0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_modules_b2b_offer_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
-console.log(myAjax);
 
 /***/ }),
 

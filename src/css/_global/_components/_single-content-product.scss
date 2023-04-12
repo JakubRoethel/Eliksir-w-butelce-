@@ -355,12 +355,11 @@
     width: 100%;
 
     .ingredients_container {
-      flex: 4;
+      flex: 2;
 
       ul {
         list-style-type: disc;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        max-height: 120px;
       }
     }
 
@@ -378,7 +377,6 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-      max-height: 120px;
       flex-direction: column;
       padding-left: 25px;
       gap: 5px;

@@ -832,6 +832,10 @@ a {
   background: #FAD9BA;
   padding: 120px 10%;
 }
+.archive .product_cat.dodatki {
+  background: #fff4d8;
+  padding: 120px 10%;
+}
 .archive .archive-container .category-title {
   font-size: 40px;
   margin-bottom: 25px;
@@ -1198,12 +1202,11 @@ ul.products li.product hr {
   width: 100%;
 }
 .product_details .mix_details .ingredients_container {
-  flex: 4;
+  flex: 2;
 }
 .product_details .mix_details .ingredients_container ul {
   list-style-type: disc;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  max-height: 120px;
 }
 .product_details .mix_details .how_make_coctail {
   flex: 2;
@@ -1212,7 +1215,6 @@ ul.products li.product hr {
 .product_details .mix_details ul {
   display: flex;
   flex-wrap: wrap;
-  max-height: 120px;
   flex-direction: column;
   padding-left: 25px;
   gap: 5px;
@@ -1691,7 +1693,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 
 .how_to_mix {
-  background-color: #F0D7C9;
+  background-color: #f6b98c;
   padding: 100px 0px;
   display: flex;
   flex-direction: column;
@@ -1837,11 +1839,15 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .call_to_action_container .single_call_to_action:hover {
   min-width: 66.6%;
 }
+.call_to_action_container .single_call_to_action:hover .hover_text {
+  opacity: 1;
+  transition-delay: 400ms;
+  transition-property: opacity;
+}
 .call_to_action_container .single_call_to_action .mask {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #dde3c9;
   opacity: 0.8;
 }
 .call_to_action_container .single_call_to_action .title,
@@ -1850,7 +1856,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   left: 35px;
   font-weight: 700;
   color: #2a2b2e;
-  max-width: 480px;
+  max-width: 425px;
 }
 .call_to_action_container .single_call_to_action .title {
   bottom: 105px;
@@ -1860,6 +1866,28 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .call_to_action_container .single_call_to_action .description {
   bottom: 35px;
   font-size: 18px;
+  min-height: 46px;
+}
+.call_to_action_container .single_call_to_action .hover_text {
+  font-weight: 700;
+  color: #2a2b2e;
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  bottom: 35px;
+  width: 35%;
+  text-align: right;
+  opacity: 0;
+  padding: 0px 48px 0px 20px;
+}
+.call_to_action_container .single_call_to_action:first-child .mask {
+  background-color: #FFE8AD;
+}
+.call_to_action_container .single_call_to_action:nth-child(2) .mask {
+  background-color: #FAFEA0;
+}
+.call_to_action_container .single_call_to_action:nth-child(3) .mask {
+  background-color: #C3DCE3;
 }
 
 .featured_products_section {

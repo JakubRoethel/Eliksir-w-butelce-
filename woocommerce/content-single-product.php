@@ -221,7 +221,7 @@ $product_short_description = $product->get_short_description();
                 <h6 class="title"><?php echo __('Skład') ?> </h6>
                 <ul class="ingredients_list">
                     <?php foreach ($ingredients_list as $ingredient) {
-                        $single_ingredient = $ingredient['pojedynczy_skladnik'];
+                        $single_ingredient = $ingredient['single_item'];
                     ?>
                         <li class="single_ingredient">
                             <?php echo $single_ingredient ?>
@@ -231,24 +231,37 @@ $product_short_description = $product->get_short_description();
             </div>
         <?php endif; ?>
 
-        <div class="how_make_coctail">
-            <h6 class="title"><?php echo __('Jak przygotować koktajl') ?></h6>
-            <ul class="step_list">
-                <li class="single_item">
-                    <?php echo __('Po prostu wymieszaj z lodem:') ?>
+        
 
-                </li>
-                <li class="single_item">
-                    <?php echo __('- 1 porcję alkoholu') ?>
-                </li>
-                <li class="single_item">
-                    <?php echo __('- 1/2 porcji eliksiru') ?>
-                </li>
-                <li class="single_item">
-                    <?php echo __('Gotowe! Naprawdę. To takie proste!') ?>
-                </li>
-            </ul>
-        </div>
+
+        <?php
+            $how_to_make_list = get_field('how_to_make_list');
+            $how_to_make_title = get_field('how_to_make_main_title') 
+            
+            ?>
+
+            
+            <?php
+            
+            if ($how_to_make_list) : ?>
+            
+            <div class="how_make_coctail">
+                <h6 class="title"><?php echo $how_to_make_title  ?></h6>
+            
+                <ul class="step_list">
+                    <?php foreach ($how_to_make_list as $single_item_list) {
+                         $single_item = $single_item_list['single_item'];
+                         ?>
+                         <li class="single_item">
+                            <?php echo $single_item ?>
+                        </li>
+
+                     <?php  } ?>
+                </ul>
+            </div>
+            <?php endif; ?>
+            
+
     </div>
     <?php $movie_url = get_field('link_do_filmu');
     if ($movie_url) :

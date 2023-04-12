@@ -29,9 +29,9 @@ $mix_subtitle = get_field('how_to_mix')['subtitle'];
           </div>
       <?php endif; ?> 
         </div>
-        <?php $mix_main_img = get_field('how_to_mix')['main_img']; ?>
+        <?php $mix_main_img_url = get_field('how_to_mix')['main_img']; ?>
         <div class="right_side_mix">
-            <?php echo wp_get_attachment_image( $mix_main_img, 'full' ); ?>
+            <?php echo file_get_contents($mix_main_img_url); ?>
         </div>
     </div>
     <?php $mix_text = get_field('how_to_mix')['text']; ?>

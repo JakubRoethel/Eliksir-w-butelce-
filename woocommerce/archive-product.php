@@ -48,6 +48,14 @@ $page_id = wc_get_page_id('shop');
 				getProductsByCat(40, 6);
 				?>
 			</section>
+
+			<section id='dodatki' class="product_cat dodatki">
+				<h2 class="category-title"><?php echo __('Dodatki') ?></h2>
+				<p class="category-description"><?php echo get_term_by('id', 41, 'product_cat')->description ?></p>
+				<?php
+				getProductsByCat(41, 3);
+				?>
+			</section>
 		</div>
 
 	</div>

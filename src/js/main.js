@@ -50,10 +50,33 @@ faq_list.click(function () {
 });
 
 
+jQuery(document).ready(function($){
+  // Get the element you want to animate
+  var $element = $('.glass_overlay');
+  console.log($element);
+  $(window).scroll(function() {
+    // Get the position of the element relative to the top of the window
+    var elementTop = $element.offset().top;
+    var elementHeight = $element.outerHeight();
+    var windowHeight = $(window).height();
+    var windowScrollTop = $(this).scrollTop();
+    var visibleStart = windowScrollTop + windowHeight;
+    var visibleEnd = windowScrollTop;
+    // Check if the element is in view
+    if ((elementTop + elementHeight >= visibleEnd) && (elementTop <= visibleStart)) {
+      // Calculate the amount to move the element based on the scroll position
+      var distance = windowScrollTop - elementTop;
+      var translateY = 'translateY(' + distance + 'px)';
+      // Add the transform to the element's CSS
+      $element.css('transform', translateY);
+    }
+  });
+});
+
+
 
 headerService(myAjax);
 swiperService();
 getOfferService();
 
 
-console.log(myAjax); 
