@@ -6,7 +6,8 @@
   "dependencies": {
     "aos": "^2.3.4",
     "autoprefixer": "10.4.5",
-    "basic-ftp": "^5.0.2"
+    "basic-ftp": "^5.0.2",
+    "gsap": "^3.11.5"
   },
   "devDependencies": {
     "ftp-deploy": "^2.4.3",
