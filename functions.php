@@ -50,7 +50,7 @@ function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
             $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/water.svg" alt="' . $term->name . '" width="15" height="15" />';
             $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
         } else {
-            $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/' . $term->name . '.svg" alt="' . $term->name . '" width="15" height="15" />';
+            $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/' . $term->slug . '.svg" alt="' . $term->name . '" width="15" height="15" />';
             $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
         }
     }

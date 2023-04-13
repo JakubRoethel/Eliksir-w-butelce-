@@ -135,7 +135,7 @@ faq_list.click(function () {
 // Create the animation timeline
 var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline({
   defaults: {
-    duration: 8,
+    duration: 18,
     ease: 'linear'
   }
 });
@@ -154,9 +154,9 @@ gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
   animation: timeline,
   trigger: '.right_side_mix svg',
   start: 'bottom bottom',
-  end: 'top 40%',
+  end: 'top 20%',
   markers: true,
-  scrub: 1
+  scrub: 2
 });
 
 /***/ }),

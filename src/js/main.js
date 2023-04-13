@@ -126,7 +126,7 @@ getOfferService();
 // Create the animation timeline
 const timeline = gsap.timeline({
   defaults: {
-    duration: 8,
+    duration: 18,
     ease: 'linear'
   }
 });
@@ -141,7 +141,7 @@ ScrollTrigger.create({
   animation: timeline,
   trigger: '.right_side_mix svg',
   start: 'bottom bottom',
-  end: 'top 40%',
+  end: 'top 20%',
   markers: true,
-  scrub: 1
+  scrub: 2
 });

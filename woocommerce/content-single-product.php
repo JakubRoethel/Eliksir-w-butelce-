@@ -312,6 +312,13 @@ $product_short_description = $product->get_short_description();
 </div>
 </div>
 
+<?php 
+
+
+get_template_part('views/product', 'single-set', array(
+     'product_id' => $product_id
+)); ?>
+
 
 
 <div class="popup_container">
