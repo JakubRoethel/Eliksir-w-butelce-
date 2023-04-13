@@ -239,6 +239,20 @@
           border-bottom: 1px solid #40434c4d;
           margin-top: 22px;
         }
+
+
+        .set_includes_titles_section {
+          margin-bottom: 24px;
+
+          .title {
+            margin-bottom: 10px;
+          }
+          .product_title_list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+          }
+        }
       }
 
       div.product_gallery {

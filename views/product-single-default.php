@@ -1,8 +1,8 @@
-<?php
-
+<?php 
+//template for single default product view
 $product_id = $args['product_id'];
 // Get the product object
-$product = wc_get_product($product_id);
+$product = wc_get_product( $product_id );
 
 
 $product_id = $product->get_id();
@@ -17,25 +17,30 @@ $product_short_description = $product->get_short_description();
     <div class="product_wrapper">
         <div class="summary entry-summary">
             <h2 class="product_name"> <?php echo $product_title ?></h2>
-            <div class="set_includes_titles_section">
-                <p class="title"><?php echo __('W skład zestawu wchodzi') ?></p>
-                <?php
-                //show product titles included in set
-                $product_ids = get_field('products_in_set'); // array of product IDs
-                $args = array(
-                    'post_type' => 'product',
-                    'post__in' => $product_ids,
-                    'orderby' => 'post__in'
-                ); ?>
-                <div class="product_title_list">
-                    <?php foreach ($product_ids as $product_id) {
-                        $_product = wc_get_product($product_id); // Get product object
-                        if ($product) {
-                            echo '<li>' . $_product->get_title() . '</li>';
-                        }
-                    } ?>
+            <?php
+            if (!empty($tags)) :
+            ?>
+
+                <p class="tags_title"><?php echo __('Najlepiej smakuje z:&nbsp;') ?> </p>
+                <div class="tags_container">
+                    <?php foreach ($tags as $tag) :
+                        $name = $tag->name;
+                        $term_id = $tag->term_id;
+                        $url = get_tag_link($tag->term_id);
+                        $icon_id = get_field('tag_img', 'product_tag_' . $term_id); ?>
+
+                        <div class="single_tag">
+                            <?php echo wp_get_attachment_image($icon_id, 'full'); ?>
+                            <a href="<?php echo $url ?>" class="tag_name">
+                                <?php echo $name ?>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            </div>
+
+            <?php
+            endif; ?>
+
             <p class="product_description">
                 <?php echo $product_description ?>
             </p>
@@ -108,69 +113,7 @@ $product_short_description = $product->get_short_description();
     </div>
 </div>
 </div>
-<div class="set_includes_section">
-    <?php
 
-    $product_ids = get_field('products_in_set'); // array of product IDs
-    $args = array(
-        'post_type' => 'product',
-        'post__in' => $product_ids,
-        'orderby' => 'post__in'
-    );
-    //show number of categoires like 4 eliksirs and 5 addons
-    $products = get_posts($args);
-    $category_count = array(); // Initialize an empty array to store the category counts
-    if ($product_ids != 0) {
-        foreach ($products as $product) {
-            $categories = get_the_terms($product->ID, 'product_cat'); // Get the categories for each product
-            if ($categories) {
-                foreach ($categories as $category) {
-                    if ($category->parent == 0) { // Only count parent categories
-                        if (isset($category_count[$category->term_id])) {
-                            $category_count[$category->term_id]++;
-                        } else {
-                            $category_count[$category->term_id] = 1;
-                        }
-                    }
-                }
-            }
-        } ?>
-
-        <div>
-            <p class="title">
-                <?php echo __('W zestawie ');
-                foreach ($category_count as $category_id => $count) {
-                    $category = get_term($category_id, 'product_cat');
-                    echo   $count . 'X ' . $category->name . ' ';
-                }
-                ?>
-            </p>
-        </div>
-
-        <?php
-        $query = new WP_Query($args);
-        if ($query->have_posts()) { ?>
-            <ul class="products swiper_product_set">
-                <div class="swiper-wrapper">
-                    <?php
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                    ?>
-                        <div class="swiper-slide">
-                            <?php wc_get_template_part('content', 'product'); ?>
-                        </div>
-
-                    <?php   } ?>
-                </div>
-                <div class="swiper-scrollbar"></div>
-            </ul>
-    <?php  }
-        wp_reset_query();
-    }
-
-
-    ?>
-</div>
 <div class="product_details">
     <div class="mix_details">
 

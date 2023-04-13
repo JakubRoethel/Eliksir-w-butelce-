@@ -155,7 +155,6 @@ gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
   trigger: '.right_side_mix svg',
   start: 'bottom bottom',
   end: 'top 20%',
-  markers: true,
   scrub: 2
 });
 

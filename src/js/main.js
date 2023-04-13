@@ -142,6 +142,5 @@ ScrollTrigger.create({
   trigger: '.right_side_mix svg',
   start: 'bottom bottom',
   end: 'top 20%',
-  markers: true,
   scrub: 2
 });

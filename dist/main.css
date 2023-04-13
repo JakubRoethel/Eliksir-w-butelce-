@@ -1105,6 +1105,18 @@ ul.products li.product hr {
   border-bottom: 1px solid rgba(64, 67, 76, 0.3019607843);
   margin-top: 22px;
 }
+.product-template-default div.product .product_wrapper div.summary .set_includes_titles_section {
+  margin-bottom: 24px;
+}
+.product-template-default div.product .product_wrapper div.summary .set_includes_titles_section .title {
+  margin-bottom: 10px;
+}
+.product-template-default div.product .product_wrapper div.summary .set_includes_titles_section .product_title_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
 .product-template-default div.product .product_wrapper div.product_gallery {
   flex: 4;
   max-width: 100%;
