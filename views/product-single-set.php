@@ -51,7 +51,8 @@ $product_short_description = $product->get_short_description();
                     woocommerce_variable_add_to_cart();
                 } else {
                     woocommerce_template_single_add_to_cart();
-                }  ?>
+                }    ?>
+               
                     <button class="button get_offer"><?php echo __('Zamów w ofercie dla firm') ?></button>
             </div>
             <span class="free_shipping">

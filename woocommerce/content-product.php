@@ -24,6 +24,7 @@ global $product;
 if (empty($product) || !$product->is_visible()) {
 	return;
 }
+
 $product_id = $product->get_id();
 $product_title = $product->get_name();
 $product_price = $product->get_price_html();
@@ -78,6 +79,33 @@ $url = get_permalink($product_id);
 
 			<?php
 				endif;
+				$terms_dodatki_list = get_field('dodatki_dodaj_do');
+				
+
+				if (!empty($terms_dodatki_list)) : 
+					$lastElement = end($terms_dodatki_list);
+				?>
+					<div class= "terms_dodatki">
+					<p>Dodaj do:&nbsp; </p>
+					<?php 
+					foreach ($terms_dodatki_list as $key=> $single_term_dodatki  ) {
+                        $single_term_dodatki_title = $single_term_dodatki['dodaj_do'];
+						
+                    ?>
+                        <p class="single_item_dodaj">
+							<?php if($single_term_dodatki == $lastElement ){
+								echo $single_term_dodatki_title;
+
+							} else { 
+								echo $single_term_dodatki_title .  ",";
+							} ?>
+						
+						</p>
+                    <?php  } ?>
+					</div> 
+
+					<?php endif;
+
 			endif; ?>
 		</div>
 	</a>

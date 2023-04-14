@@ -1,6 +1,7 @@
 .b2b_section {
   .hero_section {
     position: relative;
+    width: 100%;
     img {
       object-fit: contain;
       display: block;
@@ -24,6 +25,39 @@
       margin-left: 8%;
       font-size: 76px;
       font-weight: 700;
+      text-transform: uppercase;
+
+    }
+
+    .download_button {
+      margin-left: 8%;
+      margin-top: 70px;
+      max-width: 440px;
+
+      button {
+        font-size: 16px;
+        color: white;
+        background-color:#313235;
+        border: unset;
+        border-radius: 105px;
+        padding: 16px 32px 16px 64px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 21px;
+          width: 32px; 
+          height: 32px;
+          background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/04/upload_file_FILL0_wght100_GRAD200_opsz48-1.svg"); 
+          background-repeat: no-repeat;
+          background-size: cover;
+
+        }
+        
+      }
     }
 
     &::after {

@@ -75,7 +75,7 @@ $page_id = wc_get_page_id('shop');
 	<div class="container why_eliksir_section" style="background: <?php echo $background_color; ?>">
 
 		<div class="text_and_button_wrapper">
-			<p class="title" style="color: <?php echo $title_color ?>"><?php echo $title ?></p>
+			<p class="title"><?php echo $title ?></p>
 			<p class="description"><?php echo $description ?></p>
 			<a href="<?php echo $cta_button['url'] ?>" class="cta_button button"><?php echo $cta_button['title'] ?></a>
 		</div>

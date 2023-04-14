@@ -9,11 +9,19 @@
     margin-bottom: 16px;
   }
 
+  address {
+    min-height: 120px;
+  }
+
   .order_item {
     .product-name {
       display: flex;
       align-items: center;
       gap: 7px;
+
+      .wc-item-meta {
+        display: none;
+      }
 
       a {
         color: #40434d;
