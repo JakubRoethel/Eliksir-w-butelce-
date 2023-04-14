@@ -929,6 +929,9 @@ ul.products li.product hr {
   font-weight: 700;
   padding-bottom: 30px;
 }
+.product-template-default div.product .product_wrapper div.summary .set_subtitle {
+  margin-bottom: 24px;
+}
 .product-template-default div.product .product_wrapper div.summary .tags_title {
   font-size: 16px;
   font-weight: 700;
@@ -2882,6 +2885,30 @@ article form.checkout .woocommerce-checkout-review-order .woocommerce-mini-cart_
 }
 .select2-dropdown .select2-results ul li:hover {
   background-color: rgba(64, 67, 77, 0.4745098039) !important;
+}
+
+.woocommerce-order {
+  color: #40434d;
+}
+.woocommerce-order h2 {
+  font-size: 24px;
+}
+.woocommerce-order .woocommerce-notice {
+  margin-bottom: 16px;
+}
+.woocommerce-order .order_item .product-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.woocommerce-order .order_item .product-name a {
+  color: #40434d;
+}
+.woocommerce-order .order_item .product-name img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
 .custom-page-template {

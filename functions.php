@@ -10,7 +10,7 @@ function studio_scripts()
 
     wp_register_script('main', get_stylesheet_directory_uri() . '/dist/main.js', ['jquery', 'acf-input'], 1, true);
     wp_enqueue_script('main');
-    wp_localize_script( 'main', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+    wp_localize_script('main', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 
     wp_register_script('Swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', null, null, true);
     wp_enqueue_script('Swiper');
@@ -287,3 +287,35 @@ function register_email_activity_submenu_page()
     );
 }
 add_action('admin_menu', 'register_email_activity_submenu_page');
+
+
+
+//show product image on thanks you page 
+add_filter('woocommerce_order_item_name', 'add_image_before_product_title', 10, 2);
+function add_image_before_product_title($item_name, $item)
+{
+    $product = $item->get_product();
+    $image = $product->get_image('thumbnail'); // adjust the size as needed
+    $item_name = '<div class="product-image">' . $image . '</div>' . $item_name;
+    return $item_name;
+}
+
+
+  // Remove the "Order Received" breadcrumb
+add_filter('woocommerce_get_breadcrumb', 'add_back_to_shop_breadcrumb', 10, 2);
+function add_back_to_shop_breadcrumb($crumbs, $object)
+{
+    if (is_wc_endpoint_url('order-received')) {
+        array_pop($crumbs);
+    }
+    return $crumbs;
+}
+
+
+add_action( 'template_redirect', 'disable_cart_page' );
+function disable_cart_page() {
+    if ( is_cart() ) {
+        wp_redirect( get_permalink( get_option( 'woocommerce_shop_page_id' ) ) );
+        exit;
+    }
+}

@@ -46,7 +46,8 @@ $url = get_permalink($product_id);
 			$args = array(
 				'post_type' => 'product',
 				'post__in' => $featured_post_ids,
-				'orderby' => 'post__in'
+				'posts_per_page' => -1
+				
 			);
 		
 		

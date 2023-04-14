@@ -17,6 +17,11 @@ $product_short_description = $product->get_short_description();
     <div class="product_wrapper">
         <div class="summary entry-summary">
             <h2 class="product_name"> <?php echo $product_title ?></h2>
+            <?php
+            $set_subtitle = get_field('set_subtitle'); // array of product IDs
+            if ( $set_subtitle ) {
+                echo "<p class='set_subtitle'>" . $set_subtitle . "</p>";
+            } ?>
             <div class="set_includes_titles_section">
                 <p class="title"><?php echo __('W skład zestawu wchodzi') ?></p>
                 <?php
@@ -30,7 +35,7 @@ $product_short_description = $product->get_short_description();
                 <div class="product_title_list">
                     <?php foreach ($product_ids as $product_id) {
                         $_product = wc_get_product($product_id); // Get product object
-                        if ($product) {
+                        if ( $product ) {
                             echo '<li>' . $_product->get_title() . '</li>';
                         }
                     } ?>

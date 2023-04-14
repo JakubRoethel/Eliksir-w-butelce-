@@ -1,0 +1,29 @@
+.woocommerce-order {
+  color: #40434d;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .woocommerce-notice {
+    margin-bottom: 16px;
+  }
+
+  .order_item {
+    .product-name {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      a {
+        color: #40434d;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid black;
+      }
+    }
+  }
+}
