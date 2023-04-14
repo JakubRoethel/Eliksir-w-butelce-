@@ -31,7 +31,6 @@ $display_categor_id = get_field('category_set', 'general_settings');
 
 ?>
 <div class="archive-wrapper">
-<?php echo $display_categor_id  ?>
     <div class="archive-container">
         <?php do_action('woocommerce_before_main_content'); ?>
         <section class="product_cat">

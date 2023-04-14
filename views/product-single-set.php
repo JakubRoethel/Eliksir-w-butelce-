@@ -35,7 +35,7 @@ $product_short_description = $product->get_short_description();
                 <div class="product_title_list">
                     <?php foreach ($product_ids as $product_id) {
                         $_product = wc_get_product($product_id); // Get product object
-                        if ( $product ) {
+                        if ( $_product ) {
                             echo '<li>' . $_product->get_title() . '</li>';
                         }
                     } ?>
@@ -51,17 +51,8 @@ $product_short_description = $product->get_short_description();
                     woocommerce_variable_add_to_cart();
                 } else {
                     woocommerce_template_single_add_to_cart();
-                }
-                if (has_term(array($zestawy_ID_cat), 'product_cat', $product_id)) {
-                    // do something if product with given ID is in category "zestawy"
-                ?>
+                }  ?>
                     <button class="button get_offer"><?php echo __('Zamów w ofercie dla firm') ?></button>
-
-                <?php   }
-
-
-                ?>
-
             </div>
             <span class="free_shipping">
                 <p> <?php echo __('Darmowa dostawa od 100zł') ?> </p>
