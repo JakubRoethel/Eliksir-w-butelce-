@@ -4,7 +4,8 @@
     .tag-pretitle {
       font-size: 32px;
       color: #40434d;
-      margin-bottom: 10px;
+      margin-bottom: 60px;
+      text-transform: uppercase;
     }
 
     &.tags.zestawy {
@@ -13,6 +14,12 @@
 
     &.Wielkanoc {
       padding: 120px 10%;
+    }
+
+    &.dodatki {
+      .category-description {
+        margin-bottom: 70px;
+      }
     }
   }
   .category-title {
@@ -54,6 +61,9 @@
     }
   }
 
+ 
+  
+
   .wpc-filters-widget-main-wrapper
     .wpc-filters-labels
     li.wpc-term-item
@@ -87,8 +97,69 @@
   .wpc-horizontal-layout
     .wpc-filters-section:not(.wpc-filter-layout-submit-button) {
     width: auto !important;
-    margin-right: 0 !important;
+    margin: 0 !important;
     max-width: 100% !important;
+  }
+
+  .additional_section {
+    background-color: #E8F4D4;
+    padding: 120px 206px 160px 206px;
+    color: #40434d;
+    font-weight: 700;
+
+    .additional_section_title {
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 45px;
+      font-size: 60px;
+    }
+
+    .additional_section_description {
+      text-align: center;
+      padding: 0px 80px 45px 80px;
+      font-size: 18px;
+    }
+
+    .subtitle_wrapper  {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 150px;
+      padding-bottom: 60px;
+
+      .subtitle {
+        font-size: 36px;
+      }
+      
+      .subtitle:first-child {
+        color:#4ECB71;
+      }
+
+      .subtitle:nth-child(2) {
+        color:#4EA5CB;
+      }
+
+      .subtitle:nth-child(3) {
+        color:#854ECB;
+      }
+
+      .subtitle:nth-child(4) {
+        color:#D87878;
+      }
+    }
+    
+    .img_wrapper {
+      display: flex;
+      gap: 55px;
+      justify-content: center;
+
+      img {
+        width: 33.33%;
+        height: auto;
+      }
+    }
+
+    
   }
 
 

@@ -44,9 +44,7 @@
       <div class="icon_box">
         <p>English</p>
         <div class="icon_container">
-          <a href="http://eliksir-w-butelce.local/my-account/">
-            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-          </a>
+          
           <div class="cart-icon-container">
             <a class="cart-icon" href="<?php echo wc_get_cart_url(); ?>">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>

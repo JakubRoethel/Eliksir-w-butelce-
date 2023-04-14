@@ -103,4 +103,15 @@
     }
 
   }
+
+  .terms_dodatki {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      white-space: nowrap;
+    }
+
+  }
+
 }

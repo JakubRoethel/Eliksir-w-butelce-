@@ -31,7 +31,6 @@ $display_categor_id = get_field('category_set', 'general_settings');
 
 ?>
 <div class="archive-wrapper">
-<?php echo $display_categor_id  ?>
     <div class="archive-container">
         <?php do_action('woocommerce_before_main_content'); ?>
         <section class="product_cat">
@@ -63,8 +62,39 @@ $display_categor_id = get_field('category_set', 'general_settings');
             <?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
             getProductsByCat($display_categor_id, 6);
             ?>
-
             </section>
+
+            <?php
+                $additional_section_title = get_field('category_archive_zestawy', 'general_settings')['naglowek'];
+                $additional_section_description = get_field('category_archive_zestawy', 'general_settings')['tekst'];
+                $additional_subtitle_list = get_field('category_archive_zestawy', 'general_settings')['kolorowe_tytuly'];
+                $additional_imgs_list = get_field('category_archive_zestawy', 'general_settings')['zdjecia'];
+            ?>
+            <section class="additional_section">
+                <h2 class="additional_section_title"> <?php echo $additional_section_title ?> </h2>
+                <p class="additional_section_description"> <?php echo $additional_section_description ?> </p>
+
+                <?php if( $additional_subtitle_list): ?>
+                <div class="subtitle_wrapper">
+                <?php  foreach( $additional_subtitle_list as $additional_subtitle) { 
+                                $subtitle = $additional_subtitle['naglowek'];
+                            ?>
+                              <p class="subtitle"> <?php echo $subtitle ?> </p>
+                            <?php  } ?>
+                </div>
+                <?php endif; ?> 
+                <?php if( $additional_imgs_list): ?>
+                <div class="img_wrapper">
+                <?php  foreach( $additional_imgs_list as $additional_img) { 
+                                $img = $additional_img['img'];
+                            ?>
+                               <?php echo wp_get_attachment_image( $img, 'full' ); ?>
+                            <?php  } ?>
+                </div>
+                <?php endif; ?>
+            </section>
+
+
         
         <?php
         } ?>

@@ -32,8 +32,7 @@ $tag = get_queried_object();
     <div class="archive-container">
         <?php do_action('woocommerce_before_main_content'); ?>
         <section class="product_cat">
-            <p class="tag-pretitle"><?php echo __('Dobierz eliksir do alkoholu') ?></p>
-            <h2 class="woocommerce-products-header__title page-title category-title"><?php woocommerce_page_title(); ?></h2>
+            <p class="tag-pretitle"><?php echo __('Eliksiry do') ?> <?php woocommerce_page_title(); ?></p>
             <?php echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
             getProductsByTag($tag->term_id);
             ?>

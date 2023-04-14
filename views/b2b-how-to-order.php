@@ -35,9 +35,11 @@
         <?php $title = get_field('why_eliksir')['title']; ?>
         <?php $image_id = get_field('why_eliksir')['image']; ?>
         <?php $description = get_field('why_eliksir')['description']; ?>
+        <?php $cta_button = get_field('why_eliksir')['cta_button']; ?>
         <div class="text_wrapper">
             <p class="title"><?php echo $title ?></p>
             <p class="description"><?php echo $description ?></p>
+            <a href="<?php echo $cta_button['url'] ?>" class="cta_button button"><?php echo $cta_button['title'] ?></a>
         </div>
         <div class="image_wrapper">
         <div class="img_container"> <?php echo wp_get_attachment_image( $image_id , 'full' ); ?> </div>

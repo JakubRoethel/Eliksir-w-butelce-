@@ -66,9 +66,9 @@
     }
 
     .button {
-      color: #40434d;
+      color: white;
       border: 1px solid #40434d;
-      background-color: transparent !important;
+      background-color: #40434d !important;
       border-radius: 30px;
       width: fit-content;
       padding: 14px 32px;
@@ -77,9 +77,9 @@
 
       &::after {
         content: "";
-        background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/arrow_right_alt.svg");
-        width: 16px;
-        height: 12px;
+        background: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/04/arrow_right_alt_white.svg");
+        width: 22px;
+        height: 19px;
         display: inline-block;
         background-repeat: no-repeat;
         margin-left: 10px;

@@ -126,6 +126,15 @@ add_filter('woocommerce_get_breadcrumb', function ($crumbs, $Breadcrumb) {
         ];
         array_splice($crumbs, 1, 0, [$new_breadcrumb]); //Insert a new breadcrumb after the 'Home' crumb
     }
+    if ( is_tax( 'product_tag' ) ) {
+        // Pobierz nazwę aktualnego tagu
+        $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+        if ( $term ) {
+            // Zmodyfikuj tekst breadcrumb dla tego tagu
+            $crumbs[ count($crumbs) - 1 ][0] = 'Eliksiry do ' . $term->name;
+        }
+    }
+
     return $crumbs;
 }, 10, 2);
 
@@ -143,17 +152,6 @@ remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_sh
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 
 remove_theme_support('html5', 'comment-form');
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Register custom post type for email activity data
@@ -319,3 +317,5 @@ function disable_cart_page() {
         exit;
     }
 }
+
+
