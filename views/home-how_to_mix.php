@@ -35,7 +35,7 @@ $mix_subtitle = get_field('how_to_mix')['subtitle'];
         </div>
     </div>
     <?php $mix_text = get_field('how_to_mix')['text']; ?>
-    <p class="subtitle"> <?php echo $mix_subtitle ?></p>
+    <p class="text"> <?php echo $mix_text  ?></p>
     
 
     

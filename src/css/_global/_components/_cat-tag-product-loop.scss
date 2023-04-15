@@ -19,6 +19,14 @@
       .category-description {
         margin-bottom: 70px;
       }
+
+      
+    }
+
+    .eliksiry {
+      .products {
+        padding-top: 51px;
+      }
     }
 
     .extra-product-card {
@@ -57,7 +65,7 @@
     }
   }
   .category-title {
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
   .category-description {
     font-size: 16px;
@@ -67,6 +75,11 @@
     color: #40434d;
     max-width: 80%;
     margin-bottom: 40px;
+  }
+
+  .wpc-filters-widget-content{
+    padding-bottom: 11px;
+
   }
 
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {

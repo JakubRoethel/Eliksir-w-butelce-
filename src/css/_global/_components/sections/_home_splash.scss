@@ -2,27 +2,31 @@
   
   margin: 0 auto;
   background-color: #fff4d8;
-  padding: 50px 5% 0 5%;
+  padding: 120px 205px 0 205px;
 
   .title,
   .subtitle {
     font-weight: 700;
     color: #40434d;
     text-align: center;
+
   }
 
   .title {
     font-size: 60px;
     text-transform: uppercase;
+
   }
 
   .subtitle {
     padding: 20px 0px;
+    line-height: 48px;
+    font-size: 32px;
   }
 
   .info_container {
     display: flex;
-    padding: 40px 0 0 0px;
+    padding: 70px 0 0 0px;
     position: relative;
     justify-content: space-between;
     max-width: 1350px;
@@ -51,6 +55,7 @@
         font-size: 32px;
         text-align: left;
         position: relative;
+        white-space: nowrap;
       }
 
       .img_description::before {

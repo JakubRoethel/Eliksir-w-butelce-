@@ -1,6 +1,6 @@
 .how_to_mix {
     background-color: #f6b98c;
-    padding: 100px 0px;
+    padding: 125px 205px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +8,7 @@
     // max-width: 1800px;
     margin: 0 auto;
 
-    .title, .subtitle {
+    .title, .subtitle, .text {
         font-weight: 700;
         color: #40434D;
         text-align: center;
@@ -21,14 +21,21 @@
 
     .subtitle {
         padding: 20px 0px;
+        font-size: 24px;
      
     };
+
+    .text {
+        font-size: 40px;
+        padding-top: 50px;
+    }
 
     .mix_ingredients {
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: 600px;
+        gap: 45px;
 
         .left_side_mix {
            flex: 1;

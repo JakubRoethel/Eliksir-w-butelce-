@@ -1560,7 +1560,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .home_splash {
   margin: 0 auto;
   background-color: #fff4d8;
-  padding: 50px 5% 0 5%;
+  padding: 120px 205px 0 205px;
 }
 .home_splash .title,
 .home_splash .subtitle {
@@ -1574,10 +1574,12 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 .home_splash .subtitle {
   padding: 20px 0px;
+  line-height: 48px;
+  font-size: 32px;
 }
 .home_splash .info_container {
   display: flex;
-  padding: 40px 0 0 0px;
+  padding: 70px 0 0 0px;
   position: relative;
   justify-content: space-between;
   max-width: 1350px;
@@ -1607,6 +1609,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   font-size: 32px;
   text-align: left;
   position: relative;
+  white-space: nowrap;
 }
 .home_splash .info_container .left_box .img_description::before {
   height: 1px;
@@ -1723,14 +1726,14 @@ iframe .ytp-cued-thumbnail-overlay-image {
 
 .how_to_mix {
   background-color: #f6b98c;
-  padding: 100px 0px;
+  padding: 125px 205px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
-.how_to_mix .title, .how_to_mix .subtitle {
+.how_to_mix .title, .how_to_mix .subtitle, .how_to_mix .text {
   font-weight: 700;
   color: #40434D;
   text-align: center;
@@ -1741,12 +1744,18 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 .how_to_mix .subtitle {
   padding: 20px 0px;
+  font-size: 24px;
+}
+.how_to_mix .text {
+  font-size: 40px;
+  padding-top: 50px;
 }
 .how_to_mix .mix_ingredients {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 600px;
+  gap: 45px;
 }
 .how_to_mix .mix_ingredients .left_side_mix {
   flex: 1;
@@ -1792,7 +1801,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 
 .filter_section {
   background-color: #fff4d8;
-  padding: 110px 10% 130px 10%;
+  padding: 110px 205px 130px 205px;
   margin: 0 auto;
 }
 .filter_section .title {
@@ -1932,7 +1941,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 
 .featured_products_section, ul.products {
-  padding: 10% 0% 5% 0%;
+  padding: 100px 0% 100px 0%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -2074,6 +2083,9 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .archive-wrapper .product_cat.dodatki .category-description {
   margin-bottom: 70px;
 }
+.archive-wrapper .product_cat .eliksiry .products {
+  padding-top: 51px;
+}
 .archive-wrapper .product_cat .extra-product-card {
   margin-bottom: 2.99em;
   position: relative;
@@ -2104,7 +2116,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
      object-fit: cover;
 }
 .archive-wrapper .category-title {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .archive-wrapper .category-description {
   font-size: 16px;
@@ -2114,6 +2126,9 @@ iframe .ytp-cued-thumbnail-overlay-image {
   color: #40434d;
   max-width: 80%;
   margin-bottom: 40px;
+}
+.archive-wrapper .wpc-filters-widget-content {
+  padding-bottom: 11px;
 }
 .archive-wrapper .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
   background-color: transparent;
@@ -2303,7 +2318,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 
 .how_to_order_section {
-  padding: 120px 10%;
+  padding: 120px 205px;
   background: #FFF4D8;
 }
 .how_to_order_section .title {
@@ -2311,6 +2326,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   font-weight: 700;
   color: #40434D;
   text-align: center;
+  text-transform: uppercase;
 }
 .how_to_order_section .order_steps_wrapper {
   display: flex;
@@ -2344,7 +2360,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .why_eliksir {
   display: flex;
   color: #40434D;
-  padding: 60px 0% 120px 10%;
+  padding: 60px 0% 140px 205px;
   background: #FFF4D8;
   gap: 10%;
 }
