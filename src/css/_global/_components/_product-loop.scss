@@ -28,12 +28,12 @@
 
     }
     .woocommerce-breadcrumb {
-        padding: 0 10%;
+        padding: 0 205px;
         margin-top: 80px;
 
     }
     .product_cat {
-        padding: 20px 10%;
+        padding: 20px 205px;
         scroll-margin-top: 150px;
 
         .button {
@@ -46,12 +46,16 @@
 
         &.eliksiry  {
             background: #FAD9BA;
-            padding: 120px 10%;
+            padding: 120px 205px 70px 120px;
+
+            .widget_wpc_filters_widget {
+                padding-bottom: 40px;
+            }
         }
 
         &.dodatki  {
             background: #fff4d8;
-            padding: 120px 10%;
+            padding: 120px 205px;
         }
     }
 

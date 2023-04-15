@@ -827,11 +827,11 @@ a {
   row-gap: 5%;
 }
 .archive .woocommerce-breadcrumb {
-  padding: 0 10%;
+  padding: 0 205px;
   margin-top: 80px;
 }
 .archive .product_cat {
-  padding: 20px 10%;
+  padding: 20px 205px;
   scroll-margin-top: 150px;
 }
 .archive .product_cat .button {
@@ -842,11 +842,14 @@ a {
 }
 .archive .product_cat.eliksiry {
   background: #FAD9BA;
-  padding: 120px 10%;
+  padding: 120px 205px 70px 120px;
+}
+.archive .product_cat.eliksiry .widget_wpc_filters_widget {
+  padding-bottom: 40px;
 }
 .archive .product_cat.dodatki {
   background: #fff4d8;
-  padding: 120px 10%;
+  padding: 120px 205px;
 }
 .archive .archive-container .category-title {
   font-size: 40px;
@@ -2428,7 +2431,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 
 .shop_page .why_eliksir_section .text_and_button_wrapper {
-  padding: 40px 0;
+  padding: 140px 0;
   width: 40%;
 }
 .shop_page .why_eliksir_section .text_and_button_wrapper .title {
