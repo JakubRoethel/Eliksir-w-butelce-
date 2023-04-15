@@ -207,6 +207,9 @@
               font-family: fontAwesome;
               content: "\f217";
               padding-left: 10px;
+              position: relative;
+              top: unset;
+              right: unset;
             }
 
             &:hover {
