@@ -14,23 +14,28 @@ function getProductsByCat($theCat, $posts_per_page)
         )
     );
     $loop = new WP_Query($args);
+    
     if ($loop->have_posts()) {
         $product_count = 0; // Counter for the number of products displayed
-        ?>
+        $total_count = $loop->found_posts;
+?>
         <ul class="products columns-<?php echo esc_attr(wc_get_loop_prop('columns')); ?>">
             <?php while ($loop->have_posts()) : $loop->the_post();
                 $product_count++; // Increment the product counter
-                if ($product_count == 6) { // If it's the 6th product, add the extra li tag
-                    ?>
-                    <li class="extra-product">
-                    <?php get_template_part('views/cta', 'extra-loop-card', array(
+                if ($product_count == 6 && $total_count >= 5) { // If it's the 6th product, add the extra li tag
+
+                    get_template_part('views/cta', 'extra-loop-card', array(
                         'cat_id' => $theCat
-                    )); ?>
-                    </li>
-                    <?php
+                    ));
                 }
                 wc_get_template_part('content', 'product');
-            endwhile; ?>
+            endwhile; 
+
+            if($total_count < 5) {
+                get_template_part('views/cta', 'extra-loop-card', array(
+                    'cat_id' => $theCat
+                ));
+            } ?>
         </ul>
     <?php   } else {
         return false;
@@ -40,8 +45,8 @@ function getProductsByCat($theCat, $posts_per_page)
         <div class="button_container">
             <a class="button shop-more" href="<?php echo get_category_link($product_category) ?>"><?php echo get_field('more_button', 'product_cat_' . $theCat) ?></a>
         </div>
-<?php } else if($posts_per_page == -1){
-    return true;
-}
+<?php } else if ($posts_per_page == -1) {
+        return true;
+    }
     return true;
 }

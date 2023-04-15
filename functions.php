@@ -126,12 +126,12 @@ add_filter('woocommerce_get_breadcrumb', function ($crumbs, $Breadcrumb) {
         ];
         array_splice($crumbs, 1, 0, [$new_breadcrumb]); //Insert a new breadcrumb after the 'Home' crumb
     }
-    if ( is_tax( 'product_tag' ) ) {
+    if (is_tax('product_tag')) {
         // Pobierz nazwę aktualnego tagu
-        $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-        if ( $term ) {
+        $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+        if ($term) {
             // Zmodyfikuj tekst breadcrumb dla tego tagu
-            $crumbs[ count($crumbs) - 1 ][0] = 'Eliksiry do ' . $term->name;
+            $crumbs[count($crumbs) - 1][0] = 'Eliksiry do ' . $term->name;
         }
     }
 
@@ -299,7 +299,7 @@ function add_image_before_product_title($item_name, $item)
 }
 
 
-  // Remove the "Order Received" breadcrumb
+// Remove the "Order Received" breadcrumb
 add_filter('woocommerce_get_breadcrumb', 'add_back_to_shop_breadcrumb', 10, 2);
 function add_back_to_shop_breadcrumb($crumbs, $object)
 {
@@ -310,12 +310,26 @@ function add_back_to_shop_breadcrumb($crumbs, $object)
 }
 
 
-add_action( 'template_redirect', 'disable_cart_page' );
-function disable_cart_page() {
-    if ( is_cart() ) {
-        wp_redirect( get_permalink( get_option( 'woocommerce_shop_page_id' ) ) );
+add_action('template_redirect', 'disable_cart_page');
+function disable_cart_page()
+{
+    if (is_cart()) {
+        wp_redirect(get_permalink(get_option('woocommerce_shop_page_id')));
         exit;
     }
 }
 
 
+//cart counter 
+add_filter('woocommerce_add_to_cart_fragments', 'mini_cart_count_fragments', 10, 1);
+
+function mini_cart_count_fragments($fragments)
+{
+    $get_cart_URL = wc_get_cart_url();
+    $get_cart_contents_count = WC()->cart->get_cart_contents_count( );
+    $fragments['a.cart-icon'] = sprintf("<a class='cart-icon' data-cart='%s' href='%s'>
+                                            <i class='fa fa-shopping-cart' aria-hidden='true'></i>
+                                         </a>", $get_cart_contents_count, $get_cart_URL);
+
+    return $fragments;
+}

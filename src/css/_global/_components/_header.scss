@@ -203,6 +203,21 @@
 
       .cart-icon {
         outline: none;
+
+        &::after {
+          content: attr(data-cart);
+          display: block;
+          display: block;
+          font-size: 0.8em;
+          position: absolute;
+          top: -8px;
+          left: 11px;
+          font-size: 10px;
+          background: #EA3E32;
+          padding: 1px 5px;
+          /* height: 14px; */
+          border-radius: 10px;
+        }
       }
     }
   }
