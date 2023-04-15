@@ -408,14 +408,11 @@ function headerService(myAjax) {
           },
           success: function success(data) {
             jQuery(document.body).trigger("wc_fragment_refresh");
-            console.log("Added to cart! " + item_quantity);
             jQuery(document.body).trigger("wc_fragments_refreshed");
-            // jQuery(".mini-cart-container").addClass("minicart-show");
-            console.log(wc_cart_fragments_params);
             $(".cart-icon i").addClass("shake-cart");
             setTimeout(function () {
-              return $('.cart-icon i').removeClass('shake-cart');
-            }, 1000);
+              $('.cart-icon i').removeClass('shake-cart');
+            }, 900);
           },
           error: function error(jqXHR, textStatus, errorThrown) {
             console.log("Error: " + errorThrown);

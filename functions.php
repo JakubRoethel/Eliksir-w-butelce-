@@ -326,10 +326,8 @@ add_filter('woocommerce_add_to_cart_fragments', 'mini_cart_count_fragments', 10,
 function mini_cart_count_fragments($fragments)
 {
     $get_cart_URL = wc_get_cart_url();
-    $get_cart_contents_count = WC()->cart->get_cart_contents_count( );
-    $fragments['a.cart-icon'] = sprintf("<a class='cart-icon' data-cart='%s' href='%s'>
-                                            <i class='fa fa-shopping-cart' aria-hidden='true'></i>
-                                         </a>", $get_cart_contents_count, $get_cart_URL);
+    $get_cart_contents_count = WC()->cart->get_cart_contents_count();
+    $fragments['span.cart-count'] = sprintf(" <span class='cart-count'>%s</span>", $get_cart_contents_count);
 
     return $fragments;
 }

@@ -82,12 +82,13 @@ jQuery(function ($) {
         },
         success: function (data) {
           jQuery(document.body).trigger("wc_fragment_refresh");
-          console.log("Added to cart! " + item_quantity);
           jQuery(document.body).trigger("wc_fragments_refreshed");
-          // jQuery(".mini-cart-container").addClass("minicart-show");
-          console.log(wc_cart_fragments_params);
           $(".cart-icon i").addClass("shake-cart");
-          setTimeout(() => $('.cart-icon i').removeClass('shake-cart'), 1000);
+          setTimeout(() => {
+            $('.cart-icon i').removeClass('shake-cart');
+            
+          }, 900);
+         
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Error: " + errorThrown);

@@ -16,16 +16,28 @@
 
 //shake shake animation on cart
 @keyframes shake {
-0% { rotate: 0deg; }
-10% { rotate: 10deg; }
-30% { rotate: -10deg; }
-45% { rotate: 5deg; }
-55% { rotate: -5deg; }
-60% { rotate: 0deg; }
+  0% {
+    rotate: 0deg;
+  }
+  10% {
+    rotate: 10deg;
+  }
+  30% {
+    rotate: -10deg;
+  }
+  45% {
+    rotate: 5deg;
+  }
+  55% {
+    rotate: -5deg;
+  }
+  60% {
+    rotate: 0deg;
+  }
 }
 
 .shake-cart {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) 1;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1;
 }
 
 .header {
@@ -36,7 +48,7 @@
   right: 0;
   padding: 20px;
   z-index: $z_index_header;
-//   max-width: 1800px;
+  //   max-width: 1800px;
   margin: 0 auto;
   transition: all 0.3s ease;
 
@@ -122,9 +134,10 @@
       a {
         transition: all 0.3s ease;
       }
-     
-      a:hover,  &.current-menu-item a {
-        color: #E58A56;
+
+      a:hover,
+      &.current-menu-item a {
+        color: #e58a56;
         transition: all 0.3s ease;
       }
     }
@@ -204,18 +217,16 @@
       .cart-icon {
         outline: none;
 
-        &::after {
-          content: attr(data-cart);
-          display: block;
+        span {
           display: block;
           font-size: 0.8em;
           position: absolute;
           top: -8px;
           left: 11px;
           font-size: 10px;
-          background: #EA3E32;
+          background: #ea3e32;
           padding: 1px 5px;
-          /* height: 14px; */
+          z-index: 2;
           border-radius: 10px;
         }
       }
@@ -226,7 +237,7 @@
 //header for shop
 .header_shop {
   padding: unset;
-  
+
   .container {
     padding: 20px 30px;
     background-position: center !important;
@@ -244,12 +255,12 @@
     padding: 10px;
     transition: all 0.3s ease;
     .submenu_container {
-        ul {
-            background-color: #292929eb;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            backdrop-filter: blur(3px);
-        }
+      ul {
+        background-color: #292929eb;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        backdrop-filter: blur(3px);
+      }
     }
   }
   //submenu under main menu - only for shop
@@ -264,16 +275,12 @@
       background-color: #292929;
 
       li {
-        a:hover,  &.current-menu-item a {
-          color: #E58A56;
+        a:hover,
+        &.current-menu-item a {
+          color: #e58a56;
           transition: all 0.3s ease;
         }
       }
-
-    
     }
   }
 }
-
-
-

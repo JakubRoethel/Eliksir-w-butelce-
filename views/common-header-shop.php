@@ -46,7 +46,8 @@
         <div class="icon_container">
 
           <div class="cart-icon-container">
-            <a class="cart-icon" data-cart="<?php echo WC()->cart->get_cart_contents_count() ?>" href="<?php echo wc_get_cart_url(); ?>">
+            <a class="cart-icon" href="<?php echo wc_get_cart_url(); ?>">
+              <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count() ?></span>
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
             <div class="mini-cart-container">

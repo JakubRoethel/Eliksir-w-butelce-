@@ -45,14 +45,15 @@
         <p>English</p>
         <div class="icon_container">
           <div class="cart-icon-container">
-            <a class="cart-icon" data-cart="<?php echo WC()->cart->get_cart_contents_count() ?>" href="<?php echo wc_get_cart_url(); ?>">
+            <a class="cart-icon" href="<?php echo wc_get_cart_url(); ?>">
+              <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count() ?></span>
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
             <div class="mini-cart-container">
               <div class="mini-cart-header">
                 <h2 class="mini-cart-title"><?php echo __('Twój koszyk') ?></h2>
                 <div class="close-icon">
-                <?php echo @file_get_contents(get_stylesheet_directory_uri() . '/assets/img/close.svg)') ?>
+                  <?php echo @file_get_contents(get_stylesheet_directory_uri() . '/assets/img/close.svg)') ?>
                 </div>
               </div>
               <div class="widget_shopping_cart_content">

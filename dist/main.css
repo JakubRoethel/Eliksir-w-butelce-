@@ -575,7 +575,7 @@ table {
   transition: all 0.3s ease;
 }
 .header .header_navigation ul li a:hover, .header .header_navigation ul li.current-menu-item a {
-  color: #E58A56;
+  color: #e58a56;
   transition: all 0.3s ease;
 }
 .header .header_navigation li:nth-child(2)::before {
@@ -643,18 +643,16 @@ table {
 .header .header_right .icon_container .cart-icon {
   outline: none;
 }
-.header .header_right .icon_container .cart-icon::after {
-  content: attr(data-cart);
-  display: block;
+.header .header_right .icon_container .cart-icon span {
   display: block;
   font-size: 0.8em;
   position: absolute;
   top: -8px;
   left: 11px;
   font-size: 10px;
-  background: #EA3E32;
+  background: #ea3e32;
   padding: 1px 5px;
-  /* height: 14px; */
+  z-index: 2;
   border-radius: 10px;
 }
 
@@ -693,7 +691,7 @@ table {
   background-color: #292929;
 }
 .header_shop .submenu_container ul li a:hover, .header_shop .submenu_container ul li.current-menu-item a {
-  color: #E58A56;
+  color: #e58a56;
   transition: all 0.3s ease;
 }
 
@@ -1094,6 +1092,9 @@ ul.products li.product hr {
   font-family: fontAwesome;
   content: "\f217";
   padding-left: 10px;
+  position: relative;
+  top: unset;
+  right: unset;
 }
 .product-template-default div.product .product_wrapper div.summary form .single_add_to_cart_button:hover {
   background-color: #a52b23 !important;
