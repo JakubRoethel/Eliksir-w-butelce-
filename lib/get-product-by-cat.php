@@ -22,7 +22,7 @@ function getProductsByCat($theCat, $posts_per_page)
         <ul class="products columns-<?php echo esc_attr(wc_get_loop_prop('columns')); ?>">
             <?php while ($loop->have_posts()) : $loop->the_post();
                 $product_count++; // Increment the product counter
-                if ($product_count == 6 && $total_count >= 5) { // If it's the 6th product, add the extra li tag
+                if ($product_count == 6 && $total_count >= 5 && !is_shop()) { // If it's the 6th product, add the extra li tag
 
                     get_template_part('views/cta', 'extra-loop-card', array(
                         'cat_id' => $theCat
@@ -31,7 +31,7 @@ function getProductsByCat($theCat, $posts_per_page)
                 wc_get_template_part('content', 'product');
             endwhile; 
 
-            if($total_count < 5) {
+            if($total_count < 5 && !is_shop()) {
                 get_template_part('views/cta', 'extra-loop-card', array(
                     'cat_id' => $theCat
                 ));

@@ -27,6 +27,7 @@ get_header('shop');
 
 $tag = get_queried_object();
 
+
 ?>
 <div class="archive-wrapper">
     <div class="archive-container">
