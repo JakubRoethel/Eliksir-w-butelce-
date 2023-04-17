@@ -64,7 +64,7 @@ if($is_product_set) {
                     </div>
                 </section>
                 <section class="form_container b2b_offer">
-                    <form action="#" method="post">
+                <form class="form-hide" action="#" method="post">
                         <p>Możesz też zamówić produkty przez formularz</p>
                         <div class="container name">
                             <label for="name">Name & Surname:</label>
@@ -107,6 +107,11 @@ if($is_product_set) {
                         <div id="product-list"></div>
                         <button id="order-button" type="submit">Order</button>
                     </form>
+                    <div class="contact_form">
+                        <p class="title"><?php echo __('Daj nam znać czego potrzebujesz, a wyślemy Ci ofertę skrojoną na miarę') ?></p>
+                        <?php echo do_shortcode('[contact-form-7 id="590" title="Popup B2B product"]'); ?>
+                    </div>
+                    
 
                 </section>
             </div>

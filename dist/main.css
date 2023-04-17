@@ -842,7 +842,7 @@ a {
 }
 .archive .product_cat.eliksiry {
   background: #FAD9BA;
-  padding: 120px 205px 70px 120px;
+  padding: 120px 205px 70px 205px;
 }
 .archive .product_cat.eliksiry .widget_wpc_filters_widget {
   padding-bottom: 40px;
@@ -1335,8 +1335,8 @@ iframe .ytp-cued-thumbnail-overlay-image {
   padding-right: 200px;
 }
 .container.b2b_offer_section .text_and_button_wrapper .button {
-  color: white;
-  background-color: #40434d;
+  color: #40434d;
+  background-color: transparent;
   border-radius: 30px;
   width: -moz-fit-content;
   width: fit-content;
@@ -1354,6 +1354,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   background-repeat: no-repeat;
   margin-left: 10px;
   transition: all 0.3s ease;
+  filter: invert(1);
 }
 .container.b2b_offer_section .text_and_button_wrapper .button:hover {
   transition: all 0.3s ease;
@@ -2453,13 +2454,13 @@ iframe .ytp-cued-thumbnail-overlay-image {
      object-fit: cover;
 }
 .shop_page .why_eliksir_section .button {
-  color: white;
+  color: #40434d;
   border: 1px solid #40434d;
-  background-color: #40434d !important;
+  background-color: transparent !important;
   border-radius: 30px;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 14px 32px;
+  padding: 11px 32px 15px 32px;
   transition: all 0.3s ease;
   display: inline-block;
 }
@@ -2472,11 +2473,10 @@ iframe .ytp-cued-thumbnail-overlay-image {
   background-repeat: no-repeat;
   margin-left: 10px;
   transition: all 0.3s ease;
+  filter: invert(1);
 }
 .shop_page .why_eliksir_section:hover {
   transition: all 0.3s ease;
-  background: #40434d;
-  color: white;
 }
 .shop_page .why_eliksir_section:hover::after {
   transform: translateX(6px);
@@ -2500,19 +2500,18 @@ iframe .ytp-cued-thumbnail-overlay-image {
   align-items: center;
 }
 .popup_container .popup_content {
-  margin-top: 220px;
+  margin-top: 100px;
 }
 
 .main_wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
 }
 .main_wrapper .popup_wrapper {
   display: flex;
   justify-content: center;
   background-color: #e5decb;
-  border: 2px solid #40434D;
+  border: 2px solid #40434d;
   border-radius: 25px;
   padding: 60px;
   gap: 40px;
@@ -2522,6 +2521,30 @@ iframe .ytp-cued-thumbnail-overlay-image {
   justify-content: center;
   align-items: center;
   background-color: #e5decb;
+  max-width: 420px;
+}
+.main_wrapper .b2b_offer.form_container .contact_form .title {
+  max-width: 416px;
+  margin-bottom: 20px;
+}
+.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-submit {
+  width: 100%;
+  background: #e58a56;
+  border: 1px solid #e58a56 !important;
+  color: white;
+  border-radius: 54px;
+  border: 2px solid;
+  padding: 15px 15px;
+}
+.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-submit:hover {
+  background: #a4633d;
+}
+.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-spinner {
+  display: none;
+}
+.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-response-output {
+  margin: unset;
+  border-radius: 8px;
 }
 .main_wrapper .b2b_offer.form_container form {
   max-width: 500px;
@@ -2529,6 +2552,9 @@ iframe .ytp-cued-thumbnail-overlay-image {
   gap: 20px;
   display: flex;
   flex-direction: column;
+}
+.main_wrapper .b2b_offer.form_container form.form-hide {
+  display: none;
 }
 .main_wrapper .b2b_offer.form_container .container {
   display: flex;
@@ -2565,6 +2591,10 @@ iframe .ytp-cued-thumbnail-overlay-image {
   border: 2px solid;
   padding: 8px 15px;
 }
+.main_wrapper .b2b_offer.form_container textarea {
+  height: 120px;
+  border-radius: 24px;
+}
 .main_wrapper .b2b_offer.form_container select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2572,13 +2602,14 @@ iframe .ytp-cued-thumbnail-overlay-image {
   padding-right: 20px;
   background: url("https://cdn3.iconfinder.com/data/icons/fatcow/16x16_0150/control_repeat_blue.png") no-repeat center right;
 }
-.main_wrapper .b2b_offer.form_container input.error, .main_wrapper .b2b_offer.form_container select.error {
+.main_wrapper .b2b_offer.form_container input.error,
+.main_wrapper .b2b_offer.form_container select.error {
   outline: red;
   border: 2px solid red;
 }
 .main_wrapper .b2b_offer.form_container #order-button {
-  background: #E58A56;
-  border: 1px solid #E58A56 !important;
+  background: #e58a56;
+  border: 1px solid #e58a56 !important;
   color: white;
   border-radius: 54px;
   border: 2px solid;
@@ -2600,7 +2631,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  color: #40434D;
+  color: #40434d;
 }
 .main_wrapper .left_conainer .wrapper p {
   max-width: 300px;

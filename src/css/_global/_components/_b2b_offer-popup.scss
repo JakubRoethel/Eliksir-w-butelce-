@@ -1,152 +1,185 @@
 //test page
 
 .popup_container {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 
-
-    &.show {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .popup_content {
-        margin-top: 220px;
-    }
-    
-  }
-
-.main_wrapper {
+  &.show {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
-.popup_wrapper {
-   display: flex;
-   justify-content: center;
-   background-color: #e5decb;
-   border: 2px solid #40434D;
-   border-radius: 25px;
-   padding: 60px;
-   gap: 40px;
+    align-items: center;
+  }
+
+  .popup_content {
+    margin-top: 100px;
+  }
 }
-.b2b_offer.form_container {
+
+.main_wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #e5decb;
-  
-
-  form {
-    max-width: 500px;
-    color: #40434d;
-    gap: 20px;
+  .popup_wrapper {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    background-color: #e5decb;
+    border: 2px solid #40434d;
+    border-radius: 25px;
+    padding: 60px;
+    gap: 40px;
   }
-
-  .container {
+  .b2b_offer.form_container {
     display: flex;
-    flex-direction: column;
-  }
+    justify-content: center;
+    align-items: center;
+    background-color: #e5decb;
+    max-width: 420px;
 
-  label {
-    font-size: 14px;
-  }
+    .contact_form {
+      .title {
+        max-width: 416px;
+        margin-bottom: 20px;
+      }
 
-  .wrapper {
-    display: flex;
-    .product_selector {
-      margin-right: 20px;
-      flex: 2;
+      .wpcf7-submit {
+        width: 100%;
+        background: #e58a56;
+        border: 1px solid #e58a56 !important;
+        color: white;
+        border-radius: 54px;
+        border: 2px solid;
+        padding: 15px 15px;
+
+        &:hover {
+          background: #a4633d;
+        }
+      }
+
+      .wpcf7-spinner {
+        display: none;
+      }
+
+      .wpcf7-response-output {
+        margin: unset;
+        border-radius: 8px;
+      }
     }
 
-    .quantity {
-      max-width: 120px;
+    form {
+      &.form-hide {
+        display: none;
+      }
+      max-width: 500px;
+      color: #40434d;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
     }
-  }
 
-  #button-hook {
-    text-align: right;
-    button {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .wrapper {
+      display: flex;
+      .product_selector {
+        margin-right: 20px;
+        flex: 2;
+      }
+
+      .quantity {
+        max-width: 120px;
+      }
+    }
+
+    #button-hook {
+      text-align: right;
+      button {
         background: unset;
         padding: unset;
         border: unset;
         text-decoration: underline;
         font-size: 14px;
-        
+      }
     }
-  }
-  input,
-  textarea,
-  select {
-    background-color: #e5decb;
-    border-radius: 54px;
-    border: 2px solid;
-    padding: 8px 15px;
-  }
+    input,
+    textarea,
+    select {
+      background-color: #e5decb;
+      border-radius: 54px;
+      border: 2px solid;
+      padding: 8px 15px;
+    }
 
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-right: 20px;
-    background: url("https://cdn3.iconfinder.com/data/icons/fatcow/16x16_0150/control_repeat_blue.png")
-      no-repeat center right;
-  }
+    textarea {
+      height: 120px;
+      border-radius: 24px;
+    }
 
-  input.error, select.error {
-    outline: red;
-    border: 2px solid red;
-  }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 20px;
+      background: url("https://cdn3.iconfinder.com/data/icons/fatcow/16x16_0150/control_repeat_blue.png")
+        no-repeat center right;
+    }
 
-  #order-button {
-    background: #E58A56;
-    border: 1px solid #E58A56 !important;
-    color: white;
-    border-radius: 54px;
-    border: 2px solid;
-    padding: 15px 15px;
+    input.error,
+    select.error {
+      outline: red;
+      border: 2px solid red;
+    }
 
-    &:hover {
+    #order-button {
+      background: #e58a56;
+      border: 1px solid #e58a56 !important;
+      color: white;
+      border-radius: 54px;
+      border: 2px solid;
+      padding: 15px 15px;
+
+      &:hover {
         background: #a4633d;
+      }
     }
   }
-}
 
-.left_conainer {
+  .left_conainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-right: 1px solid #40434d40;
     padding-right: 20px;
     .wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        color: #40434D;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      color: #40434d;
 
-        p {
-            max-width: 300px;
-            text-align: center;
-        }
-        img {
-            max-width: 250px;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-radius: 30px;
-        }
+      p {
+        max-width: 300px;
+        text-align: center;
+      }
+      img {
+        max-width: 250px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 30px;
+      }
     }
-}
-
+  }
 }

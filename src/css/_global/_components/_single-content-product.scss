@@ -499,8 +499,8 @@ iframe {
     }
 
     .button {
-      color: white;
-      background-color: #40434d;
+      color: #40434d;
+      background-color: transparent;
       border-radius: 30px;
       width: fit-content;
       padding: 14px 32px 20px 32px;
@@ -517,6 +517,7 @@ iframe {
         background-repeat: no-repeat;
         margin-left: 10px;
         transition: all 0.3s ease;
+        filter: invert(1);
       }
 
       &:hover {
@@ -528,6 +529,7 @@ iframe {
         &::after {
           transform: translateX(6px);
           transition: all 0.3s ease;
+          
         }
       }
     }
