@@ -1,0 +1,74 @@
+.customer_benefits_section {
+    background-color:#fad9ba;
+    color: #40434D;
+    padding: 150px 0px;
+
+    .text_container {
+        padding: 0px 200px;
+
+        .title {
+            font-size: 60px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 60px;
+            text-align: center;
+        }
+    
+        .description {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 36px;
+            text-align: center;
+            margin-top: 35px;
+            padding: 0px 100px;
+        }
+    }
+
+    .img_benefits_list_container {
+        display: flex;
+        margin-top: 70px;
+        padding-right: 200px;
+
+        img {
+            max-height: 760px;
+            object-fit: cover;
+        }
+
+           
+        .img_container, .benefits_list_container  {
+            flex: 1;
+        }
+
+        .benefits_list_container {
+            display: flex;
+            gap: 60px;
+            flex-direction: column;
+            padding-left: 100px;
+        }
+
+        .single_benefit {
+            color:#40434D;
+
+            .number_and_description_wrapper {
+
+                display: flex;
+                gap: 15px;
+                align-items: center;
+
+                .item_number {
+                    font-size: 80px;
+                    font-weight: 700;
+                }
+    
+                .benefit_description {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+
+           
+        }
+    }
+
+
+}

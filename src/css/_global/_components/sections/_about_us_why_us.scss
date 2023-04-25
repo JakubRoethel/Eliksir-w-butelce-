@@ -1,0 +1,50 @@
+.why_us {
+    display: flex;
+    color: #40434d;
+    padding: 0px 0% 0px 10%;
+    gap: 10%;
+    background-color:#fff4d8;
+  
+    .text_and_button_wrapper {
+      display: flex;
+      flex: 1;
+      margin: auto;
+      flex-direction: column;
+      .title {
+        font-size: 133px;
+        font-weight: 700;
+        color: #40434C;
+        margin-right: -50%;
+        z-index: 1;
+        margin-bottom: 30px;
+      }
+  
+      .description {
+        font-size: 18px;
+        font-weight: 700;
+        color: #40434d;
+        margin: auto;
+        margin-bottom: 30px;
+        list-style: disc;
+        list-style-position: outside;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+
+    a.button {
+      margin-left: -15px;
+    }
+  
+    .image_wrapper {
+      flex: 2;
+
+  
+      img {
+        display: block;
+        height: 100%;
+      }
+    }
+  }

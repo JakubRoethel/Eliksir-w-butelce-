@@ -1,0 +1,33 @@
+.about_us_section {
+    .hero_section {
+      position: relative;
+      width: 100%;
+      img {
+        object-fit: contain;
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+  
+      .description_wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+  
+      .hero_description {
+        max-width: 850px;
+        margin-left: 8%;
+        font-size: 76px;
+        font-weight: 700;
+        text-transform: uppercase;
+  
+      }
+
+    }
+}
