@@ -3340,3 +3340,141 @@ article form.checkout .woocommerce-checkout-review-order .woocommerce-mini-cart_
   outline: red;
   border: 2px solid red;
 }
+
+.degustacje_hero_section .hero_section {
+  position: relative;
+  width: 100%;
+}
+.degustacje_hero_section .hero_section img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.degustacje_hero_section .hero_section .description_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.degustacje_hero_section .hero_section .hero_description {
+  max-width: 850px;
+  margin-left: 8%;
+  font-size: 76px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.degustacje_hero_section .hero_section .download_button {
+  margin-left: 8%;
+  margin-top: 70px;
+  max-width: 440px;
+}
+.degustacje_hero_section .hero_section .download_button button {
+  font-size: 16px;
+  color: white;
+  background-color: #313235;
+  border: unset;
+  border-radius: 105px;
+  padding: 16px 32px 16px 64px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.degustacje_hero_section .hero_section .download_button button::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  width: 32px;
+  height: 32px;
+  background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/04/upload_file_FILL0_wght100_GRAD200_opsz48-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.degustacje_hero_section .hero_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.9;
+}
+
+section.degustacje_content {
+  background: #fff4d8;
+  padding: 120px 205px 240px 205px;
+}
+section.degustacje_content .title {
+  color: #40434d;
+  font-size: 40px;
+  text-align: center;
+}
+section.degustacje_content .description_wrapper {
+  display: flex;
+  gap: 10%;
+  margin-top: 120px;
+}
+section.degustacje_content .description_wrapper .description_container {
+  flex: 1;
+  font-size: 24px;
+  color: #40434d;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+section.degustacje_content .description_wrapper .description_container strong {
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+}
+section.degustacje_content .description_wrapper .contact_container {
+  flex: 1;
+  color: #40434d;
+  font-size: 24px;
+}
+section.degustacje_content .description_wrapper .contact_container .button {
+  font-size: 16px;
+  margin-top: 100px;
+}
+.degustacje_gallery {
+  background: #FAD9BA;
+  padding: 120px 205px;
+}
+.degustacje_gallery .gallery_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  margin-top: -260px;
+}
+.degustacje_gallery .gallery_wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+.degustacje_gallery .gallery_wrapper img:nth-child(1) {
+  grid-area: 1/1/3/2;
+}
+.degustacje_gallery .gallery_wrapper img:nth-child(2) {
+  grid-area: 3/1/5/2;
+}
+.degustacje_gallery .gallery_wrapper img:nth-child(3) {
+  grid-area: 1/2/4/4;
+}
+.degustacje_gallery .gallery_wrapper img:nth-child(4) {
+  grid-area: 4/2/5/3;
+}
+.degustacje_gallery .gallery_wrapper img:nth-child(5) {
+  grid-area: 4/3/5/4;
+}
+
+.degustacje.b2b_offer_section {
+  background: #fff4d8;
+}
