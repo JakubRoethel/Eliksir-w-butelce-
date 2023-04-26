@@ -198,4 +198,17 @@ export default function swiperService() {
         },
       });
 
+
+      var swiper5 = new Swiper(".swiper_logo", {
+        effect: "slide",
+        grabCursor: true,
+        centeredSlides: false,
+        slidesPerView: "7",
+        spaceBetween: 0,
+        loop: true,
+      });
+      
+
+      
+
 }
