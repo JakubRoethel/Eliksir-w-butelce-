@@ -203,8 +203,14 @@ export default function swiperService() {
         effect: "slide",
         grabCursor: true,
         centeredSlides: false,
-        slidesPerView: "7",
-        spaceBetween: 0,
+        slidesPerView: "4.2",
+        spaceBetween: 50,
+        slidesOffsetBefore: 150,
+        slidesOffsetAfter: 150,
+        slideToClickedSlide: true,
+        autoplay: {
+          delay: 1000,
+        },
         loop: true,
       });
       

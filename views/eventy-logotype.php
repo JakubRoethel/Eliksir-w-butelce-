@@ -1,9 +1,9 @@
 <?php
-$title = get_field('logotype')['title'];
-$logotype_list = get_field('logotype')['logotype_img'];
+$title = get_field('logotype_eventy')['title'];
+$logotype_list = get_field('logotype_eventy')['logotype_img'];
 ?>
 
-<div class="logotype_section">
+<div class="logotype_eventy_section">
     <p class="title"> <?php echo $title ?> </p>
     <?php
         if( $logotype_list ): ?>
@@ -24,7 +24,7 @@ $logotype_list = get_field('logotype')['logotype_img'];
  <?php endif; ?>
  </div>
 
-<div class="container b2b_offer_section about_us">
+<div class="container b2b_offer_section eventy">
             <?php $image_id = 415; ?>
             <div class="text_and_button_wrapper">
                 <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>

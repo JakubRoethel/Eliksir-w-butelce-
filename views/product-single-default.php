@@ -177,7 +177,7 @@ $product_short_description = $product->get_short_description();
             </h6>
             <?php
             $movie_url = get_field('link_do_filmu'); ?>
-            <iframe width="100%" height="350px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <iframe width="100%" height="650px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
             </iframe>
         </div>
     <?php endif; ?>
