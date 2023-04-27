@@ -2397,6 +2397,37 @@ iframe .ytp-cued-thumbnail-overlay-image {
   height: 100%;
 }
 
+.contact_button_container {
+  display: flex;
+  align-items: flex-end;
+  position: sticky;
+  top: 60px;
+  z-index: 1;
+}
+.contact_button_container .contact_button {
+  background-color: #E58A56;
+  padding: 9px 50px 9px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  max-width: 170px;
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: 80px;
+}
+.contact_button_container .contact_button::after {
+  content: "";
+  background: url(/wp-content/uploads/2023/04/Vector.svg);
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .why_eliksir_section {
   display: flex;
   color: #40434d;
@@ -2454,9 +2485,9 @@ iframe .ytp-cued-thumbnail-overlay-image {
      object-fit: cover;
 }
 .shop_page .why_eliksir_section .button {
-  color: #40434d;
+  color: white;
   border: 1px solid #40434d;
-  background-color: transparent !important;
+  background-color: #40434d;
   border-radius: 30px;
   width: -moz-fit-content;
   width: fit-content;
@@ -2473,7 +2504,10 @@ iframe .ytp-cued-thumbnail-overlay-image {
   background-repeat: no-repeat;
   margin-left: 10px;
   transition: all 0.3s ease;
-  filter: invert(1);
+}
+.shop_page .why_eliksir_section .button:hover {
+  background: transparent;
+  color: #40434d;
 }
 .shop_page .why_eliksir_section:hover {
   transition: all 0.3s ease;
@@ -2718,8 +2752,15 @@ iframe .ytp-cued-thumbnail-overlay-image {
   flex-direction: column;
   gap: 10px;
 }
+.why_us a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #40434d;
+  text-decoration: underline;
+}
 .why_us a.button {
   margin-left: -15px;
+  text-decoration: none;
 }
 .why_us .image_wrapper {
   flex: 2;
@@ -2727,6 +2768,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .why_us .image_wrapper img {
   display: block;
   height: 100%;
+  width: 100%;
 }
 
 .customer_benefits_section {

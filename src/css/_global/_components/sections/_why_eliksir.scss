@@ -66,9 +66,9 @@
     }
 
     .button {
-      color: #40434d;
+      color: white;
       border: 1px solid #40434d;
-      background-color: transparent !important;
+      background-color: #40434d;
       border-radius: 30px;
       width: fit-content;
       padding: 11px 32px 15px 32px;
@@ -84,7 +84,10 @@
         background-repeat: no-repeat;
         margin-left: 10px;
         transition: all 0.3s ease;
-        filter: invert(1);
+      }
+      &:hover {
+        background: transparent;
+        color: #40434d;
       }
     }
 

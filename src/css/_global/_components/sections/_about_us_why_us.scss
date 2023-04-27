@@ -33,9 +33,17 @@
       }
     }
 
+    a {
+      font-size: 18px;
+        font-weight: 700;
+        color: #40434d;
+        text-decoration: underline;
+    }
+
 
     a.button {
       margin-left: -15px;
+      text-decoration: none;
     }
   
     .image_wrapper {
@@ -45,6 +53,7 @@
       img {
         display: block;
         height: 100%;
+        width: 100%;
       }
     }
   }

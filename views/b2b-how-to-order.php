@@ -1,5 +1,13 @@
+<?php $cta_button = get_field('contact_button');
+    ?>
+    <div class="contact_button_container">
+        <a href="<?php echo $cta_button['url'] ?>"  class="contact_button"><?php echo $cta_button['title'] ?></a>
+    </div>
+    
     <div class="container how_to_order_section">
-    <?php $title = get_field('how_to_order')['title']; ?>
+    <?php 
+        $title = get_field('how_to_order')['title'];
+    ?>
     <h2 class="title"><?php echo $title ; ?></h2>
         <?php $order_steps_list = get_field('how_to_order')['order_step'];
 
