@@ -22,6 +22,29 @@
         ]); ?>
       </div>
     </div>
+    <div class="menu_container_mobile">
+      <div class="header_navigation_mobile">
+        <?php wp_nav_menu([
+          'menu' => 'Main menu',
+          'menu_id' => 'navigation-list',
+          'menu_class' => 'navigation__list',
+          'container' => 'nav',
+          'container_id' => 'navigation',
+          'container_class' => 'navigation',
+          'theme_location' => 'main-menu',
+        ]); ?>
+      </div>
+      <?php wp_nav_menu([
+        'menu' => 'Menu footer left',
+        'menu_id' => 'navigation-list',
+        'menu_class' => 'navigation_list_footer',
+        'container' => 'nav',
+        'container_id' => 'navigation',
+        'container_class' => 'navigation',
+        'theme_location' => 'main-menu',
+      ]); ?>
+    </div>
+    
 
     <div class="header_right">
       <ul class="navigation_social">
@@ -42,7 +65,7 @@
         </li>
       </ul>
       <div class="icon_box">
-        <p>English</p>
+        <p class="translation_dropdown">English</p>
         <div class="icon_container">
 
           <div class="cart-icon-container">
@@ -62,6 +85,11 @@
               </div>
             </div>
           </div>
+          <button type="button" class="header__toggle">
+              <div class="header__toggle__item"></div>
+              <div class="header__toggle__item"></div>
+              <div class="header__toggle__item"></div>
+            </button>
         </div>
       </div>
     </div>

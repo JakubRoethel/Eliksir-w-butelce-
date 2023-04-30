@@ -14,19 +14,19 @@ export default function headerService(myAjax) {
     });
   
   
-    // const burger = document.querySelector('.header__toggle');
+    const burger = document.querySelector('.header__toggle');
   
-  //   burger.addEventListener('click', () => {
-  //     if(header.classList.contains('header--navigation-open')){
-  //       header.classList.remove('header--navigation-open');
-  //     } else {
-  //       header.classList.add('header--navigation-open');
-  //     }
-  //   });
+    burger.addEventListener('click', () => {
+      if(header.classList.contains('header--navigation-open')){
+        header.classList.remove('header--navigation-open');
+      } else {
+        header.classList.add('header--navigation-open');
+      }
+    });
   
-  //   headerOverlay.addEventListener('click', () => {
-  //       header.classList.remove('header--navigation-open');
-  //   });
+    // headerOverlay.addEventListener('click', () => {
+    //     header.classList.remove('header--navigation-open');
+    // });
 
 
 

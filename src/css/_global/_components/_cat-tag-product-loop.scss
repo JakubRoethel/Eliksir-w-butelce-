@@ -66,6 +66,10 @@
   }
   .category-title {
     text-transform: uppercase;
+
+    @include bp($bp-mobile) {
+      font-size: 32px;
+    }
   }
   .category-description {
     font-size: 16px;
@@ -75,6 +79,10 @@
     color: #40434d;
     max-width: 80%;
     margin-bottom: 40px;
+    @include bp($bp-mobile) {
+      max-width: 100%;
+    }
+    
   }
 
   .wpc-filters-widget-content{

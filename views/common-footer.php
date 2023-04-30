@@ -25,7 +25,7 @@
         </li>
         <li class="social_item">
           <a href="<?php the_field('youtube_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-            <i class="fa-brands fa-youtube fa-beat-fade"></i>
+            <i class="fa-brands fa-youtube"></i>
           </a>
         </li>
       </ul>

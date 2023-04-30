@@ -354,20 +354,18 @@ function headerService(myAjax) {
       header.classList.remove('header--scrolled');
     }
   });
+  var burger = document.querySelector('.header__toggle');
+  burger.addEventListener('click', function () {
+    if (header.classList.contains('header--navigation-open')) {
+      header.classList.remove('header--navigation-open');
+    } else {
+      header.classList.add('header--navigation-open');
+    }
+  });
 
-  // const burger = document.querySelector('.header__toggle');
-
-  //   burger.addEventListener('click', () => {
-  //     if(header.classList.contains('header--navigation-open')){
-  //       header.classList.remove('header--navigation-open');
-  //     } else {
-  //       header.classList.add('header--navigation-open');
-  //     }
-  //   });
-
-  //   headerOverlay.addEventListener('click', () => {
-  //       header.classList.remove('header--navigation-open');
-  //   });
+  // headerOverlay.addEventListener('click', () => {
+  //     header.classList.remove('header--navigation-open');
+  // });
 
   //minicart buttons logic
   jQuery(function ($) {
@@ -496,13 +494,17 @@ function swiperService() {
     breakpoints: {
       // when window width is >= 320px
       320: {
-        slidesPerView: 1.5,
-        spaceBetween: 20
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0
       },
       // when window width is >= 480px
       780: {
         slidesPerView: 2.5,
-        spaceBetween: 30
+        spaceBetween: 30,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0
       },
       // when window width is >= 640px
       940: {

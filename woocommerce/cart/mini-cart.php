@@ -39,22 +39,26 @@ do_action('woocommerce_before_mini_cart'); ?>
                 $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
         ?>
                 <li class="woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
-
-                    <?php if (empty($product_permalink)) : ?>
-                        <?php echo $thumbnail  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-                        ?>
-                    <?php else : ?>
-                        <a href="<?php echo esc_url($product_permalink); ?>">
-                            <?php echo $thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+                    <div class="image_title_wrapper">
+                        <?php if (empty($product_permalink)) : ?>
+                            <?php echo $thumbnail  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
                             ?>
-                        </a>
-                    <?php endif; ?>
-                    <h3 class="cart-item-title">
-                    <a href="<?php echo esc_url($product_permalink); ?>">
-                        <?php echo $product_name; ?>
+                        <?php else : ?>
+                            <a href="<?php echo esc_url($product_permalink); ?>">
+                                <?php echo $thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+                                ?>
+                            </a>
+                        <?php endif; ?>
+                        <h3 class="cart-item-title">
+                            <a href="<?php echo esc_url($product_permalink); ?>">
+                                <?php echo $product_name; ?>
+                            </a>
+                            <div class="price mobile">
+                                <span><?php echo $_product->get_price(); ?><?php echo get_woocommerce_currency() ?></span>
+                            </div>
+                        </h3>
+                    </div>
 
-                    </a>
-                    </h3>
                     <div class="product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                         <?php
                         if ($_product->is_sold_individually()) {
@@ -81,7 +85,7 @@ do_action('woocommerce_before_mini_cart'); ?>
                     </div>
                     <?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
                     ?>
-                    
+
                 </li>
         <?php
             }

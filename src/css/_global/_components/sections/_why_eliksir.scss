@@ -4,17 +4,31 @@
   padding: 0px 0% 0px 10%;
   gap: 10%;
 
+  @include bp($bp-mobile) {
+    padding: 38px 0px 0px 0px;
+    flex-direction: column;
+  }
+
   .text_and_button_wrapper {
     display: flex;
     flex: 1;
     margin: auto;
     flex-direction: column;
+    @include bp($bp-mobile) {
+      padding: 0px 16px 38px 16px;
+    }
+
     .title {
       font-size: 133px;
       font-weight: 700;
       color: #e58a56;
       margin-right: -50%;
       z-index: 1;
+
+      @include bp($bp-mobile) {
+        font-size: 50px;
+        margin-right: unset;
+      }
     }
 
     .description {
@@ -23,6 +37,11 @@
       color: #40434d;
       margin: auto;
       margin-bottom: 30px;
+      @include bp($bp-mobile) {
+        font-size: 14px;
+        margin-top: 20px;
+      
+      }
     }
   }
 

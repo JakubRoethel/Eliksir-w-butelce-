@@ -105,7 +105,7 @@ $product_short_description = $product->get_short_description();
     </div>
 </div>
 </div>
-<div class="set_includes_section">
+<!-- <div class="set_includes_section">
     <?php
 
     $product_ids = get_field('products_in_set'); // array of product IDs
@@ -167,7 +167,7 @@ $product_short_description = $product->get_short_description();
 
 
     ?>
-</div>
+</div> -->
 <div class="product_details">
     <div class="mix_details">
 

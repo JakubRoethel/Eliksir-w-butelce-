@@ -57,13 +57,17 @@ export default function swiperService() {
         breakpoints: {
           // when window width is >= 320px
           320: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.1,
             spaceBetween: 20,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0,
           },
           // when window width is >= 480px
           780: {
             slidesPerView: 2.5,
             spaceBetween: 30,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0,
           },
           // when window width is >= 640px
           940: {

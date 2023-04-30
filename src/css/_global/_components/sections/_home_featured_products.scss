@@ -8,6 +8,10 @@
   overflow: hidden;
   position: relative;
 
+  @include bp($bp-mobile) {
+    padding: 38px 16px 0 16px;
+  }
+
   .swiper-scrollbar {
     border-radius: 2px;
     height: 5px;
@@ -25,6 +29,10 @@
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
+    @include bp($bp-mobile) {
+      font-size: 24px;
+      text-align: left;
+    }
   }
 
   .description {
@@ -34,12 +42,28 @@
     padding: 20px;
     max-width: 950px;
     margin: 0 auto;
+    @include bp($bp-mobile) {
+      font-size: 14px;
+      text-align: left;
+      padding: unset;
+      padding-top: 38px;
+    }
   }
 
   .swiper_featured {
     padding: 30px 0;
     .swiper-slide {
       height: 100%; 
+      @include bp($bp-mobile) {
+        height: auto; 
+      }
+      li {
+        @include bp($bp-mobile) {
+          height: 100%; 
+        }
+      }
+      
+
     }
   }
 
@@ -95,6 +119,11 @@
       color: #40434d;
       font-size: 16px;
       font-weight: 700;
+      @include bp($bp-mobile) {
+        font-size: 12px;
+      }
+  
+      
     }
 
     .single_sub_product {

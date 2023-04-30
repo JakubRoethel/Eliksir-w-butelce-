@@ -1,100 +1,127 @@
 .how_to_mix {
-    background-color: #f6b98c;
-    padding: 125px 205px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // max-width: 1800px;
-    margin: 0 auto;
+  background-color: #f6b98c;
+  padding: 125px 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // max-width: 1800px;
+  margin: 0 auto;
 
-    .title, .subtitle, .text {
-        font-weight: 700;
-        color: #40434D;
-        text-align: center;
-    };
+  @include bp($bp-mobile) {
+    padding: 38px 16px 0 16px;
+  }
 
-    .title {
-        font-size: 60px;
-        text-transform: uppercase;
-    };
+  .title,
+  .subtitle,
+  .text {
+    font-weight: 700;
+    color: #40434d;
+    text-align: center;
+  }
 
-    .subtitle {
-        padding: 20px 0px;
-        font-size: 24px;
-     
-    };
-
-    .text {
-        font-size: 40px;
-        padding-top: 50px;
+  .title {
+    font-size: 60px;
+    text-transform: uppercase;
+    @include bp($bp-mobile) {
+      font-size: 24px;
+      text-align: left;
     }
+  }
 
-    .mix_ingredients {
+  .subtitle {
+    padding: 20px 0px;
+    font-size: 24px;
+    @include bp($bp-mobile) {
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+
+  .text {
+    font-size: 40px;
+    padding-top: 50px;
+    @include bp($bp-mobile) {
+      font-size: 16px;
+      margin-bottom: 38px;
+      padding-top: 0;
+    }
+  }
+
+  .mix_ingredients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    gap: 45px;
+    @include bp($bp-mobile) {
+      gap: 0px;
+      padding: 0 20px;
+    }
+    .left_side_mix {
+      flex: 1;
+
+      .single_icon_box {
         display: flex;
         align-items: center;
-        justify-content: center;
-        max-width: 600px;
-        gap: 45px;
+        justify-content: flex-end;
+        gap: 20px;
+        padding: 15px 0px;
 
-        .left_side_mix {
-           flex: 1;
-
-            .single_icon_box {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 20px;
-                padding: 15px 0px;
-        
-                .icon_description {
-                    font-weight: 700;
-                    font-size: 34px;
-                    min-width: 130px;
-                }
-        
-                img {
-                    width: 70px;
-                    height: auto;
-                }
-            }
-
-            .single_icon_box:first-child .icon_description {
-                color: #C3A43B;
-            }
-        
-        
-            .single_icon_box:nth-child(2) .icon_description {
-                color: #F26B1F;
-                ;
-            };
-        
-        
-            .single_icon_box:nth-child(3) .icon_description {
-                color: #6797B2;
-            };
-
+        @include bp($bp-mobile) {
+          justify-content: start;
         }
-    }
 
+        .icon_description {
+          font-weight: 700;
+          font-size: 34px;
+          min-width: 130px;
+          @include bp($bp-mobile) {
+            font-size: 18px;
+            min-width: unset;
+          }
+        }
 
-    .right_side_mix{
-       flex: 1;
         img {
-            height: auto;
-            // max-width: 320px;
+          width: 70px;
+          height: auto;
+          @include bp($bp-mobile) {
+            width: 28px;
+          }
         }
+      }
+
+      .single_icon_box:first-child .icon_description {
+        color: #c3a43b;
+      }
+
+      .single_icon_box:nth-child(2) .icon_description {
+        color: #f26b1f;
+      }
+
+      .single_icon_box:nth-child(3) .icon_description {
+        color: #6797b2;
+      }
     }
+  }
+
+  .right_side_mix {
+    flex: 1;
+    svg {
+      @include bp($bp-mobile) {
+        width: 100%;
+      }
+    }
+  }
 }
 
-
 .containerr {
-    width: 100%;
-    height: 800px; /* set the height of the container */
-    overflow: hidden; /* hide overflow so the glass doesn't spill out */
-    position: relative; /* make the svg element position relative to the container */
-  }
-  
+  width: 100%;
+  height: 800px; /* set the height of the container */
+  overflow: hidden; /* hide overflow so the glass doesn't spill out */
+  position: relative; /* make the svg element position relative to the container */
+}
+
 //   svg {
 //     position: absolute; /* position the svg inside the container */
 //     top: 0;

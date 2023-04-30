@@ -3,6 +3,9 @@
   padding: 110px 205px 130px 205px;
   // max-width: 1800px;
   margin: 0 auto;
+  @include bp($bp-mobile) {
+    padding: 38px 16px 0 16px;
+  }
 
   .title {
     font-weight: 700;
@@ -10,6 +13,10 @@
     text-align: center;
     font-size: 40px;
     text-transform: uppercase; 
+    @include bp($bp-mobile) {
+      font-size: 24px;
+      text-align: left;
+    }
   }
 
   .filter_container {
@@ -18,12 +25,32 @@
     align-items: flex-end;
     padding-top: 80px;
 
+    @include bp($bp-mobile) {
+      justify-content: center;
+      align-items: unset;
+      flex-wrap: wrap;
+      row-gap: 30px;
+      padding-top: 30px;
+      padding-bottom: 50px;
+     }
+
+    .single_icon_box {
+      @include bp($bp-mobile) {
+       width: 33%;
+       }
+    }
+
     a {
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 25px;
+
+      @include bp($bp-mobile) {
+        gap: 20px;
+        justify-content: flex-end;
+       }
     }
 
     path {
@@ -75,6 +102,9 @@
       font-weight: 700;
       font-size: 24px;
       color: #40434d;
+      @include bp($bp-mobile) {
+        font-size: 18px;
+      }
     }
   }
 }

@@ -4,6 +4,10 @@
   background-color: #fff4d8;
   padding: 120px 205px 0 205px;
 
+  @include bp($bp-mobile) {
+    padding: 38px 16px 0 16px;
+  }
+
   .title,
   .subtitle {
     font-weight: 700;
@@ -16,12 +20,22 @@
     font-size: 60px;
     text-transform: uppercase;
 
+    @include bp($bp-mobile) {
+      font-size: 24px;
+      text-align: left;
+    }
+
   }
 
   .subtitle {
     padding: 20px 0px;
     line-height: 48px;
     font-size: 32px;
+    @include bp($bp-mobile) {
+      font-size: 18px;
+      line-height: 27px;
+      text-align: left;
+    }
   }
 
   .info_container {
@@ -31,6 +45,11 @@
     justify-content: space-between;
     max-width: 1350px;
     margin: 0 auto;
+
+    //hide for mobile since we need another html structure
+    @include bp($bp-mobile) {
+     display: none;
+    }
 
     .left_box {
         flex: 1;

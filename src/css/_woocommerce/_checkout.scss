@@ -23,6 +23,10 @@ article {
         display: grid;
         gap: 100px;
 
+        @include bp($bp-mobile) {
+          grid-template-columns: 1fr;
+        }
+
     }
 
     h3 {

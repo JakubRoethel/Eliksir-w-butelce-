@@ -1,16 +1,36 @@
 .product-template-default {
   margin-top: 200px;
   background-color: #fff4d8;
+
+  @include bp($bp-mobile) {
+    margin-top: 144px;
+  }
   .woocommerce-breadcrumb {
     padding: 0px 10% 32px 10%;
+
+    @include bp($bp-mobile) {
+      padding: 16px;
+      margin: unset;
+      font-size: 14px;
+    }
+  }
+
+  @include bp($bp-mobile) {
+    padding: 0;
   }
 
   div.product {
     padding: 0px 10%;
+    @include bp($bp-mobile) {
+      padding: 0;
+    }
 
     .product_wrapper {
       display: flex;
       gap: 5%;
+      @include bp($bp-mobile) {
+        flex-direction: column-reverse;
+      }
 
       a {
         color: #40434d;
@@ -26,14 +46,22 @@
         color: #40434d;
         position: relative;
 
+        @include bp($bp-mobile) {
+          padding: 0 16px;
+        }
+
         .product_name {
           font-size: 40px;
           font-weight: 700;
           padding-bottom: 30px;
+          @include bp($bp-mobile) {
+            font-size: 32px;
+            margin-top: 16px;
+          }
         }
 
         .set_subtitle {
-          margin-bottom: 24px; 
+          margin-bottom: 24px;
         }
 
         .tags_title {
@@ -64,9 +92,10 @@
 
         .product_description {
           font-size: 16px;
-          font-weight: 500;
           line-height: 20px;
           padding-bottom: 24px;
+          font-family: futura-pt, sans-serif;
+          font-weight: 600;
         }
 
         .buttons_container {
@@ -96,6 +125,10 @@
             font-size: 16px;
             font-weight: 700;
             opacity: 0.7;
+
+            @include bp($bp-mobile) {
+              font-size: 14px !important;
+            }
 
             .woo-selected-variation-item-name {
               display: none;
@@ -157,6 +190,10 @@
               opacity: 0.7;
               color: #40434d;
               padding-bottom: 10px;
+
+              @include bp($bp-mobile) {
+                font-size: 14px !important;
+              }
             }
 
             button {
@@ -188,7 +225,7 @@
               margin: 0;
             }
             /* Firefox */
-            input[type=number] {
+            input[type="number"] {
               -moz-appearance: textfield;
             }
           }
@@ -201,7 +238,6 @@
             border-radius: 105px;
             font-size: 16px;
             font-weight: 700;
-
 
             &::after {
               font-family: fontAwesome;
@@ -247,7 +283,6 @@
           margin-top: 22px;
         }
 
-
         .set_includes_titles_section {
           margin-bottom: 24px;
 
@@ -269,10 +304,18 @@
         overflow: hidden;
         margin-top: 12px;
 
+        @include bp($bp-mobile) {
+          margin-top: 0px;
+        }
+
         .swiper_single_product {
           color: black;
           position: relative;
           padding-bottom: 26px;
+
+          @include bp($bp-mobile) {
+            padding-bottom: 0px;
+          }
 
           img {
             aspect-ratio: 6/5;
@@ -297,6 +340,10 @@
           gap: 10px;
           z-index: 1;
 
+          @include bp($bp-mobile) {
+            bottom: 20px !important;
+          }
+
           .swiper-pagination-bullet {
             width: 14px;
             height: 14px;
@@ -317,7 +364,7 @@
 .set_includes_section {
   .title {
     font-size: 24px;
-    color: #40434D;
+    color: #40434d;
     margin-left: 10%;
     text-transform: uppercase;
   }
@@ -371,28 +418,40 @@
 .product_details {
   padding: 100px 10% 55px 10%;
 
+  @include bp($bp-mobile) {
+    padding: 16px;
+  }
+
   .mix_details {
     display: flex;
     width: 100%;
 
+    @include bp($bp-mobile) {
+      flex-direction: column;
+    }
+
     .ingredients_container {
       flex: 2;
-
+      font-family: futura-pt, sans-serif;
+      font-weight: 600;
       ul {
         list-style-type: disc;
         max-height: 120px;
+
+        @include bp($bp-mobile) {
+          max-height: unset;
+        }
       }
     }
 
     .how_make_coctail {
       flex: 2;
       position: relative;
-
-      // ul li:last-child {
-      //     position: absolute;
-      //     bottom: 0px;
-
-      // }
+      font-family: futura-pt, sans-serif;
+      font-weight: 600;
+      @include bp($bp-mobile) {
+        margin-top: 42px;
+      }
     }
 
     ul {
@@ -414,6 +473,7 @@
   h6 {
     font-size: 24px;
     color: #40434d;
+    font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
     padding-bottom: 10px;
     text-transform: uppercase;
@@ -422,11 +482,16 @@
   .product_short_description {
     padding-top: 80px;
     font-size: 14px;
-    line-height: 18px;
     color: #40434d;
 
     .short_description_text {
       width: 78%;
+      font-family: futura-pt, sans-serif;
+      font-weight: 600;
+
+      @include bp($bp-mobile) {
+        width: 100%;
+      }
     }
 
     h6 {
@@ -437,14 +502,23 @@
 }
 
 iframe {
+  @include bp($bp-mobile) {
+    height: 250px !important;
+   }
   .ytp-cued-thumbnail-overlay-image {
     background-size: auto;
+  
+    
   }
 }
 
 .cross_selling_section {
   padding: 150px 10% 64px 10%;
   background-color: #fac6b6;
+
+  @include bp($bp-mobile) {
+    padding: 16px;
+  }
 
   .title {
     font-size: 40px;
@@ -458,6 +532,11 @@ iframe {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
+
+    @include bp($bp-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 12px;
+    }
 
     &:before {
       content: unset;
@@ -474,6 +553,12 @@ iframe {
   color: #40434d;
   padding: 0px 0% 0px 10%;
   gap: 10%;
+  
+
+  @include bp($bp-mobile) {
+    padding: 0px;
+    flex-direction: column;
+  }
 
   .text_and_button_wrapper {
     display: flex;
@@ -487,6 +572,11 @@ iframe {
       margin-right: -50%;
       z-index: 1;
       white-space: nowrap;
+      @include bp($bp-mobile) {
+       font-size: 42px;
+       margin-right: 0;
+       padding: 0 16px;
+      }
     }
 
     .description {
@@ -496,6 +586,14 @@ iframe {
       margin: auto;
       margin-bottom: 30px;
       padding-right: 200px;
+      
+      @include bp($bp-mobile) {
+        font-size: 14px;
+        margin-right: 0;
+        padding: 0 16px;
+        padding-right: unset;
+       }
+
     }
 
     .button {
@@ -507,6 +605,13 @@ iframe {
       transition: all 0.3s ease;
       display: inline-block;
       border: 1px solid #40434d;
+
+      @include bp($bp-mobile) {
+        margin: 0 16px;
+        width: auto;
+
+
+      }
 
       &::after {
         content: "";
@@ -526,10 +631,14 @@ iframe {
         color: #40434d;
         border: 1px solid #40434d;
 
+        @include bp($bp-mobile) {
+          background-color: transparent;
+          color: #40434d;
+        }
+
         &::after {
           transform: translateX(6px);
           transition: all 0.3s ease;
-          
         }
       }
     }
