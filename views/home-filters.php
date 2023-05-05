@@ -13,12 +13,19 @@ $filter_title = get_field('filter_section')['title'];
             <?php foreach ($filters_icons as $filters_icons) {
                 $description = $filters_icons['icon_text'];
                 $svg_icon = $filters_icons['real_icon'];
+                $context = stream_context_create([
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false
+                    ]
+                ]);
                 $icon_link= $filters_icons['icon_link'];
             ?>
                 <div class="single_icon_box <?php echo strtolower($description); ?>">
                     <a class="filter_link" href="<?php echo $icon_link  ?>">
                         <?php
                         if ($svg_icon) {
+
                             // $opts = array('https'=>array('header' => "User-Agent:MyAgent/1.0\r\n")); 
                             // //Basically adding headers to the request
                             // $context = stream_context_create($opts);
@@ -32,7 +39,7 @@ $filter_title = get_field('filter_section')['title'];
                             // );
                             
                             // $context = stream_context_create($opts);
-                            echo @file_get_contents($svg_icon);
+                            echo file_get_contents($svg_icon,false, $context);
                             
                         }
                         ?>
