@@ -29,10 +29,19 @@ $mix_subtitle = get_field('how_to_mix')['subtitle'];
           </div>
       <?php endif; ?> 
         </div>
-        <?php $mix_main_img_url = get_field('how_to_mix')['main_img']; ?>
-        <div class="right_side_mix">
-            <?php echo file_get_contents($mix_main_img_url); ?>
-        </div>
+        <?php
+            $mix_main_img_url = get_field('how_to_mix')['main_img'];
+            $context = stream_context_create([
+                'ssl' => [
+                    'verify_peer' => false,
+                    'verify_peer_name' => false
+                ]
+            ]);
+?>
+<div class="right_side_mix">
+    <?php echo file_get_contents($mix_main_img_url, false, $context); ?>
+</div>
+
     </div>
     <?php $mix_text = get_field('how_to_mix')['text']; ?>
     <p class="text"> <?php echo $mix_text  ?></p>

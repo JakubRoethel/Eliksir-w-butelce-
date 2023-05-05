@@ -30,10 +30,19 @@
                         <p style="color: <?php echo $color_hex ?>" class="order_number"><?php echo $key+1 ?>.</p>
                         <p class="description"> <?php echo $description  ?></p>
                         </div>
-                        <div class="svg<?php echo $key ?>">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/arrow-step.svg'); ?>
-                        </div>
-                      
+                        <?php
+                            $context = stream_context_create([
+                                'ssl' => [
+                                    'verify_peer' => false,
+                                    'verify_peer_name' => false
+                                ]
+                            ]);
+                            ?>
+
+                            <div class="svg<?php echo $key ?>">
+                                <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/arrow-step.svg', false, $context); ?>
+                            </div>
+
                     </div>
                 <?php  } ?>
             </div>
