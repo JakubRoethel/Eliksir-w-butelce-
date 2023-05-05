@@ -41,6 +41,7 @@
 
                             <div class="svg<?php echo $key ?>">
                                 <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/arrow-step.svg', false, $context); ?>
+                                <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/arrow-step-mobile.svg', false, $context); ?>
                             </div>
 
                     </div>

@@ -11,6 +11,11 @@
         background-color: #FAD9BA;
         padding: 120px 10%;
 
+        @include bp($bp-mobile) {
+            padding: 80px 16px;
+            
+          }
+
         .product_cat {
             padding: unset;
             &.zestawy {
@@ -21,6 +26,13 @@
         ul.products {
             padding-top: unset;
             row-gap: 5%;
+
+            @include bp($bp-mobile) {
+                padding: 0px;
+                column-gap: unset;
+                gap: 16px;
+                margin-bottom: 40px;
+              }
            
         }
 
@@ -96,7 +108,7 @@
             color: #40434D;
 
             @include bp($bp-mobile) {
-                font-size: 32px;
+                font-size: 24px;
             }
         }
 
