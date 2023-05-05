@@ -1,9 +1,13 @@
 
 .archive {
 
-   
     margin-top: 200px;
     background-color: #fff4d8;
+
+    @include bp($bp-mobile) {
+       margin-top: 120px;
+        
+      }
 
     //for b2b product section 
     &.b2b {
@@ -36,6 +40,13 @@
            
         }
 
+        .category-title {
+
+            @include bp($bp-mobile) {
+                font-size: 24px !important;
+            }
+        }
+
 
 
     }
@@ -45,7 +56,7 @@
 
         @include bp($bp-mobile) {
             padding: 0 16px;
-            margin-top: 20px;
+            margin: 20px 0px 0px 0px;
           }
 
     }
@@ -54,8 +65,7 @@
         scroll-margin-top: 150px;
 
         @include bp($bp-mobile) {
-            padding: 0 16px;
-            margin-top: 20px;
+            padding: 20px 16px 0px 16px;
           }
 
         .button {
@@ -64,13 +74,18 @@
 
         &.zestawy {
             padding-bottom: 120px;
+
+            @include bp($bp-mobile) {
+                padding: 20px 16px 40px 16px;
+                // margin-top: 20px;
+              }
         }
 
         &.eliksiry  {
             background: #FAD9BA;
             padding: 120px 205px 70px 205px;
             @include bp($bp-mobile) {
-                padding: 32px 16px;
+                padding: 40px 16px;
                 // margin-top: 20px;
               }
 
@@ -83,15 +98,11 @@
             background: #fff4d8;
             padding: 120px 205px;
             @include bp($bp-mobile) {
-                padding: 0 16px;
-                margin-top: 20px;
+                padding: 40px 16px 40px 16px;
               }
         }
     }
 
-    
-
-  
     
     & .archive-container {
         // @include bp($bp-tablet) {
@@ -108,7 +119,7 @@
             color: #40434D;
 
             @include bp($bp-mobile) {
-                font-size: 24px;
+                font-size: 32px;
             }
         }
 
@@ -128,6 +139,7 @@
     
             @include bp($bp-mobile) {
                 grid-template-columns: repeat(2, 1fr);
+                margin: 0px;
                 li.product {
                     width: 100% !important;
                 }

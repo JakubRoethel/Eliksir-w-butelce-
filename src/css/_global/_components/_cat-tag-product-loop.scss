@@ -5,14 +5,30 @@
       color: #40434d;
       margin-bottom: 60px;
       text-transform: uppercase;
+
+      @include bp($bp-mobile) {
+        margin-bottom: 25px;
+      }
+
+
     }
 
     &.tags.zestawy {
       padding-top: 100px;
+
+      @include bp($bp-mobile) {
+        padding-top: unset;
+        padding: 40px 16px 40px 16px;
+      }
     }
 
     &.Wielkanoc {
       padding: 120px 10%;
+      
+      @include bp($bp-mobile) {
+        padding: 40px 16px;
+        // margin-top: 20px;
+      }
     }
 
     &.dodatki {

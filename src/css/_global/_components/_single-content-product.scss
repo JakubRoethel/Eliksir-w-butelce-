@@ -566,16 +566,23 @@ iframe {
     margin: 10% auto;
     flex-direction: column;
 
+    @include bp($bp-mobile) {
+      margin: unset;
+      padding: 100px 16px 90px 16px;
+      
+    }
+
     .title {
       margin-bottom: 40px;
       font-size: 88px;
       margin-right: -50%;
       z-index: 1;
       white-space: nowrap;
+
       @include bp($bp-mobile) {
        font-size: 42px;
        margin-right: 0;
-       padding: 0 16px;
+       margin-bottom: 20px;
       }
     }
 
@@ -590,8 +597,8 @@ iframe {
       @include bp($bp-mobile) {
         font-size: 14px;
         margin-right: 0;
-        padding: 0 16px;
         padding-right: unset;
+        margin-bottom: 40px;
        }
 
     }
@@ -607,8 +614,7 @@ iframe {
       border: 1px solid #40434d;
 
       @include bp($bp-mobile) {
-        margin: 0 16px;
-        width: auto;
+        width: 100%;
 
 
       }

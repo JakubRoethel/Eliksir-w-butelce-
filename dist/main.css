@@ -1067,6 +1067,11 @@ a {
   margin-top: 200px;
   background-color: #fff4d8;
 }
+@media screen and (max-width: 619px) {
+  .archive {
+    margin-top: 120px;
+  }
+}
 .archive.b2b {
   margin-top: unset;
   background-color: #FAD9BA;
@@ -1096,6 +1101,11 @@ a {
     margin-bottom: 40px;
   }
 }
+@media screen and (max-width: 619px) {
+  .archive.b2b .category-title {
+    font-size: 24px !important;
+  }
+}
 .archive .woocommerce-breadcrumb {
   padding: 0 205px;
   margin-top: 80px;
@@ -1103,7 +1113,7 @@ a {
 @media screen and (max-width: 619px) {
   .archive .woocommerce-breadcrumb {
     padding: 0 16px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 0px;
   }
 }
 .archive .product_cat {
@@ -1112,8 +1122,7 @@ a {
 }
 @media screen and (max-width: 619px) {
   .archive .product_cat {
-    padding: 0 16px;
-    margin-top: 20px;
+    padding: 20px 16px 0px 16px;
   }
 }
 .archive .product_cat .button {
@@ -1122,13 +1131,18 @@ a {
 .archive .product_cat.zestawy {
   padding-bottom: 120px;
 }
+@media screen and (max-width: 619px) {
+  .archive .product_cat.zestawy {
+    padding: 20px 16px 40px 16px;
+  }
+}
 .archive .product_cat.eliksiry {
   background: #FAD9BA;
   padding: 120px 205px 70px 205px;
 }
 @media screen and (max-width: 619px) {
   .archive .product_cat.eliksiry {
-    padding: 32px 16px;
+    padding: 40px 16px;
   }
 }
 .archive .product_cat.eliksiry .widget_wpc_filters_widget {
@@ -1140,8 +1154,7 @@ a {
 }
 @media screen and (max-width: 619px) {
   .archive .product_cat.dodatki {
-    padding: 0 16px;
-    margin-top: 20px;
+    padding: 40px 16px 40px 16px;
   }
 }
 @media screen and (max-width: 619px) {
@@ -1156,7 +1169,7 @@ a {
 }
 @media screen and (max-width: 619px) {
   .archive .archive-container .category-title {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 .archive .archive-container ul.products {
@@ -1176,6 +1189,7 @@ a {
 @media screen and (max-width: 619px) {
   .archive .archive-container ul.products {
     grid-template-columns: repeat(2, 1fr);
+    margin: 0px;
   }
   .archive .archive-container ul.products li.product {
     width: 100% !important;
@@ -1778,6 +1792,12 @@ iframe .ytp-cued-thumbnail-overlay-image {
   margin: 10% auto;
   flex-direction: column;
 }
+@media screen and (max-width: 619px) {
+  .container.b2b_offer_section .text_and_button_wrapper {
+    margin: unset;
+    padding: 100px 16px 90px 16px;
+  }
+}
 .container.b2b_offer_section .text_and_button_wrapper .title {
   margin-bottom: 40px;
   font-size: 88px;
@@ -1789,7 +1809,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   .container.b2b_offer_section .text_and_button_wrapper .title {
     font-size: 42px;
     margin-right: 0;
-    padding: 0 16px;
+    margin-bottom: 20px;
   }
 }
 .container.b2b_offer_section .text_and_button_wrapper .description {
@@ -1804,8 +1824,8 @@ iframe .ytp-cued-thumbnail-overlay-image {
   .container.b2b_offer_section .text_and_button_wrapper .description {
     font-size: 14px;
     margin-right: 0;
-    padding: 0 16px;
     padding-right: unset;
+    margin-bottom: 40px;
   }
 }
 .container.b2b_offer_section .text_and_button_wrapper .button {
@@ -1821,8 +1841,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 @media screen and (max-width: 619px) {
   .container.b2b_offer_section .text_and_button_wrapper .button {
-    margin: 0 16px;
-    width: auto;
+    width: 100%;
   }
 }
 .container.b2b_offer_section .text_and_button_wrapper .button::after {
@@ -2749,11 +2768,27 @@ iframe .ytp-cued-thumbnail-overlay-image {
   margin-bottom: 60px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 619px) {
+  .archive-wrapper .product_cat .tag-pretitle {
+    margin-bottom: 25px;
+  }
+}
 .archive-wrapper .product_cat.tags.zestawy {
   padding-top: 100px;
 }
+@media screen and (max-width: 619px) {
+  .archive-wrapper .product_cat.tags.zestawy {
+    padding-top: unset;
+    padding: 40px 16px 40px 16px;
+  }
+}
 .archive-wrapper .product_cat.Wielkanoc {
   padding: 120px 10%;
+}
+@media screen and (max-width: 619px) {
+  .archive-wrapper .product_cat.Wielkanoc {
+    padding: 40px 16px;
+  }
 }
 .archive-wrapper .product_cat.dodatki .category-description {
   margin-bottom: 70px;
@@ -3278,14 +3313,32 @@ iframe .ytp-cued-thumbnail-overlay-image {
   padding: 140px 0;
   width: 40%;
 }
+@media screen and (max-width: 619px) {
+  .shop_page .why_eliksir_section .text_and_button_wrapper {
+    padding: 32px 16px 40px 16px;
+    width: 100%;
+  }
+}
 .shop_page .why_eliksir_section .text_and_button_wrapper .title {
   font-size: 88px;
   line-height: 90px;
   margin-right: -230px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 619px) {
+  .shop_page .why_eliksir_section .text_and_button_wrapper .title {
+    font-size: 42px;
+    line-height: 44px;
+    margin: unset;
+  }
+}
 .shop_page .why_eliksir_section .image_wrapper {
   width: 60%;
+}
+@media screen and (max-width: 619px) {
+  .shop_page .why_eliksir_section .image_wrapper {
+    width: 100%;
+  }
 }
 .shop_page .why_eliksir_section .image_wrapper .img_container {
   height: 100%;
@@ -3306,6 +3359,11 @@ iframe .ytp-cued-thumbnail-overlay-image {
   padding: 11px 32px 15px 32px;
   transition: all 0.3s ease;
   display: inline-block;
+}
+@media screen and (max-width: 619px) {
+  .shop_page .why_eliksir_section .button {
+    width: 100%;
+  }
 }
 .shop_page .why_eliksir_section .button::after {
   content: "";

@@ -22,7 +22,7 @@ function getProductsByTag($theTag)
             <?php while ($loop->have_posts()) : $loop->the_post();
             $product_count++; // Increment the product counter
             if ($product_count == 6 && $total_count >= 6 && !is_shop()) { // If it's the 6th product, add the extra li tag
-                echo "More than 5";
+               
                 get_template_part('views/cta', 'extra-loop-card');
             }
 
@@ -31,7 +31,6 @@ function getProductsByTag($theTag)
             endwhile;
 
             if($total_count < 6 && !is_shop()) {
-                echo "Less 6";
                 get_template_part('views/cta', 'extra-loop-card');
             } ?>
 

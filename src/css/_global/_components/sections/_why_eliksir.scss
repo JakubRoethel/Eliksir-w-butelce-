@@ -58,19 +58,36 @@
 //shop page section
 .shop_page {
   .why_eliksir_section {
+
     .text_and_button_wrapper {
       padding: 140px 0;
       width: 40%;
+
+      @include bp($bp-mobile) {
+        padding: 32px 16px 40px 16px;
+        width: 100%;
+      }
+
       .title {
         font-size: 88px;
         line-height: 90px;
         margin-right: -230px;
         margin-bottom: 30px;
+
+        @include bp($bp-mobile) {
+          font-size: 42px;
+          line-height: 44px;
+          margin: unset;
+        }
       }
     }
 
     .image_wrapper {
       width: 60%;
+
+      @include bp($bp-mobile) {
+        width: 100%;
+      }
 
       .img_container {
         height: 100%;
@@ -93,6 +110,11 @@
       padding: 11px 32px 15px 32px;
       transition: all 0.3s ease;
       display: inline-block;
+
+      @include bp($bp-mobile) {
+        
+        width: 100%;
+      }
 
       &::after {
         content: "";
