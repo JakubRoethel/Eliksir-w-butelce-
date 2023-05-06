@@ -9,6 +9,11 @@
     flex-direction: column;
   }
 
+    @include bp($bp-tablet) {
+    padding: 0px 0px 0px 50px;
+    gap: 40px;
+}
+
   .text_and_button_wrapper {
     display: flex;
     flex: 1;
@@ -18,12 +23,22 @@
       padding: 0px 16px 38px 16px;
     }
 
+    @include bp($bp-tablet) {
+      margin: 10% auto;
+  }
+
     .title {
       font-size: 133px;
       font-weight: 700;
       color: #e58a56;
       margin-right: -50%;
       z-index: 1;
+
+      @include bp($bp-tablet) {
+        font-size: 52px;
+        margin-right: -190px;
+        margin-bottom: 30px;
+    }
 
       @include bp($bp-mobile) {
         font-size: 50px;
@@ -47,10 +62,24 @@
 
   .image_wrapper {
     flex: 2;
+    @include bp($bp-tablet) {
+      flex: 1;
+  }
+
+  .img_container {
+    @include bp($bp-tablet) {
+      height: 100%;
+  }
+  }
 
     img {
       display: block;
       height: 100%;
+
+      @include bp($bp-tablet) {
+        height: 100%;
+        object-fit: cover;
+    }
     }
   }
 }
@@ -68,6 +97,10 @@
         width: 100%;
       }
 
+       @include bp($bp-tablet) {
+        width: 50%;
+    }
+
       .title {
         font-size: 88px;
         line-height: 90px;
@@ -79,6 +112,11 @@
           line-height: 44px;
           margin: unset;
         }
+
+        @include bp($bp-tablet) {
+          font-size: 52px;
+          line-height: 60px;
+      }
       }
     }
 
@@ -88,6 +126,10 @@
       @include bp($bp-mobile) {
         width: 100%;
       }
+
+      @include bp($bp-tablet) {
+        width: 50%;
+    }
 
       .img_container {
         height: 100%;

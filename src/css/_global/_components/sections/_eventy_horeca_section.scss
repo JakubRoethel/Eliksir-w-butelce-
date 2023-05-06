@@ -3,11 +3,22 @@
     padding: 105px 205px 150px 205px;
     color: #40434D;
 
+    @include bp($bp-mobile) {
+        padding: 50px 0px 80px 0px;
+      }
+
     .title {
         font-size: 40px;
         font-weight: 700;
         text-align: center;
         margin-bottom: 105px;
+
+        @include bp($bp-mobile) {
+            font-size: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+            padding: 0px 16px
+          }
     }
 
     .list-wrapper {
@@ -15,6 +26,11 @@
         flex-wrap: wrap;
         gap: 105px;
         padding-left: 24px;
+
+        @include bp($bp-mobile) {
+            gap: 20px;
+            padding: 0px 16px;
+          }
 
 
         ul {
@@ -24,8 +40,17 @@
             font-weight: 500;
             line-height: 36px;
 
+            @include bp($bp-mobile) {
+                list-style-position: inside;
+              }
+
             .subtitle {
                 margin-left: -24px;
+
+                @include bp($bp-mobile) {
+                    margin-left: unset;
+                    padding-bottom: 20px;
+                  }
             }
 
         }
@@ -41,13 +66,21 @@
         .list_two {
             flex: 1;
             padding-top: 36px;
+
+            @include bp($bp-mobile) {
+                padding-top: 0px;
+              }
         }
 
         .list_three {
             width: 100%;
+            @include bp($bp-mobile) {
+                padding-top: 40px;
+              }
             li:nth-child(1) {
                 list-style-type: none;
-                font-weight: 700;  
+                font-weight: 700; 
+                
              }
         }
 

@@ -6,6 +6,10 @@
       padding: 78px 16px 80px 16px;
     }
 
+    @include bp($bp-tablet) {
+      padding: 100px 50px 50px 50px;
+  }
+
     .title {
         font-size: 60px;
         font-weight: 700;
@@ -16,6 +20,10 @@
         @include bp($bp-mobile) {
           font-size: 24px;
         }
+
+        @include bp($bp-tablet) {
+          font-size: 40px;
+      }
     }
 
   .order_steps_wrapper {
@@ -45,10 +53,18 @@
           flex: 2;
         }
 
+        @include bp($bp-tablet) {
+          align-items: center;
+      }
+
         .order_number {
           font-size: 80px;
           font-weight: 700;
           color: #40434D;
+
+          @include bp($bp-tablet) {
+            font-size: 52px;
+        }
         }
         .description {
           font-size: 16px;
@@ -85,6 +101,10 @@
     background: #FFF4D8;
     gap: 10%;
 
+    @include bp($bp-tablet) {
+      padding: 50px 0px 50px 50px;
+  }
+
     @include bp($bp-mobile) {
       padding: 0px;
       flex-direction: column-reverse;
@@ -107,6 +127,11 @@
               font-size: 24px;
               line-height: 36px;
             }
+
+            @include bp($bp-tablet) {
+              font-size: 40px;
+              
+          }
         }
 
         .description {
@@ -136,6 +161,12 @@
     .image_wrapper {
         flex: 1;
 
+        .img_container {
+          @include bp($bp-tablet) {
+            height: 100%;
+        }
+        }
+
         img {
             display: block;
             height: 100%;
@@ -144,6 +175,10 @@
             @include bp($bp-mobile) {
               max-height: 115px;
             }
+
+            @include bp($bp-tablet) {
+              height: 100%;
+          }
         }
     }
 }
@@ -170,10 +205,15 @@
     position: absolute;
     top: 80px;
     right: 80px;
+
+    @include bp($bp-tablet) {
+      top:30px;
+      right: 50px;
+  }
   
     &::after {
       content:"";
-      background: url(/wp-content/uploads/2023/04/Vector.svg);
+      background: url('https://eliksir-w-butelce.local/wp-content/uploads/2023/05/Vector.svg');
       width: 30px;
       height: 30px;
       display: inline-block;

@@ -1,12 +1,25 @@
 .degustacje_hero_section {
+
+  @include bp($bp-mobile) {
+    height: 25vh;
+  }
     .hero_section {
       position: relative;
       width: 100%;
+
+      @include bp($bp-mobile) {
+        height: 100%;
+      }
       img {
         object-fit: contain;
         display: block;
         height: auto;
         width: 100%;
+
+         @include bp($bp-mobile) {
+          height: 100%;
+          object-fit: cover;
+        }
       }
   
       .description_wrapper {
@@ -27,6 +40,11 @@
         font-weight: 700;
         text-transform: uppercase;
         z-index: 1;
+
+         @include bp($bp-mobile) {
+          font-size: 44px;
+          margin-top: 35px;
+        }
   
       }
   

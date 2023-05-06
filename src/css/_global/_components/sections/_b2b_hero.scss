@@ -19,6 +19,10 @@
   .hero_section {
     position: relative;
     width: 100%;
+
+    @include bp($bp-tablet) {
+      height: 55vh;
+  }
     img {
       object-fit: contain;
       display: block;
@@ -28,6 +32,10 @@
       @include bp($bp-mobile) {
         display: none;
       }
+
+      @include bp($bp-tablet) {
+        display: none;
+    }
     }
 
     img:nth-child(2) {
@@ -36,6 +44,12 @@
       @include bp($bp-mobile) {
         display: block;
       }
+
+      @include bp($bp-tablet) {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+    }
     }
 
     .description_wrapper {
@@ -63,6 +77,10 @@
       @include bp($bp-mobile) {
         font-size: 44px;
       }
+
+      @include bp($bp-tablet) {
+        font-size: 52px;
+    }
 
     }
 
@@ -94,7 +112,7 @@
           left: 21px;
           width: 32px; 
           height: 32px;
-          background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/04/upload_file_FILL0_wght100_GRAD200_opsz48-1.svg"); 
+          background-image: url("https://eliksir-w-butelce.local/wp-content/uploads/2023/04/upload_file_FILL0_wght100_GRAD200_opsz48-1.svg"); 
           background-repeat: no-repeat;
           background-size: cover;
 

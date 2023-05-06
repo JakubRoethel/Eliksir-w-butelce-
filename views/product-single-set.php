@@ -56,6 +56,9 @@ $product_short_description = $product->get_short_description();
                     <button class="button get_offer"><?php echo __('Zamów w ofercie dla firm') ?></button>
             </div>
             <span class="free_shipping">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 6.75L9 5.75L11 6.75V2H7V6.75ZM4 14V12H9V14H4ZM2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H13V10L9 8L5 10V2H2V16Z" fill="#40434C"/>
+                </svg>
                 <p> <?php echo __('Darmowa dostawa od 100zł') ?> </p>
             </span>
         </div>
@@ -105,69 +108,7 @@ $product_short_description = $product->get_short_description();
     </div>
 </div>
 </div>
-<!-- <div class="set_includes_section">
-    <?php
 
-    $product_ids = get_field('products_in_set'); // array of product IDs
-    $args = array(
-        'post_type' => 'product',
-        'post__in' => $product_ids,
-        'orderby' => 'post__in'
-    );
-    //show number of categoires like 4 eliksirs and 5 addons
-    $products = get_posts($args);
-    $category_count = array(); // Initialize an empty array to store the category counts
-    if ($product_ids != 0) {
-        foreach ($products as $product) {
-            $categories = get_the_terms($product->ID, 'product_cat'); // Get the categories for each product
-            if ($categories) {
-                foreach ($categories as $category) {
-                    if ($category->parent == 0) { // Only count parent categories
-                        if (isset($category_count[$category->term_id])) {
-                            $category_count[$category->term_id]++;
-                        } else {
-                            $category_count[$category->term_id] = 1;
-                        }
-                    }
-                }
-            }
-        } ?>
-
-        <div>
-            <p class="title">
-                <?php echo __('W zestawie ');
-                foreach ($category_count as $category_id => $count) {
-                    $category = get_term($category_id, 'product_cat');
-                    echo   $count . 'X ' . $category->name . ' ';
-                }
-                ?>
-            </p>
-        </div>
-
-        <?php
-        $query = new WP_Query($args);
-        if ($query->have_posts()) { ?>
-            <ul class="products swiper_product_set">
-                <div class="swiper-wrapper">
-                    <?php
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                    ?>
-                        <div class="swiper-slide">
-                            <?php wc_get_template_part('content', 'product'); ?>
-                        </div>
-
-                    <?php   } ?>
-                </div>
-                <div class="swiper-scrollbar"></div>
-            </ul>
-    <?php  }
-        wp_reset_query();
-    }
-
-
-    ?>
-</div> -->
 <div class="product_details">
     <div class="mix_details">
 

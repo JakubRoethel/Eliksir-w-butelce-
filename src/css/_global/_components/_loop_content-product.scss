@@ -58,6 +58,10 @@ ul.products {
       margin-top: 20px !important;
     }
   }
+
+  .added_to_cart{
+    display: none;
+  }
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button {

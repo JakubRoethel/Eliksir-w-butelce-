@@ -5,7 +5,7 @@
     background-color: #fff4d8;
 
     @include bp($bp-mobile) {
-       margin-top: 120px;
+       margin-top: 140px;
         
       }
 
@@ -19,6 +19,10 @@
             padding: 80px 16px;
             
           }
+
+          @include bp($bp-tablet) {
+            padding: 50px;
+        }
 
         .product_cat {
             padding: unset;
@@ -47,12 +51,22 @@
             }
         }
 
+        .button_container {
+            @include bp($bp-tablet) {
+                margin-top: 40px;
+            }
+        }
+
 
 
     }
     .woocommerce-breadcrumb {
         padding: 0 205px;
         margin-top: 80px;
+
+        @include bp($bp-tablet) {
+            padding: 0px 50px;
+        }
 
         @include bp($bp-mobile) {
             padding: 0 16px;
@@ -68,6 +82,10 @@
             padding: 20px 16px 0px 16px;
           }
 
+          @include bp($bp-tablet) {
+            padding: 20px 50px;
+        }
+
         .button {
             margin: auto;
         }
@@ -79,6 +97,9 @@
                 padding: 20px 16px 40px 16px;
                 // margin-top: 20px;
               }
+              @include bp($bp-tablet) {
+                padding-bottom: 50px;
+            }
         }
 
         &.eliksiry  {
@@ -88,6 +109,10 @@
                 padding: 40px 16px;
                 // margin-top: 20px;
               }
+
+              @include bp($bp-tablet) {
+                padding: 50px;
+            }
 
             .widget_wpc_filters_widget {
                 padding-bottom: 40px;
@@ -100,6 +125,10 @@
             @include bp($bp-mobile) {
                 padding: 40px 16px 40px 16px;
               }
+
+            @include bp($bp-tablet) {
+                padding: 50px;
+            }
         }
     }
 

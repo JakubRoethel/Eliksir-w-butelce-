@@ -1,16 +1,31 @@
 section.degustacje_content {
   background: #fff4d8;
   padding: 120px 205px 240px 205px;
+
+  @include bp($bp-mobile) {
+    padding: 50px 16px 80px 16px;
+  }
   .title {
     color: #40434d;
     font-size: 40px;
     text-align: center;
+
+    @include bp($bp-mobile) {
+      font-size: 32px;
+      text-align: left;
+    }
   }
 
   .description_wrapper {
     display: flex;
     gap: 10%;
     margin-top: 120px;
+
+    @include bp($bp-mobile) {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 40px;
+    }
 
     .description_container {
       flex: 1;
@@ -50,6 +65,10 @@ section.degustacje_content {
     background: #FAD9BA;
     padding: 120px 205px; 
 
+    @include bp($bp-mobile) {
+      padding: 50px 16px;
+    }
+
     .gallery_wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -57,6 +76,13 @@ section.degustacje_content {
         grid-column-gap: 60px;
         grid-row-gap: 60px;
         margin-top: -260px;
+
+        @include bp($bp-mobile) {
+          margin-top: 0;
+          display: flex;
+          flex-direction: column;
+          grid-row-gap: 20px;
+        }
         img {
             object-fit: cover;
             height: 100%;

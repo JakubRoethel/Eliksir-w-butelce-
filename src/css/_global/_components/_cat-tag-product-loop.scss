@@ -20,6 +20,10 @@
         padding-top: unset;
         padding: 40px 16px 40px 16px;
       }
+
+      @include bp($bp-tablet) {
+        padding-top: 50px;
+    }
     }
 
     &.Wielkanoc {
@@ -29,6 +33,10 @@
         padding: 40px 16px;
         // margin-top: 20px;
       }
+
+      @include bp($bp-tablet) {
+        padding: 50px;
+    }
     }
 
     &.dodatki {
@@ -48,6 +56,11 @@
     .extra-product-card {
       margin-bottom: 2.99em;
       position: relative;
+
+      @include bp($bp-mobile) {
+        min-height: 332px;
+         
+       }
 
       &::after {
         content: ""; // ::before and ::after both require content
@@ -73,6 +86,16 @@
         z-index: 2;
         text-transform: unset;
         margin: 20px;
+
+        @include bp($bp-mobile) {
+          margin: 0px;
+          bottom: unset;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 30px;
+
+         }
       }
       img {
         height: 100%;
@@ -173,17 +196,39 @@
     color: #40434d;
     font-weight: 700;
 
+    @include bp($bp-mobile) {
+      padding: 40px 16px 80px 16px;
+    }
+
+    @include bp($bp-tablet) {
+      padding: 50px;
+  }
+
+    
+
     .additional_section_title {
       text-align: center;
       text-transform: uppercase;
       padding-bottom: 45px;
       font-size: 60px;
+
+      @include bp($bp-mobile) {
+        font-size: 32px;
+      }
+
+      @include bp($bp-tablet) {
+        font-size: 40px;
+    }
     }
 
     .additional_section_description {
       text-align: center;
       padding: 0px 80px 45px 80px;
       font-size: 18px;
+
+      @include bp($bp-mobile) {
+        padding: 0px;
+      }
     }
 
     .subtitle_wrapper {
@@ -193,8 +238,25 @@
       gap: 150px;
       padding-bottom: 60px;
 
+      @include bp($bp-mobile) {
+        gap:20px;
+        padding: 40px 0px;
+      }
+
+      @include bp($bp-tablet) {
+        gap: 20px;
+      }
+
       .subtitle {
         font-size: 36px;
+
+        @include bp($bp-mobile) {
+          font-size: 18px;
+        }
+
+        @include bp($bp-tablet) {
+          font-size: 25px;
+        }
       }
 
       .subtitle:first-child {
@@ -218,6 +280,14 @@
       display: flex;
       gap: 55px;
       justify-content: center;
+
+      @include bp($bp-mobile) {
+        gap: 10px;
+      }
+
+      @include bp($bp-tablet) {
+        gap: 20px;
+      }
 
       img {
         width: 33.33%;

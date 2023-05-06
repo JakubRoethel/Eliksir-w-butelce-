@@ -4,12 +4,23 @@
     padding: 0px 0% 0px 10%;
     gap: 10%;
     background-color:#fff4d8;
+
+    @include bp($bp-mobile) {
+      flex-direction: column;
+      padding: 50px 0px 0px 0px;
+    }
   
     .text_and_button_wrapper {
       display: flex;
       flex: 1;
       margin: auto;
       flex-direction: column;
+
+      @include bp($bp-mobile) {
+        padding: 0px 16px;
+        align-items: center;
+      }
+    
       .title {
         font-size: 133px;
         font-weight: 700;
@@ -17,6 +28,12 @@
         margin-right: -50%;
         z-index: 1;
         margin-bottom: 30px;
+
+        @include bp($bp-mobile) {
+          font-size: 40px;
+          width: 100%;
+          margin-right: unset;
+        }
       }
   
       .description {
@@ -30,6 +47,10 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @include bp($bp-mobile) {
+          padding-left:16px;
+        }
       }
     }
 
@@ -38,12 +59,18 @@
         font-weight: 700;
         color: #40434d;
         text-decoration: underline;
+      
     }
 
 
     a.button {
       margin-left: -15px;
       text-decoration: none;
+
+      @include bp($bp-mobile) {
+        margin-left: 0px;
+        margin-bottom: 30px;
+      }
     }
   
     .image_wrapper {

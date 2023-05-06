@@ -4,13 +4,23 @@
     padding: 0px 0% 0px 10%;
     gap: 10%;
     background-color:#FAD9BA;
-    ;
+    
+    @include bp($bp-mobile) {
+      padding: 50px 0px 0px 0px;
+      flex-direction: column;
+      gap: 40px;
+    }
   
     .text_and_button_wrapper {
       display: flex;
       flex: 1;
       margin: auto;
       flex-direction: column;
+
+      @include bp($bp-mobile) {
+        padding: 0px 16px;
+      }
+
       .title {
         font-size: 56px;
         font-weight: 700;
@@ -18,6 +28,11 @@
         margin-right: -50%;
         z-index: 1;
         margin-bottom: 30px;
+
+        @include bp($bp-mobile) {
+          font-size: 40px;
+          margin-right: unset;
+        }
       }
   
       .description {
@@ -37,6 +52,10 @@
 
     a.button {
       margin-left: -15px;
+
+      @include bp($bp-mobile) {
+        margin-left: unset;
+      }
     }
   
     .image_wrapper {
