@@ -48,11 +48,17 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     $title = $faq['title'];
                                     $description = $faq['description'];
                                     $icon_url = get_stylesheet_directory_uri() . '/assets/img/+.svg';
-                                ?>
+                                    $context = stream_context_create([
+                                        'ssl' => [
+                                            'verify_peer' => false,
+                                            'verify_peer_name' => false
+                                        ]
+                                    ]);
+                                    ?>
                                     <div class="wrapper">
                                         <div class="title-icon-container">
                                             <p class="title"><?php echo $title; ?></p>
-                                           <?php  echo file_get_contents($icon_url); ?>
+                                           <?php  echo file_get_contents($icon_url, false, $context); ?>
                                             
                                         </div>
                                         

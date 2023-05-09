@@ -4,6 +4,11 @@
     padding: 0px 0% 0px 10%;
     gap: 10%;
     background-color:#FAD9BA;
+
+    @include bp($bp-tablet) {
+      padding: 0px 0px 0px 50px;
+      gap: 40px;
+  }
     
     @include bp($bp-mobile) {
       padding: 50px 0px 0px 0px;
@@ -21,6 +26,10 @@
         padding: 0px 16px;
       }
 
+      @include bp($bp-tablet) {
+        margin: 10% auto;
+    }
+
       .title {
         font-size: 56px;
         font-weight: 700;
@@ -31,6 +40,11 @@
 
         @include bp($bp-mobile) {
           font-size: 40px;
+          margin-right: unset;
+        }
+
+        @include bp($bp-mobile) {
+          font-size: 50px;
           margin-right: unset;
         }
       }
@@ -61,10 +75,25 @@
     .image_wrapper {
       flex: 2;
 
+      @include bp($bp-tablet) {
+        flex: 1;
+    }
+
+    .img_container {
+      @include bp($bp-tablet) {
+        height: 100%;
+    }
+    }
+
   
       img {
         display: block;
         height: 100%;
+
+        @include bp($bp-tablet) {
+          height: 100%;
+          object-fit: cover;
+      }
       }
     }
   }

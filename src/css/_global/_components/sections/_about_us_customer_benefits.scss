@@ -7,12 +7,20 @@
         padding: 50px 0px 80px 0px;
       }
 
+      @include bp($bp-tablet) {
+        padding: 50px;
+    }
+
     .text_container {
         padding: 0px 200px;
 
         @include bp($bp-mobile) {
             padding: 0px 16px;
           }
+
+          @include bp($bp-tablet) {
+            padding: 0px;
+        }
 
         .title {
             font-size: 60px;
@@ -52,6 +60,11 @@
             padding: 0px;
           }
 
+          @include bp($bp-tablet) {
+            flex-direction: column;
+            padding: 0px;
+        }
+
           .img_container{
             @include bp($bp-mobile) {
                 display: none;
@@ -78,6 +91,12 @@
             @include bp($bp-mobile) {
                 padding: 0px 16px;
               }
+
+              @include bp($bp-tablet) {
+                padding:50px 0px 0px 0px;
+            }
+
+              
         }
 
         .single_benefit {

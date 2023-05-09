@@ -60,4 +60,59 @@ $splash_subtitle = get_field('splash')['subtitle'];
       <?php endif; ?> 
     </div>
   </div>
+
+
+
+  <div class="info_container_mobile">
+    <div class="left_box_mobile">
+      <?php
+        $splash_imgs = get_field('splash')['middle_img_section'];
+          if( $splash_imgs): ?>
+          <div class="imgs">
+          <?php  foreach( $splash_imgs as $splash_imgs) { 
+                         $splash_img = $splash_imgs['img_mobile'];  
+                    ?>
+                       
+                        <div class="img">
+                            <?php echo wp_get_attachment_image( $splash_img, 'full' ); ?>
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    </div>
+    <div class="right_box_mobile">
+    <?php
+        $splash_ingredients = get_field('splash')['left_ingredients'];
+          if( $splash_ingredients ): ?>
+          <div class="ingredients_list ingredients_list_one ">
+          <?php  foreach( $splash_ingredients as $splash_ingredients) { 
+                         $icon = $splash_ingredients['ingredients_icon'];
+                         $description = $splash_ingredients['ingredients_text'];
+                    ?>
+                        <div  class="single_ingredient">
+                            <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
+                            <p class="img_description">  <?php echo $description  ?> </p>
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    <?php
+        $splash_ingredients = get_field('splash')['right_ingredients'];
+          if( $splash_ingredients ): ?>
+          <div class="ingredients_list ingredients_list_two">
+          <?php  foreach( $splash_ingredients as $splash_ingredients) { 
+                         $icon = $splash_ingredients['ingredients_icon'];
+                         $description = $splash_ingredients['ingredients_text'];
+                    ?>
+                        <div class="single_ingredient">
+                            <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
+                            <p class="img_description">  <?php echo $description  ?> </p> 
+                        </div>
+                      <?php  } ?>
+          </div>
+      <?php endif; ?> 
+    </div>
+  </div>
+
+
 </div>                

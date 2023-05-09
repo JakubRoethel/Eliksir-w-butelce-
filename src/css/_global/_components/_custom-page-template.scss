@@ -5,17 +5,29 @@
   margin-top: 56px;
   h1 {
     font-size: 40px;
+
+    @include bp($bp-mobile) {
+      font-size: 32px;
+    }
   }
 
   .entry-content {
     display: flex;
     gap: 60px;
 
+    @include bp($bp-mobile) {
+      gap: 20px;
+    }
+
     .sidebar {
   
       color: #40434d;
       width: 220px;
       border-right: 1px solid #40434d2d;
+
+      @include bp($bp-mobile) {
+        width: 125px;
+      }
 
       .menu_container {
         ul {
@@ -44,6 +56,14 @@
       table {
         max-width: 800px;
       }
+
+      .wp-block-table {
+        @include bp($bp-mobile) {
+          font-size: 12px !important;
+        }
+      }
+
+      
       .wp-block-table thead {
         border: 1px solid !important;
         border-top: unset !important;
@@ -94,9 +114,17 @@
 
             .title {
               font-size: 18px;
+
+              @include bp($bp-mobile) {
+                font-size: 16px;
+              }
             }
             svg {
               transition: all 0.3s ease;
+              @include bp($bp-mobile) {
+                height: 12px;
+                width: 12px;
+              }
             }
           }
 
@@ -105,6 +133,10 @@
             font-family: futura-pt, sans-serif;
             font-size: 16px;
             margin-top: 16px;
+
+            @include bp($bp-mobile) {
+              font-size: 14px;
+            }
           }
 
           &.active .description {

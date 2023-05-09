@@ -7,6 +7,10 @@
         padding: 50px 0px 80px 0px;
       }
 
+      @include bp($bp-tablet) {
+        padding: 50px 0px 0px 0px;
+    }
+
     .title {
         font-size: 40px;
         font-weight: 700;
@@ -31,6 +35,12 @@
             gap: 20px;
             padding: 0px 16px;
           }
+
+          @include bp($bp-tablet) {
+            flex-direction: column;
+            gap: 40px;
+            padding: 0px 50px;
+        }
 
 
         ul {
@@ -70,6 +80,10 @@
             @include bp($bp-mobile) {
                 padding-top: 0px;
               }
+
+              @include bp($bp-tablet) {
+                padding-top: 0px;
+            }
         }
 
         .list_three {

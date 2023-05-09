@@ -5,6 +5,11 @@
     gap: 10%;
     background-color:#fff4d8;
 
+    @include bp($bp-tablet) {
+      padding: 0px 0px 0px 50px;
+      gap: 20px;
+  }
+
     @include bp($bp-mobile) {
       flex-direction: column;
       padding: 50px 0px 0px 0px;
@@ -20,6 +25,10 @@
         padding: 0px 16px;
         align-items: center;
       }
+
+       @include bp($bp-tablet) {
+      margin: 10% auto;
+  }
     
       .title {
         font-size: 133px;
@@ -34,6 +43,11 @@
           width: 100%;
           margin-right: unset;
         }
+
+        @include bp($bp-tablet) {
+          font-size: 52px;
+          line-height: 60px;
+      }
       }
   
       .description {
@@ -75,12 +89,18 @@
   
     .image_wrapper {
       flex: 2;
+      @include bp($bp-tablet) {
+        flex: 1;
+    }
 
-  
+    .img_container {
+      height: 100%;
       img {
         display: block;
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
+    }
     }
   }

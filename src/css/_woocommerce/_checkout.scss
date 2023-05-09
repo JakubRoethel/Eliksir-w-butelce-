@@ -7,6 +7,15 @@
 article {
   padding: 120px 10%;
   margin-top: 100px;
+
+  @include bp($bp-mobile) {
+    padding: 55px 16px;
+  }
+
+  @include bp($bp-tablet) {
+    padding: 120px 50px ;
+}
+
   .breadcrumbs .woocommerce-breadcrumb {
     color: #40434d;
     font-family: futura-pt, sans-serif;
