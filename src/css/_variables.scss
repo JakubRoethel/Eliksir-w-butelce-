@@ -70,10 +70,11 @@ $transition_fast                  : all 100ms ease;
 
 $bp-super-narrow                  : ( max:  419px );
 $bp-mobile-narrow                 : ( max:  479px );
-$bp-mobile                        : ( max:  768px );
+$bp-mobile                        : ( max:  519px );
+
 $bp-phablet                       : ( max:  767px );
 $bp-portrait                      : ( max:  1023px );
-$bp-tablet                        : ( max:  1199px );
+$bp-tablet                        : ( min: map-get($bp-mobile, max) + 1, max:  1199px );
 $bp-desktop                       : ( max: 1359px );
 $bp-min-desktop                   : ( min: 1200px );
 $bp-hd                            : ( min: map-get($bp-desktop, max) + 1 );

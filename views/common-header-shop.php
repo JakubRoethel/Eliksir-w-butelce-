@@ -44,7 +44,7 @@
         'theme_location' => 'main-menu',
       ]); ?>
     </div>
-    
+
 
     <div class="header_right">
       <ul class="navigation_social">
@@ -77,7 +77,15 @@
               <div class="mini-cart-header">
                 <h2 class="mini-cart-title"><?php echo __('Twój koszyk') ?></h2>
                 <div class="close-icon">
-                  <?php echo @file_get_contents(get_stylesheet_directory_uri() . '/assets/img/close.svg)') ?>
+                  <?php
+                  $context = stream_context_create([
+                    'ssl' => [
+                      'verify_peer' => false,
+                      'verify_peer_name' => false
+                    ]
+                  ]);
+                  echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/close.svg)', false, $context);
+                  ?>
                 </div>
               </div>
               <div class="widget_shopping_cart_content">
@@ -86,10 +94,10 @@
             </div>
           </div>
           <button type="button" class="header__toggle">
-              <div class="header__toggle__item"></div>
-              <div class="header__toggle__item"></div>
-              <div class="header__toggle__item"></div>
-            </button>
+            <div class="header__toggle__item"></div>
+            <div class="header__toggle__item"></div>
+            <div class="header__toggle__item"></div>
+          </button>
         </div>
       </div>
     </div>

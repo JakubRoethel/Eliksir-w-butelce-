@@ -155,7 +155,7 @@ remove_theme_support('html5', 'comment-form');
 
 
 // Register custom post type for email activity data
-function register_email_activity_post_type()
+function register_email_activity_post_type() 
 {
     $labels = array(
         'name' => __('Email Activity', 'textdomain'),
