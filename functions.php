@@ -39,7 +39,7 @@ add_theme_support('custom-logo');
 add_filter('wpc_filters_label_term_html', 'wpc_term_brand_logoo', 10, 4);
 function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
 {
-    if ($filter['ID'] == 317) {
+    if ($filter['ID'] == 317 || $filter['ID'] == 777 ) {
 
         if ($term->term_id === 45) {
             //id = 45 is bubbles
@@ -331,3 +331,5 @@ function mini_cart_count_fragments($fragments)
 
     return $fragments;
 }
+
+

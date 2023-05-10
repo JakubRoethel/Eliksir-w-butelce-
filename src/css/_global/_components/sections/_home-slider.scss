@@ -52,6 +52,33 @@
    }
  };
 
+ .hero_section_desktop {
+  @include bp($bp-mobile) {
+    display: none;
+  }
+
+  @include bp($bp-tablet) { 
+    display: none;
+  }
+ }
+
+ .hero_section_mobile {
+  display: none;
+
+  @include bp($bp-mobile) {
+    display: block;
+    height: 75vh;
+
+    .swiper {
+      height: 100%;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+ }
+
  
 
 

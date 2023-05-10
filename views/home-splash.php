@@ -89,7 +89,7 @@ $splash_subtitle = get_field('splash')['subtitle'];
                          $icon = $splash_ingredients['ingredients_icon'];
                          $description = $splash_ingredients['ingredients_text'];
                     ?>
-                        <div  class="single_ingredient">
+                        <div  class="single_ingredient" data-aos="slide-right">
                             <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
                             <p class="img_description">  <?php echo $description  ?> </p>
                         </div>
@@ -104,7 +104,7 @@ $splash_subtitle = get_field('splash')['subtitle'];
                          $icon = $splash_ingredients['ingredients_icon'];
                          $description = $splash_ingredients['ingredients_text'];
                     ?>
-                        <div class="single_ingredient">
+                        <div class="single_ingredient" data-aos="slide-right">
                             <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
                             <p class="img_description">  <?php echo $description  ?> </p> 
                         </div>

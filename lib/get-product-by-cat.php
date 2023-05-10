@@ -2,6 +2,8 @@
 function getProductsByCat($theCat, $posts_per_page)
 {
     $product_category = get_term_by('id', $theCat, 'product_cat');
+	$order_by = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : 'date';
+    $order = isset( $_GET['order'] ) ? wc_clean( $_GET['order'] ) : 'desc'; 
     $args = array(
         'post_type' => 'product',
         'posts_per_page' => $posts_per_page,
@@ -11,11 +13,31 @@ function getProductsByCat($theCat, $posts_per_page)
                 'field' => 'id',
                 'terms' => $theCat
             )
-        )
+            
+            ),
+            // 'meta_key' => '_price',
+    		// 'orderby' => 'meta_value_num',
+    		// 'order' => 'ASC'
+			
     );
+
+	// if ( $order_by == 'price' ) {
+	// 	$args['orderby'] = 'meta_value_num';
+	// 	$args['meta_key'] = '_price';
+	// 	$args['order'] = 'ASC';
+	// } elseif ( $order_by == 'price_desc' ) {
+	// 	$args['orderby'] = 'meta_value_num';
+	// 	$args['meta_key'] = '_price';
+	// 	$args['order'] = 'DESC';
+	// } else {
+	// 	$args['orderby'] = $order_by;
+	// }
+
+    
     $loop = new WP_Query($args);
     
     if ($loop->have_posts()) {
+        echo do_shortcode('[fe_sort id="3"]');
         $product_count = 0; // Counter for the number of products displayed
         $total_count = $loop->found_posts;
 ?>
@@ -41,6 +63,7 @@ function getProductsByCat($theCat, $posts_per_page)
         return false;
     }
     wp_reset_query();
+				
     if ($product_category->count > $posts_per_page && $posts_per_page != -1) { ?>
         <div class="button_container">
             <a class="button shop-more" href="<?php echo get_category_link($product_category) ?>"><?php echo get_field('more_button', 'product_cat_' . $theCat) ?></a>

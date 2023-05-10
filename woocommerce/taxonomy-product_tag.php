@@ -42,6 +42,7 @@ $tag = get_queried_object();
             <h2 class="category-title"><?php echo __('Zestawy') ?></h2>
             <p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
             <?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
+            echo 'test'
             getProductsByCat(39, 6);
             ?>
 

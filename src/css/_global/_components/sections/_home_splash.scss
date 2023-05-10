@@ -55,6 +55,10 @@
      display: none;
     }
 
+    @include bp($bp-tablet) { 
+      display: none;
+    }
+
     .left_box {
         flex: 1;
       .ingredients_list {
@@ -226,9 +230,21 @@
       display: flex;
     }
 
+    @include bp($bp-tablet) { 
+      display: block;
+      display: flex;
+    }
+
     .left_box_mobile {
-      width: 50%;
+      width: 100%;
       margin-left: -16px;
+      z-index: 100;
+
+      @include bp($bp-tablet) { 
+        width: 50%;
+        margin-left: -50px;
+      }
+
 
       img {
         object-fit: contain;
@@ -236,37 +252,44 @@
     }
 
     .right_box_mobile {
+      margin-top: 22%;
       width: 50%;
+
+      @include bp($bp-tablet) { 
+        margin-top: 10%;
+      }
+     
 
       .ingredients_list {
         display: flex;
         flex-direction: column;
-        gap: 18px;
+        gap: 10px;
       }
 
       .single_ingredient {
         display: flex;
         flex-direction: column;
         align-items: end;
-        gap: 20px;
+        gap: 10px;
       }
     }
 
     .single_ingredient img {
-        height: 25px;
+        height: 20px;
         object-fit: contain;
-        width: 25px;
+        width: 20px;
     }
     .img_description {
       font-weight: 600;
-      font-size: 18px;
+      font-size: 16px;
       width: 100%;
       text-align: right;
       position: relative;
+      white-space: nowrap;
     }
 
     .img_description::before {
-        min-width: 42vw;
+        min-width: 68vw;
         height: 1px;
         position: absolute;
         /* bottom: 0; */
@@ -276,6 +299,8 @@
 
 
       .ingredients_list_one {
+
+        margin-bottom: 18px;
 
         .single_ingredient:first-child .img_description {
           color: #8ad141;

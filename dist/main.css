@@ -2383,6 +2383,34 @@ iframe .ytp-cued-thumbnail-overlay-image {
   color: #73C16C;
 }
 
+@media screen and (max-width: 519px) {
+  .hero_section_desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 1199px) {
+  .hero_section_desktop {
+    display: none;
+  }
+}
+
+.hero_section_mobile {
+  display: none;
+}
+@media screen and (max-width: 519px) {
+  .hero_section_mobile {
+    display: block;
+    height: 75vh;
+  }
+  .hero_section_mobile .swiper {
+    height: 100%;
+  }
+  .hero_section_mobile .swiper img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
 .home_splash {
   margin: 0 auto;
   background-color: #fff4d8;
@@ -2435,6 +2463,11 @@ iframe .ytp-cued-thumbnail-overlay-image {
   margin: 0 auto;
 }
 @media screen and (max-width: 519px) {
+  .home_splash .info_container {
+    display: none;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 1199px) {
   .home_splash .info_container {
     display: none;
   }
@@ -2586,48 +2619,71 @@ iframe .ytp-cued-thumbnail-overlay-image {
     display: flex;
   }
 }
+@media screen and (min-width: 520px) and (max-width: 1199px) {
+  .home_splash .info_container_mobile {
+    display: block;
+    display: flex;
+  }
+}
 .home_splash .info_container_mobile .left_box_mobile {
-  width: 50%;
+  width: 100%;
   margin-left: -16px;
+  z-index: 100;
+}
+@media screen and (min-width: 520px) and (max-width: 1199px) {
+  .home_splash .info_container_mobile .left_box_mobile {
+    width: 50%;
+    margin-left: -50px;
+  }
 }
 .home_splash .info_container_mobile .left_box_mobile img {
   -o-object-fit: contain;
      object-fit: contain;
 }
 .home_splash .info_container_mobile .right_box_mobile {
+  margin-top: 22%;
   width: 50%;
+}
+@media screen and (min-width: 520px) and (max-width: 1199px) {
+  .home_splash .info_container_mobile .right_box_mobile {
+    margin-top: 10%;
+  }
 }
 .home_splash .info_container_mobile .right_box_mobile .ingredients_list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
 }
 .home_splash .info_container_mobile .right_box_mobile .single_ingredient {
   display: flex;
   flex-direction: column;
   align-items: end;
-  gap: 20px;
+  gap: 10px;
 }
 .home_splash .info_container_mobile .single_ingredient img {
-  height: 25px;
+  height: 20px;
   -o-object-fit: contain;
      object-fit: contain;
-  width: 25px;
+  width: 20px;
 }
 .home_splash .info_container_mobile .img_description {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   text-align: right;
   position: relative;
+  white-space: nowrap;
 }
 .home_splash .info_container_mobile .img_description::before {
-  min-width: 42vw;
+  min-width: 68vw;
   height: 1px;
   position: absolute;
   /* bottom: 0; */
   top: -5px;
   right: 0;
+}
+.home_splash .info_container_mobile .ingredients_list_one {
+  margin-bottom: 18px;
 }
 .home_splash .info_container_mobile .ingredients_list_one .single_ingredient:first-child .img_description {
   color: #8ad141;
