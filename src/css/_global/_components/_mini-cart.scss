@@ -24,9 +24,14 @@
     top: 60px;
 
     &.minicart-show {
-      right: -92px !important;
+      right: -97.9px !important;
     }
   }
+
+  @include bp($bp-tablet) { 
+    top: 90px;
+  }
+
 
   &.minicart-show {
     right: 0;

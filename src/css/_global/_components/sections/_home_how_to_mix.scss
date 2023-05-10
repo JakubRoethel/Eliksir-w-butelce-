@@ -12,6 +12,10 @@
     padding: 38px 16px 0 16px;
   }
 
+  @include bp($bp-tablet) { 
+    padding: 48px 48px 48px 48px;
+  }
+
   .title,
   .subtitle,
   .text {

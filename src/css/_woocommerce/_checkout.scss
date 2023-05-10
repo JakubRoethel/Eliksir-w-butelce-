@@ -13,8 +13,8 @@ article {
   }
 
   @include bp($bp-tablet) {
-    padding: 120px 50px ;
-}
+    padding: 120px 50px;
+  }
 
   .breadcrumbs .woocommerce-breadcrumb {
     color: #40434d;
@@ -28,14 +28,17 @@ article {
     color: #40434d;
 
     .checkout-wrapper {
-        grid-template-columns: 1fr 1fr;
-        display: grid;
-        gap: 100px;
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+      gap: 100px;
 
-        @include bp($bp-mobile) {
-          grid-template-columns: 1fr;
-        }
+      @include bp($bp-mobile) {
+        grid-template-columns: 1fr;
+      }
 
+      @include bp($bp-tablet) {
+        grid-template-columns: 1fr;
+      }
     }
 
     h3 {
@@ -194,7 +197,8 @@ article {
         }
       }
 
-      .woocommerce-mini-cart__total, .order__total {
+      .woocommerce-mini-cart__total,
+      .order__total {
         display: flex;
         justify-content: space-between;
         padding: 20px 0px;
@@ -204,11 +208,10 @@ article {
         font-size: 24px;
         .amount {
           color: #ea3e32;
-          
         }
       }
 
-      //radio buttton style 
+      //radio buttton style
       input[type="radio"] {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -216,35 +219,33 @@ article {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        border: 2px solid #1C1B1F;;
+        border: 2px solid #1c1b1f;
         outline: none;
         transition: all 0.3s ease-in-out;
         margin-right: 10px;
         padding: unset;
         margin-top: 5px !important;
       }
-      
-      input[type="radio"]:checked {
-        background-color: #1C1B1F;;
-      }
 
-      
+      input[type="radio"]:checked {
+        background-color: #1c1b1f;
+      }
 
       .shipping {
         font-size: 24px;
 
         #shipping_method {
-            font-family: futura-pt, sans-serif;
-            font-size: 18px;
-            margin-top: 24px;
+          font-family: futura-pt, sans-serif;
+          font-size: 18px;
+          margin-top: 24px;
 
-            .woocommerce-Price-amount {
-              color: #ea3e32;
-              font-family: futura-pt-bold, sans-serif;
-            }
-            li {
-               display: flex;
-            }
+          .woocommerce-Price-amount {
+            color: #ea3e32;
+            font-family: futura-pt-bold, sans-serif;
+          }
+          li {
+            display: flex;
+          }
         }
       }
 
@@ -253,55 +254,51 @@ article {
         padding: unset;
 
         ul.payment_methods {
+          background: transparent;
+          padding: unset;
+
+          li {
             background: transparent;
-            padding: unset;
+            border-top: unset;
+            font-size: 18px;
 
-            li {
-                background: transparent;
-                border-top: unset;
-                font-size: 18px;
-
-                input[type="radio"] {
-                  margin: 1px 5px 4px 0 !important;
-                }
+            input[type="radio"] {
+              margin: 1px 5px 4px 0 !important;
             }
+          }
         }
 
         .place-order {
-            padding: unset;
+          padding: unset;
 
-            .woocommerce-terms-and-conditions-wrapper {
-                margin-top: 24px;
-                font-family: futura-pt, sans-serif;
+          .woocommerce-terms-and-conditions-wrapper {
+            margin-top: 24px;
+            font-family: futura-pt, sans-serif;
 
-                .woocommerce-privacy-policy-link {
-                    color: #40434d;
-                    text-decoration: underline;
-                }
+            .woocommerce-privacy-policy-link {
+              color: #40434d;
+              text-decoration: underline;
             }
-            button {
-                background: #EA3E32;
-                margin-top: 24px;
-                width: 100%;
-                border-radius: 40px;
-                padding: 15px;
+          }
+          button {
+            background: #ea3e32;
+            margin-top: 24px;
+            width: 100%;
+            border-radius: 40px;
+            padding: 15px;
 
-                &:hover {
-                    background: #a62b22;
-                }
-
+            &:hover {
+              background: #a62b22;
             }
+          }
         }
       }
       .woocommerce-mini-cart__buttons {
         display: none !important;
       }
     }
-
-    
   }
 }
-
 
 //dropdown for choosing country
 .select2-dropdown {
@@ -317,14 +314,15 @@ article {
       margin-bottom: 15px;
       margin-right: 3px;
 
-      .select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected] {
+      .select2-container--default
+        .select2-results__option--highlighted[aria-selected],
+      .select2-container--default
+        .select2-results__option--highlighted[data-selected] {
         background-color: #40434d79 !important;
-        }
+      }
       li {
         background-color: white;
         color: #40434d;
-
-       
 
         &:hover {
           background-color: #40434d79 !important;

@@ -152,8 +152,8 @@ timeline.from('.glass_overlay', {
 // Create the ScrollTrigger
 gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
   animation: timeline,
-  trigger: '.right_side_mix svg',
-  start: 'bottom bottom',
+  trigger: '.how_to_mix',
+  start: 'top bottom',
   end: 'top 20%',
   scrub: 2
 });
@@ -494,22 +494,23 @@ function swiperService() {
     breakpoints: {
       // when window width is >= 320px
       320: {
-        slidesPerView: 1.1,
+        slidesPerView: 1.3,
         spaceBetween: 20,
         slidesOffsetBefore: 0,
         slidesOffsetAfter: 0
       },
-      // when window width is >= 480px
-      780: {
-        slidesPerView: 2.5,
-        spaceBetween: 30,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter: 0
-      },
       // when window width is >= 640px
-      940: {
+      740: {
+        slidesPerView: 2.5,
+        spaceBetween: 40,
+        slidesOffsetBefore: 48,
+        slidesOffsetAfter: 48
+      },
+      1200: {
         slidesPerView: 3.5,
-        spaceBetween: 40
+        spaceBetween: 40,
+        slidesOffsetBefore: 100,
+        slidesOffsetAfter: 100
       }
     },
     navigation: {
@@ -556,28 +557,26 @@ function swiperService() {
       },
       autoHeight: true,
       //enable auto height
-      // mousewheel: true,
       forceToAxis: true,
-      // freeMode: {
-      //   enabled: true,
-      //   sticky: false,
-      // },
-
       breakpoints: {
-        // when window width is >= 320px
         320: {
-          slidesPerView: 1.5,
-          spaceBetween: 20
-        },
-        // when window width is >= 480px
-        780: {
-          slidesPerView: 2.5,
-          spaceBetween: 30
+          slidesPerView: 1.3,
+          spaceBetween: 20,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0
         },
         // when window width is >= 640px
-        940: {
+        740: {
+          slidesPerView: 2.5,
+          spaceBetween: 40,
+          slidesOffsetBefore: 48,
+          slidesOffsetAfter: 48
+        },
+        1200: {
           slidesPerView: 3.5,
-          spaceBetween: 40
+          spaceBetween: 40,
+          slidesOffsetBefore: 100,
+          slidesOffsetAfter: 100
         }
       },
       navigation: {

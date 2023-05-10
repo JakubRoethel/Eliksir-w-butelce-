@@ -139,8 +139,8 @@ timeline
 // Create the ScrollTrigger
 ScrollTrigger.create({
   animation: timeline,
-  trigger: '.right_side_mix svg',
-  start: 'bottom bottom',
+  trigger: '.how_to_mix',
+  start: 'top bottom',
   end: 'top 20%',
   scrub: 2
 });

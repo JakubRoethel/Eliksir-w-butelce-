@@ -57,10 +57,10 @@
       margin-bottom: 2.99em;
       position: relative;
 
-      @include bp($bp-mobile) {
-        min-height: 332px;
-         
-       }
+      a {
+        display: block;
+        height: 100%;
+      }
 
       &::after {
         content: ""; // ::before and ::after both require content
@@ -75,6 +75,10 @@
           rgba(0, 0, 0, 0) 100%
         );
         opacity: 0.9;
+
+        @include bp($bp-mobile) {
+          height: 100%;
+         }        
       }
 
       .title {
@@ -129,6 +133,17 @@
 
   }
 
+  ul.wpc-filters-ul-list {
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  ul.wpc-filters-ul-list::-webkit-scrollbar{
+    display: none;
+  }
+
+
+
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
     background-color: transparent;
     border: 2px solid #40434d;
@@ -159,6 +174,7 @@
     label
     span.wpc-filter-label-wrapper {
     padding: 6px 22px;
+    width: max-content;
   }
 
   .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover {

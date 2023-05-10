@@ -16,7 +16,7 @@
         padding: 120px 10%;
 
         @include bp($bp-mobile) {
-            padding: 80px 16px;
+            padding: 60px 0px;
             
           }
 
@@ -52,6 +52,11 @@
         }
 
         .button_container {
+
+            @include bp($bp-mobile) {
+                margin-top: 40px;
+            }
+
             @include bp($bp-tablet) {
                 margin-top: 40px;
             }

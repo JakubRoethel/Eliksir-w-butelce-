@@ -7,12 +7,16 @@
     padding: 38px 16px 0 16px;
   }
 
+  @include bp($bp-tablet) {
+    padding: 38px 48px 0 48px;
+  }
+
   .title {
     font-weight: 700;
     color: #40434d;
     text-align: center;
     font-size: 40px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     @include bp($bp-mobile) {
       font-size: 24px;
       text-align: left;
@@ -32,12 +36,26 @@
       row-gap: 30px;
       padding-top: 30px;
       padding-bottom: 50px;
-     }
+    }
+    @include bp($bp-tablet) {
+      padding-bottom: 50px;
+    }
 
     .single_icon_box {
       @include bp($bp-mobile) {
-       width: 33%;
-       }
+        width: 33%;
+      }
+
+      @include bp($bp-tablet) {
+        flex: 1;
+      }
+
+      svg {
+        @include bp($bp-tablet) {
+          width: 50px;
+          height: 80px;
+        }
+      }
     }
 
     a {
@@ -50,7 +68,12 @@
       @include bp($bp-mobile) {
         gap: 20px;
         justify-content: flex-end;
-       }
+      }
+
+      @include bp($bp-tablet) {
+        gap: 20px;
+        justify-content: flex-end;
+      }
     }
 
     path {
@@ -73,7 +96,7 @@
       );
     }
 
-    .woda:hover svg g path:nth-child(4){
+    .woda:hover svg g path:nth-child(4) {
       transition: all 0.6s cubic-bezier(0.64, -0.68, 0.4, 1.85);
       d: path(
         "M39.471 107.991C29.5406 107.991 21.1317 107.458 17.2276 106.567L13 70C21.8493 71.0288 30.2613 71.2492 38.49 71.2492C46.7186 71.2492 54.6507 71.0288 63.5 70L59.8525 106.595C53.4057 108.202 46.6986 107.991 39.491 107.991"
@@ -91,11 +114,8 @@
       transition: all 1s ease !important;
       d: path(
         "M12.7527 16C10.7283 22.2055 8.22871 31.2055 8.02213 38.2945C7.71226 48.2192 10.625 53.5822 18.7641 58.0616C19.3219 58.3699 20.1895 58.7397 21.1191 59.1507C21.3876 59.274 21.6769 59.3973 21.9867 59.5205C26.4694 61.4932 31.5306 61.4932 36.0133 59.5205C36.3231 59.3973 36.6124 59.274 36.8809 59.1507C37.8105 58.7603 38.6781 58.3699 39.2359 58.0616C47.375 53.5822 50.2877 48.2192 49.9779 38.2945C49.7713 31.5548 47.375 22.5959 45.2473 16C41.3636 17.0685 36.0959 17.7055 29.0103 17.7055C21.9247 17.7055 16.6777 17.0479 12.7734 16"
-        );
-      
+      );
     }
-
-    
 
     .icon_description {
       text-align: center;
@@ -103,6 +123,10 @@
       font-size: 24px;
       color: #40434d;
       @include bp($bp-mobile) {
+        font-size: 18px;
+      }
+
+      @include bp($bp-tablet) {
         font-size: 18px;
       }
     }

@@ -12,6 +12,10 @@
     padding: 38px 16px 0 16px;
   }
 
+  @include bp($bp-tablet) {
+    padding: 48px 0px 48px 0px;
+  }
+
   .swiper-scrollbar {
     border-radius: 2px;
     height: 5px;
@@ -67,8 +71,19 @@
     }
   }
 
+
+
   .wpc-horizontal-layout .wpc-filters-widget-wrapper {
     justify-content: center;
+  }
+
+  ul.wpc-filters-ul-list {
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  ul.wpc-filters-ul-list::-webkit-scrollbar{
+    display: none;
   }
 
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
@@ -86,6 +101,7 @@
 
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
     padding: 6px 22px;
+    width: max-content;
   }
 
   .wpc-filters-widget-main-wrapper input.wpc-label-input+label:hover span.wpc-filter-label-wrapper {
@@ -96,7 +112,7 @@
   .wpc-filters-widget-main-wrapper input.wpc-label-input:checked+label span.wpc-filter-label-wrapper {
     background-color: #40434D;
     border-radius: 20px;
-    border: 1px solid black;
+    border: 1px solid black; 
   }
 
   /* filters container */
