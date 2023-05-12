@@ -25,6 +25,7 @@ get_header('shop');
 $category = get_queried_object();
 $category_name = $category->name;
 $category_set_id = 39;
+$category_set_id_b2b = 57;
 $display_categor_id = get_field('category_set', 'general_settings');
 
 
@@ -42,7 +43,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
             ?>
         </section>
         <?php
-        if( $category->term_id != $category_set_id ) {
+        if( $category->term_id != $category_set_id && $category->term_id != $category_set_id_b2b  ) {
             ?>
             <section id='zestawy' class="product_cat zestawy tags" style="background: #FDC9B8">
             <h2 class="category-title"><?php echo __('Zestawy') ?></h2>
@@ -54,7 +55,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
         </section>
         <?php
         }
-        else { ?>
+        elseif ($category->term_id == $category_set_id)  { ?>
 
         
             <section id='<?php echo get_term_by('id', $display_categor_id, 'product_cat')->name ?>' class="product_cat <?php echo get_term_by('id', $display_categor_id, 'product_cat')->name ?> tags" style="background: #FDC9B8">

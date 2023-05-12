@@ -45,15 +45,18 @@ $product_short_description = $product->get_short_description();
                 <?php echo $product_description ?>
             </p>
             <div class="buttons_container">
-                <?php
-                $zestawy_ID_cat = 39;
-                if ($product->is_type('variable')) {
-                    woocommerce_variable_add_to_cart();
-                } else {
-                    woocommerce_template_single_add_to_cart();
-                }    ?>
-               
-                    <button class="button get_offer"><?php echo __('Zamów w ofercie dla firm') ?></button>
+            <?php
+                $zestawy_ID_cat = 37;
+                if (has_term(39, 'product_cat')) {
+                    if ($product->is_type('variable')) {
+                        woocommerce_variable_add_to_cart();
+                    } else {
+                        woocommerce_template_single_add_to_cart();
+                    }
+                } else if (has_term(57, 'product_cat')) {
+                    echo '<button class="button get_offer">' . __('Zamów w ofercie dla firm') . '</button>';
+                }
+                ?>
             </div>
             <span class="free_shipping">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,8 +188,11 @@ $product_short_description = $product->get_short_description();
     </h6>
     <?php
 
-    $cross_sell_ids = get_post_meta($product_id, '_crosssell_ids', true);
+    $cross_sell_ids = $product->get_cross_sell_ids();
     $products_per_page = 3;
+    
+    error_log(print_r($cross_sell_ids, true));
+    error_log("test");
 
     if ($cross_sell_ids) {
         getCrossSellProducts($product_id, $products_per_page);

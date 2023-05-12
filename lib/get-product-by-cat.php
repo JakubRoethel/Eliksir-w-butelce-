@@ -15,29 +15,14 @@ function getProductsByCat($theCat, $posts_per_page)
             )
             
             ),
-            // 'meta_key' => '_price',
-    		// 'orderby' => 'meta_value_num',
-    		// 'order' => 'ASC'
 			
     );
 
-	// if ( $order_by == 'price' ) {
-	// 	$args['orderby'] = 'meta_value_num';
-	// 	$args['meta_key'] = '_price';
-	// 	$args['order'] = 'ASC';
-	// } elseif ( $order_by == 'price_desc' ) {
-	// 	$args['orderby'] = 'meta_value_num';
-	// 	$args['meta_key'] = '_price';
-	// 	$args['order'] = 'DESC';
-	// } else {
-	// 	$args['orderby'] = $order_by;
-	// }
 
     
     $loop = new WP_Query($args);
     
     if ($loop->have_posts()) {
-        echo do_shortcode('[fe_sort id="3"]');
         $product_count = 0; // Counter for the number of products displayed
         $total_count = $loop->found_posts;
 ?>

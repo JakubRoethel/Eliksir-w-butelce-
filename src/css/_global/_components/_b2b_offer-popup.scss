@@ -10,6 +10,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 7000;
 
   &.show {
     display: flex;
@@ -40,11 +41,12 @@
     align-items: center;
     background-color: #e5decb;
     max-width: 420px;
+    flex-direction: column;
 
-    .contact_form {
       .title {
         max-width: 416px;
         margin-bottom: 20px;
+        color: #40434D;
       }
 
       .wpcf7-submit {
@@ -69,7 +71,7 @@
         margin: unset;
         border-radius: 8px;
       }
-    }
+    
 
     form {
       &.form-hide {
@@ -89,17 +91,32 @@
 
     label {
       font-size: 14px;
-    }
+      color: #40434C;
 
-    .wrapper {
-      display: flex;
-      .product_selector {
-        margin-right: 20px;
-        flex: 2;
+      span {
+        color:#D91515;
       }
 
-      .quantity {
-        max-width: 120px;
+      input, textarea {
+        width: 100%;
+        margin-top: 5px;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+  }
+    }
+
+    .numb_container {
+      display: flex;
+      gap: 16px;
+      p:first-child {
+        width: 70%;
+      }
+
+      p::nth-child(2) {
+        width: 40%;
       }
     }
 
@@ -127,20 +144,6 @@
       border-radius: 24px;
     }
 
-    select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      padding-right: 20px;
-      background: url("https://cdn3.iconfinder.com/data/icons/fatcow/16x16_0150/control_repeat_blue.png")
-        no-repeat center right;
-    }
-
-    input.error,
-    select.error {
-      outline: red;
-      border: 2px solid red;
-    }
 
     #order-button {
       background: #e58a56;
@@ -170,8 +173,13 @@
       gap: 30px;
       color: #40434d;
 
-      p {
+      a {
         max-width: 300px;
+        text-align: center;
+        color: #40434d;
+      }
+
+      p {
         text-align: center;
       }
       img {

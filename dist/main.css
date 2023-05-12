@@ -1388,6 +1388,13 @@ a {
   width: 100%;
 }
 
+.archive.term-57 {
+  background-color: #FAD9BA;
+}
+.archive.term-57 .b2b_offer_section {
+  background-color: #fff4d8;
+}
+
 ul.products li.product {
   border: 1px solid transparent;
   display: flex;
@@ -4191,6 +4198,7 @@ iframe .ytp-cued-thumbnail-overlay-image {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 7000;
 }
 .popup_container.show {
   display: flex;
@@ -4220,12 +4228,14 @@ iframe .ytp-cued-thumbnail-overlay-image {
   align-items: center;
   background-color: #e5decb;
   max-width: 420px;
+  flex-direction: column;
 }
-.main_wrapper .b2b_offer.form_container .contact_form .title {
+.main_wrapper .b2b_offer.form_container .title {
   max-width: 416px;
   margin-bottom: 20px;
+  color: #40434D;
 }
-.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-submit {
+.main_wrapper .b2b_offer.form_container .wpcf7-submit {
   width: 100%;
   background: #e58a56;
   border: 1px solid #e58a56 !important;
@@ -4234,13 +4244,13 @@ iframe .ytp-cued-thumbnail-overlay-image {
   border: 2px solid;
   padding: 15px 15px;
 }
-.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-submit:hover {
+.main_wrapper .b2b_offer.form_container .wpcf7-submit:hover {
   background: #a4633d;
 }
-.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-spinner {
+.main_wrapper .b2b_offer.form_container .wpcf7-spinner {
   display: none;
 }
-.main_wrapper .b2b_offer.form_container .contact_form .wpcf7-response-output {
+.main_wrapper .b2b_offer.form_container .wpcf7-response-output {
   margin: unset;
   border-radius: 8px;
 }
@@ -4260,16 +4270,29 @@ iframe .ytp-cued-thumbnail-overlay-image {
 }
 .main_wrapper .b2b_offer.form_container label {
   font-size: 14px;
+  color: #40434C;
 }
-.main_wrapper .b2b_offer.form_container .wrapper {
+.main_wrapper .b2b_offer.form_container label span {
+  color: #D91515;
+}
+.main_wrapper .b2b_offer.form_container label input, .main_wrapper .b2b_offer.form_container label textarea {
+  width: 100%;
+  margin-top: 5px;
+}
+.main_wrapper .b2b_offer.form_container label input[type=number]::-webkit-inner-spin-button,
+.main_wrapper .b2b_offer.form_container label input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main_wrapper .b2b_offer.form_container .numb_container {
   display: flex;
+  gap: 16px;
 }
-.main_wrapper .b2b_offer.form_container .wrapper .product_selector {
-  margin-right: 20px;
-  flex: 2;
+.main_wrapper .b2b_offer.form_container .numb_container p:first-child {
+  width: 70%;
 }
-.main_wrapper .b2b_offer.form_container .wrapper .quantity {
-  max-width: 120px;
+.main_wrapper .b2b_offer.form_container .numb_container p::nth-child(2) {
+  width: 40%;
 }
 .main_wrapper .b2b_offer.form_container #button-hook {
   text-align: right;
@@ -4292,18 +4315,6 @@ iframe .ytp-cued-thumbnail-overlay-image {
 .main_wrapper .b2b_offer.form_container textarea {
   height: 120px;
   border-radius: 24px;
-}
-.main_wrapper .b2b_offer.form_container select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding-right: 20px;
-  background: url("https://cdn3.iconfinder.com/data/icons/fatcow/16x16_0150/control_repeat_blue.png") no-repeat center right;
-}
-.main_wrapper .b2b_offer.form_container input.error,
-.main_wrapper .b2b_offer.form_container select.error {
-  outline: red;
-  border: 2px solid red;
 }
 .main_wrapper .b2b_offer.form_container #order-button {
   background: #e58a56;
@@ -4331,8 +4342,12 @@ iframe .ytp-cued-thumbnail-overlay-image {
   gap: 30px;
   color: #40434d;
 }
-.main_wrapper .left_conainer .wrapper p {
+.main_wrapper .left_conainer .wrapper a {
   max-width: 300px;
+  text-align: center;
+  color: #40434d;
+}
+.main_wrapper .left_conainer .wrapper p {
   text-align: center;
 }
 .main_wrapper .left_conainer .wrapper img {

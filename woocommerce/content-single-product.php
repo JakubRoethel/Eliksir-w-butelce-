@@ -56,62 +56,16 @@ if($is_product_set) {
             <div class="popup_wrapper">
                 <section class="left_conainer">
                     <div class="wrapper">
-                        <p>Chcesz złożyć zamówienie telefonicznie? Zadzwoń do nas!</p>
+                        <p>Chcesz złożyć zamówienie telefonicznie? <br> Zadzwoń do nas!</p>
                         <img src="http://eliksir-w-butelce.local/wp-content/uploads/2023/04/Rectangle-312-1.png" />
                         <p>Ewa Betka</p>
-                        <p>+48 123 123 123</p>
-                        <p>ewa@eliksirwbutelce.pl</p>
+                        <a href="#">+48 123 123 123</a>
+                        <a href="#">ewa@eliksirwbutelce.pl</a>
                     </div>
                 </section>
                 <section class="form_container b2b_offer">
-                <form class="form-hide" action="#" method="post">
-                        <p>Możesz też zamówić produkty przez formularz</p>
-                        <div class="container name">
-                            <label for="name">Name & Surname:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="container email">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="container phone">
-                            <label for="phone">Phone number:</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="wrapper">
-                            <div class="container product_selector">
-                                <label for="product">Product:</label>
-                                <select id="product" name="product" required>
-                                    <option value="">Select a product</option>
-                                    <?php
-                                    $args = array(
-                                        'post_type' => 'product',
-                                        'posts_per_page' => -1, // set to -1 to retrieve all posts
-                                    );
-
-                                    $products = get_posts($args);
-
-                                    foreach ($products as $product) {
-                                        $product_title = $product->post_title; ?>
-                                        <option value="<?php echo $product_title ?>"><?php echo $product_title ?></option>
-
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="container quantity">
-                                <label for="quantity">Quantity:</label>
-                                <input type="number" id="quantity" name="quantity" required>
-                            </div>
-                        </div>
-                        <div id="button-hook"></div>
-                        <div id="product-list"></div>
-                        <button id="order-button" type="submit">Order</button>
-                    </form>
-                    <div class="contact_form">
                         <p class="title"><?php echo __('Daj nam znać czego potrzebujesz, a wyślemy Ci ofertę skrojoną na miarę') ?></p>
-                        <?php echo do_shortcode('[contact-form-7 id="590" title="Popup B2B product"]'); ?>
-                    </div>
-                    
+                <?php echo do_shortcode('[contact-form-7 id="787" title="B2B contact form"]'); ?>
 
                 </section>
             </div>
