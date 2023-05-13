@@ -105,6 +105,22 @@
               @include bp($bp-tablet) {
                 padding-bottom: 50px;
             }
+
+            .product_metadata_wrapper ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap:7px;
+                min-height: 130px;
+
+                li:first-child{
+                    margin-left: -7px;
+                }
+
+                li {
+                    min-height: unset;
+                }
+                
+            }
         }
 
         &.eliksiry  {
@@ -122,6 +138,7 @@
             .widget_wpc_filters_widget {
                 padding-bottom: 40px;
             }
+
         }
 
         &.dodatki  {

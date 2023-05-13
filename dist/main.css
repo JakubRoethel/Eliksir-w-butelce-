@@ -1312,6 +1312,18 @@ a {
     padding-bottom: 50px;
   }
 }
+.archive .product_cat.zestawy .product_metadata_wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-height: 130px;
+}
+.archive .product_cat.zestawy .product_metadata_wrapper ul li:first-child {
+  margin-left: -7px;
+}
+.archive .product_cat.zestawy .product_metadata_wrapper ul li {
+  min-height: unset;
+}
 .archive .product_cat.eliksiry {
   background: #FAD9BA;
   padding: 120px 205px 70px 205px;
