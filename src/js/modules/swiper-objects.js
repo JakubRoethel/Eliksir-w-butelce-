@@ -30,6 +30,19 @@ export default function swiperService() {
     },
   });
 
+
+  var swiper1_mobile = new Swiper(".swiper_mobile", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "1",
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+  });
+
   var swiper2 = new Swiper(".swiper_featured", {
     effect: "slide",
     grabCursor: true,
@@ -204,14 +217,25 @@ export default function swiperService() {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
-    slidesPerView: "4.2",
+    slidesPerView: "7",
     spaceBetween: 50,
-    slidesOffsetBefore: 150,
-    slidesOffsetAfter: 150,
+    speed: 400,
     slideToClickedSlide: true,
     autoplay: {
       delay: 1000,
     },
     loop: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        speed: 800,
+      },
+      780: {
+        slidesPerView: 7,
+        spaceBetween: 50,
+      },
+    },
   });
 }

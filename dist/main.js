@@ -336,7 +336,7 @@ function getOfferService() {
 
     var getOfferButton = document.querySelector(".get_offer");
     var popupContainer = document.querySelector(".popup_container");
-    console.log();
+    var closeButton = document.querySelector(".close_popup");
     if (getOfferButton) {
       console.log("IF");
       getOfferButton.addEventListener("click", function () {
@@ -344,6 +344,11 @@ function getOfferService() {
       });
       popupContainer.addEventListener("click", function (event) {
         if (event.target === popupContainer) {
+          popupContainer.classList.remove("show");
+        }
+      });
+      closeButton.addEventListener("click", function (event) {
+        if (event.target === closeButton) {
           popupContainer.classList.remove("show");
         }
       });
@@ -491,6 +496,17 @@ function swiperService() {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    }
+  });
+  var swiper1_mobile = new Swiper(".swiper_mobile", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "1",
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000
     }
   });
   var swiper2 = new Swiper(".swiper_featured", {
@@ -662,15 +678,26 @@ function swiperService() {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
-    slidesPerView: "4.2",
+    slidesPerView: "7",
     spaceBetween: 50,
-    slidesOffsetBefore: 150,
-    slidesOffsetAfter: 150,
+    speed: 400,
     slideToClickedSlide: true,
     autoplay: {
       delay: 1000
     },
-    loop: true
+    loop: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        speed: 800
+      },
+      780: {
+        slidesPerView: 7,
+        spaceBetween: 50
+      }
+    }
   });
 }
 

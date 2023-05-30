@@ -34,11 +34,14 @@ $display_categor_id = get_field('category_set', 'general_settings');
 <div class="archive-wrapper">
     <div class="archive-container">
         <?php do_action('woocommerce_before_main_content'); ?>
-        <section class="product_cat">
+        <section id="<?php echo "_" . $category->term_id ?>" class="product_cat">
             <h2 class="woocommerce-products-header__title page-title category-title"><?php echo $category_name; ?></h2>
             <p class="category-description"><?php echo $category->description; ?></p>
+            <div class="filters_wrapper">
+				<?php echo do_shortcode('[fe_widget horizontal="yes" columns="1"]');
+				echo do_shortcode('[fe_sort id="3"]'); ?>
+				</div>
             <?php
-            echo do_shortcode('[fe_widget horizontal="yes" columns="1"]');
             getProductsByCat($category->term_id, -1);
             ?>
         </section>

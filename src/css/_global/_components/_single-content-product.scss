@@ -465,10 +465,13 @@
       }
       ul {
         list-style-type: disc;
-        max-height: 120px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 16px;
 
         @include bp($bp-mobile) {
           max-height: unset;
+          grid-template-columns: 1fr;
         }
 
         @include bp($bp-tablet) {
@@ -639,7 +642,7 @@ iframe {
 
     @include bp($bp-mobile) {
       margin: unset;
-      padding: 100px 16px 90px 16px;
+      padding: 0px 16px 90px 16px;
       
     }
 

@@ -25,9 +25,14 @@
           }
     }
 
+    .swiper_logo {
+        padding: 0px 50px;
+    }
+
     .swiper-wrapper {
         display: flex;
         align-items: center;
+        transition-timing-function: linear;
     }
 
 }

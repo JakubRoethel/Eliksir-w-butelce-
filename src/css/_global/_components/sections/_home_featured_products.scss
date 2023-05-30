@@ -61,6 +61,25 @@
       @include bp($bp-mobile) {
         height: auto; 
       }
+      .woocommerce-loop-product__title {
+        min-height: 128px;
+
+        @include bp($bp-mobile) {
+          min-height: 68px;
+        }
+      }
+
+      .product_metadata_wrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+
+        @include bp($bp-mobile) {
+          gap: 2px;
+          min-height: 63px;
+        }
+      }
+
       li {
         @include bp($bp-mobile) {
           height: 100%; 
@@ -107,6 +126,10 @@
   .wpc-filters-widget-main-wrapper input.wpc-label-input+label:hover span.wpc-filter-label-wrapper {
     background-color: #40434D;
     border-radius: 20px;
+    @include bp($bp-mobile) {
+      background-color: unset;
+      
+    }
   }
 
   .wpc-filters-widget-main-wrapper input.wpc-label-input:checked+label span.wpc-filter-label-wrapper {

@@ -158,6 +158,21 @@
         text-align: left;
         padding: 0;
       }
+
+      &:after {
+        @include bp($bp-mobile) {
+          content: "";
+          background: url(/wp-content/uploads/2023/03/arrow_right_alt.svg);
+          width: 16px;
+          height: 12px;
+          display: inline-block;
+          background-repeat: no-repeat;
+          margin-left: 11px;
+          transition: all 0.3s ease;
+          position: absolute;
+          bottom: 2px;
+        }
+      }
     }
   }
 

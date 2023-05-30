@@ -10,6 +10,7 @@ ul.products {
       aspect-ratio: 3/2;
       object-fit: cover;
       height: auto;
+      width: 100%;
     }
 
     .button {
@@ -71,3 +72,36 @@ ul.products {
     margin-top: 20px !important;
   }
 }
+
+#zestawy_b2b li.product .button.add_to_cart_button {
+  display: none !important;
+}
+
+
+#zestawy {
+  ul.products {
+    li.product {
+      .product-details-wrapper {
+        .woocommerce-loop-product__title {
+          min-height: 127px;
+        }
+      }
+    }
+  }
+}
+
+
+#dodatki {
+  ul.products {
+    li.product {
+      .product-details-wrapper {
+        .woocommerce-loop-product__title {
+          @include bp($bp-mobile) {
+           min-height: 65px;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,41 @@
+.legal {
+    background-color: #fff4d8;
+    .legal-template {
+        padding: 20px 0px;
+        color: #40434D;
+
+        h1 {
+            font-size: 50px;
+
+            @include bp($bp-mobile) {
+                font-size: 32px;
+              }
+        }
+
+        h2, h3, h4 ,h5 {
+            font-size: 32px;
+            padding: 20px 0px;
+            @include bp($bp-mobile) {
+                font-size: 24px;
+              }
+        }
+
+        ul, ol {
+            list-style-position: inside;
+        }
+
+        p, li, a{
+            font-size: 16px;
+            color: #40434D;
+            @include bp($bp-mobile) {
+                font-size: 14px;
+              }
+        }
+
+        table {
+            margin: 20px 0px;
+        }
+
+    
+    }
+}

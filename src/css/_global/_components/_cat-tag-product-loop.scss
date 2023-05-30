@@ -9,11 +9,9 @@
       @include bp($bp-mobile) {
         margin-bottom: 25px;
       }
-
-
     }
 
-    &.tags.zestawy {
+     &.zestawy {
       padding-top: 100px;
 
       @include bp($bp-mobile) {
@@ -23,12 +21,16 @@
 
       @include bp($bp-tablet) {
         padding-top: 50px;
-    }
+      }
+
+      .woocommerce-loop-product__title {
+        min-height: 127px;
+      }
     }
 
     &.Wielkanoc {
       padding: 120px 10%;
-      
+
       @include bp($bp-mobile) {
         padding: 40px 16px;
         // margin-top: 20px;
@@ -36,15 +38,13 @@
 
       @include bp($bp-tablet) {
         padding: 50px;
-    }
+      }
     }
 
     &.dodatki {
       .category-description {
         margin-bottom: 70px;
       }
-
-      
     }
 
     .eliksiry {
@@ -56,6 +56,10 @@
     .extra-product-card {
       margin-bottom: 2.99em;
       position: relative;
+
+      @include bp($bp-mobile) {
+        min-height: 330px;
+      }
 
       a {
         display: block;
@@ -69,16 +73,12 @@
         left: 0;
         width: 100%;
         height: 45%;
-        background-image: linear-gradient(
-          0deg,
-          #000000 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
+        background-image: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
         opacity: 0.9;
 
         @include bp($bp-mobile) {
           height: 100%;
-         }        
+        }
       }
 
       .title {
@@ -98,8 +98,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           font-size: 30px;
-
-         }
+        }
       }
       img {
         height: 100%;
@@ -107,6 +106,7 @@
       }
     }
   }
+
   .category-title {
     text-transform: uppercase;
 
@@ -125,24 +125,25 @@
     @include bp($bp-mobile) {
       max-width: 100%;
     }
-    
   }
 
-  .wpc-filters-widget-content{
+  .wpc-filters-widget-content {
     padding-bottom: 11px;
-
   }
 
   ul.wpc-filters-ul-list {
     display: flex;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+
+    @include bp($bp-mobile) {
+      flex-wrap: unset;
+      overflow-x: scroll;
+    }
   }
 
-  ul.wpc-filters-ul-list::-webkit-scrollbar{
+  ul.wpc-filters-ul-list::-webkit-scrollbar {
     display: none;
   }
-
-
 
   .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
     background-color: transparent;
@@ -168,39 +169,36 @@
     }
   }
 
-  .wpc-filters-widget-main-wrapper
-    .wpc-filters-labels
-    li.wpc-term-item
-    label
-    span.wpc-filter-label-wrapper {
+  .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
     padding: 6px 22px;
     width: max-content;
+    min-height: 44px;
   }
 
   .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover {
     background-color: #40434d;
+
+    @include bp($bp-mobile) {
+      background-color: unset;
+    }
   }
 
-  .wpc-filters-widget-main-wrapper
-    input.wpc-label-input
-    + label:hover
-    span.wpc-filter-label-wrapper {
+  .wpc-filters-widget-main-wrapper input.wpc-label-input + label:hover span.wpc-filter-label-wrapper {
     background-color: #40434d;
     border-radius: 50px;
+    @include bp($bp-mobile) {
+      background-color: unset;
+    }
   }
 
-  .wpc-filters-widget-main-wrapper
-    input.wpc-label-input:checked
-    + label
-    span.wpc-filter-label-wrapper {
+  .wpc-filters-widget-main-wrapper input.wpc-label-input:checked + label span.wpc-filter-label-wrapper {
     background-color: #40434d;
     border-radius: 50px;
     border: 1px solid black;
   }
 
   /* filters container */
-  .wpc-horizontal-layout
-    .wpc-filters-section:not(.wpc-filter-layout-submit-button) {
+  .wpc-horizontal-layout .wpc-filters-section:not(.wpc-filter-layout-submit-button) {
     width: auto !important;
     margin: 0 !important;
     max-width: 100% !important;
@@ -218,9 +216,7 @@
 
     @include bp($bp-tablet) {
       padding: 50px;
-  }
-
-    
+    }
 
     .additional_section_title {
       text-align: center;
@@ -234,7 +230,7 @@
 
       @include bp($bp-tablet) {
         font-size: 40px;
-    }
+      }
     }
 
     .additional_section_description {
@@ -255,7 +251,7 @@
       padding-bottom: 60px;
 
       @include bp($bp-mobile) {
-        gap:20px;
+        gap: 20px;
         padding: 40px 0px;
       }
 
@@ -347,6 +343,138 @@
           transition: all 0.3s ease;
         }
       }
+    }
+  }
+}
+
+section#_41 {
+  .filters_wrapper {
+    .widget_wpc_filters_widget {
+      display: none;
+    }
+  }
+
+  .woocommerce-loop-product__title {
+    @include bp($bp-mobile) {
+      min-height: 67px;
+    }
+  }
+}
+
+.tax-product_tag {
+  .filters_wrapper {
+    .widget_wpc_filters_widget {
+      display: none;
+    }
+  }
+}
+
+.term-zestawy-dla-twojej-firmy {
+  .filters_wrapper {
+    .widget_wpc_filters_widget {
+      display: none;
+    }
+  }
+}
+
+section#_39 {
+
+  .product_metadata_wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap:7px;
+
+    @include bp($bp-mobile) {
+        gap: 2px;
+      }
+
+      li:first-child {
+        margin-left: -7px;
+
+        @include bp($bp-mobile) {
+            margin-left: -2px;
+          }
+      }
+    
+
+    li {
+        min-height: unset;
+    }
+  } 
+
+  .woocommerce-loop-product__title {
+
+    min-height: 128px;
+
+    @include bp($bp-mobile) {
+      min-height: 128px;
+    }
+  }
+}
+
+#zestawy_b2b .woocommerce-loop-product__title {
+  @include bp($bp-mobile) {
+    min-height: 60px;
+  }
+}
+
+
+  
+.shop_page .zestawy   {
+
+  padding-top: 20px !important;
+
+}
+
+section#_58 {
+  .filters_wrapper {
+
+    justify-content: flex-end;
+    .widget_wpc_filters_widget {
+      display: none;
+    }
+  }
+
+  .widget_wpc_sorting_widget {
+    @include bp($bp-mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .category-description{
+    margin: 0px;
+  }
+
+  .meta_button_wrapper {
+    a {
+      @include bp($bp-mobile) {
+        display: none;
+      }
+    }
+  }
+  
+}
+
+
+section#_57 {
+  .filters_wrapper {
+
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    
+  }
+
+  .meta_button_wrapper {
+    a {
+      @include bp($bp-mobile) {
+        display: none;
+      }
+    }
+  }
+
+  .woocommerce-loop-product__title {
+    @include bp($bp-mobile) {
+      min-height: 85px;
     }
   }
 }

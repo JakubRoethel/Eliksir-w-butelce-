@@ -180,7 +180,7 @@ $product_short_description = $product->get_short_description();
             </h6>
             <?php
             $movie_url = get_field('link_do_filmu'); ?>
-            <iframe width="100%" height="650px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <iframe width="100%" height="550px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
             </iframe>
         </div>
     <?php endif; ?>
@@ -216,5 +216,4 @@ $product_short_description = $product->get_short_description();
         <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
     </div>
 </div>
-</div>
-</div>
+

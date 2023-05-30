@@ -34,7 +34,12 @@ $page_id = wc_get_page_id('shop');
 			<section id='zestawy' class="product_cat zestawy">
 				<h2 class="category-title"><?php echo __('Zestawy') ?></h2>
 				<p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
+				<div class="filters_wrapper">
 				<?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
+				echo do_shortcode('[fe_sort id="3"]'); ?>
+				</div>
+				
+				<?php
 				getProductsByCat(39, 6);
 				?>
 
@@ -43,8 +48,11 @@ $page_id = wc_get_page_id('shop');
 			<section id='eliksiry' class="product_cat eliksiry">
 				<h2 class="category-title"><?php echo __('Eliksiry') ?></h2>
 				<p class="category-description"><?php echo get_term_by('id', 40, 'product_cat')->description ?></p>
+				<div class="filters_wrapper">
+				<?php echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
+				echo do_shortcode('[fe_sort id="3"]'); ?>
+				</div>
 				<?php
-				echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
 				getProductsByCat(40, 6);
 				?>
 			</section>

@@ -20,11 +20,12 @@
   padding: 32px 40px;
 
   @include bp($bp-mobile) {
-    width: 98.5vw;
-    top: 60px;
+    width: calc(100% - 32px);
+    top: 86px;
+    position: fixed;
 
     &.minicart-show {
-      right: -97.9px !important;
+      right: 16px !important;
     }
   }
 
@@ -224,8 +225,11 @@
 
   .close-icon {
     cursor: pointer;
-    width: 30px;
+    width: 24px;
+    height: 24px;
     display: flex;
+    background: url("/wp-content/uploads/2023/05/close.svg");
+    background-size: contain;
   }
 }
 

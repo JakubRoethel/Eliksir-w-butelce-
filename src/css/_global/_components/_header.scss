@@ -210,7 +210,7 @@
       content: "";
       width: 30px;
       height: 30px;
-      background-image: url("https://www.test404studio.pl/eliksir-w-butelce/wp-content/uploads/2023/03/Portal.svg");
+      background-image: url("/wp-content/uploads/2023/03/Portal.svg");
       position: absolute;
       display: flex;
       left: -35px;
@@ -221,7 +221,7 @@
       content: "";
       width: 30px;
       height: 30px;
-      background-image: url("http://eliksir-w-butelce.local/wp-content/uploads/2023/03/Portal.svg");
+      background-image: url("/wp-content/uploads/2023/03/Portal.svg");
       position: absolute;
       display: flex;
       right: -35px;
@@ -355,7 +355,7 @@
           position: absolute;
           top: -8px;
           left: 11px;
-          font-size: 10px;
+          font-size: 10px; 
           background: #ea3e32;
           padding: 1px 5px;
           z-index: 1;
@@ -425,6 +425,7 @@
       @include bp($bp-mobile) {
         position: relative;
         z-index: -2;
+        margin-top: -1px;
       }
 
       ul {
@@ -485,6 +486,7 @@
   }
   @include bp($bp-mobile) {
     display: flex;
+    margin-left: 0px;
   }
 
   &:hover {

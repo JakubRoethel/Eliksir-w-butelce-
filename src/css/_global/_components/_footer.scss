@@ -143,6 +143,7 @@
             border: unset;
             padding: 8px 24px;
             outline: none;
+            color: #292929;
             @include bp($bp-mobile) {
               font-size: 14px;
             }

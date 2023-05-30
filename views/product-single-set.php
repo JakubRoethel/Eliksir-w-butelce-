@@ -36,7 +36,7 @@ $product_short_description = $product->get_short_description();
                     <?php foreach ($product_ids as $product_id) {
                         $_product = wc_get_product($product_id); // Get product object
                         if ( $_product ) {
-                            echo '<li>' . $_product->get_title() . '</li>';
+                            echo '<a href="' . $_product->get_permalink() . '"><li>' . $_product->get_title() . '</li></a>';
                         }
                     } ?>
                 </div>
@@ -110,7 +110,7 @@ $product_short_description = $product->get_short_description();
         </div>
     </div>
 </div>
-</div>
+
 
 <div class="product_details">
     <div class="mix_details">
@@ -213,6 +213,4 @@ $product_short_description = $product->get_short_description();
     <div class="image_wrapper">
         <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
     </div>
-</div>
-</div>
 </div>
