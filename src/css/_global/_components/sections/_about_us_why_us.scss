@@ -76,6 +76,23 @@
       
     }
 
+    .button-wrapper {
+      margin-left: -15px;
+      display: flex;
+      gap: 40px;
+      padding-bottom: 50px;
+
+      a.button {
+        text-decoration: none;
+  
+        @include bp($bp-mobile) {
+          margin-left: 0px;
+          margin-bottom: 30px;
+        }
+      }
+
+    }
+
 
     a.button {
       margin-left: -15px;

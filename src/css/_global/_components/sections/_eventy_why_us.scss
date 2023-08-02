@@ -19,11 +19,13 @@
     .text_and_button_wrapper {
       display: flex;
       flex: 1;
-      margin: auto;
+      margin: 100px auto;
       flex-direction: column;
+
 
       @include bp($bp-mobile) {
         padding: 0px 16px;
+        margin: 0px;
       }
 
       @include bp($bp-tablet) {
@@ -80,15 +82,15 @@
     }
 
     .img_container {
-      @include bp($bp-tablet) {
         height: 100%;
-    }
+    
     }
 
   
       img {
         display: block;
         height: 100%;
+        object-fit: cover;
 
         @include bp($bp-tablet) {
           height: 100%;

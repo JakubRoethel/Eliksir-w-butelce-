@@ -1,8 +1,8 @@
-<?php 
+<?php
 //template for single default product view
 $product_id = $args['product_id'];
 // Get the product object
-$product = wc_get_product( $product_id );
+$product = wc_get_product($product_id);
 
 
 $product_id = $product->get_id();
@@ -41,9 +41,9 @@ $product_short_description = $product->get_short_description();
             <?php
             endif; ?>
 
-            <p class="product_description">
+            <div class="product_description">
                 <?php echo $product_description ?>
-            </p>
+        </div>
             <div class="buttons_container">
                 <?php
                 $zestawy_ID_cat = 39;
@@ -63,12 +63,7 @@ $product_short_description = $product->get_short_description();
                 ?>
 
             </div>
-            <span class="free_shipping">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 6.75L9 5.75L11 6.75V2H7V6.75ZM4 14V12H9V14H4ZM2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H13V10L9 8L5 10V2H2V16Z" fill="#40434C"/>
-                </svg>
-                <p> <?php echo __('Darmowa dostawa od 100zł') ?> </p>
-            </span>
+
         </div>
         <div class="product_gallery">
             <div class="swiper_single_product">
@@ -175,12 +170,14 @@ $product_short_description = $product->get_short_description();
     ?>
         <div class="product_short_description">
             <p class="short_description_text"> <?php echo $product_short_description ?></p>
+            <?php
+            $section_title = get_field('tytul_sekcji_z_filmem'); ?>
             <h6>
-                <?php echo __('Jak przygotować koktajl? Nic prostszego! Obejrzyj nasze wideo') ?>
+                <?php echo $section_title ?>
             </h6>
             <?php
             $movie_url = get_field('link_do_filmu'); ?>
-            <iframe width="100%" height="650px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <iframe width="100%" height="550px" src="<?php echo $movie_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
             </iframe>
         </div>
     <?php endif; ?>
@@ -204,17 +201,19 @@ $product_short_description = $product->get_short_description();
 
     ?>
 </div>
-
+<?php
+$offer_title = get_field('why_us_category_content', 'general_settings')['title'];
+$offer_description = get_field('why_us_category_content', 'general_settings')['description'];
+$button_text = get_field('why_us_category_content', 'general_settings')['button_text'];
+?>
 <div class="container b2b_offer_section">
     <?php $image_id = 415; ?>
     <div class="text_and_button_wrapper">
-        <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>
-        <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
-        <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
+        <p class="title" style="color: #B293B1"><?php echo $offer_title ?></p>
+        <p class="description"><?php echo $offer_description ?></p>
+        <button class="button get_offer"><?php echo $button_text ?></button>
     </div>
     <div class="image_wrapper">
         <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
     </div>
-</div>
-</div>
 </div>

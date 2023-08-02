@@ -157,6 +157,9 @@ gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
   end: 'top 20%',
   scrub: 2
 });
+var labels_list_var = labels_list;
+console.log('mainjs');
+console.log(labels_list_var);
 
 /***/ }),
 
@@ -336,7 +339,7 @@ function getOfferService() {
 
     var getOfferButton = document.querySelector(".get_offer");
     var popupContainer = document.querySelector(".popup_container");
-    console.log();
+    var closeButton = document.querySelector(".close_popup");
     if (getOfferButton) {
       console.log("IF");
       getOfferButton.addEventListener("click", function () {
@@ -344,6 +347,11 @@ function getOfferService() {
       });
       popupContainer.addEventListener("click", function (event) {
         if (event.target === popupContainer) {
+          popupContainer.classList.remove("show");
+        }
+      });
+      closeButton.addEventListener("click", function (event) {
+        if (event.target === closeButton) {
           popupContainer.classList.remove("show");
         }
       });
@@ -470,7 +478,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ swiperService)
 /* harmony export */ });
 function swiperService() {
-  var swiperNames = ["Basil smash", "Orange Classic", "Cherry Cuba", "Lime sour", "Old Fashioned", "Spritz"];
+  var labels_list_var = labels_list.nav_labels_list;
+  console.log(labels_list_var);
   var swiper1 = new Swiper(".swiper", {
     effect: "slide",
     grabCursor: true,
@@ -485,12 +494,23 @@ function swiperService() {
       el: ".swiper-pagination",
       clickable: true,
       renderBullet: function renderBullet(index, className) {
-        return "<span class=\"dot swiper-pagination-bullet\">".concat(swiperNames[index], "</span>");
+        return "<span class=\"dot swiper-pagination-bullet\">".concat(labels_list_var[index].slider_button_text, "</span>");
       }
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    }
+  });
+  var swiper1_mobile = new Swiper(".swiper_mobile", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "1",
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000
     }
   });
   var swiper2 = new Swiper(".swiper_featured", {
@@ -546,6 +566,7 @@ function swiperService() {
       prevEl: ".swiper-button-prev"
     }
   });
+  console.log("after-swiper");
   var swiper3 = new Swiper(".swiper_single_product", {
     effect: "slide",
     grabCursor: true,
@@ -662,15 +683,26 @@ function swiperService() {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
-    slidesPerView: "4.2",
+    slidesPerView: "4",
     spaceBetween: 50,
-    slidesOffsetBefore: 150,
-    slidesOffsetAfter: 150,
+    speed: 400,
     slideToClickedSlide: true,
     autoplay: {
       delay: 1000
     },
-    loop: true
+    loop: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        speed: 800
+      },
+      780: {
+        slidesPerView: 7,
+        spaceBetween: 50
+      }
+    }
   });
 }
 

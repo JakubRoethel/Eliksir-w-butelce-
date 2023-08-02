@@ -17,8 +17,11 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! wp_doing_ajax() ) {
-	do_action( 'woocommerce_review_order_before_payment' );
+if ( ! wp_doing_ajax() ) { ?>
+	<div class="coupon-form">
+		<?php do_action( 'woocommerce_review_order_before_payment' );?>
+	</div>
+<?php
 }
 ?>
 <div id="payment" class="woocommerce-checkout-payment">

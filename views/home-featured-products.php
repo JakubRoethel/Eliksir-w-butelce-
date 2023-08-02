@@ -1,7 +1,15 @@
+<?php 
+$title = get_field('featured_products')['title'];
+$description = get_field('featured_products')['description'];
+
+?>
+
+
+
 <div class="featured_products_section">
     <div class="description_filters_wrapper">
-        <h2 class="title">Polecane produkty</h2>
-        <p class="description">Nullam finibus massa non porttitor scelerisque. Nulla mattis vulputate diam in pellentesque. Proin sodales ultrices dui, id lobortis enim dictum eu. Curabitur consequat ipsum magna, sit amet aliquet felis posuere in. Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.</p>
+        <h2 class="title"><?php echo $title  ?></h2>
+        <p class="description"><?php echo $description  ?></p>
     </div>
     <div class="featured_products_wrapper">
         <div class="products_filters">

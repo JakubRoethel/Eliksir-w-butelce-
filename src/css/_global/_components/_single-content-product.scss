@@ -115,7 +115,16 @@
           padding-bottom: 24px;
           font-family: futura-pt, sans-serif;
           font-weight: 600;
+
+          ul {
+            padding-top: 20px;
+            list-style-type: disc;
+            list-style-position: inside;
+          }
         }
+
+
+
 
         .buttons_container {
           max-width: 350px;
@@ -465,10 +474,13 @@
       }
       ul {
         list-style-type: disc;
-        max-height: 120px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 16px;
 
         @include bp($bp-mobile) {
           max-height: unset;
+          grid-template-columns: 1fr;
         }
 
         @include bp($bp-tablet) {
@@ -629,6 +641,7 @@ iframe {
   @include bp($bp-tablet) {
     padding: 0px;
     gap: 0;
+    flex-direction: column;
 }
 
   .text_and_button_wrapper {
@@ -639,7 +652,7 @@ iframe {
 
     @include bp($bp-mobile) {
       margin: unset;
-      padding: 100px 16px 90px 16px;
+      padding: 0px 16px 90px 16px;
       
     }
 
@@ -652,7 +665,6 @@ iframe {
       font-size: 88px;
       margin-right: -50%;
       z-index: 1;
-      white-space: nowrap;
 
       @include bp($bp-mobile) {
        font-size: 42px;
@@ -662,6 +674,7 @@ iframe {
 
       @include bp($bp-tablet) {
         font-size: 52px;
+        margin-right: 0px;
     }
     }
 
@@ -730,7 +743,7 @@ iframe {
   }
 
   .image_wrapper {
-    flex: 2;
+    flex: 1;
     margin-left: -260px;
 
     @include bp($bp-tablet) {
@@ -751,7 +764,6 @@ iframe {
   }
 }
 
-//for test page (to delete)
-.form_container {
-  color: black;
-}
+
+
+

@@ -110,11 +110,19 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap:7px;
-                min-height: 130px;
 
-                li:first-child{
+                @include bp($bp-mobile) {
+                    gap: 2px;
+                  }
+
+                  li:first-child {
                     margin-left: -7px;
-                }
+
+                    @include bp($bp-mobile) {
+                        margin-left: -2px;
+                      }
+                  }
+                
 
                 li {
                     min-height: unset;
@@ -215,3 +223,11 @@
         background-color: #fff4d8;
     }
 }
+
+#zestawy_b2b ul.products {
+    @include bp($bp-mobile) {
+    row-gap: 40px;
+    }
+}
+
+

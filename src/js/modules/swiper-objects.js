@@ -1,12 +1,7 @@
 export default function swiperService() {
-  let swiperNames = [
-    "Basil smash",
-    "Orange Classic",
-    "Cherry Cuba",
-    "Lime sour",
-    "Old Fashioned",
-    "Spritz",
-  ];
+  var labels_list_var = labels_list.nav_labels_list;
+  console.log(labels_list_var);
+
   var swiper1 = new Swiper(".swiper", {
     effect: "slide",
     grabCursor: true,
@@ -21,12 +16,25 @@ export default function swiperService() {
       el: ".swiper-pagination",
       clickable: true,
       renderBullet: function (index, className) {
-        return `<span class="dot swiper-pagination-bullet">${swiperNames[index]}</span>`;
+        return `<span class="dot swiper-pagination-bullet">${labels_list_var[index].slider_button_text}</span>`;
       },
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+  });
+
+
+  var swiper1_mobile = new Swiper(".swiper_mobile", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: "1",
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000,
     },
   });
 
@@ -85,6 +93,8 @@ export default function swiperService() {
       prevEl: ".swiper-button-prev",
     },
   });
+
+  console.log("after-swiper");
 
   var swiper3 = new Swiper(".swiper_single_product", {
     effect: "slide",
@@ -204,14 +214,25 @@ export default function swiperService() {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
-    slidesPerView: "4.2",
+    slidesPerView: "4",
     spaceBetween: 50,
-    slidesOffsetBefore: 150,
-    slidesOffsetAfter: 150,
+    speed: 400,
     slideToClickedSlide: true,
     autoplay: {
       delay: 1000,
     },
     loop: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        speed: 800,
+      },
+      780: {
+        slidesPerView: 7,
+        spaceBetween: 50,
+      },
+    },
   });
 }

@@ -22,7 +22,7 @@ $rows = get_field('hero_section')['slider_images'];
 $rows = get_field('hero_section')['slider_images'];
       if( $rows ): ?>
         <div class="container hero_section hero_section_mobile">
-            <div class="swiper">
+            <div class="swiper_mobile">
                 <div class="swiper-wrapper">
                     <?php  foreach( $rows as $row ) { 
                          $image = $row['single_slide_image_mobile'];

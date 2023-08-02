@@ -24,12 +24,32 @@ $logotype_list = get_field('logotype')['logotype_img'];
  <?php endif; ?>
  </div>
 
+ <?php
+
+$title = get_field('b2b_offer_about')['title'];
+$description_list = get_field('b2b_offer_about')['description'];
+$button_text = get_field('b2b_offer_about')['button_text'];
+$image_id = get_field('b2b_offer_about')['img'];
+
+?>
+
 <div class="container b2b_offer_section about_us">
-            <?php $image_id = 415; ?>
+           
             <div class="text_and_button_wrapper">
-                <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>
-                <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
-                <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
+            <p class="title"><?php echo $title ?></p>
+            <?php if ($description_list) : ?>
+            <ul class="description">
+            <?php foreach ($description_list as $single_item_list) {
+                        $single_item = $single_item_list['single_row'];
+                    ?>
+                        <li class="single_item">
+                            <?php echo $single_item ?>
+                        </li>
+
+                    <?php  } ?>
+            </ul>
+        <?php endif; ?>
+        <button class="button get_offer"><?php echo $button_text ?></button>
             </div>
             <div class="image_wrapper">
                 <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
@@ -37,3 +57,10 @@ $logotype_list = get_field('logotype')['logotype_img'];
         </div>
     </div>
 </div>
+
+<?php 
+
+get_template_part('views/popup-offer');
+
+
+?>

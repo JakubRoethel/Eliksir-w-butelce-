@@ -18,7 +18,7 @@ function getProductsByTag($theTag)
         $product_count = 0; // Counter for the number of products displayed
         $total_count = $loop->found_posts;
         ?>
-       <ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+       <ul class="products tags columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
             <?php while ($loop->have_posts()) : $loop->the_post();
             $product_count++; // Increment the product counter
             if ($product_count == 6 && $total_count >= 6 && !is_shop()) { // If it's the 6th product, add the extra li tag

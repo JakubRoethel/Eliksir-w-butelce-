@@ -40,80 +40,82 @@ $url = get_permalink($product_id);
 			<?php echo $product_price; ?>
 		</div>
 	</a>
-		<hr>
+	<hr>
 
-		<div class="meta_button_wrapper">
-			<div class="product_metadata_wrapper">
+	<div class="meta_button_wrapper">
+		<div class="product_metadata_wrapper">
+			<?php
+
+			$featured_post_ids = get_field('products_in_set');
+			$args = array(
+				'post_type' => 'product',
+				'post__in' => $featured_post_ids,
+				'posts_per_page' => -1
+
+			);
+
+
+			$featured_posts = get_posts($args);
+			if ($featured_post_ids) : ?>
+
+				<ul>
+					<?php foreach ($featured_posts as $key => $featured_post) :
+						$permalink = get_permalink($featured_post->ID);
+						$title = get_the_title($featured_post->ID);
+						// $custom_field = get_field( 'field_name', $featured_post->ID );
+					?>
+						<li>
+							<a href="<?php echo esc_url($permalink); ?>" class="single_sub_product_link">
+								<?php echo esc_html($title) . ($key !== array_key_last($featured_posts) ? "," : ""); ?>
+							</a>
+						</li>
+					<?php endforeach;
+					// wp_reset_query();
+					?>
+
+				</ul>
+				<?php else :
+				// $terms = get_terms('product_tag');
+				$terms = wc_get_product_tag_list($product_id);
+				if (!empty($terms)) :
+				?>
+
+					<p>Mieszaj z:&nbsp; </p>
+					<?php echo $terms ?>
+
 				<?php
-
-				$featured_post_ids = get_field('products_in_set');
-				$args = array(
-					'post_type' => 'product',
-					'post__in' => $featured_post_ids,
-					'posts_per_page' => -1
-
-				);
+				endif;
+				$terms_dodatki_list = get_field('dodatki_dodaj_do');
 
 
-				$featured_posts = get_posts($args);
-				if ($featured_post_ids) : ?>
+				if (!empty($terms_dodatki_list)) :
+					$lastElement = end($terms_dodatki_list);
+				?>
+					<div class="terms_dodatki">
+						<p><?php echo __('Dodaj do:&nbsp') ?> </p>
+						<?php
+						foreach ($terms_dodatki_list as $key => $single_term_dodatki) {
+							$single_term_dodatki_title = $single_term_dodatki['dodaj_do'];
 
-					<ul>
-						<?php foreach ($featured_posts as $featured_post) :
-							$permalink = get_permalink($featured_post->ID);
-							$title = get_the_title($featured_post->ID);
-							// $custom_field = get_field( 'field_name', $featured_post->ID );
 						?>
-							<li>
-								<p class="single_sub_product"><?php echo esc_html($title); ?></p>
-							</li>
-						<?php endforeach;
-						// wp_reset_query();
-						?>
+							<p class="single_item_dodaj">
+								<?php if ($single_term_dodatki == $lastElement) {
+									echo $single_term_dodatki_title;
+								} else {
+									echo $single_term_dodatki_title .  ",";
+								} ?>
 
-					</ul>
-					<?php else :
-					// $terms = get_terms('product_tag');
-					$terms = wc_get_product_tag_list($product_id);
-					if (!empty($terms)) :
-					?>
+							</p>
+						<?php  } ?>
+					</div>
 
-						<p>Mieszaj z:&nbsp; </p>
-						<?php echo $terms ?>
+			<?php endif;
 
-					<?php
-					endif;
-					$terms_dodatki_list = get_field('dodatki_dodaj_do');
+			endif; ?>
 
-
-					if (!empty($terms_dodatki_list)) :
-						$lastElement = end($terms_dodatki_list);
-					?>
-						<div class="terms_dodatki">
-							<p><?php echo __('Dodaj do:&nbsp') ?> </p>
-							<?php
-							foreach ($terms_dodatki_list as $key => $single_term_dodatki) {
-								$single_term_dodatki_title = $single_term_dodatki['dodaj_do'];
-
-							?>
-								<p class="single_item_dodaj">
-									<?php if ($single_term_dodatki == $lastElement) {
-										echo $single_term_dodatki_title;
-									} else {
-										echo $single_term_dodatki_title .  ",";
-									} ?>
-
-								</p>
-							<?php  } ?>
-						</div>
-
-				<?php endif;
-
-				endif; ?>
-
-			</div>
-			<?php do_action('woocommerce_after_shop_loop_item'); ?>
 		</div>
+		<?php do_action('woocommerce_after_shop_loop_item'); ?>
+	</div>
 
 
 </li>

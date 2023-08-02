@@ -144,3 +144,9 @@ ScrollTrigger.create({
   end: 'top 20%',
   scrub: 2
 });
+
+var labels_list_var = labels_list;
+
+
+console.log('mainjs');
+console.log(labels_list_var);

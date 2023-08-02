@@ -5,12 +5,52 @@
   position: relative;
   background-color: #292929;
 
+
   @include bp($bp-mobile) {
     padding: 8% 10px 8% 10px;
   }
   @include bp($bp-tablet) {
     padding: 8% 13% 8% 13%;
   }
+
+
+  .Studio404 {
+    position: absolute;
+    margin-top: 20px;
+    cursor: pointer;
+
+    @include bp($bp-mobile) {
+      position: unset;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    @include bp($bp-tablet) {
+      position: unset;
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      display: flex;
+      width: 60%;
+
+      @include bp($bp-mobile) {
+
+        justify-content: center;
+      }
+
+      @include bp($bp-tablet) {
+
+        justify-content: center;
+      }
+    }
+
+  }
+
+
+
 
   .container {
     display: flex;
@@ -143,6 +183,7 @@
             border: unset;
             padding: 8px 24px;
             outline: none;
+            color: #292929;
             @include bp($bp-mobile) {
               font-size: 14px;
             }
@@ -210,4 +251,6 @@
       }
     }
   }
+
+  
 }

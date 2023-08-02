@@ -19,6 +19,7 @@
     flex: 1;
     margin: auto;
     flex-direction: column;
+    padding: 100px 0px;
     @include bp($bp-mobile) {
       padding: 0px 16px 38px 16px;
     }
@@ -28,21 +29,25 @@
   }
 
     .title {
-      font-size: 133px;
+      font-size: 90px;
       font-weight: 700;
       color: #e58a56;
-      margin-right: -50%;
+      margin-right: -90%;
       z-index: 1;
+      line-height: 120px;
+    margin-bottom: 44px;
 
       @include bp($bp-tablet) {
         font-size: 52px;
         margin-right: -190px;
         margin-bottom: 30px;
+        line-height: 70px;
     }
 
       @include bp($bp-mobile) {
-        font-size: 50px;
+        font-size: 45px;
         margin-right: unset;
+        line-height: 70px;
       }
     }
 
@@ -67,6 +72,7 @@
   }
 
   .img_container {
+    height: 100%;
     @include bp($bp-tablet) {
       height: 100%;
   }
@@ -75,6 +81,9 @@
     img {
       display: block;
       height: 100%;
+      object-fit: cover;
+      width: 100%;
+      object-fit: cover;
 
       @include bp($bp-tablet) {
         height: 100%;
@@ -186,3 +195,22 @@
     }
   }
 }
+
+
+.page-id-326 .why_eliksir_section {
+  padding: 0px;
+  gap: 10%;
+
+  .text_and_button_wrapper {
+    width: 40%;
+    padding: 100px 0px 100px 10%;   
+  
+  }
+
+  .image_wrapper {
+    width: 60%;
+
+  }
+}
+
+

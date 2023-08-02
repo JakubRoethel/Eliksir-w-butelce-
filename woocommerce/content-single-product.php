@@ -49,29 +49,11 @@ if($is_product_set) {
     ));
 } ?>
 
-<div class="popup_container">
-    <div class="popup_content">
-        <!-- your prepared order form here -->
-        <div class="main_wrapper">
-            <div class="popup_wrapper">
-                <section class="left_conainer">
-                    <div class="wrapper">
-                        <p>Chcesz złożyć zamówienie telefonicznie? <br> Zadzwoń do nas!</p>
-                        <img src="http://eliksir-w-butelce.local/wp-content/uploads/2023/04/Rectangle-312-1.png" />
-                        <p>Ewa Betka</p>
-                        <a href="#">+48 123 123 123</a>
-                        <a href="#">ewa@eliksirwbutelce.pl</a>
-                    </div>
-                </section>
-                <section class="form_container b2b_offer">
-                        <p class="title"><?php echo __('Daj nam znać czego potrzebujesz, a wyślemy Ci ofertę skrojoną na miarę') ?></p>
-                <?php echo do_shortcode('[contact-form-7 id="787" title="B2B contact form"]'); ?>
 
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+get_template_part('views/popup-offer');
+
+?>
 
 
 <?php do_action('woocommerce_after_single_product'); ?>

@@ -16,6 +16,9 @@ function studio_scripts()
     wp_enqueue_script('Swiper');
 
     wp_enqueue_script('blurry-load', get_stylesheet_directory_uri() . '/src/js/modules/blurry-load.js', array('jquery'), '', true);
+    
+    $nav_labels_list = get_field('hero_section', 28)['slider_button'];
+    wp_localize_script('main', 'labels_list', array('nav_labels_list' => $nav_labels_list));
 }
 
 add_action('wp_enqueue_scripts', 'studio_scripts');
@@ -152,6 +155,21 @@ remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_sh
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 
 remove_theme_support('html5', 'comment-form');
+
+// remove cupon form
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form');
+
+
+// add cupon form in difrent location
+add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form' );
+
+
+
+
+
+
+
 
 
 // Register custom post type for email activity data

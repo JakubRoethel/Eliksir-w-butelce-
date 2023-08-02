@@ -1,30 +1,30 @@
 .how_to_order_section {
-    padding: 120px 205px;
-    background: #FFF4D8;
+  padding: 120px 205px;
+  background: #fff4d8;
+
+  @include bp($bp-mobile) {
+    padding: 78px 16px 80px 16px;
+  }
+
+  @include bp($bp-tablet) {
+    padding: 100px 50px 50px 50px;
+  }
+
+  .title {
+    font-size: 60px;
+    font-weight: 700;
+    color: #40434d;
+    text-align: center;
+    text-transform: uppercase;
 
     @include bp($bp-mobile) {
-      padding: 78px 16px 80px 16px;
+      font-size: 24px;
     }
 
     @include bp($bp-tablet) {
-      padding: 100px 50px 50px 50px;
-  }
-
-    .title {
-        font-size: 60px;
-        font-weight: 700;
-        color: #40434D;
-        text-align: center;
-        text-transform: uppercase;
-
-        @include bp($bp-mobile) {
-          font-size: 24px;
-        }
-
-        @include bp($bp-tablet) {
-          font-size: 40px;
-      }
+      font-size: 40px;
     }
+  }
 
   .order_steps_wrapper {
     display: flex;
@@ -37,7 +37,7 @@
 
     .single_order_step {
       display: flex;
-      flex-direction: column; 
+      flex-direction: column;
       flex: 1;
 
       @include bp($bp-mobile) {
@@ -55,22 +55,29 @@
 
         @include bp($bp-tablet) {
           align-items: center;
-      }
+        }
 
         .order_number {
           font-size: 80px;
           font-weight: 700;
-          color: #40434D;
+          color: #40434d;
 
           @include bp($bp-tablet) {
             font-size: 52px;
-        }
+          }
         }
         .description {
           font-size: 16px;
           font-weight: 700;
-          color: #40434D;
+          color: #40434d;
           margin: auto;
+
+          @include bp($bp-mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-left: 20px;
+          }
         }
       }
 
@@ -82,105 +89,100 @@
         }
       }
 
-      svg:nth-child(2){
+      svg:nth-child(2) {
         display: none;
 
         @include bp($bp-mobile) {
           display: block;
+          width: 15px;
         }
-
       }
     }
   }
 }
 
 .why_eliksir {
-    display: flex;
-    color: #40434D;
-    padding: 60px 0% 140px 205px;
-    background: #FFF4D8;
-    gap: 10%;
+  display: flex;
+  color: #40434d;
+  padding: 60px 0% 140px 205px;
+  background: #fff4d8;
+  gap: 10%;
 
-    @include bp($bp-tablet) {
-      padding: 50px 0px 50px 50px;
+  @include bp($bp-tablet) {
+    padding: 50px 0px 50px 50px;
   }
 
+  @include bp($bp-mobile) {
+    padding: 0px;
+    flex-direction: column-reverse;
+  }
+  // background: #FFF4D8;
+  .text_wrapper {
+    flex: 1;
+    margin: auto;
+
     @include bp($bp-mobile) {
-      padding: 0px;
-      flex-direction: column-reverse;
-    }
-    // background: #FFF4D8;
-    .text_wrapper {
-        flex: 1;
-        margin: auto;
-
-        @include bp($bp-mobile) {
-          padding: 24px 16px 80px 16px;
-        }
-
-        .title {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 56px;
-
-            @include bp($bp-mobile) {
-              font-size: 24px;
-              line-height: 36px;
-            }
-
-            @include bp($bp-tablet) {
-              font-size: 40px;
-              
-          }
-        }
-
-        .description {
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 45px;
-
-            @include bp($bp-mobile) {
-              font-size: 16px;
-              line-height: 24px;
-              margin-top: 24px;
-            }
-        }
-
-        .cta_button {
-          background-color: #E58A56;
-          color: white;
-          border: unset;
-          margin-top: 55px;
-
-          @include bp($bp-mobile) {
-            margin-top: 24px;
-          }
-        }
+      padding: 24px 16px 80px 16px;
     }
 
-    .image_wrapper {
-        flex: 1;
+    .title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 56px;
 
-        .img_container {
-          @include bp($bp-tablet) {
-            height: 100%;
-        }
-        }
+      @include bp($bp-mobile) {
+        font-size: 24px;
+        line-height: 36px;
+      }
 
-        img {
-            display: block;
-            height: 100%;
-            object-fit: cover;
-
-            @include bp($bp-mobile) {
-              max-height: 115px;
-            }
-
-            @include bp($bp-tablet) {
-              height: 100%;
-          }
-        }
+      @include bp($bp-tablet) {
+        font-size: 40px;
+      }
     }
+
+    .description {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 45px;
+
+      @include bp($bp-mobile) {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 24px;
+      }
+    }
+
+    .cta_button {
+      background-color: #e58a56;
+      color: white;
+      border: unset;
+      margin-top: 55px;
+
+      @include bp($bp-mobile) {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .image_wrapper {
+    flex: 1;
+
+    .img_container {
+      @include bp($bp-tablet) {
+        height: 100%;
+      }
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+
+      @include bp($bp-tablet) {
+        height: 100%;
+      }
+    }
+  }
 }
 
 .contact_button_container {
@@ -195,8 +197,8 @@
   }
 
   .contact_button {
-    background-color: #E58A56;
-    padding: 9px 50px 9px 12px;
+    background-color: #e58a56;
+    padding: 14px 50px 14px 12px;
     font-size: 12px;
     font-weight: 700;
     color: white;
@@ -205,15 +207,17 @@
     position: absolute;
     top: 80px;
     right: 80px;
+    border: unset;
+    z-index: 999;
 
     @include bp($bp-tablet) {
-      top:30px;
+      top: 60px;
       right: 50px;
-  }
-  
+    }
+
     &::after {
-      content:"";
-      background: url('https://eliksir-w-butelce.local/wp-content/uploads/2023/05/Vector.svg');
+      content: "";
+      background: url("https://eliksir-w-butelce.local/wp-content/uploads/2023/05/Vector.svg");
       width: 30px;
       height: 30px;
       display: inline-block;
@@ -221,10 +225,6 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      
-  
     }
   }
 }
-
-

@@ -7,7 +7,7 @@ get_header('shop'); ?>
   <section class="left_conainer">
     <div class="wrapper">
       <p>Chcesz złożyć zamówienie telefonicznie? Zadzwoń do nas!</p>
-      <img src="http://eliksir-w-butelce.local/wp-content/uploads/2023/04/Rectangle-312-1.png"/>
+      <img src="https://eliksir-w-butelce.local/wp-content/uploads/2023/08/DSD2578-1.jpg"/>
       <p>Ewa Betka</p>
       <p>+48 123 123 123</p>
       <p>ewa@eliksirwbutelce.pl</p>

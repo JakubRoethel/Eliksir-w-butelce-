@@ -34,7 +34,11 @@ $tag = get_queried_object();
         <?php do_action('woocommerce_before_main_content'); ?>
         <section class="product_cat">
             <p class="tag-pretitle"><?php echo __('Eliksiry do') ?> <?php woocommerce_page_title(); ?></p>
-            <?php echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
+            <!-- <div class="filters_wrapper">
+				<?php echo do_shortcode('[fe_widget id="316" horizontal="yes" columns="1"]');
+                echo do_shortcode('[fe_sort id="3"]'); ?>
+				</div> -->
+            <?php
             getProductsByTag($tag->term_id);
             ?>
         </section>
@@ -42,17 +46,22 @@ $tag = get_queried_object();
             <h2 class="category-title"><?php echo __('Zestawy') ?></h2>
             <p class="category-description"><?php echo get_term_by('id', 39, 'product_cat')->description ?></p>
             <?php echo do_shortcode('[fe_widget id="314" horizontal="yes" columns="1"]');
-            echo 'test'
             getProductsByCat(39, 6);
             ?>
 
         </section>
+        <?php
+        $offer_title = get_field('why_us_category_content', 'general_settings')['title'];
+        $offer_description = get_field('why_us_category_content', 'general_settings')['description'];
+        $button_text = get_field('why_us_category_content', 'general_settings')['button_text'];
+        $image_id = get_field('why_us_category_content', 'general_settings')['img'];
+        ?>
         <div class="container b2b_offer_section">
-            <?php $image_id = 415; ?>
+            
             <div class="text_and_button_wrapper">
-                <p class="title" style="color: #B293B1"><?php echo __('Poznaj ofertę B2B') ?></p>
-                <p class="description"><?php echo __('Pellentesque commodo enim ac mi venenatis laoreet. Maecenas molestie tincidunt massa, at viverra leo consectetur sed. Sed commodo urna mi.') ?></p>
-                <a href="#" class="cta_button button"><?php echo __('Zamów rozmowę z konsultantem') ?></a>
+                <p class="title" style="color: #B293B1"><?php echo $offer_title ?></p>
+                <p class="description"><?php echo $offer_description ?></p>
+                <button class="button get_offer"><?php echo $button_text ?></button>
             </div>
             <div class="image_wrapper">
                 <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
@@ -60,7 +69,13 @@ $tag = get_queried_object();
         </div>
     </div>
 </div>
-    </div>
+</div>
 </div>
 
-<?php get_footer(); ?>
+<?php 
+
+get_template_part('views/popup-offer');
+
+get_footer(); 
+
+?>

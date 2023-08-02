@@ -61,6 +61,25 @@
       @include bp($bp-mobile) {
         height: auto; 
       }
+      .woocommerce-loop-product__title {
+        min-height: 128px;
+
+        @include bp($bp-mobile) {
+          min-height: 68px;
+        }
+      }
+
+      .product_metadata_wrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+
+        @include bp($bp-mobile) {
+          gap: 2px;
+          min-height: 63px;
+        }
+      }
+
       li {
         @include bp($bp-mobile) {
           height: 100%; 
@@ -86,7 +105,7 @@
     display: none;
   }
 
-  .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label {
+  .wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item label  {
     background-color: transparent;
     border: 2px solid #40434D;
     border-radius: 20px;
@@ -98,21 +117,36 @@
       font-weight: 700;
     }
   }
-
-  .wpc-filters-widget-main-wrapper .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
+  .wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
     padding: 6px 22px;
     width: max-content;
   }
 
-  .wpc-filters-widget-main-wrapper input.wpc-label-input+label:hover span.wpc-filter-label-wrapper {
+  .wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item input.wpc-label-input + label:hover   {
     background-color: #40434D;
     border-radius: 20px;
+    color: white;
+    @include bp($bp-mobile) {
+      background-color: unset;
+      
+    }
   }
 
-  .wpc-filters-widget-main-wrapper input.wpc-label-input:checked+label span.wpc-filter-label-wrapper {
+  .wpc-filters-main-wrap input.wpc-label-input+label:hover span.wpc-filter-label-wrapper {
     background-color: #40434D;
     border-radius: 20px;
-    border: 1px solid black; 
+    color: white;
+  }
+
+  .wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item input.wpc-label-input + label:hover a  {
+    color: white;
+  }
+
+  .wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item input.wpc-label-input:checked+label span.wpc-filter-label-wrapper {
+    background-color: #40434D;
+    border-radius: 20px;
+    border: 1px solid black;
+    color: white; 
   }
 
   /* filters container */

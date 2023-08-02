@@ -2,7 +2,8 @@
   
   margin: 0 auto;
   background-color: #fff4d8;
-  padding: 120px 205px 0 205px;
+  padding: 50px 205px 0px 205px;
+  max-height: 100vh;
 
   @include bp($bp-mobile) {
     padding: 38px 16px 0 16px;
@@ -21,7 +22,7 @@
   }
 
   .title {
-    font-size: 60px;
+    font-size: 48px;
     text-transform: uppercase;
 
     @include bp($bp-mobile) {
@@ -34,7 +35,7 @@
   .subtitle {
     padding: 20px 0px;
     line-height: 48px;
-    font-size: 32px;
+    font-size: 24px;
     @include bp($bp-mobile) {
       font-size: 18px;
       line-height: 27px;
@@ -44,7 +45,7 @@
 
   .info_container {
     display: flex;
-    padding: 70px 0 0 0px;
+    padding: 20px 0 0 0px;
     position: relative;
     justify-content: space-between;
     max-width: 1350px;
@@ -61,10 +62,11 @@
 
     .left_box {
         flex: 1;
+        margin-top: 5%;
       .ingredients_list {
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: 40px;
       }
       .single_ingredient {
         display: flex;
@@ -73,13 +75,13 @@
       }
 
       .single_ingredient img {
-        height: 95px;
+        height: 35px;
         object-fit: contain;
-        width: 95px;
+        width: 35px;
       }
       .img_description {
         font-weight: 600;
-        font-size: 32px;
+        font-size: 18px;
         text-align: left;
         position: relative;
         white-space: nowrap;
@@ -87,7 +89,7 @@
 
       .img_description::before {
         height: 1px;
-        min-width: 40vw;
+        min-width: 35vw;
         position: absolute;
         top: -5px;
         left: 0;
@@ -138,9 +140,13 @@
         z-index: 1;
       .imgs {
         .img {
+          display: flex;
+          justify-content: center;
           img {
             object-fit: contain;
             height: 100%;
+            width: 80%;
+           
           }
         }
       }
@@ -148,10 +154,11 @@
 
     .right_box {
         flex: 1;
+        margin-top: 5%;
       .ingredients_list {
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: 40px;
       }
 
       .single_ingredient {
@@ -163,20 +170,21 @@
     }
 
     .single_ingredient img {
-        height: 95px;
+        height: 35px;
         object-fit: contain;
-        width: 95px;
+        width: 35px;
     }
     .img_description {
       font-weight: 600;
-      font-size: 32px;
+      font-size: 18px;
       width: 100%;
       text-align: right;
       position: relative;
+      white-space: nowrap;
     }
 
     .img_description::before {
-        min-width: 42vw;
+        min-width: 35vw;
         height: 1px;
         position: absolute;
         /* bottom: 0; */
@@ -242,7 +250,7 @@
 
       @include bp($bp-tablet) { 
         width: 50%;
-        margin-left: -50px;
+        margin-left: -15px;
       }
 
 

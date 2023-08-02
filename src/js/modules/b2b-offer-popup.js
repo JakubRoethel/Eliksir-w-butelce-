@@ -163,7 +163,8 @@ export default function getOfferService() {
 
     const getOfferButton = document.querySelector(".get_offer");
     const popupContainer = document.querySelector(".popup_container");
-    console.log();
+    const closeButton = document.querySelector(".close_popup");
+
     if (getOfferButton) {
       console.log("IF")
       getOfferButton.addEventListener("click", () => {
@@ -172,6 +173,12 @@ export default function getOfferService() {
 
       popupContainer.addEventListener("click", (event) => {
         if (event.target === popupContainer) {
+          popupContainer.classList.remove("show");
+        }
+      });
+
+      closeButton.addEventListener("click", (event) => {
+        if (event.target === closeButton) {
           popupContainer.classList.remove("show");
         }
       });

@@ -3,11 +3,21 @@
 .custom-page-template {
   color: #40434d;
   margin-top: 56px;
-  h1 {
+  h1{
     font-size: 40px;
+    padding-bottom: 20px;
 
     @include bp($bp-mobile) {
-      font-size: 32px;
+      font-size: 20px;
+    }
+  }
+
+  h2,h3,h4 {
+    font-size: 30px;
+    padding-bottom: 20px;
+
+    @include bp($bp-mobile) {
+      font-size: 16px;
     }
   }
 
@@ -22,11 +32,11 @@
     .sidebar {
   
       color: #40434d;
-      width: 220px;
+      width: 20%;
       border-right: 1px solid #40434d2d;
 
       @include bp($bp-mobile) {
-        width: 125px;
+        width: 40%;
       }
 
       .menu_container {
@@ -50,7 +60,11 @@
     }
 
     .content {
-      flex: 3;
+      width: 80%;
+
+      @include bp($bp-mobile) {
+        width: 60%;
+      }
       //Shipping
 
       table {
@@ -116,7 +130,7 @@
               font-size: 18px;
 
               @include bp($bp-mobile) {
-                font-size: 16px;
+                font-size: 12px;
               }
             }
             svg {
@@ -155,6 +169,12 @@
         strong {
             font-family: futura-pt-bold, sans-serif;
         }
+      }
+
+
+      a {
+        color: #40434d;
+        text-decoration: underline;
       }
     }
   }
