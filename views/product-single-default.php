@@ -44,24 +44,40 @@ $product_short_description = $product->get_short_description();
             <div class="product_description">
                 <?php echo $product_description ?>
         </div>
-            <div class="buttons_container">
-                <?php
-                $zestawy_ID_cat = 39;
-                if ($product->is_type('variable')) {
-                    woocommerce_variable_add_to_cart();
+        <?php
+        $set_include = get_field('set_include');
+
+        if ($set_include) : ?>
+            <div class="set-include">
+                <ul class="set-include-list">
+                    <?php foreach ($set_include as $single_set_item) { 
+                        $product_name =  $single_set_item['product_name'];
+                        ?>
+                        <li class="single-item">
+                            <?php echo $product_name; ?>
+                        </li>
+
+                    <?php
+
+                    } ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+        <div class="buttons_container">
+            <?php
+                $zestawy_ID_cat = 37;
+                if (has_term(39, 'product_cat')) {
+                    if ($product->is_type('variable')) {
+                        woocommerce_variable_add_to_cart();
+                    } else {
+                        woocommerce_template_single_add_to_cart();
+                    }
+                } else if (has_term(57, 'product_cat')) {
+                    echo '<button class="button get_offer">' . __('Zamów') . '</button>';
                 } else {
                     woocommerce_template_single_add_to_cart();
                 }
-                if (has_term(array($zestawy_ID_cat), 'product_cat', $product_id)) {
-                    // do something if product with given ID is in category "zestawy"
                 ?>
-                    <button class="button get_offer"><?php echo __('Zamów w ofercie dla firm') ?></button>
-
-                <?php   }
-
-
-                ?>
-
             </div>
 
         </div>
@@ -204,14 +220,15 @@ $product_short_description = $product->get_short_description();
 <?php
 $offer_title = get_field('why_us_category_content', 'general_settings')['title'];
 $offer_description = get_field('why_us_category_content', 'general_settings')['description'];
-$button_text = get_field('why_us_category_content', 'general_settings')['button_text'];
+$image_id = get_field('why_us_category_content', 'general_settings')['img'];
+
 ?>
 <div class="container b2b_offer_section">
-    <?php $image_id = 415; ?>
+
     <div class="text_and_button_wrapper">
         <p class="title" style="color: #B293B1"><?php echo $offer_title ?></p>
         <p class="description"><?php echo $offer_description ?></p>
-        <button class="button get_offer"><?php echo $button_text ?></button>
+        
     </div>
     <div class="image_wrapper">
         <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>

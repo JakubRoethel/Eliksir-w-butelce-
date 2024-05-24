@@ -120,26 +120,7 @@ function products_slider($atts)
 
 add_shortcode('products_slider_shortcode', 'products_slider');
 
-add_filter('woocommerce_get_breadcrumb', function ($crumbs, $Breadcrumb) {
-    $shop_page_id = wc_get_page_id('shop'); //Get the shop page ID
-    if ($shop_page_id > 0 && !is_shop()) { //Check we got an ID (shop page is set). Added check for is_shop to prevent Home / Shop / Shop as suggested in comments
-        $new_breadcrumb = [
-            _x('Sklep', 'breadcrumb', 'woocommerce'), //Title
-            get_permalink(wc_get_page_id('shop')) // URL
-        ];
-        array_splice($crumbs, 1, 0, [$new_breadcrumb]); //Insert a new breadcrumb after the 'Home' crumb
-    }
-    if (is_tax('product_tag')) {
-        // Pobierz nazwę aktualnego tagu
-        $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-        if ($term) {
-            // Zmodyfikuj tekst breadcrumb dla tego tagu
-            $crumbs[count($crumbs) - 1][0] = 'Eliksiry do ' . $term->name;
-        }
-    }
 
-    return $crumbs;
-}, 10, 2);
 
 
 function my_acf_init()
@@ -162,7 +143,7 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_
 
 
 // add cupon form in difrent location
-add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form' );
+add_action( 'woocommerce_review_order_after_order_total', 'woocommerce_checkout_coupon_form' );
 
 
 
@@ -349,5 +330,12 @@ function mini_cart_count_fragments($fragments)
 
     return $fragments;
 }
+
+// fix add to cart fragments //
+
+
+function enqueue_wc_cart_fragments() { wp_enqueue_script( 'wc-cart-fragments' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_wc_cart_fragments' );
 
 

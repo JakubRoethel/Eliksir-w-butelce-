@@ -27,7 +27,7 @@ $benefits_list = get_field('customer_benefits')['benefits_list']; ?>
                 <div class="single_benefit">
                     <div class="number_and_description_wrapper">
                         <p style="color: <?php echo $color_hex ?>" class="item_number"><?php echo $key+1 ?>.</p>
-                        <p class="benefit_description"> <?php echo $description  ?></p>
+                        <p class="benefit_description" > <?php echo $description  ?></p>
                     </div>
                 </div>
         <?php  } ?>

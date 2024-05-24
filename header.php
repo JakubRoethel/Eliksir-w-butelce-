@@ -27,6 +27,7 @@
   <?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+
+<body <?php body_class(!empty($args['class']) ? $args['class'] : ''); ?> >
   <?php get_template_part('views/common', 'header'); ?>
   <?php get_template_part('views/common', 'preloader'); ?>

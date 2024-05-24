@@ -33,10 +33,10 @@
     </div>
 
     <div class="right_footer_blocks">
-      <div class="subscribe_form_container">
-        <h2><?php the_field('newsletter_title', 'footer_settings'); ?></h2>
-        <p><?php the_field('newsletter_description', 'footer_settings'); ?></p>
-        <?php echo do_shortcode('[mc4wp_form id=312]'); ?>
+    <div class="footer_logo">
+        <a href="<?php bloginfo('url'); ?>">
+          <img src="<?php echo esc_url(wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]); ?>" class="u-img-responsive">
+        </a>
       </div>
 
       <div class="footer_navigation_2">

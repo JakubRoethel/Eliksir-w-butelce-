@@ -15,18 +15,20 @@ export default function headerService(myAjax) {
   
   
     const burger = document.querySelector('.header__toggle');
-  
-    burger.addEventListener('click', () => {
-      if(header.classList.contains('header--navigation-open')){
-        header.classList.remove('header--navigation-open');
-      } else {
-        header.classList.add('header--navigation-open');
-      }
-    });
-  
-    // headerOverlay.addEventListener('click', () => {
-    //     header.classList.remove('header--navigation-open');
-    // });
+
+
+  // noscroll on body in mobile menu
+
+  burger.addEventListener("click", () => {
+    if (header.classList.contains("header--navigation-open")) {
+      header.classList.remove("header--navigation-open");
+      document.documentElement.classList.remove("noscroll");
+    } else {
+      header.classList.add("header--navigation-open");
+      document.documentElement.classList.add("noscroll");
+    }
+  });
+
 
 
 
@@ -111,5 +113,9 @@ jQuery(document).on('added_to_cart', function(event, fragments, cart_hash) {
 });
 
 
+
+
   }
+
+  
   

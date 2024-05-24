@@ -58,3 +58,10 @@ $image_id = get_field('b2b_offer_eventy')['img'];
 </div>
 </div>
 </div>
+
+<?php 
+
+get_template_part('views/popup-offer');
+
+
+?>

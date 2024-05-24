@@ -123,6 +123,43 @@
           }
         }
 
+        .set-include {
+          padding-bottom: 24px;
+          font-size: 16px;
+          line-height: 20px;
+          padding-bottom: 24px;
+          font-family: futura-pt, sans-serif;
+          font-weight: 600;
+
+          ul {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+
+            li {
+              display: flex;
+              align-items: center;
+            }
+
+            li::before{
+              content: "";
+              background-color: #E2C54E;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              display: inline-block;
+              margin-right: 10px;
+            }
+
+            li:nth-child(even)::before{
+              content: "";
+              background-color: #F26B1F;
+            }
+          }
+        }
+
 
 
 
@@ -513,9 +550,9 @@
         padding-left: 0px;
       }
 
-      li:last-child {
-        margin-top: 30px;
-      }
+      // li:last-child {
+      //   margin-top: 30px;
+      // }
     }
 
     li {
@@ -626,6 +663,12 @@ iframe {
   }
 }
 
+.term-zestawy {
+  .container.b2b_offer_section { 
+    background-color:#FDC9B8 ;
+  }
+}
+
 .container.b2b_offer_section {
   display: flex;
   color: #40434d;
@@ -652,7 +695,7 @@ iframe {
 
     @include bp($bp-mobile) {
       margin: unset;
-      padding: 0px 16px 90px 16px;
+      padding: 38px 16px 90px 16px;
       
     }
 

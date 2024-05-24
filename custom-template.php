@@ -41,10 +41,42 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php the_content(); ?>
 
                         <?php
-                        $faqs_list = get_field('faqs_list');
-                        if ($faqs_list) : ?>
+                        $faqs_list_main_title_one = get_field('faq_main_title_one');
+                        $faqs_list_one = get_field('faqs_list');
+                        $faqs_list_main_title_two = get_field('faq_main_title_two');
+                        $faqs_list_two = get_field('faqs_list_two');
+                        if ($faqs_list_one) : ?>
                             <div class="faq_list">
-                                <?php foreach ($faqs_list as $faq) {
+                                <h2 class="main_title_faqs"> <?php echo  $faqs_list_main_title_one ?> </h2>
+                                <?php foreach ($faqs_list_one as $faq) {
+                                    $title = $faq['title'];
+                                    $description = $faq['description'];
+                                    $icon_url = get_stylesheet_directory_uri() . '/assets/img/+.svg';
+                                    $context = stream_context_create([
+                                        'ssl' => [
+                                            'verify_peer' => false,
+                                            'verify_peer_name' => false
+                                        ]
+                                    ]);
+                                    ?>
+                                    <div class="wrapper">
+                                        <div class="title-icon-container">
+                                            <p class="title"><?php echo $title; ?></p>
+                                           <?php  echo file_get_contents($icon_url, false, $context); ?>
+                                            
+                                        </div>
+                                        
+                                        <p class="description"><?php echo $description; ?></p>
+                                    </div>
+
+
+                                <?php   } ?>
+                            </div>
+                        <?php endif; 
+                        if ($faqs_list_two) : ?>
+                            <div class="faq_list">
+                                <h2 class="main_title_faqs"> <?php echo  $faqs_list_main_title_two ?> </h2>
+                                <?php foreach ($faqs_list_two as $faq) {
                                     $title = $faq['title'];
                                     $description = $faq['description'];
                                     $icon_url = get_stylesheet_directory_uri() . '/assets/img/+.svg';

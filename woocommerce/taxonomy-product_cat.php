@@ -20,16 +20,23 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 require_once dirname(__DIR__, 1) . ('/lib/get-product-by-cat.php');
-get_header('shop');
+
 
 $category = get_queried_object();
 $category_name = $category->name;
 $category_set_id = 39;
 $category_set_id_b2b = 57;
 $display_categor_id = get_field('category_set', 'general_settings');
+$children_of_category_id_57 = get_term_children($category_set_id_b2b, 'product_cat');
 
 
 
+if ($category->term_id != $category_set_id_b2b && !in_array($category->term_id, $children_of_category_id_57)) {
+	get_header('shop');
+} else {
+    
+	get_header('', array('class' => 'header-b2b'));
+}
 ?>
 <div class="archive-wrapper">
     <div class="archive-container">
@@ -45,6 +52,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
             getProductsByCat($category->term_id, -1);
             ?>
         </section>
+        
         <?php
         if ($category->term_id != $category_set_id && $category->term_id != $category_set_id_b2b) {
         ?>
@@ -74,6 +82,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
             $additional_subtitle_list = get_field('category_archive_zestawy', 'general_settings')['kolorowe_tytuly'];
             $additional_imgs_list = get_field('category_archive_zestawy', 'general_settings')['zdjecia'];
             ?>
+            <?php if ($additional_section_title) : ?>
             <section class="additional_section">
                 <h2 class="additional_section_title"> <?php echo $additional_section_title ?> </h2>
                 <p class="additional_section_description"> <?php echo $additional_section_description ?> </p>
@@ -97,6 +106,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
                     </div>
                 <?php endif; ?>
             </section>
+            <?php endif; ?>
 
 
 
@@ -106,7 +116,7 @@ $display_categor_id = get_field('category_set', 'general_settings');
         <?php
         $offer_title = get_field('why_us_category_content', 'general_settings')['title'];
         $offer_description = get_field('why_us_category_content', 'general_settings')['description'];
-        $button_text = get_field('why_us_category_content', 'general_settings')['button_text'];
+        
         $image_id = get_field('why_us_category_content', 'general_settings')['img'];
         ?>
         <div class="container b2b_offer_section">
@@ -114,7 +124,6 @@ $display_categor_id = get_field('category_set', 'general_settings');
             <div class="text_and_button_wrapper">
                 <p class="title" style="color: #B293B1"><?php echo $offer_title ?></p>
                 <p class="description"><?php echo $offer_description ?></p>
-                <button class="button get_offer"><?php echo $button_text ?></button>
             </div>
             <div class="image_wrapper">
                 <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>

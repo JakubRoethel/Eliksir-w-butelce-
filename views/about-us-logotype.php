@@ -49,7 +49,7 @@ $image_id = get_field('b2b_offer_about')['img'];
                     <?php  } ?>
             </ul>
         <?php endif; ?>
-        <button class="button get_offer"><?php echo $button_text ?></button>
+        <button class="button" ><?php echo $button_text ?></button>
             </div>
             <div class="image_wrapper">
                 <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
@@ -60,7 +60,7 @@ $image_id = get_field('b2b_offer_about')['img'];
 
 <?php 
 
-get_template_part('views/popup-offer');
+
 
 
 ?>

@@ -21,7 +21,7 @@
     flex-direction: column;
     padding: 100px 0px;
     @include bp($bp-mobile) {
-      padding: 0px 16px 38px 16px;
+      padding: 38px 16px 38px 16px;
     }
 
     @include bp($bp-tablet) {
@@ -203,12 +203,23 @@
 
   .text_and_button_wrapper {
     width: 40%;
-    padding: 100px 0px 100px 10%;   
+    padding: 100px 0px 100px 10%; 
+    
+    @include bp($bp-mobile) {
+        
+      width: 100%;
+      padding: 38px 16px 38px 16px;
+    }
   
   }
 
   .image_wrapper {
     width: 60%;
+
+    @include bp($bp-mobile) {
+        
+      width: 100%;
+    }
 
   }
 }

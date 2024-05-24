@@ -45,24 +45,23 @@
       ]); ?>
 
       <div class="mobile_menu_footer">
-        <ul class="navigation_social">
-          <li class="social_item">
-            <a href="<?php the_field('facebook_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </li>
-          <li class="social_item">
-            <a href="<?php the_field('instagram_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </li>
-          <li class="social_item">
-            <a href="<?php the_field('youtube_link', 'footer_settings'); ?>" target="_blank" rel="noopener norefferer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-        
+         <ul class="navigation_social">
+        <li class="social_item">
+          <a href="<?php the_field('facebook_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
+          <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li class="social_item">
+          <a href="<?php the_field('instagram_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
+          <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li class="social_item">
+          <a href="<?php the_field('youtube_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
+          <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+      </ul>
       </div>
 
     </div>
@@ -72,17 +71,17 @@
       <ul class="navigation_social">
         <li class="social_item">
           <a href="<?php the_field('facebook_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
-            Facebook
+          <i class="fa-brands fa-facebook"></i>
           </a>
         </li>
         <li class="social_item">
           <a href="<?php the_field('instagram_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
-            Instagram
+          <i class="fa-brands fa-instagram"></i>
           </a>
         </li>
         <li class="social_item">
           <a href="<?php the_field('youtube_link', 'header_settings'); ?>" target="_blank" rel="noopener norefferer">
-            Youtube
+          <i class="fa-brands fa-youtube"></i>
           </a>
         </li>
       </ul>

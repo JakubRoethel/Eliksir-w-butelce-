@@ -314,10 +314,8 @@ article {
       margin-bottom: 15px;
       margin-right: 3px;
 
-      .select2-container--default
-        .select2-results__option--highlighted[aria-selected],
-      .select2-container--default
-        .select2-results__option--highlighted[data-selected] {
+      .select2-container--default .select2-results__option--highlighted[aria-selected],
+      .select2-container--default .select2-results__option--highlighted[data-selected] {
         background-color: #40434d79 !important;
       }
       li {
@@ -335,27 +333,55 @@ article {
 // woocommerce coupon
 
 .coupon-form {
-
   margin: 40px 0px;
 
-  .woocommerce-form-coupon-toggle{
-    display: none;
+  .woocommerce-info {
+    border-top: unset;
+    background-color: unset;
+    padding: 16px 0px;
+    font-family: $normalized_font_family;
+    font-size: 18px;
+    font-weight: 400;
+
+    &::before {
+      content: "";
+    }
+
+    a {
+      color: #40434d;
+      font-size: 18px;
+      text-decoration: underline;
+    }
   }
 
- .form-row {
-  margin-top: 20px !important;
- }
+  .form-row {
+    margin-top: 20px !important;
+  }
 
   p {
     button {
       padding: 13px !important;
     }
   }
-
-
-
 }
 
+//woocomerce checkout error
 
+.woocommerce-error {
+  border-top: unset;
+  background-color: unset;
+  padding: 16px 0px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
-
+  &::before {
+    top: 0px;
+    left: 50%;
+  }
+  li {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #FF3333;
+  }
+}

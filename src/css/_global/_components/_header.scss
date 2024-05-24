@@ -364,6 +364,10 @@
         }
       }
     }
+
+    .translation_dropdown {
+      display: none;
+    }
   }
 }
 
@@ -553,5 +557,20 @@
     pointer-events: all;
     opacity: 0.49;
     z-index: 3;
+  }
+}
+
+
+.header-b2b {
+  .header {
+    background-color:rgba(41, 41, 41, 0.7607843137);
+    backdrop-filter: blur(3px);
+    transition: all 0.3s ease;
+  }
+
+  .header.header--scrolled {
+    background-color: unset;
+    backdrop-filter: unset;
+    transition: all 0.3s ease;
   }
 }

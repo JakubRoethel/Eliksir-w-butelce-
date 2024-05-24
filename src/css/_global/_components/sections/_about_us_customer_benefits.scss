@@ -114,8 +114,13 @@
                 }
     
                 .benefit_description {
-                    font-size: 16px;
+                    font-size: 26px;
                     font-weight: 700;
+
+                    a {
+                        color:#40434D;
+                        text-decoration: underline;
+                    }
                 }
             }
 

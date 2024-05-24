@@ -33,6 +33,11 @@
         display: flex;
         align-items: center;
         transition-timing-function: linear;
+		
+		 img {
+            object-fit: contain;
+            height: auto;
+        }
     }
 
 }
@@ -42,6 +47,12 @@
 
     .cta_button {
         z-index: 100;
+    }
+
+    .button {
+        a {
+            color: #40434D;
+        }
     }
 
     .title {

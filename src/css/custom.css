@@ -45,3 +45,92 @@
     color: white;
     background: #E58A56;
   }
+
+.woocommerce-breadcrumb {
+	display: -webkit-inline-box;
+}
+
+
+.select2-dropdown--below {
+	z-index: 1 !important;
+}
+
+.wpc-term-item-content-wrapper label:hover span.wpc-filter-label-wrapper a {
+	color: white !important;
+}
+
+.wpc-label-input:checked + label span.wpc-filter-label-wrapper a {
+	color: white !important;
+}
+
+.wpc-filters-main-wrap .wpc-filters-labels li.wpc-term-item label span.wpc-filter-label-wrapper {
+	padding: 6px 22px !important;
+}
+
+.contact_button_container button {
+	border-radius: 30px;
+}
+
+
+.header_right .navigation_social .social_item a {
+	opacity: 1 !important;
+}
+
+.header_right .navigation_social .social_item a i {
+	font-weight: 900;
+	font-size: 19px;
+}
+
+.single_tag img {
+	height: 36px !important;
+    width: 36px !important;
+    object-fit: contain;
+}
+
+.woocommerce ul.products li.product .button.add_to_cart_button {
+	display: inline-block !important;
+	margin-top: 10px;
+}
+
+
+.term-zestawy-prezontowe ul.products li.product .button.add_to_cart_button {
+	display: none !important;
+}
+
+.product-template-default div.product .product_wrapper div.summary .product_description ul {
+	list-style-position: outside !important;
+}
+
+.woocommerce ul.products li.product_cat-zestawy-prezontowe  a.button.add_to_cart_button
+
+{
+	display: none !important;
+}
+
+
+.header-b2b .header {
+    background-color:rgba(41, 41, 41, 0.7607843137);
+    backdrop-filter: blur(3px);
+    transition: all 0.3s ease;
+  }
+
+.header-b2b .header.header--scrolled {
+    background-color: unset;
+    backdrop-filter: unset;
+    transition: all 0.3s ease;
+  }
+
+ul.products li.product .meta_button_wrapper .button {
+	padding: 0.618em 1em;
+    width: 100%;
+    background-color: #ea3e32 !important;
+    color: white !important;
+    border-radius: 0 !important;
+    font-size: 14px;
+    border: 1px solid #ea3e32 !important;
+    text-align: center;
+    margin: unset !important;
+    font-family: futura-pt, sans-serif;
+    font-weight: 600;
+    text-transform: initial;
+}

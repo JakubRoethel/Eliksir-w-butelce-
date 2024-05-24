@@ -27,6 +27,7 @@
 
     @include bp($bp-mobile) {
       gap: 20px;
+      flex-direction: column;
     }
 
     .sidebar {
@@ -36,7 +37,10 @@
       border-right: 1px solid #40434d2d;
 
       @include bp($bp-mobile) {
-        width: 40%;
+        width: 100%;
+        border-right: unset;
+        border-bottom: 1px solid #40434d2d;
+        padding-bottom: 32px;
       }
 
       .menu_container {
@@ -63,7 +67,7 @@
       width: 80%;
 
       @include bp($bp-mobile) {
-        width: 60%;
+        width: 100%;
       }
       //Shipping
 
@@ -116,6 +120,9 @@
 
       //FAQ
       .faq_list {
+        .main_title_faqs {
+          margin-top: 20px;
+        }
         .wrapper {
           cursor: pointer;
           border-bottom: 1px solid #40434d2d;
@@ -137,7 +144,7 @@
               transition: all 0.3s ease;
               @include bp($bp-mobile) {
                 height: 12px;
-                width: 12px;
+                min-width: 12px;
               }
             }
           }

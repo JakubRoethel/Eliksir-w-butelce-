@@ -11,7 +11,7 @@ $gallery = get_field('gallery');
         <div class="description_container"><?php echo $desctiption ?></div>
         <div class="contact_container">
             <?php echo $contact_description ?>
-            <a class="button shop-more" href="<?php echo $contact_button['url'] ?>">
+            <a class="button shop-more get_offer" >
                 <?php echo $contact_button['title'] ?>
             </a>
         </div>
@@ -52,9 +52,16 @@ $image_id = get_field('b2b_offer_degustacje')['img'];
                 <?php  } ?>
             </ul>
         <?php endif; ?>
-        <button class="button get_offer"><?php echo $button_text ?></button>
+        <button class="button"><?php echo $button_text ?></button>
     </div>
     <div class="image_wrapper">
         <div class="img_container"> <?php echo wp_get_attachment_image($image_id, 'full'); ?> </div>
     </div>
 </div>
+
+<?php 
+
+get_template_part('views/popup-offer');
+
+
+?>

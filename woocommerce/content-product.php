@@ -18,6 +18,9 @@
 
 defined('ABSPATH') || exit;
 
+
+
+
 global $product;
 
 // Ensure visibility.
